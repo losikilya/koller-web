@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server'
-import { Container } from '@dance/ui'
+import { Container, buttonClassName } from '@dance/ui'
 import { Link } from '@/shared/i18n/navigation'
 import styles from '@/shared/styles/Pages.module.scss'
 export async function HomePage() {
@@ -11,7 +11,7 @@ export async function HomePage() {
           <p className={styles.eyebrow}>{t('eyebrow')}</p>
           <h1 className={styles.title}>{t('title')}</h1>
           <p className={styles.description}>{t('description')}</p>
-          <Link className={styles.action} href="/playground">
+          <Link className={buttonClassName()} href="/playground">
             {t('action')} <span aria-hidden="true">↗</span>
           </Link>
         </div>

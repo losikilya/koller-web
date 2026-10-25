@@ -1,0 +1,6 @@
+# Acceptance mapping
+
+Canonical unit feature: tests/bdd/designSystem/controls.feature, adjacent controls.steps.tsx. SC-101/102/105/106 tags live there; SC-103/104 tags live only in the canonical browser feature tests/e2e/designSystem/interactions.feature. The unit feature retains untagged named drivers for those browser contracts, avoiding duplicate scenario IDs.
+SC-101 through SC-106 use focused RTL drivers at the public package API; SC-106 renders the component example composition. New behavior requires RED, not baseline classification.
+Browser acceptance additionally runs tests/e2e/designSystem/interactions.feature against built Storybook for native dialog focus/containment/restoration and real keyboard tabs. Existing foundation browser tests protect all routes, EN/RU and compact navigation; extend their responsive checks to tablet/desktop.
+Full pre-production GREEN baseline: ci-reports/phase-2/baseline.log, exit 0 using installed Edge and an explicit pnpm exit code. No production edits preceded it. Initial sandbox/esbuild denial and missing bundled Chromium were infrastructure failures, never product RED. Expanded final verify exit 0: ci-reports/phase-2/verify.log (31 Vitest, 17 application browser, six Storybook browser checks).

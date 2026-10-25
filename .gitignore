@@ -43,6 +43,10 @@ coverage/
 .workflow-running
 .architecture-refactor-running
 ci-reports/
+storybook-static/
+.features-gen-storybook/
+playwright-storybook-report/
+test-results-storybook/
 
 # Miscellaneous
 ticket.md

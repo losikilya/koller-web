@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server'
-import { Container } from '@dance/ui'
+import { Container, buttonClassName } from '@dance/ui'
 import { Link } from '@/shared/i18n/navigation'
 import styles from '@/shared/styles/Pages.module.scss'
 export async function IdentityPage({ kind }: { kind: 'login' | 'register' }) {
@@ -9,7 +9,7 @@ export async function IdentityPage({ kind }: { kind: 'login' | 'register' }) {
       <p className={styles.eyebrow}>{t('eyebrow')}</p>
       <h1>{t(kind + 'Title')}</h1>
       <p className={styles.description}>{t(kind + 'Description')}</p>
-      <Link href="/playground" className={styles.action}>
+      <Link href="/playground" className={buttonClassName()}>
         {t('action')}
       </Link>
     </Container>

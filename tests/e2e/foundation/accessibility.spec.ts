@@ -1,4 +1,48 @@
 import { test, expect } from '@playwright/test'
+import { expectAccessible } from '../helpers/a11y'
+for (const width of [320, 768, 1280]) {
+  test(`localized pages reflow at ${width}px`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 900 })
+    for (const locale of ['en', 'ru']) {
+      for (const path of [
+        '',
+        '/playground',
+        '/playground/practice-timer',
+        '/login',
+        '/register',
+      ]) {
+        await page.goto('/' + locale + path)
+        await expect(page.getByRole('main')).toBeVisible()
+        expect(
+          await page.evaluate(
+            () => document.documentElement.scrollWidth <= window.innerWidth
+          ),
+          locale + path
+        ).toBe(true)
+        await expect(
+          page
+            .getByRole('navigation')
+            .getByRole('link', {
+              name: locale === 'en' ? 'Playground' : 'Плейграунд',
+              exact: true,
+              includeHidden: true,
+            })
+            .first()
+        ).toBeVisible({ visible: width >= 768 })
+        await expect(
+          page
+            .getByRole('navigation')
+            .getByRole('button', { includeHidden: true })
+        ).toBeVisible({ visible: width < 768 })
+      }
+    }
+    if (width === 768)
+      await page.screenshot({
+        path: test.info().outputPath('tablet-shell.png'),
+        fullPage: true,
+      })
+  })
+}
 test('default locale is deterministic and invalid routes return 404', async ({
   page,
 }) => {
@@ -45,6 +89,7 @@ for (const locale of ['en', 'ru'])
       await page.keyboard.press('Enter')
       await expect(page.getByRole('main')).toBeFocused()
       expect(errors).toEqual([])
+      await expectAccessible(page)
       if (locale === 'en' && path === '') {
         await page.screenshot({
           path: test.info().outputPath('desktop-shell.png'),

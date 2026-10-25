@@ -6,7 +6,8 @@ html {
   background: var(--surface-canvas);
   color: var(--text-default);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 100%;
+  line-height: var(--line-body);
 }
 body {
   margin: 0;
@@ -20,8 +21,8 @@ a {
 }
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 4px;
+  outline: var(--focus-width) solid var(--focus-ring);
+  outline-offset: var(--focus-offset);
 }
 main:focus {
   outline: none;

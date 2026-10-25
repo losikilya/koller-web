@@ -1,22 +1,67 @@
+/* Raw values verified against mobile Colors.ts, Text.tsx, Input.tsx and Button.tsx.
+   Web adaptations and provenance: docs/web-platform/phase-2/design-system.md. */
 :root {
   color-scheme: dark;
-  --surface-canvas: #0b0c0e;
-  --surface-raised: #13131c;
-  --surface-card: #0e1417;
-  --text-default: #fff;
-  --text-muted: #b4b5c8;
-  --action-primary: #4cd6ff;
-  --action-on-primary: #000;
-  --action-secondary: #ecb1ff;
-  --border-decorative: rgba(255, 255, 255, 0.12);
-  --border-control: rgba(255, 255, 255, 0.5);
-  --focus-ring: #4cd6ff;
+  --raw-black: #000;
+  --raw-white: #fff;
+  --raw-canvas: #0b0c0e;
+  --raw-raised: #13131c;
+  --raw-card: #0e1417;
+  --raw-cyan: #4cd6ff;
+  --raw-cyan-dark: #004e60;
+  --raw-violet: #ecb1ff;
+  --raw-danger: #fc5a5a;
+  --raw-success: #37fe11;
+  --raw-warning: #ffc107;
+  --raw-muted-web: #b4b5c8;
+  --raw-control: rgba(255, 255, 255, 0.5);
+  --raw-separator-web: rgba(255, 255, 255, 0.12);
+  --raw-cyan-subtle: rgba(76, 214, 255, 0.08);
+  --raw-cyan-selected: rgba(76, 214, 255, 0.15);
+  --raw-scrim: rgba(11, 12, 14, 0.7);
+  --surface-canvas: var(--raw-canvas);
+  --surface-raised: var(--raw-raised);
+  --surface-card: var(--raw-card);
+  --surface-hover: var(--raw-cyan-subtle);
+  --surface-selected: var(--raw-cyan-selected);
+  --overlay-scrim: var(--raw-scrim);
+  --text-default: var(--raw-white);
+  --text-muted: var(--raw-muted-web);
+  --text-placeholder: var(--raw-muted-web);
+  --action-primary: var(--raw-cyan);
+  --action-on-primary: var(--raw-black);
+  --action-primary-hover: var(--raw-violet);
+  --action-primary-active: var(--raw-cyan);
+  --action-secondary: var(--raw-violet);
+  --feedback-danger: var(--raw-danger);
+  --feedback-success: var(--raw-success);
+  --feedback-warning: var(--raw-warning);
+  --border-decorative: var(--raw-separator-web);
+  --border-control: var(--raw-control);
+  --focus-ring: var(--raw-cyan);
+  --focus-width: 2px;
+  --focus-offset: 4px;
+  --disabled-opacity: 0.5;
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     sans-serif;
+  --font-caption: 0.75rem;
   --font-small: 0.875rem;
   --font-body-size: 1rem;
+  --font-subtitle: 1.125rem;
+  --font-section: 1.5rem;
   --font-title: 2rem;
   --font-display: 3.75rem;
+  --font-display-compact: 2.5rem;
+  --line-body: 1.5;
+  --line-reading: 1.7;
+  --line-heading: 1.25;
+  --line-display: 1.08;
+  --weight-regular: 400;
+  --weight-bold: 700;
+  --weight-heavy: 800;
+  --tracking-label: 0.12em;
+  --tracking-display: -0.04em;
+  --space-0: 0;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -29,7 +74,36 @@
   --border-width: 1px;
   --radius-control: 0.75rem;
   --radius-card: 0.5rem;
+  --radius-dialog: var(--radius-control);
   --radius-pill: 9999px;
+  --radius-circle: 50%;
   --elevation-overlay: 0 8px 24px rgba(0, 0, 0, 0.35);
   --content-max: 75rem;
+  --dialog-max: 36rem;
+  --target-min: 2.75rem;
+  --header-height: 6rem;
+  --gutter: var(--space-4);
+  --motion-fast: 120ms;
+  --motion-normal: 200ms;
+  --motion-loading: 800ms;
+  --motion-easing: ease-out;
+}
+/* Responsive conventions: compact <640; medium 640..1023; wide >=1024.
+   Existing navigation collapses below 768px to accommodate localized links. */
+@media (min-width: 640px) {
+  :root {
+    --gutter: var(--space-6);
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --gutter: var(--space-8);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-normal: 0ms;
+    --motion-loading: 0ms;
+  }
 }

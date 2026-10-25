@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server'
-import { Container } from '@dance/ui'
+import { Badge, Card, Container, buttonClassName } from '@dance/ui'
 import { Link } from '@/shared/i18n/navigation'
 import { practiceTimer } from './catalog'
 import styles from '@/shared/styles/Pages.module.scss'
@@ -10,14 +10,14 @@ export async function PlaygroundPage() {
       <p className={styles.eyebrow}>{t('eyebrow')}</p>
       <h1>{t('title')}</h1>
       <p className={styles.description}>{t('description')}</p>
-      <article className={styles.card}>
-        <span className={styles.badge}>{t('status')}</span>
+      <Card className={styles.card}>
+        <Badge>{t('status')}</Badge>
         <h2>{t('tool')}</h2>
         <p>{t('toolDescription')}</p>
-        <Link href={practiceTimer.path} className={styles.action}>
+        <Link href={practiceTimer.path} className={buttonClassName()}>
           {t('open')}
         </Link>
-      </article>
+      </Card>
     </Container>
   )
 }
@@ -28,9 +28,11 @@ export async function PracticeTimerPage() {
       <p className={styles.eyebrow}>{t('eyebrow')}</p>
       <h1>{t('description')}</h1>
       <h2>{t('title')}</h2>
-      <p className={styles.badge}>{t('status')}</p>
+      <p>
+        <Badge>{t('status')}</Badge>
+      </p>
       <p className={styles.description}>{t('notice')}</p>
-      <Link href="/playground" className={styles.action}>
+      <Link href="/playground" className={buttonClassName()}>
         {t('back')}
       </Link>
     </Container>

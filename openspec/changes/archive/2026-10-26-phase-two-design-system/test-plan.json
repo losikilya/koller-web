@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "implementationFiles": [
+    "packages/ui/src/index.tsx",
+    "packages/ui/src/Dialog.tsx",
+    "packages/ui/src/Tabs.tsx",
+    "packages/ui/src/Primitives.module.scss",
+    "packages/design-tokens/src/tokens.css",
+    "packages/ui/stories/Primitives.stories.tsx",
+    "apps/web/src/shell/Shell.module.scss",
+    "apps/web/src/shared/styles/Pages.module.scss",
+    "apps/web/src/app/globals.scss",
+    "apps/web/src/modules/playground/Pages.tsx",
+    "apps/web/src/shell/HomePage.tsx",
+    "apps/web/src/shell/IdentityPage.tsx",
+    "apps/web/src/shell/MobileNavigation.tsx"
+  ],
+  "scenarios": [
+    {
+      "id": "SC-101",
+      "requirement": "FR-101",
+      "feature": "tests/bdd/designSystem/controls.feature",
+      "layer": "unit",
+      "testFile": "tests/bdd/designSystem/controls.steps.tsx"
+    },
+    {
+      "id": "SC-102",
+      "requirement": "FR-101",
+      "feature": "tests/bdd/designSystem/controls.feature",
+      "layer": "unit",
+      "testFile": "tests/bdd/designSystem/controls.steps.tsx"
+    },
+    {
+      "id": "SC-103",
+      "requirement": "FR-102",
+      "feature": "tests/e2e/designSystem/interactions.feature",
+      "layer": "browser",
+      "testFile": "tests/bdd/designSystem/controls.steps.tsx"
+    },
+    {
+      "id": "SC-104",
+      "requirement": "FR-102",
+      "feature": "tests/e2e/designSystem/interactions.feature",
+      "layer": "browser",
+      "testFile": "tests/bdd/designSystem/controls.steps.tsx"
+    },
+    {
+      "id": "SC-105",
+      "requirement": "FR-103",
+      "feature": "tests/bdd/designSystem/controls.feature",
+      "layer": "unit",
+      "testFile": "tests/bdd/designSystem/controls.steps.tsx"
+    },
+    {
+      "id": "SC-106",
+      "requirement": "FR-104",
+      "feature": "tests/bdd/designSystem/controls.feature",
+      "layer": "unit",
+      "testFile": "tests/bdd/designSystem/controls.steps.tsx"
+    }
+  ]
+}

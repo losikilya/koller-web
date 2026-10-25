@@ -23,6 +23,7 @@ export function MobileNavigation({
       }}
     >
       <Button
+        variant="secondary"
         ref={toggle}
         aria-expanded={isOpen}
         aria-controls={id}

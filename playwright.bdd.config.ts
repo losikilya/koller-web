@@ -41,8 +41,8 @@ const browserUse = {
 
 // Generated Playwright BDD specs; regular E2E specs run from tests/e2e in their own project.
 const bddTestDir = defineBddConfig({
-  features: 'tests/e2e/**/*.feature',
-  steps: 'tests/e2e/**/*.steps.ts',
+  features: 'tests/e2e/foundation/**/*.feature',
+  steps: 'tests/e2e/foundation/**/*.steps.ts',
   outputDir: '.features-gen',
 })
 
@@ -83,6 +83,7 @@ export default defineConfig({
       name: `${browserName}-e2e`,
       testDir: 'tests/e2e',
       testMatch: '**/*.spec.ts',
+      testIgnore: '**/designSystem/**',
       use: browserUse,
     },
   ],

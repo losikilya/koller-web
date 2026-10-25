@@ -8,16 +8,16 @@
 }
 .eyebrow {
   font-size: var(--font-small);
-  letter-spacing: 0.12em;
-  font-weight: 700;
+  letter-spacing: var(--tracking-label);
+  font-weight: var(--weight-bold);
   color: var(--action-primary);
   margin: 0 0 var(--space-6);
 }
 .title {
   font-size: var(--font-display);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-  font-weight: 800;
+  line-height: var(--line-display);
+  letter-spacing: var(--tracking-display);
+  font-weight: var(--weight-heavy);
   white-space: pre-line;
   max-width: 18ch;
   margin: 0 0 var(--space-6);
@@ -25,24 +25,8 @@
 .description {
   color: var(--text-muted);
   max-width: 36rem;
-  line-height: 1.7;
+  line-height: var(--line-reading);
   margin: 0 0 var(--space-8);
-}
-.action {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3rem;
-  max-width: 100%;
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--radius-pill);
-  background: var(--action-primary);
-  color: var(--action-on-primary);
-  font-weight: 700;
-  text-decoration: none;
-  &:hover {
-    filter: brightness(1.1);
-  }
 }
 .art {
   aspect-ratio: 1;
@@ -50,7 +34,7 @@
   overflow: hidden;
   background: radial-gradient(
     ellipse at center,
-    rgba(76, 214, 255, 0.09),
+    var(--surface-hover),
     transparent 65%
   );
   &::before,
@@ -58,7 +42,7 @@
     content: '';
     position: absolute;
     inset: 15%;
-    border: 2px solid var(--action-primary);
+    border: var(--focus-width) solid var(--action-primary);
     border-radius: 50%;
     transform: rotate(-35deg) scaleX(0.45);
   }
@@ -70,7 +54,7 @@
 }
 .section {
   padding-block: var(--space-12) var(--space-16);
-  border-top: 1px solid var(--border-decorative);
+  border-top: var(--border-width) solid var(--border-decorative);
   h2 {
     font-size: var(--font-title);
     line-height: 1.3;
@@ -83,15 +67,15 @@
   gap: var(--space-8);
   margin-top: var(--space-12);
   article {
-    border-top: 1px solid var(--border-decorative);
+    border-top: var(--border-width) solid var(--border-decorative);
     padding-top: var(--space-6);
   }
   h3 {
-    font-size: 1.125rem;
+    font-size: var(--font-subtitle);
   }
   p {
     color: var(--text-muted);
-    line-height: 1.7;
+    line-height: var(--line-reading);
   }
 }
 .page {
@@ -100,31 +84,19 @@
   h1 {
     font-size: var(--font-title);
     max-width: 28ch;
-    line-height: 1.25;
+    line-height: var(--line-heading);
   }
 }
 .card {
   margin-top: var(--space-12);
-  padding: var(--space-8);
   max-width: 42rem;
-  border: 1px solid var(--border-decorative);
-  border-radius: var(--radius-card);
-  background: var(--surface-card);
   h2 {
-    font-size: 1.5rem;
+    font-size: var(--font-section);
   }
   p {
     color: var(--text-muted);
-    line-height: 1.7;
+    line-height: var(--line-reading);
   }
-}
-.badge {
-  display: inline-block;
-  color: var(--action-secondary);
-  font-size: var(--font-small);
-  border: 1px solid currentColor;
-  border-radius: var(--radius-pill);
-  padding: var(--space-2) var(--space-3);
 }
 @media (max-width: 767px) {
   .hero {
@@ -134,7 +106,7 @@
     padding-block: var(--space-12);
   }
   .title {
-    font-size: 2.5rem;
+    font-size: var(--font-display-compact);
   }
   .art {
     max-width: 22rem;
@@ -143,9 +115,6 @@
   }
   .grid {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .card {
-    padding: var(--space-6);
   }
   .page {
     padding-block: var(--space-12);

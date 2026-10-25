@@ -1,25 +1,25 @@
 .header {
-  border-bottom: 1px solid var(--border-decorative);
+  border-bottom: var(--border-width) solid var(--border-decorative);
 }
 .headerInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
-  min-height: 6rem;
+  min-height: var(--header-height);
 }
 .brand {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  font-weight: 700;
+  font-weight: var(--weight-bold);
   text-decoration: none;
   white-space: nowrap;
 }
 .mark {
-  font-size: 2rem;
+  font-size: var(--font-title);
   color: var(--action-primary);
-  font-weight: 800;
+  font-weight: var(--weight-heavy);
   letter-spacing: -0.25rem;
   padding-right: 0.25rem;
   span {
@@ -34,6 +34,11 @@
     font-size: var(--font-small);
     text-decoration: none;
     padding-block: var(--space-3);
+    &:hover {
+      color: var(--action-primary);
+      text-decoration: underline;
+      text-underline-offset: var(--space-2);
+    }
   }
   a[aria-current] {
     color: var(--action-primary);
@@ -47,16 +52,22 @@
 .mobilePanel {
   position: absolute;
   inset-inline: 0;
-  top: 6rem;
+  top: var(--header-height);
   z-index: 10;
   background: var(--surface-raised);
   padding: var(--space-6);
   box-shadow: var(--elevation-overlay);
-  border-bottom: 1px solid var(--border-control);
+  border-bottom: var(--border-width) solid var(--border-control);
   a {
     display: block;
-    min-height: 2.75rem;
+    min-height: var(--target-min);
     padding: var(--space-3);
+    &:hover,
+    &[aria-current] {
+      color: var(--action-primary);
+      text-decoration: underline;
+      text-underline-offset: var(--space-2);
+    }
   }
 }
 .skip {
@@ -73,7 +84,7 @@
   }
 }
 .footer {
-  border-top: 1px solid var(--border-decorative);
+  border-top: var(--border-width) solid var(--border-decorative);
   padding-block: var(--space-8);
   color: var(--text-muted);
   font-size: var(--font-small);

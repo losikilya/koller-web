@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: var(--surface-canvas);
+  color: var(--text-default);
+  font-family: var(--font-body);
+  font-size: var(--font-body-size);
+  line-height: var(--line-body);
+}
+h1,
+h2,
+h3,
+p,
+a {
+  overflow-wrap: anywhere;
+}
