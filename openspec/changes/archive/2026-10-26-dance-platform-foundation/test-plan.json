@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "implementationFiles": [
+    "apps/web/src/app/globals.scss",
+    "apps/web/src/app/[locale]/layout.tsx",
+    "apps/web/src/app/[locale]/login/page.tsx",
+    "apps/web/src/app/[locale]/not-found.tsx",
+    "apps/web/src/app/[locale]/page.tsx",
+    "apps/web/src/app/[locale]/playground/page.tsx",
+    "apps/web/src/app/[locale]/playground/practice-timer/page.tsx",
+    "apps/web/src/app/[locale]/register/page.tsx",
+    "apps/web/src/modules/playground/catalog.ts",
+    "apps/web/src/modules/playground/index.ts",
+    "apps/web/src/modules/playground/Pages.tsx",
+    "apps/web/src/proxy.ts",
+    "apps/web/src/shared/i18n/messages/en.json",
+    "apps/web/src/shared/i18n/messages/ru.json",
+    "apps/web/src/shared/i18n/navigation.ts",
+    "apps/web/src/shared/i18n/request.ts",
+    "apps/web/src/shared/i18n/routes.ts",
+    "apps/web/src/shared/i18n/routing.ts",
+    "apps/web/src/shared/styles/Pages.module.scss",
+    "apps/web/src/shell/HomePage.tsx",
+    "apps/web/src/shell/IdentityPage.tsx",
+    "apps/web/src/shell/MobileNavigation.tsx",
+    "apps/web/src/shell/navigation.ts",
+    "apps/web/src/shell/Shell.module.scss",
+    "apps/web/src/shell/Shell.tsx",
+    "apps/web/src/styles.d.ts",
+    "packages/ui/src/index.tsx",
+    "packages/ui/src/Primitives.module.scss",
+    "packages/ui/src/styles.d.ts",
+    "packages/contracts/src/index.ts",
+    "packages/design-tokens/src/tokens.css"
+  ],
+  "scenarios": [
+    {
+      "id": "SC-001",
+      "requirement": "FR-001",
+      "feature": "tests/e2e/foundation/smoke.feature",
+      "layer": "browser",
+      "testFile": "tests/apps/web/shared/i18n/routes.test.ts"
+    },
+    {
+      "id": "SC-002",
+      "requirement": "FR-002",
+      "feature": "tests/e2e/foundation/smoke.feature",
+      "layer": "browser",
+      "testFile": "tests/apps/web/shared/i18n/routes.test.ts"
+    },
+    {
+      "id": "SC-003",
+      "requirement": "FR-003",
+      "feature": "tests/bdd/foundation/controls.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/shell/MobileNavigation.test.tsx"
+    },
+    {
+      "id": "SC-004",
+      "requirement": "FR-004",
+      "feature": "tests/bdd/foundation/controls.feature",
+      "layer": "unit",
+      "testFile": "tests/packages/ui/Button.test.tsx"
+    }
+  ]
+}

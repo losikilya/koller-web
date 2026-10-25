@@ -1,0 +1,4 @@
+schema: frontend-bdd-tdd
+context: |
+  Dance Platform Phase 1. Follow AGENTS.md and docs/PROCESS.md.
+  Main orchestrator is sole writer. Preserve recorded RED/GREEN/REFACTOR.

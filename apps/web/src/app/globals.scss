@@ -1,0 +1,51 @@
+@use '@dance/design-tokens/tokens.css';
+* {
+  box-sizing: border-box;
+}
+html {
+  background: var(--surface-canvas);
+  color: var(--text-default);
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+body {
+  margin: 0;
+}
+a {
+  color: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+main:focus {
+  outline: none;
+}
+h1,
+h2,
+h3,
+p,
+a {
+  overflow-wrap: anywhere;
+}
+main {
+  min-height: 60vh;
+}
+::selection {
+  background: var(--action-primary);
+  color: var(--action-on-primary);
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

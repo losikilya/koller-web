@@ -1,0 +1,23 @@
+{
+  "name": "@dance/web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint src --ext .ts,.tsx",
+    "typecheck": "next typegen && tsc --noEmit",
+    "test": "vitest run --root ../.. tests/apps/web"
+  },
+  "dependencies": {
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "next-intl": "4.14.9",
+    "sass": "1.77.6",
+    "@dance/ui": "workspace:*",
+    "@dance/design-tokens": "workspace:*",
+    "@dance/contracts": "workspace:*"
+  }
+}

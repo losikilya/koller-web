@@ -1,0 +1,13 @@
+# Dependency decisions
+
+The supplied starter had package manifests/lockfiles but no installed node_modules or source. Original manifest: starter-package.json. Installed host: Node 24.10.0, npm 11.6.1, pnpm 8.15.4. PowerShell blocks npm.ps1/pnpm.ps1, so local Windows commands use .cmd without changing execution policy.
+
+Registry metadata verified Next 16.4.3 requires Node >=20.9 and supports React 19; next-intl 4.14.9 supports Next 16/React 19. Official references: [Next installation](https://nextjs.org/docs/app/getting-started/installation), [next-intl routing](https://next-intl.dev/docs/routing/configuration), [proxy naming](https://next-intl.dev/docs/routing/middleware). Keep the starter's stricter Node engine ^20.19.0 || >=22.12.0. No forced installation or peer-error bypass.
+
+New pinned runtime: next 16.4.3, next-intl 4.14.9. Preserve React/react-dom 19.3.0, TypeScript 5.9.3, Sass 1.77.6 and existing ESLint/Prettier majors. Add Turbo 2.11.10; pin already available pnpm 8.15.4 in packageManager rather than upgrading the host. Single authoritative workspace lockfile is pnpm-lock.yaml. The separate pre-existing .opencode/package-lock.json belongs to its plugin metadata and is not a workspace application lockfile; it remains untouched to preserve the agent environment.
+
+Existing allowed ranges resolve through the lockfile: Vitest/coverage 4.1.12, Playwright 1.64.1, playwright-bdd 9.2.1, OpenSpec 1.15.0. Root dev dependencies supply workflow/test tools and one React copy for RTL; app runtime dependencies live in apps/web. Workspace references use workspace:\*.
+
+Unused banking runtime dependencies were removed after confirming no source consumers: Redux/RTK, router/history, jQuery/input masks, forms/selects/validation, axios, persistence and miscellaneous legacy utilities. Root postbuild dist/version output and env-cmd/Vite preview were replaced because Next emits .next. Vite 7/plugin-react remain for Vitest only; unused SVGR removed. No Tailwind, state library, provider client, auth framework, UI framework, NestJS, Prisma or Storybook was added.
+
+Installation emitted upstream deprecated-package notices from the preserved CRA lint toolchain. vitest-cucumber 7.0.0 publishes cli-generate.mjs but its optional CLI bin references a missing cli-generate.js; scenario imports execute correctly and the project does not use that generator. Do not patch vendor files or upgrade the workflow to hide this warning. No test threshold was lowered. CRA's RTL/Jest heuristics are excluded only from Playwright files because page locators/expect(actual,message) use a different API; all existing production lint checks remain.

@@ -1,0 +1,103 @@
+.header {
+  border-bottom: 1px solid var(--border-decorative);
+}
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 6rem;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.mark {
+  font-size: 2rem;
+  color: var(--action-primary);
+  font-weight: 800;
+  letter-spacing: -0.25rem;
+  padding-right: 0.25rem;
+  span {
+    color: var(--action-secondary);
+  }
+}
+.desktop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  a {
+    font-size: var(--font-small);
+    text-decoration: none;
+    padding-block: var(--space-3);
+  }
+  a[aria-current] {
+    color: var(--action-primary);
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+  }
+}
+.mobile {
+  display: none;
+}
+.mobilePanel {
+  position: absolute;
+  inset-inline: 0;
+  top: 6rem;
+  z-index: 10;
+  background: var(--surface-raised);
+  padding: var(--space-6);
+  box-shadow: var(--elevation-overlay);
+  border-bottom: 1px solid var(--border-control);
+  a {
+    display: block;
+    min-height: 2.75rem;
+    padding: var(--space-3);
+  }
+}
+.skip {
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-4);
+  z-index: 20;
+  padding: var(--space-3);
+  background: var(--action-primary);
+  color: var(--action-on-primary);
+  transform: translateY(-200%);
+  &:focus {
+    transform: none;
+  }
+}
+.footer {
+  border-top: 1px solid var(--border-decorative);
+  padding-block: var(--space-8);
+  color: var(--text-muted);
+  font-size: var(--font-small);
+}
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  strong {
+    color: var(--text-default);
+  }
+  p {
+    margin: var(--space-2) 0;
+  }
+}
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+  .brand {
+    font-size: var(--font-small);
+  }
+}

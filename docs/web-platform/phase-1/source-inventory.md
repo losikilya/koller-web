@@ -1,0 +1,33 @@
+# Source inventory
+
+- apps/web/src/app/globals.scss
+- apps/web/src/app/[locale]/layout.tsx
+- apps/web/src/app/[locale]/login/page.tsx
+- apps/web/src/app/[locale]/not-found.tsx
+- apps/web/src/app/[locale]/page.tsx
+- apps/web/src/app/[locale]/playground/page.tsx
+- apps/web/src/app/[locale]/playground/practice-timer/page.tsx
+- apps/web/src/app/[locale]/register/page.tsx
+- apps/web/src/modules/playground/catalog.ts
+- apps/web/src/modules/playground/index.ts
+- apps/web/src/modules/playground/Pages.tsx
+- apps/web/src/proxy.ts
+- apps/web/src/shared/i18n/messages/en.json
+- apps/web/src/shared/i18n/messages/ru.json
+- apps/web/src/shared/i18n/navigation.ts
+- apps/web/src/shared/i18n/request.ts
+- apps/web/src/shared/i18n/routes.ts
+- apps/web/src/shared/i18n/routing.ts
+- apps/web/src/shared/styles/Pages.module.scss
+- apps/web/src/shell/HomePage.tsx
+- apps/web/src/shell/IdentityPage.tsx
+- apps/web/src/shell/MobileNavigation.tsx
+- apps/web/src/shell/navigation.ts
+- apps/web/src/shell/Shell.module.scss
+- apps/web/src/shell/Shell.tsx
+- apps/web/src/styles.d.ts
+- packages/ui/src/index.tsx
+- packages/ui/src/Primitives.module.scss
+- packages/ui/src/styles.d.ts
+- packages/contracts/src/index.ts
+- packages/design-tokens/src/tokens.css

@@ -1,0 +1,6 @@
+# Current Codex CLI/IDE project config. No credentials, model or provider override.
+# Project configuration is applied only after the repository is trusted.
+[agents]
+enabled = true
+# Three specialists may remain open; AGENTS.md requires sequential execution.
+max_concurrent_threads_per_session = 3

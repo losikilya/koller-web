@@ -1,0 +1,15 @@
+{
+  "name": "@dance/design-tokens",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./tokens.css": "./src/tokens.css"
+  },
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "scripts": {
+    "lint": "prettier --check src/tokens.css"
+  }
+}

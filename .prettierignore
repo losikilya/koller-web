@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+coverage
+# TDD evidence: ledger.json stores sha256 of the exact report bytes
+openspec/changes/**/evidence/
+.pnpm-store/
+**/.next/
+**/.turbo/
+pnpm-lock.yaml
+apps/web/next-env.d.ts
+docs/web-platform/phase-0/

@@ -1,0 +1,32 @@
+name: Frontend quality
+on: [push, pull_request]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      PLAYWRIGHT_BROWSER_CHANNEL: chrome
+      TURBO_TELEMETRY_DISABLED: '1'
+      NEXT_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm verify:ci
+      - name: Validate change evidence and source coverage
+        if: github.event_name == 'pull_request'
+        run: node scripts/workflow-ci.mjs ${{ github.event.pull_request.base.sha }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-reports
+          path: |
+            ci-reports/
+            coverage/
+            playwright-report/
+            test-results/
