@@ -12,7 +12,7 @@ Treat WCAG AA as the default product target unless the repository documents anot
 - Read the OpenSpec scenarios, nearby UI and existing tests.
 - Identify the user task, interactive elements, dynamic updates, error states and focus transitions.
 - Inspect the rendered accessibility semantics when browser access exists.
-- Reuse accessible behavior from the current components (`packages/ui-kit`, `ui`); do not create wrappers or migration work outside the requested scope.
+- Reuse accessible behavior from the current components (`@dance/ui`); do not create wrappers or migration work outside the requested scope.
 
 ## 2. Review in impact order
 

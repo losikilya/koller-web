@@ -10,7 +10,7 @@ Refactoring changes structure without changing externally observable behavior. I
 ## 1. Define the boundary
 
 - State the target, motivation, non-goals and observable behavior that must remain stable.
-- Read callers, tests, public APIs, ADRs, sub-app/FSD boundaries and relevant anchors.
+- Read callers, tests, public APIs, ADRs, active architecture boundaries and relevant anchors.
 - Establish a green baseline. Add characterization tests at the public seam when coverage is insufficient; never claim this as RED.
 - For a wide or architectural refactor, create an OpenSpec design/tasks plan and request architect review.
 

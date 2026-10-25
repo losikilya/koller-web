@@ -17,6 +17,33 @@ import { pathToFileURL } from 'node:url';
 const SCHEMA = 'frontend-architecture-refactor';
 const MAX_OUTPUT = 20 * 1024 * 1024;
 
+export function maintenancePathAllowed(path, change) {
+  if (path.includes('\\') || path.split('/').includes('..')) return false;
+  if (path.startsWith(`openspec/changes/${change}/`) ||
+      new RegExp(`^openspec/changes/archive/\\d{4}-\\d{2}-\\d{2}-${change}/`).test(path)) return true;
+  if (path.startsWith('openspec/schemas/frontend-maintenance/')) return true;
+  if (/^\.(?:opencode|claude|agents|codex)\/.*\.(?:md|toml|yaml)$/.test(path)) return true;
+  if (/^docs\/(?:agent-reference\/[^/]+\.md|CODEX\.md|PROCESS\.md|STARTER-OPTIMIZATION\.md|web-platform\/phase-1\/post-phase-1-cleanup\.md)$/.test(path)) return true;
+  if (/^(?:apps\/web|packages\/(?:ui|contracts|design-tokens))\/package\.json$/.test(path)) return true;
+  return ['AGENTS.md', 'CLAUDE.md', 'README.md', 'package.json', 'pnpm-lock.yaml',
+    'packages/design-tokens/tsconfig.json', 'scripts/architecture-refactor-workflow.mjs',
+    'scripts/architecture-refactor-workflow.test.mjs', 'scripts/workflow-ci.mjs',
+    'scripts/starter-config.test.mjs', 'openspec/config.yaml'].includes(path);
+}
+
+export function checkMaintenanceScope(root, change, changedPaths) {
+  const readGit = (args) => {
+    const result = spawnSync('git', args, { cwd: root, encoding: 'utf8', maxBuffer: MAX_OUTPUT });
+    ensure(result.status === 0, 'Maintenance scope requires readable Git HEAD and working tree');
+    return result.stdout.split('\0').filter(Boolean);
+  };
+  // HEAD covers staged and unstaged changes; untracked files need their own query.
+  const paths = new Set(changedPaths ?? [...readGit(['diff', '--name-only', '-z', 'HEAD']),
+    ...readGit(['ls-files', '--others', '--exclude-standard', '-z'])]);
+  for (const path of paths) ensure(maintenancePathAllowed(path, change), `Outside maintenance scope: ${path}`);
+  return [...paths];
+}
+
 export const hash = (value) => createHash('sha256').update(value).digest('hex');
 export function ensure(condition, message) {
   if (!condition) throw new Error(message);
@@ -49,6 +76,7 @@ function files(root) {
 function isWorkspaceEvidence(path, root, change) {
   const rel = relative(root, path).replaceAll('\\', '/');
   return rel.startsWith(`openspec/changes/${change}/`) ||
+    new RegExp(`^openspec/changes/archive/\\d{4}-\\d{2}-\\d{2}-${change}/`).test(rel) ||
     rel === '.architecture-refactor-running' ||
     rel.startsWith('node_modules/') ||
     rel.startsWith('dist/') ||
@@ -58,7 +86,7 @@ function isWorkspaceEvidence(path, root, change) {
     rel.startsWith('.git/');
 }
 
-function workspaceHash(root, change) {
+export function workspaceHash(root, change, portable = false) {
   const git = spawnSync('git', ['ls-files', '-co', '--exclude-standard', '-z'], {
     cwd: root,
     encoding: 'utf8',
@@ -67,6 +95,19 @@ function workspaceHash(root, change) {
   const candidates = git.status === 0
     ? git.stdout.split('\0').filter(Boolean).map((path) => safePath(root, path))
     : files(root);
+  if (portable) {
+    const state = candidates.filter((path) => !isWorkspaceEvidence(path, root, change) && existsSync(path))
+      .map((path) => {
+        const bytes = readFileSync(path);
+        const text = bytes.toString('utf8');
+        const content = !bytes.includes(0) && Buffer.from(text, 'utf8').equals(bytes)
+          ? text.replaceAll('\r\n', '\n') : bytes;
+        return `${relative(root, path).replaceAll('\\', '/')}\0${hash(content)}`;
+      })
+      .sort()
+      .join('\n');
+    return hash(state);
+  }
   const state = candidates
     .filter((path) => !isWorkspaceEvidence(path, root, change))
     .sort()
@@ -83,16 +124,23 @@ function changeDirectory(root, change) {
   return safePath(root, `openspec/changes/${change}`);
 }
 
-export function inspectChange(root, change) {
-  const directory = changeDirectory(root, change);
+export function inspectChange(root, change, directoryOverride) {
+  const defaultDirectory = changeDirectory(root, change);
+  const directory = directoryOverride ? safePath(root, directoryOverride) : defaultDirectory;
   const required = ['.openspec.yaml', 'proposal.md', 'design.md', 'baseline.md', 'verification-plan.json', 'tasks.md'];
   for (const name of required) {
     const path = resolve(directory, name);
     ensure(existsSync(path) && read(path).trim().length > 10, `Missing or empty ${name}`);
   }
-  ensure(new RegExp(`^schema:\\s*${SCHEMA}\\s*$`, 'm').test(read(resolve(directory, '.openspec.yaml'))), `Change must use ${SCHEMA}`);
+  const schema = read(resolve(directory, '.openspec.yaml')).match(/^schema:\s*([^\s]+)\s*$/m)?.[1];
+  ensure([SCHEMA, 'frontend-maintenance'].includes(schema), `Change must use ${SCHEMA} or frontend-maintenance`);
   const proposal = read(resolve(directory, 'proposal.md'));
-  ensure(/^Change kind:\s*architecture-refactor\s*$/m.test(proposal), 'proposal.md must declare architecture-refactor');
+  const kind = schema === 'frontend-maintenance' ? 'maintenance' : 'architecture-refactor';
+  ensure(new RegExp(`^Change kind:\\s*${kind}\\s*$`, 'm').test(proposal), `proposal.md must declare ${kind}`);
+  if (kind === 'maintenance') {
+    ensure(/^skip_specs:\s*true\s*$/m.test(read(resolve(directory, '.openspec.yaml'))), 'Maintenance must explicitly declare skip_specs: true');
+    ensure(!existsSync(resolve(directory, 'specs')) && !existsSync(resolve(directory, 'test-plan.json')), 'Maintenance cannot contain product specs or a behavior test plan');
+  }
   ensure(/^Behavior contract:\s*unchanged\s*$/m.test(proposal), 'proposal.md must declare unchanged behavior');
   ensure(/^## ADR impact\s*$/m.test(read(resolve(directory, 'design.md'))), 'design.md must include ADR impact');
   ensure(/^## Observable contract\s*$/m.test(read(resolve(directory, 'baseline.md'))), 'baseline.md must define observable contract');
@@ -109,7 +157,7 @@ export function inspectChange(root, change) {
     ensure(typeof item.command === 'string' && item.command.trim().length > 0, `${item.id}: command is empty`);
     ensure(!/[\r\n]/.test(item.command), `${item.id}: command must be one line`);
   }
-  return { change, directory, plan, planHash: hash(planText) };
+  return { change, directory, plan, kind, planHash: hash(planText) };
 }
 
 function readLedger(directory) {
@@ -135,6 +183,7 @@ function validateEvent(directory, event, requireSuccess = true) {
 export function recordPhase(root, change, phase) {
   ensure(['baseline', 'final'].includes(phase), 'Phase must be baseline or final');
   const state = inspectChange(root, change);
+  if (state.kind === 'maintenance') checkMaintenanceScope(root, change);
   const lockPath = resolve(root, '.architecture-refactor-running');
   let lock;
   try {
@@ -183,7 +232,8 @@ export function recordPhase(root, change, phase) {
       planHash: state.planHash,
       success,
       commands: results,
-      workspaceHash: workspaceHash(root, change),
+      workspaceHashMode: state.kind === 'maintenance' ? 'portable-maintenance-v1' : 'raw',
+      workspaceHash: workspaceHash(root, change, state.kind === 'maintenance'),
     };
     const reportName = `${String(sequence).padStart(3, '0')}-${phase}.json`;
     const reportPath = resolve(evidenceDirectory, reportName);
@@ -208,8 +258,9 @@ export function recordPhase(root, change, phase) {
   }
 }
 
-export function readyChange(root, change) {
-  const state = inspectChange(root, change);
+export function readyChange(root, change, directoryOverride, changedPaths) {
+  const state = inspectChange(root, change, directoryOverride);
+  if (state.kind === 'maintenance') checkMaintenanceScope(root, change, changedPaths);
   const tasks = read(resolve(state.directory, 'tasks.md'));
   ensure(/^- \[[xX]\]/m.test(tasks), 'No completed tasks');
   ensure(!/^- \[ \]/m.test(tasks), 'Incomplete tasks');
@@ -223,7 +274,8 @@ export function readyChange(root, change) {
   const baseline = [...ledger.events].reverse().find((event) => event.sequence < final.sequence && event.phase === 'baseline' && event.success && event.planHash === state.planHash);
   ensure(baseline, 'Missing successful baseline before final evidence');
   const finalReport = validateEvent(state.directory, final);
-  ensure(finalReport.workspaceHash === workspaceHash(root, change), 'Implementation workspace changed after final evidence');
+  if (state.kind === 'maintenance') ensure(finalReport.workspaceHashMode === 'portable-maintenance-v1', 'Maintenance final evidence must use portable workspace fingerprints');
+  ensure(finalReport.workspaceHash === workspaceHash(root, change, state.kind === 'maintenance'), 'Implementation workspace changed after final evidence');
   return { change, ready: true, planHash: state.planHash, baseline: baseline.report, final: final.report };
 }
 

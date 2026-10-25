@@ -1,193 +1,78 @@
-# Процесс изменения поведения
+# Frontend delivery process
 
-## Разделение ответственности
+OpenSpec owns requirements and contract evolution; BDD makes acceptance examples executable; TDD records the implementation sequence. Gherkin alone is not TDD evidence, and passing unit tests alone do not connect implementation to requirements. [Project reference](agent-reference/project.md) defines current paths/architecture; [AGENTS.md](../AGENTS.md) defines shared ownership and loaded rules.
 
-OpenSpec хранит требование и эволюцию контракта. BDD согласует примеры поведения и делает их исполняемыми.
-TDD задает порядок реализации. Эти части дополняют друг друга: Gherkin сам по себе не доказывает TDD,
-а зеленый unit-test сам по себе не связывает реализацию с требованием.
+The main session is the only writer. Use architect for boundary/dependency decisions, test_designer for ambiguous scenarios and reviewer for independent requirements/engineering inspection. Specialists are sequential/read-only, inherit permissions and never recursively delegate. Codex uses explicit $team-\* skills; [CODEX.md](CODEX.md) maps workflow labels. Model/iteration budgets do not prove completion.
 
-Оркестратор — единственный writer. Explore исследует незнакомую область. Architect нужен при архитектурном решении.
-Test-designer помогает уточнить сложные сценарии. Reviewer читает результат с отдельным контекстом.
-Все вызовы последовательны. Ограничение `steps` — бюджет итераций агента, не лимит токенов и не гарантия завершения.
-В Codex главный сеанс — orchestrator, team-команды вызываются как `$team-*` skills.
-Роли наследуют permissions родителя; отдельный read-only sandbox им не задаётся.
-Подключение и mapping: docs/CODEX.md. OpenCode/Claude работают как прежде.
-
-## 1. Подготовить контракт
+## Behavior changes
 
 ```sh
-npm run spec -- new change add-example --schema frontend-bdd-tdd
-npm run spec -- status --change add-example --json
-npm run spec -- instructions proposal --change add-example --json
+pnpm spec new change add-example --schema frontend-bdd-tdd
+pnpm spec status --change add-example --json
+pnpm spec instructions proposal --change add-example --json
 ```
 
-CLI возвращает инструкции; **он не генерирует содержательные документы вместо модели**.
-После создания каждого артефакта получайте следующие instructions. Схема:
-proposal → specs → design → bdd → test-plan → tasks.
+Read each next artifact's CLI instructions before writing it. Order: proposal → specs → design → bdd → test-plan → tasks. Proposal carries FR/NFR/UX IDs, scope and non-goals; specs define complete observable contracts; design records approach/ADR impact. Preserve all existing scenarios in MODIFIED requirements. Resolve blocking questions before implementation. A plan-only command stops after the concrete plan; an explicit implementation request authorizes applying its scope.
 
-В proposal: проблема, границы, FR-001/NFR-001/UX-001. В specs: полные delta-требования.
-Для MODIFIED сохраняйте все сценарии существующего требования, иначе archive может потерять часть контракта.
-В design: выбранный подход и влияние на ADR. Для простой задачи достаточно нескольких предложений.
-Не выдумывайте ADR для локального переименования.
+Canonical tagged Gherkin lives in tests/bdd/<domain> or tests/e2e/<domain> beside steps and remains executable after archive. Each change-owned scenario has @<change>, @FR-001 and @SC-001 tags; scenario IDs are unique within the change. bdd.md links to canonical features without copying them.
 
-## 2. Исполняемый BDD
+## Test layers and placement
 
-Канонические `.feature` живут рядом с тестовой инфраструктурой и продолжают исполняться после архивации change.
-`bdd.md` содержит ссылки на них, а не второй экземпляр Gherkin.
-У каждого Scenario три тега: `@add-example @FR-001 @SC-001`.
-ID сценария уникален внутри изменения. Требование может иметь несколько сценариев.
-Не добавляйте вторую несогласованную копию описания поведения.
+- apps/web/src/path/file.ts → tests/apps/web/path/file.test.ts; import through @/.
+- packages/<name>/src/path/file.ts → tests/packages/<name>/path/file.test.ts; use explicit package exports.
+- Pure logic uses direct Vitest calls and meaningful partitions/errors; do not render React for a pure function or test trivial delegates merely for coverage.
+- RTL covers observable component behavior; MSW v2 covers actual HTTP boundaries. Vitest-cucumber steps live under tests/bdd; RTL cleanup there belongs to scenario hooks because each step is a test.
+- Playwright BDD covers actual routing, focus, layout, scrolling and browser integration; plain browser specs use .spec.ts in tests/e2e. Do not add unit tests for static route composition or duplicate every pure edge case in a browser.
 
-- `tests/bdd/<domain>/*.feature` + `.steps.ts` рядом: бизнес-правила в Vitest через vitest-cucumber.
-- `tests/e2e/<domain>/*.feature` + `.steps.ts` рядом (обычные проверки без Gherkin — `*.spec.ts`): browser journeys через playwright-bdd.
-- `tests/**/*.test.ts(x)`: unit/RTL-тесты, путь зеркалит `src` (`src/utils/cameras.ts` → `tests/utils/cameras.test.ts`), импорт через `@/`.
-- RTL достаточно для поведения компонентов; реальные layout/scroll/focus/browser integration проверяются браузером.
-- Сценарии описывают намерения и результат. Детали кликов и селекторов находятся в steps.
+test-plan.json version 1 lists implementationFiles and scenarios with id, requirement, feature, layer (unit/browser) and a focused Vitest testFile. Browser scenarios additionally run through real Playwright BDD. Vitest test names contain SC IDs. Create loadable interfaces/stubs first; missing imports/browsers or broken harnesses are not RED.
 
-Чистую функцию тестируйте через экспортируемый контракт без React render. Покрывайте значимые классы входов, границы,
-empty/invalid cases и ошибки. `it.each` полезен, когда делает такие классы яснее, а не ради количества кейсов.
-Не пишите тесты для тривиальных делегатов и внутренних деталей только ради coverage.
-
-`test-plan.json` содержит:
-
-```json
-{
-  "version": 1,
-  "implementationFiles": ["src/features/example/example.ts"],
-  "scenarios": [
-    {
-      "id": "SC-001",
-      "requirement": "FR-001",
-      "feature": "tests/bdd/example/flow.feature",
-      "layer": "unit",
-      "testFile": "tests/features/example/example.test.ts"
-    }
-  ]
-}
-```
-
-`testFile` — Vitest driver для цикла TDD. Browser scenario дополнительно проверяется настоящим Playwright BDD.
-В названии Vitest-теста/Scenario должно быть `SC-001`. Сначала создайте импортируемые интерфейсы/заглушки и тесты.
-Не считать отсутствие файла или сломанную конфигурацию корректным RED.
-
-## 3. TDD
+## Recorded TDD
 
 ```sh
-npm run workflow -- check add-example
-npm run tdd -- add-example SC-001 red
-# Прочитать failureMessages. Только теперь реализовать нужное поведение.
-npm run tdd -- add-example SC-001 green
-# Рефакторинг, если он нужен; для уже простой реализации достаточно контрольного запуска.
-npm run tdd -- add-example SC-001 refactor
+pnpm workflow check add-example
+pnpm tdd add-example SC-001 red
+# Inspect the assertion failure, then implement only that behavior.
+pnpm tdd add-example SC-001 green
+pnpm tdd add-example SC-001 refactor
 ```
 
-Команда запускает настоящий Vitest и записывает report, hash, время, результат, ID и checksum test-файла.
-Успешная команда RED возвращает 0: это означает, что подтвержден ожидаемый НЕУСПЕШНЫЙ запуск Vitest.
-Сам Vitest exit code сохраняется отдельно как `exitCode`.
-GREEN невозможен без предыдущего RED. REFACTOR невозможен без GREEN. Тест внутри цикла должен оставаться тем же.
-Не подменяйте expected значением actual. Ошибочный тест можно исправить с объяснением и новым циклом RED.
-Для связанной группы сценариев допускается сначала зафиксировать несколько RED, затем небольшую общую реализацию.
+The wrapper saves real report bytes, test/report hashes, timestamps, exit codes and phase sequence. A successful RED wrapper exits 0 because it verified a failing behavior assertion; the runner's failure exitCode remains in evidence. GREEN requires prior RED; REFACTOR requires GREEN and an unchanged test. Do not replace expected values with actual values. Correct an erroneous test with an explanation and restart the cycle. A small related group may record several REDs before a shared implementation.
 
-### Тест зелёный уже на RED
+If RED already passes, either strengthen an inadequate new-behavior assertion or explicitly classify an existing regression guard as cycle baseline with a concrete baselineReason before implementation. Run pnpm tdd <change> <SC> baseline before any GREEN while production under apps/packages is committed/clean. Preserve that behavior and the same test; optional refactor may follow. A behavior change requires at least one real RED; all-baseline work belongs to tests-only. A regression discovered after implementation begins is an ordinary untagged test, not a retroactive baseline. Reviewer checks this distinction.
 
-`tdd ... red` не принимает проходящий тест и подсказывает развилку:
+One test process at a time. .workflow-running protects the TDD wrapper, not all manual processes. Remove a stale lock only after proving its process stopped. Never weaken assertions, thresholds or gates, accept setup failures as RED, suppress cycles or use skipped tests to obtain GREEN.
 
-1. **Поведение новое или меняется.** Значит, assertion слабый или проверяет не тот seam. Исправьте тест и повторите `red`; не реализуйте заранее.
-2. **Поведение уже есть в коде, и change обязан его сохранить** (например, regression guard рядом с bugfix в непокрытом legacy-коде).
-   Объявите сценарий в `test-plan.json` и упомяните его в `bdd.md`:
+## Verify, review and archive
 
-   ```json
-   { "id": "SC-002", "requirement": "FR-002", "feature": "tests/bdd/example/flow.feature", "layer": "unit",
-     "testFile": "tests/features/example/example.test.ts",
-     "cycle": "baseline", "baselineReason": "Округление суммы до тиын уже работает и не должно сломаться при исправлении" }
-   ```
+Use focused checks during implementation and the full pnpm verify on completed work; rerun affected checks/full gate after material fixes. Preserve real exit codes separately from truncated logs. verify sequentially checks generated agents, workflow tests, lint/boundaries, strict types, formatting, Vitest/coverage, production build, browser BDD and strict specs. Keep existing coverage conventions; mutation tests may help narrow risky logic but no blanket 95% requirement exists.
 
-   ```sh
-   npm run tdd -- add-example SC-002 baseline   # production-код в src не изменён, GREEN ещё не было
-   npm run tdd -- add-example SC-002 refactor   # необязательно
-   ```
+Independent reviewer checks both requirements/evidence and engineering/ADR/architecture, including simplicity. Save its actual Verdict: PASS or Verdict: BLOCKED with scope, findings and limitations; distinguish parent-run checks from reviewer inspection. At most two passes. Never convert unexecuted review to PASS. Mark only verified tasks complete, then run pnpm workflow ready <change> for behavior changes.
 
-Gate проверяет: baseline-сценарий имеет `baselineReason`; записан, когда в `src` не было незакоммиченных
-production-изменений (тесты не считаются), и до первого GREEN; тест не менялся между baseline и refactor;
-в change остался хотя бы один настоящий RED. Поэтому baseline записывают сразу после планирования, до заглушек и реализации.
-Если все сценарии baseline, поведение не меняется: это `/test-module` без OpenSpec.
-Reviewer блокирует baseline, если diff реализует или меняет это поведение.
+Native pnpm spec archive <change> updates stable specs and archives the change after fresh verification/ready. Read the CLI plan/confirmation; never edit archived history or move it into custom year/month folders. Run pnpm spec:validate afterward. Git reports establish real state, not checklists or model verdicts. Evidence is editable and hashes detect accidental mismatch, not fraud. CI reruns checks and requires changed workspace source to belong to a verified behavior change. Protect Frontend quality / verify through the team's branch policy.
 
-Regression guard, найденный уже после начала реализации, baseline стать не может. Добавьте его обычным тестом
-без тегов `@<change>` и без записи в `test-plan.json` и перечислите для reviewer. Не переворачивайте assertion ради искусственного RED.
+## Tests-only and refactoring
 
-Тесты выполняются по одному. `.workflow-running` защищает TDD wrapper от второго запуска.
-Если процесс аварийно завершился, сначала убедитесь, что он действительно остановлен, потом удалите stale lock.
-Lock не контролирует запуск тестов вручную вне wrapper и не является системным mutex для всей машины.
+/test-module starts GREEN on existing behavior: no production/spec/process-doc changes, no OpenSpec/test-plan/evidence, no workflow/tdd commands. Use Vitest, RTL/MSW or Playwright at the lowest sufficient layer; its browser Gherkin carries no change/FR/SC tags. Report defects/conflicts rather than silently fixing them; fixes use /bugfix. Return a concise handoff in chat, not a new documentation file.
 
-## 4. Проверка и review
+/refactor uses team-refactor-safely with characterization, small steps and independent simplicity review. If observable behavior changes, use the behavior workflow. Wide boundary/ownership migrations use architecture-refactor, its own schema and recorded baseline/final evidence; do not call unrelated docs cleanup an architecture migration. The supplied architecture-refactor schema is currently absent; restoring it is a separate, explicit task before that workflow can execute, not a reason to fake behavior evidence.
 
-Во время реализации запускайте focused tests, затем обязательный полный gate на
-завершённом change. После существенных исправлений повторяйте затронутые проверки
-и требуемую финальную верификацию. Сохраняйте exit code команды отдельно от
-фильтрации лога: успешный `tail` не доказывает успешный `typecheck`.
+## Scoped maintenance
 
-Один самостоятельный change лучше вести в одной сессии. Для следующего change
-передавайте краткий handoff: решения, paths, фактические checks и следующий шаг.
-Не перечитывайте все memory/архивы. `/test-module` возвращает handoff в ответе,
-не создавая документацию.
+Docs/config/dependency cleanup has no product delta and must not fabricate product RED. Use native frontend-maintenance with skip_specs: true. This narrow category reuses the existing baseline/final runner and review policy rather than changing BDD/TDD methodology:
 
 ```sh
-npm run verify
-npm run workflow -- ready add-example
+pnpm spec new change <change> --schema frontend-maintenance
+node scripts/architecture-refactor-workflow.mjs check <change>
+node scripts/architecture-refactor-workflow.mjs baseline <change>
+# Apply only verified cleanup within the checked allowlist.
+node scripts/architecture-refactor-workflow.mjs final <change>
+node scripts/architecture-refactor-workflow.mjs ready <change>
 ```
 
-Перед `ready` отметьте реально выполненные задачи и сохраните фактическое заключение reviewer в `review.md`.
-Формат: `Verdict: PASS` либо `Verdict: BLOCKED`; далее кто проверял, что проверено, findings и ограничения.
-Reviewer независимо проверяет две оси: соответствие OpenSpec и соответствие engineering rules/ADR/архитектуре.
-Ответ reviewer: verdict, actionable findings с доказательствами, краткий scope и
-ограничения; без пересказа каждого исправного файла. Parent results отличать от
-проверок, которые reviewer выполнил сам. Лимит краткости не скрывает findings.
-Если код изменился после review, повторите затронутые проверки и review. Не превращайте незапущенное в PASS.
+Required artifacts: proposal (Change kind: maintenance; Behavior contract: unchanged), design with ADR impact, baseline with observable contract, verification-plan.json with exact sequential commands and tasks. Same successful plan must run before/after cleanup; reviewer PASS, complete tasks and unchanged workspace hash are mandatory. Scope includes only explicit docs/agent/manifests/config/tooling paths and own process artifacts. App/package source, product tests/specs, Phase 0 and unrelated archived history are rejected. Readable Git HEAD/worktree is required; existing unrelated changes must be isolated rather than blessed. Stop this category if the app contract needs changes. Tooling guard changes require their own meaningful regression tests; no product baseline is called RED. Keep the full existing verify and independent review. Human acceptance is based on the delivered report and real evidence.
 
-`verify` последовательно выполняет tests workflow-tools, lint, TS, все Vitest, build, browser BDD, strict OpenSpec validate.
-Mutation testing можно добавить для рискованной доменной логики небольшими порциями; обязательного 95% нет.
+## Commits and handoff
 
-## 5. Архив
+No commit/push/publication without an explicit request. /commit requires a user-supplied Jira ticket, owning OpenSpec change and current verification/review. Tests-only uses OpenSpec Change: none (tests-only). Keep the exact Jira message safety checks in commit-change; committing never authorizes pushing. Do not invent ticket IDs.
 
-После свежего verify + ready выполните `/change-archive <name>` или нативный OpenSpec archive workflow.
-CLI-вариант: `npm run spec -- archive <name>`; прочитайте его план и запросы подтверждения.
-OpenSpec переносит delta-требования в `openspec/specs` и архивирует change. После этого `npm run spec:validate`.
-Не перемещайте архив вручную в вложенные year/month каталоги. Для исправления создайте новое изменение.
-
-## Что реально обеспечивается
-
-- OpenSpec обеспечивает структуру артефактов и проверку формата spec; наличие файла не доказывает его смысловую полноту.
-- check проверяет IDs, Gherkin, соответствие test-plan и существование тестов.
-- ready проверяет завершенные задачи, отчеты и последовательность фаз, hashes и наличие review PASS.
-- CI исполняет тесты заново. Для PR дополнительно требует, чтобы измененные `src/` файлы были перечислены в implementationFiles измененного change.
-- Reviewer проверяет смысл требований, RED-причину и реализацию. Вызовы одной и той же модели имеют общие слепые зоны.
-
-Файлы evidence и review редактируемы. Hash обнаруживает случайное рассогласование, но не предотвращает подделку всего набора.
-Тест может упасть из-за неверной причины внутри assertion; это проверяет человек/reviewer.
-CI не может восстановить доказательство мыслительного процесса по финальному Git diff.
-Permissions OpenCode защищают доступ к инструментам; это не OS sandbox и не замена branch protection.
-Сделайте `Frontend quality / verify` обязательной проверкой ветки и назначьте владельцев workflow/spec-файлов обычным процессом команды.
-
-## Tests-only покрытие и чистый рефакторинг
-
-`/test-module` покрывает тестами существующее поведение: Vitest, RTL + user-event, MSW и Playwright BDD
-(`tests/e2e` без тегов change/FR/SC) — выбор слоя не зависит от OpenSpec. Это не TDD RED и не OpenSpec change:
-OpenSpec-артефакты и документация не создаются, существующие `openspec/specs` только читаются как контекст.
-Детальные правила — в самой команде. В коммите указывается `OpenSpec Change: none (tests-only)`.
-Подозрение на дефект или расхождение со спекой попадает в отчёт, а исправление идёт через `/bugfix`.
-
-`/refactor` загружает `team-refactor-safely`: фиксирует observable contract, добавляет characterization при необходимости,
-делает небольшие проверяемые шаги и вызывает reviewer. Изменение публичного поведения переводит работу в обычный OpenSpec flow.
-
-## Документация и конфигурация
-
-Не имитируйте RED для исправления README. Зафиксируйте change и укажите, почему поведение не изменилось;
-сохраните характеризационные проверки. У starter автоматический gate намеренно строгий и рассчитан на behavior changes.
-Для non-behavior изменений сначала расширьте его отдельной проверяемой категорией и review-политикой команды.
-До этого не обходите gate флагом skip и не маркируйте новую логику как documentation-only.
-
-## Commit
-
-После archive/validation используйте `/commit`. Он требует Jira ticket, имя OpenSpec change (для `/test-module` — `none (tests-only)`) и актуальную проверку.
-Commit не означает push; push остаётся отдельным пользовательским действием.
+Use one coherent change per session where practical. Handoff only decisions, paths, actual exit codes and next action. A stopped change remains incomplete; do not rewrite evidence/history to manufacture completion. Avoid global instructions imports and loading all archives/context. Permissions and role instructions are not substitutes for technical sandbox or branch protection.

@@ -1,3 +1,5 @@
+> Historical starter-kit report (pre-Dance Platform). The original report below is retained as history, not current setup instructions. Use [README](../README.md), [PROCESS](PROCESS.md), [CODEX](CODEX.md) and the [project reference](agent-reference/project.md) for the working Next.js workspace.
+
 # Обновление starter-kit: контекст и ESLint
 
 ## Установка

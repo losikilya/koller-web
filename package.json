@@ -21,7 +21,7 @@
     "test:e2e:gen": "bddgen -c playwright.bdd.config.ts",
     "test:e2e": "pnpm test:e2e:gen && playwright test -c playwright.bdd.config.ts",
     "test:unit": "vitest run tests --exclude tests/bdd/**",
-    "test:workflow": "node --test scripts/workflow.test.mjs scripts/starter-config.test.mjs scripts/sync-claude.test.mjs scripts/sync-codex.test.mjs",
+    "test:workflow": "node --test scripts/workflow.test.mjs scripts/starter-config.test.mjs scripts/sync-claude.test.mjs scripts/sync-codex.test.mjs scripts/architecture-refactor-workflow.test.mjs",
     "test:ci": "vitest run --coverage --reporter=default --reporter=junit --outputFile.junit=ci-reports/junit/vitest.xml",
     "spec:init": "node scripts/openspec.mjs init --tools opencode --profile core --no-animation",
     "spec:validate": "node scripts/openspec.mjs validate --all --strict --no-interactive",
@@ -53,9 +53,7 @@
     "eslint-config-react-app": "7.0.1",
     "eslint-import-resolver-typescript": "^4.4.5",
     "eslint-plugin-import-x": "^4.17.1",
-    "husky": "^8.0.3",
     "jsdom": "^25.0.1",
-    "lint-staged": "^13.2.0",
     "msw": "^2.15.0",
     "playwright-bdd": "^9.2.0",
     "prettier": "2.8.4",
@@ -69,8 +67,5 @@
     "react-dom": "19.3.0",
     "turbo": "2.11.10",
     "@dance/ui": "workspace:*"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,scss,css,json}": "prettier --write"
   }
 }

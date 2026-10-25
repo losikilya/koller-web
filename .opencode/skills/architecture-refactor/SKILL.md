@@ -2,6 +2,7 @@
 name: architecture-refactor
 description: Plan, execute and verify wide behavior-preserving frontend architecture refactors with OpenSpec, ADR decisions, recorded GREEN baselines, incremental migration steps and reviewer approval; use for FSD adoption inside sub-apps, sub-app extraction, module-boundary changes, dependency-direction cleanup, state or routing ownership moves, and other structural migrations that must not change observable behavior
 ---
+
 # Architecture refactor workflow
 
 Use this process only when observable behavior must remain unchanged. For a feature, bug fix or behavior-changing refactor, stop and use `spec-bdd-tdd` instead.
@@ -12,7 +13,7 @@ Use this process only when observable behavior must remain unchanged. For a feat
 2. Create the change with:
 
    ```sh
-   npm run spec -- new change <change> --schema frontend-architecture-refactor
+   pnpm spec new change <change> --schema frontend-architecture-refactor
    ```
 
 3. Follow `openspec instructions` for `proposal`, `design`, `baseline`, `verification-plan` and `tasks`. Do not add delta specs or Gherkin for unchanged behavior.
@@ -21,7 +22,7 @@ Use this process only when observable behavior must remain unchanged. For a feat
 6. Run:
 
    ```sh
-   npm run spec -- schema validate frontend-architecture-refactor
+   pnpm spec schema validate frontend-architecture-refactor
    node scripts/architecture-refactor-workflow.mjs check <change>
    ```
 

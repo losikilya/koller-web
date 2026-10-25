@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "sequence": 1,
+      "phase": "baseline",
+      "success": false,
+      "planHash": "d4b74b3d52853ae4a50032d33f542beab198420b1b9045a583c3e81dd66f4312",
+      "report": "evidence/architecture-refactor/001-baseline.json",
+      "reportHash": "d393e0b03252059ca70ffabe354c342ecce2352f35ed3610744f124f93605133"
+    },
+    {
+      "sequence": 2,
+      "phase": "baseline",
+      "success": true,
+      "planHash": "f97bccc0579aca1a3594db141119e1b21772a53975ca9a9c19cd9669dbee5c43",
+      "report": "evidence/architecture-refactor/002-baseline.json",
+      "reportHash": "14e477384dd9ed1e39fd8b63e9ae5e674a3b137c30fdcf0084de3a1dd30bc26f"
+    },
+    {
+      "sequence": 3,
+      "phase": "final",
+      "success": true,
+      "planHash": "f97bccc0579aca1a3594db141119e1b21772a53975ca9a9c19cd9669dbee5c43",
+      "report": "evidence/architecture-refactor/003-final.json",
+      "reportHash": "af7b648a05ef01f9e0f31fa33f35f6ebfacebd5319e671889bf1c084928ef39c"
+    },
+    {
+      "sequence": 4,
+      "phase": "final",
+      "success": true,
+      "planHash": "f97bccc0579aca1a3594db141119e1b21772a53975ca9a9c19cd9669dbee5c43",
+      "report": "evidence/architecture-refactor/004-final.json",
+      "reportHash": "4a658daad845e26a4070264031670caeae9d83e2b259428064a4ad3fed395254"
+    }
+  ]
+}

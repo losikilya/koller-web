@@ -5,7 +5,7 @@ description: Review and improve client-side React performance and scalability; u
 
 # React client best practices
 
-This is a React + Vite profile. Ignore Next.js, React Server Components, server actions and framework-specific caching guidance from the upstream source.
+This is the Dance Platform Next.js App Router profile. Read docs/agent-reference/project.md. Distinguish server work from client rendering and measure the relevant boundary; Server Components remain the default. Vite is test tooling here.
 
 ## Priority order
 
@@ -18,7 +18,7 @@ This is a React + Vite profile. Ignore Next.js, React Server Components, server 
 ## Review questions
 
 - Can independent async work start together? Is cancellation/stale response behavior correct?
-- Is a heavy dependency imported for a small capability? Does Vite actually tree-shake it?
+- Is a heavy dependency imported for a small capability? Does the actual Next.js production build eliminate unused code?
 - Does route or feature code load before the user can need it?
 - Does global state or context make unrelated subtrees rerender?
 - Is an effect mirroring props/state that can be derived during render?

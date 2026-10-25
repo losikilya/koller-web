@@ -1,0 +1,38 @@
+name: frontend-maintenance
+version: 1
+description: Scoped tooling and documentation cleanup with unchanged application behavior
+artifacts:
+  - id: proposal
+    generates: proposal.md
+    description: Maintenance scope and deletion evidence
+    template: proposal.md
+    instruction: Declare Change kind maintenance and Behavior contract unchanged. Classify KEEP/UPDATE/REMOVE/DEFER and identify actual consumers before deletion.
+    requires: []
+  - id: design
+    generates: design.md
+    description: Technical alignment without product changes
+    template: design.md
+    instruction: Include ADR impact, allowed paths and rollback. Do not change product source, specs or archived history.
+    requires: [proposal]
+  - id: baseline
+    generates: baseline.md
+    description: Existing observable behavior and actual GREEN checks
+    template: baseline.md
+    instruction: Define Observable contract and record actual pre-cleanup checks. No fabricated RED for unchanged product behavior.
+    requires: [design]
+  - id: verification-plan
+    generates: verification-plan.json
+    description: Exact shared baseline and final command plan
+    template: verification-plan.json
+    instruction: List sequential commands with version 1 and commands array, each containing id and command. Include full verify and scope validation.
+    requires: [baseline]
+  - id: tasks
+    generates: tasks.md
+    description: Verified cleanup steps and independent review
+    template: tasks.md
+    instruction: Use checkbox tasks with verification. Run existing architecture-refactor-workflow runner check/baseline/final/ready, which recognizes this maintenance category. Independent reviewer PASS and unchanged final workspace are mandatory.
+    requires: [verification-plan]
+apply:
+  requires: [tasks]
+  tracks: tasks.md
+  instruction: Keep application source/specs/history unchanged; perform only verified cleanup within allowed paths, then final verification and independent review.

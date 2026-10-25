@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "commands": [
+    { "id": "verify", "command": "pnpm verify" },
+    {
+      "id": "workflow-maintenance",
+      "command": "node --test scripts/architecture-refactor-workflow.test.mjs"
+    }
+  ]
+}
