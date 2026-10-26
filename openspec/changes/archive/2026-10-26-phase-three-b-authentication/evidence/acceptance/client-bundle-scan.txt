@@ -1,0 +1,1 @@
+Client bundle credential scan PASS: 15 JavaScript files; no privileged local credentials

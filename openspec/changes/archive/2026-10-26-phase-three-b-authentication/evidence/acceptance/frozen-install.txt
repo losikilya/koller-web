@@ -1,0 +1,49 @@
+Scope: all 5 workspace projects
+Lockfile is up to date, resolution step is skipped
+Already up to date
+ WARN  Failed to create bin at C:\Users\Lenovo\Desktop\koller_web\node_modules\.bin\vitest-cucumber. ENOENT: no such file or directory, stat 'C:\Users\Lenovo\Desktop\koller_web\node_modules\@amiceli\vitest-cucumber\dist\cli-generate.js.EXE'
+
+devDependencies:
++ @amiceli/vitest-cucumber 7.0.0
++ @cucumber/gherkin 42.0.1
++ @cucumber/messages 34.2.1
++ @dance/contracts 0.1.0 <- packages\contracts
++ @dance/design-tokens 0.1.0 <- packages\design-tokens
++ @dance/ui 0.1.0 <- packages\ui
++ @fission-ai/openspec 1.15.0
++ @playwright/test 1.64.1
++ @storybook/addon-a11y 10.6.3
++ @storybook/nextjs-vite 10.6.3
++ @supabase/supabase-js 2.118.0
++ @testing-library/jest-dom 7.0.1
++ @testing-library/react 16.3.3
++ @testing-library/user-event 14.6.8
++ @types/node 24.19.0
++ @types/react 19.3.0
++ @types/react-dom 19.3.0
++ @typescript-eslint/utils 8.72.0
++ @vitejs/plugin-react 5.2.0
++ @vitest/coverage-v8 4.1.12
++ axe-core 4.14.0
++ eslint 8.57.1
++ eslint-config-react-app 7.0.1
++ eslint-import-resolver-typescript 4.4.5
++ eslint-plugin-import-x 4.17.1
++ jsdom 25.0.1
++ msw 2.15.0
++ next 16.4.3
++ next-intl 4.14.9
++ playwright-bdd 9.2.1
++ prettier 2.8.4
++ react 19.3.0
++ react-dom 19.3.0
++ sass 1.77.6
++ storybook 10.6.3
++ supabase 2.122.0
++ turbo 2.11.10
++ typescript 5.9.3
++ vite 7.3.6
++ vitest 4.1.12
+
+ WARN  Failed to create bin at C:\Users\Lenovo\Desktop\koller_web\node_modules\.bin\vitest-cucumber. ENOENT: no such file or directory, stat 'C:\Users\Lenovo\Desktop\koller_web\node_modules\@amiceli\vitest-cucumber\dist\cli-generate.js.EXE'
+Done in 1.4s

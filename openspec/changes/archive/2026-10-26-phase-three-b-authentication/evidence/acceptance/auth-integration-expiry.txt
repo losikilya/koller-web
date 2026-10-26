@@ -1,0 +1,13 @@
+
+> dance-platform@0.1.0 test:auth C:\Users\Lenovo\Desktop\koller_web
+> node scripts/run-local-auth.mjs integration
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  21:35:51
+   Duration  2.19s (transform 97ms, setup 368ms, import 215ms, tests 1.40s, environment 0ms)
+

@@ -1,0 +1,9 @@
+
+> dance-platform@0.1.0 workflow C:\Users\Lenovo\Desktop\koller_web
+> node scripts/workflow.mjs "ready" "phase-three-b-authentication"
+
+{
+  "change": "phase-three-b-authentication",
+  "scenarios": 8,
+  "ready": true
+}

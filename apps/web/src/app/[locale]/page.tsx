@@ -2,7 +2,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { hasLocale } from 'next-intl'
 import { routing } from '@/shared/i18n/routing'
-import { Shell } from '@/shell/Shell'
+import { Shell } from '@/app/_infrastructure/shell'
 import { HomePage } from '@/shell/HomePage'
 type Props = { params: Promise<{ locale: string }> }
 export async function generateMetadata({ params }: Props) {

@@ -17,7 +17,12 @@ jobs:
           node-version: '24'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - name: Start disposable local Supabase
+        run: pnpm db:start
       - run: pnpm verify:ci
+      - name: Stop disposable local Supabase
+        if: always()
+        run: pnpm db:stop
       - name: Validate change evidence and source coverage
         if: github.event_name == 'pull_request'
         run: node scripts/workflow-ci.mjs ${{ github.event.pull_request.base.sha }}

@@ -34,9 +34,10 @@ port = 54324
 [auth]
 enabled = true
 site_url = "http://127.0.0.1:3000"
-additional_redirect_urls = []
+additional_redirect_urls = ["http://127.0.0.1:3000/en/auth/confirm", "http://127.0.0.1:3000/ru/auth/confirm", "http://127.0.0.1:3000/*/auth/callback**", "http://127.0.0.1:4310/en/auth/confirm", "http://127.0.0.1:4310/ru/auth/confirm", "http://127.0.0.1:4310/*/auth/callback**"]
 enable_signup = true
 enable_anonymous_sign_ins = false
+minimum_password_length = 8
 
 [auth.email]
 enable_signup = true
@@ -53,3 +54,10 @@ enabled = false
 
 [analytics]
 enabled = false
+[auth.email.template.confirmation]
+subject = "Confirm your Dance Platform email / Подтвердите почту"
+content_path = "./supabase/templates/confirmation.html"
+
+[auth.email.template.recovery]
+subject = "Reset your Dance Platform password / Восстановление пароля"
+content_path = "./supabase/templates/recovery.html"

@@ -6,12 +6,18 @@ export type SupportedPath =
   | '/playground/practice-timer'
   | '/login'
   | '/register'
+  | '/forgot-password'
+  | '/reset-password'
+  | '/account'
 export const supportedPaths: readonly SupportedPath[] = [
   '/',
   '/playground',
   '/playground/practice-timer',
   '/login',
   '/register',
+  '/forgot-password',
+  '/reset-password',
+  '/account',
 ]
 export function localizedPath(locale: string, path: SupportedPath): string {
   if (!locales.some((value) => value === locale))

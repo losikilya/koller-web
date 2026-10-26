@@ -1,0 +1,7 @@
+{
+  "command": "pnpm verify",
+  "exitCode": 0,
+  "path": "evidence/acceptance/review-fixes.txt",
+  "bytes": 26780,
+  "sha256": "0878c1ed126c6edf38e1cbe06aa4ee4c677f0ceb346dd66f99dede25e122c20e"
+}

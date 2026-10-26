@@ -8,7 +8,7 @@ Provide a localized, accessible public entry point to the Dance Platform and its
 
 ### Requirement: FR-001 Guest route discovery
 
-The platform SHALL expose Home, Playground, Practice Timer, Login and Register in both locales without authentication. Timer and identity pages SHALL clearly explain their placeholder status and SHALL provide no fake controls or forms.
+The platform SHALL expose Home, Playground, Practice Timer, Login and Register in both locales without authentication. Timer SHALL clearly explain its placeholder status and SHALL provide no fake controls. Login and Register SHALL provide real accessible authentication forms.
 
 #### Scenario: SC-001 Guest discovers Practice Timer
 

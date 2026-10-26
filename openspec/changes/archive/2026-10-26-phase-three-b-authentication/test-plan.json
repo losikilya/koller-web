@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "implementationFiles": [
+    "apps/web/.env.example",
+    "apps/web/src/app/[locale]/account/page.tsx",
+    "apps/web/src/app/[locale]/auth/callback/route.ts",
+    "apps/web/src/app/[locale]/auth/confirm/route.ts",
+    "apps/web/src/app/[locale]/forgot-password/page.tsx",
+    "apps/web/src/app/[locale]/login/page.tsx",
+    "apps/web/src/app/[locale]/page.tsx",
+    "apps/web/src/app/[locale]/playground/page.tsx",
+    "apps/web/src/app/[locale]/playground/practice-timer/page.tsx",
+    "apps/web/src/app/[locale]/register/page.tsx",
+    "apps/web/src/app/[locale]/reset-password/page.tsx",
+    "apps/web/src/app/_infrastructure/auth.ts",
+    "apps/web/src/app/_infrastructure/shell.tsx",
+    "apps/web/src/app/api/auth/[action]/route.ts",
+    "apps/web/src/modules/identity/AuthForm.module.scss",
+    "apps/web/src/modules/identity/AuthForm.tsx",
+    "apps/web/src/modules/identity/authPolicy.ts",
+    "apps/web/src/modules/identity/authService.ts",
+    "apps/web/src/modules/identity/index.ts",
+    "apps/web/src/shared/i18n/messages/en.json",
+    "apps/web/src/shared/i18n/messages/ru.json",
+    "apps/web/src/shared/i18n/routes.ts",
+    "apps/web/src/shared/styles/Pages.module.scss",
+    "apps/web/src/shell/IdentityPage.tsx",
+    "apps/web/src/shell/Shell.tsx",
+    "packages/contracts/src/auth.ts",
+    "packages/contracts/src/index.ts",
+    "scripts/local-auth-environment.mjs",
+    "scripts/run-local-auth.mjs",
+    "scripts/start-local-auth.mjs",
+    "supabase/config.toml",
+    "supabase/templates/confirmation.html",
+    "supabase/templates/recovery.html"
+  ],
+  "scenarios": [
+    {
+      "id": "SC-301",
+      "requirement": "FR-301",
+      "feature": "tests/bdd/identity/authentication.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/identity/authentication.test.tsx"
+    },
+    {
+      "id": "SC-302",
+      "requirement": "FR-302",
+      "feature": "tests/bdd/identity/authentication.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/identity/authentication.test.tsx"
+    },
+    {
+      "id": "SC-303",
+      "requirement": "FR-303",
+      "feature": "tests/bdd/identity/authentication.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/identity/authentication.test.tsx"
+    },
+    {
+      "id": "SC-304",
+      "requirement": "FR-304",
+      "feature": "tests/bdd/identity/authentication.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/identity/authentication.test.tsx"
+    },
+    {
+      "id": "SC-305",
+      "requirement": "FR-305",
+      "feature": "tests/bdd/identity/authentication.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/identity/authentication.test.tsx"
+    },
+    {
+      "id": "SC-306",
+      "requirement": "FR-306",
+      "feature": "tests/bdd/identity/authentication.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/identity/authentication.test.tsx"
+    },
+    {
+      "id": "SC-307",
+      "requirement": "FR-001",
+      "feature": "tests/bdd/identity/authentication.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/identity/authentication.test.tsx"
+    },
+    {
+      "id": "SC-308",
+      "requirement": "FR-304",
+      "feature": "tests/bdd/identity/provider.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/app/_infrastructure/auth.test.ts"
+    }
+  ]
+}

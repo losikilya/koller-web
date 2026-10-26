@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "command": "pnpm verify (original pipeline)",
+      "exitCode": 0,
+      "path": "evidence/acceptance/baseline.txt",
+      "bytes": 24330,
+      "sha256": "a2f60cdb536564595ab17b0750c0e6fae3aa50db99314187424543c0ed2ba6b9"
+    },
+    {
+      "command": "pnpm db:test",
+      "exitCode": 0,
+      "path": "evidence/acceptance/database-baseline.txt",
+      "bytes": 790,
+      "sha256": "1183f05595a6e36d55fe0e38792404cf4be2e79e8cef3b27483ccc2552d55822"
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --offline --store-dir .pnpm-store",
+      "exitCode": 0,
+      "path": "evidence/acceptance/frozen-install.txt",
+      "bytes": 1703,
+      "sha256": "497ecc251add022a4246e1b6951b66c05c35b48f5e42c61f6ce690bb7710064f"
+    },
+    {
+      "command": "pnpm exec vitest run focused Auth/SSR/PKCE files",
+      "exitCode": 0,
+      "path": "evidence/acceptance/focused-complete.txt",
+      "bytes": 234,
+      "sha256": "506293ae0b895639401a148d65d8511d499dbb858f83168ee6ed82aa1d92adea"
+    },
+    {
+      "command": "pnpm test:auth",
+      "exitCode": 0,
+      "path": "evidence/acceptance/auth-integration-expiry.txt",
+      "bytes": 349,
+      "sha256": "81ce6a48b9076ce8fb58e4837f4146082dfd3b0e8b1c513947c9613c88d0cf66"
+    },
+    {
+      "command": "pnpm verify",
+      "exitCode": 0,
+      "path": "evidence/acceptance/verify.txt",
+      "bytes": 26855,
+      "sha256": "617cdda7d086da4bb5f71df92c07da16eae0f234775ddabd0a92fe9588256185"
+    }
+  ],
+  "note": "Actual process exits observed by the main session. Raw bytes copied unchanged; the original TDD ledger and archived history are preserved."
+}

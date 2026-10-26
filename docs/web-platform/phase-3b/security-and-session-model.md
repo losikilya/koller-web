@@ -1,0 +1,12 @@
+# Security and session model
+
+- Identity is verified by provider getUser; getSession is never trusted for application authorization. Browser IDs and metadata cannot initialize profiles or permissions.
+- Existing request-scoped SSR clients and proxy refresh remain. Writable route adapter propagates all setAll cookies and provider headers on success and error. No persistent React auth store is introduced.
+- Cookie-backed POSTs require Origin equal to the trusted AUTH_SITE_URL. Missing/cross-origin Origin is rejected; logout cannot mutate through GET. Cookies retain Phase 3A SameSite=Lax and secure HTTPS settings. OAuth PKCE verifier/state ownership stays with the SDK/provider.
+- Internal destinations must exactly match one of the current locale's home/account/Playground/Timer paths. Query strings, fragments, encoded segments, backslashes, protocol-relative and external URLs fall back to account. Callback base origin never trusts forwarded host headers.
+- Dynamic account/auth pages and the existing proxy prevent cross-user caching. Auth handlers explicitly send private no-store and no-referrer. Callback token parameters never enter UI messages; redirects remove secrets from destination URLs. Operational reverse-proxy/access logging must redact callback queries in a future hosted environment.
+- Zod email normalization is trim/lowercase. New passwords use 8–128 characters; local Supabase enforces minimum 8. Existing login allows older provider-valid shorter passwords. No password is logged or stored in application tables. React escapes text; no HTML injection is used.
+- Provider rate limits remain authoritative. No app in-memory limiter creates a false distributed protection claim. Hosted setup must retain provider limits and configure CAPTCHA/SMTP protections as appropriate before deployment.
+- Authentication and authorization remain separate: private RLS/grants and owner-derived RPCs from Phase 3A are unchanged. Bootstrap is idempotent and failures never call signOut. Concurrent real database regression remains mandatory.
+- Local logout removes the current cookie/refresh session. Existing access JWTs retain the provider's token lifetime; no custom revocation guarantee is claimed. No custom identity merging or auto-linking based on email strings exists.
+- Privileged keys are acquired only in test Node processes from local CLI status, never committed or injected into client bundles. Normal app code consumes the existing public configuration only.

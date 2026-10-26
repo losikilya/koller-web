@@ -13,3 +13,12 @@ export type {
   PlaygroundDataWrite,
   PublicProfileDto,
 } from './identity'
+
+export {
+  emailSchema,
+  passwordSchema,
+  loginSchema,
+  registrationSchema,
+  resetPasswordSchema,
+  recoverySchema,
+} from './auth'

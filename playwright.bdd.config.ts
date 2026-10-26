@@ -42,8 +42,15 @@ const browserUse = {
 // Generated Playwright BDD specs; regular E2E specs run from tests/e2e in their own project.
 const bddTestDir = defineBddConfig({
   features: 'tests/e2e/foundation/**/*.feature',
-  steps: 'tests/e2e/foundation/**/*.steps.ts',
-  outputDir: '.features-gen',
+  steps: 'tests/e2e/{foundation,identity}/**/*.steps.ts',
+  outputDir: '.features-gen/foundation',
+})
+
+// Auth traces would contain disposable bearer credentials and email token hashes.
+const authBddTestDir = defineBddConfig({
+  features: 'tests/e2e/identity/**/*.feature',
+  steps: 'tests/e2e/identity/**/*.steps.ts',
+  outputDir: '.features-gen/auth',
 })
 
 // Not 4173: that default preview port is often held by other local projects.
@@ -79,6 +86,11 @@ export default defineConfig({
   use: { baseURL: previewOrigin, trace: 'retain-on-failure' },
   projects: [
     { name: browserName, testDir: bddTestDir, use: browserUse },
+    {
+      name: browserName + '-auth',
+      testDir: authBddTestDir,
+      use: { ...browserUse, trace: 'off', video: 'off', screenshot: 'off' },
+    },
     {
       name: `${browserName}-e2e`,
       testDir: 'tests/e2e',
