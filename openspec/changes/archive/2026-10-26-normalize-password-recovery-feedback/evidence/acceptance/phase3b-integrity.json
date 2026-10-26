@@ -1,0 +1,6 @@
+{
+  "phase3bReportsChecked": 24,
+  "phase3bAcceptanceLogsChecked": 7,
+  "mismatches": [],
+  "scope": "Exact bytes of recorded reports/logs against existing Phase3B SHA256 manifests; whole archive assessed separately by git diff HEAD."
+}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "implementationFiles": ["apps/web/src/modules/identity/authService.ts"],
+  "scenarios": [
+    {
+      "id": "SC-309",
+      "requirement": "FR-303",
+      "feature": "tests/bdd/identity/recovery.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/identity/recovery.test.ts"
+    }
+  ]
+}

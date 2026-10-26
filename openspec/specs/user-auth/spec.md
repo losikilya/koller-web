@@ -33,6 +33,12 @@ The application SHALL provide generic recovery-request feedback regardless of ac
 - **WHEN** a visitor requests recovery and follows its single-use email link
 - **THEN** the new policy-compliant password works and the old password fails
 
+#### Scenario: SC-309 Repeated recovery does not disclose account existence
+
+- **WHEN** valid recovery requests are repeated for registered and absent addresses, including provider throttling, delivery errors or thrown failures
+- **THEN** the application SHALL return identical generic pending feedback without provider error details, while still invoking the provider for every valid request and preserving its enforcement
+- **AND** malformed input SHALL fail validation before any provider request
+
 ### Requirement: FR-304 Google PKCE authentication
 
 The application SHALL start Google authentication through provider PKCE, exchange callback codes securely, verify identity and allow only localized internal destinations. Denial, missing/invalid codes and provider errors SHALL show safe errors. Identity association SHALL remain provider-owned with no custom merging. Live-provider verification SHALL be reported separately.

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "runs": [
+    {
+      "command": "pnpm test (sandbox)",
+      "exitCode": 1,
+      "path": "evidence/acceptance/baseline-sandbox.txt",
+      "bytes": 1863,
+      "sha256": "2bee0a8bd0bbcc6a2f1717f38da5218b8dcc96fbaf45a5d093f2c2f8311db6bb"
+    },
+    {
+      "command": "pnpm test (original production, before regression)",
+      "exitCode": 0,
+      "path": "evidence/acceptance/baseline.txt",
+      "bytes": 319,
+      "sha256": "9bccc589e3adce00757346abba1b9870047708785ab843bbc8edf37a94d5c16f"
+    },
+    {
+      "command": "pnpm verify (no installed-browser override)",
+      "exitCode": 1,
+      "path": "evidence/acceptance/verify-missing-chromium.txt",
+      "bytes": 71832,
+      "sha256": "31e7024850df509fcc71aabb97c6694270a687539c63e79819bfcd529f4e3918"
+    },
+    {
+      "command": "PLAYWRIGHT_BROWSER_CHANNEL=msedge pnpm verify",
+      "exitCode": 0,
+      "path": "evidence/acceptance/verify.txt",
+      "bytes": 26924,
+      "sha256": "6855611495162059c6403e245db728fc30988bb401d3f086deb4788269878cf4"
+    },
+    {
+      "command": "Phase3B existing SHA256 manifest verification",
+      "exitCode": 0,
+      "path": "evidence/acceptance/phase3b-integrity.json",
+      "bytes": 237,
+      "sha256": "9d42bf69ccc5d0680aba02a858e9a6b179e092ea7447833f29e93296383da254"
+    },
+    {
+      "command": "pnpm workflow ready normalize-password-recovery-feedback",
+      "exitCode": 0,
+      "path": "evidence/acceptance/ready.txt",
+      "bytes": 243,
+      "sha256": "0e08b67087644d7726ed43b382d26f4295ebac670677a3656ca976387f89dde7"
+    }
+  ],
+  "note": "Original raw logs copied unchanged. Sandbox loader and missing-browser setup failures are not TDD RED. Git diff HEAD for all prior archives is empty; Phase3B report/log bytes separately match existing recorded SHA256 values. No whole-archive raw-blob identity is claimed because checkout EOL conversion predates this fix."
+}

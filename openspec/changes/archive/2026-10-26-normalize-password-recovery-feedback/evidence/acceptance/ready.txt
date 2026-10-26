@@ -1,0 +1,9 @@
+
+> dance-platform@0.1.0 workflow C:\Users\Lenovo\Desktop\koller_web
+> node scripts/workflow.mjs "ready" "normalize-password-recovery-feedback"
+
+{
+  "change": "normalize-password-recovery-feedback",
+  "scenarios": 1,
+  "ready": true
+}

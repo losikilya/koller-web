@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "sequence": 1,
+      "scenario": "SC-309",
+      "phase": "red",
+      "at": "2026-10-26T18:03:51.959Z",
+      "testFile": "tests/apps/web/modules/identity/recovery.test.ts",
+      "testHash": "7710856254efc7d5499e6ec1bbf3ccf2fc963793e265395f84b8f11357e427ea",
+      "exitCode": 1,
+      "report": "evidence/001-SC-309-red.json",
+      "reportHash": "48bd924117cfd50401d7af1cd4a0833708f32256476ed542c6f0837d88e9688e",
+      "head": "a75294a1a799ec24ad3b1663fe512a312d195059",
+      "trackedDiffHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "tests/apps/web/modules/identity/recovery.test.ts",
+        "-t",
+        "\\bSC-309\\b",
+        "--reporter=json",
+        "--outputFile=C:\\Users\\Lenovo\\Desktop\\koller_web\\openspec\\changes\\normalize-password-recovery-feedback\\evidence\\001-SC-309-red.json"
+      ]
+    },
+    {
+      "sequence": 2,
+      "scenario": "SC-309",
+      "phase": "green",
+      "at": "2026-10-26T18:04:22.687Z",
+      "testFile": "tests/apps/web/modules/identity/recovery.test.ts",
+      "testHash": "7710856254efc7d5499e6ec1bbf3ccf2fc963793e265395f84b8f11357e427ea",
+      "exitCode": 0,
+      "report": "evidence/002-SC-309-green.json",
+      "reportHash": "71941a84e01627d82e177aa1e40487adb626411ddfaa61c7eae67c37286f1582",
+      "head": "a75294a1a799ec24ad3b1663fe512a312d195059",
+      "trackedDiffHash": "cf0609904270b3c0a69ebe9b75ea894dd9ba492c583b32c0f68780b73c95c4fe",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "tests/apps/web/modules/identity/recovery.test.ts",
+        "-t",
+        "\\bSC-309\\b",
+        "--reporter=json",
+        "--outputFile=C:\\Users\\Lenovo\\Desktop\\koller_web\\openspec\\changes\\normalize-password-recovery-feedback\\evidence\\002-SC-309-green.json"
+      ]
+    },
+    {
+      "sequence": 3,
+      "scenario": "SC-309",
+      "phase": "refactor",
+      "at": "2026-10-26T18:04:24.836Z",
+      "testFile": "tests/apps/web/modules/identity/recovery.test.ts",
+      "testHash": "7710856254efc7d5499e6ec1bbf3ccf2fc963793e265395f84b8f11357e427ea",
+      "exitCode": 0,
+      "report": "evidence/003-SC-309-refactor.json",
+      "reportHash": "80d0ddd25b7fa251cda946c5eb428990c1dd3269d72c8b1685e63bc79f9c62cc",
+      "head": "a75294a1a799ec24ad3b1663fe512a312d195059",
+      "trackedDiffHash": "cf0609904270b3c0a69ebe9b75ea894dd9ba492c583b32c0f68780b73c95c4fe",
+      "command": [
+        "node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "tests/apps/web/modules/identity/recovery.test.ts",
+        "-t",
+        "\\bSC-309\\b",
+        "--reporter=json",
+        "--outputFile=C:\\Users\\Lenovo\\Desktop\\koller_web\\openspec\\changes\\normalize-password-recovery-feedback\\evidence\\003-SC-309-refactor.json"
+      ]
+    }
+  ]
+}

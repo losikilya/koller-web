@@ -83,16 +83,13 @@ export async function recoverPassword(
   const parsed = recoverySchema.safeParse(input)
   if (!parsed.success) return failure('validation')
   try {
-    const { error } = await client.auth.resetPasswordForEmail(
-      parsed.data.email,
-      { redirectTo: redirect }
-    )
-    if (error && error.code !== 'user_not_found')
-      return failure(authErrorKey(error))
-    return { status: 'pending' }
+    await client.auth.resetPasswordForEmail(parsed.data.email, {
+      redirectTo: redirect,
+    })
   } catch {
-    return failure()
+    // Delivery failures and per-address limits must not reveal account existence.
   }
+  return { status: 'pending' }
 }
 export async function resetPassword(
   client: AuthClient,
