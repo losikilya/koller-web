@@ -1,0 +1,1267 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Lenovo\\Desktop\\koller_web\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "-c",
+      "playwright.storybook.config.ts",
+      "--repeat-each=5",
+      "--reporter=list,json",
+      "--output=ci-reports/phase-3a/final-recovery/stability-artifacts"
+    ],
+    "configFile": "C:\\Users\\Lenovo\\Desktop\\koller_web\\playwright.storybook.config.ts",
+    "rootDir": "C:/Users/Lenovo/Desktop/koller_web",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Lenovo/Desktop/koller_web/ci-reports/phase-3a/final-recovery/stability-artifacts",
+        "repeatEach": 5,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "storybook",
+        "name": "storybook",
+        "testDir": "C:/Users/Lenovo/Desktop/koller_web/.features-gen-storybook",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Lenovo/Desktop/koller_web/ci-reports/phase-3a/final-recovery/stability-artifacts",
+        "repeatEach": 5,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "storybook-a11y",
+        "name": "storybook-a11y",
+        "testDir": "C:/Users/Lenovo/Desktop/koller_web/tests/e2e/designSystem",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\ci-reports\\phase-3a\\final-recovery\\stability-artifacts",
+        "repeatEach": 5,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "storybook",
+        "testDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\.features-gen-storybook",
+        "snapshotDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\.features-gen-storybook",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:6006",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "storybook"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\ci-reports\\phase-3a\\final-recovery\\stability-artifacts",
+        "repeatEach": 5,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "storybook-a11y",
+        "testDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem",
+        "snapshotDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:6006",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "storybook-a11y"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm exec vite preview --outDir storybook-static --port 6006 --host 127.0.0.1 --strictPort",
+      "url": "http://127.0.0.1:6006",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": ".features-gen-storybook\\tests\\e2e\\designSystem\\interactions.feature.spec.js",
+      "file": ".features-gen-storybook/tests/e2e/designSystem/interactions.feature.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Browser interaction with shared controls",
+          "file": ".features-gen-storybook/tests/e2e/designSystem/interactions.feature.spec.js",
+          "line": 4,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Native modal contains and restores keyboard focus",
+              "ok": true,
+              "tags": [
+                "phase-two-design-system",
+                "FR-102",
+                "SC-103"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3092,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the modal component example is open",
+                          "duration": 1027
+                        },
+                        {
+                          "title": "When I open the dialog and navigate its controls",
+                          "duration": 1180
+                        },
+                        {
+                          "title": "Then Escape closes the dialog and restores trigger focus",
+                          "duration": 254
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:09.736Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2497,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the modal component example is open",
+                          "duration": 771
+                        },
+                        {
+                          "title": "When I open the dialog and navigate its controls",
+                          "duration": 870
+                        },
+                        {
+                          "title": "Then Escape closes the dialog and restores trigger focus",
+                          "duration": 234
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:17.672Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2484,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the modal component example is open",
+                          "duration": 806
+                        },
+                        {
+                          "title": "When I open the dialog and navigate its controls",
+                          "duration": 881
+                        },
+                        {
+                          "title": "Then Escape closes the dialog and restores trigger focus",
+                          "duration": 241
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:25.047Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2505,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the modal component example is open",
+                          "duration": 769
+                        },
+                        {
+                          "title": "When I open the dialog and navigate its controls",
+                          "duration": 929
+                        },
+                        {
+                          "title": "Then Escape closes the dialog and restores trigger focus",
+                          "duration": 244
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:32.288Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2616,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the modal component example is open",
+                          "duration": 777
+                        },
+                        {
+                          "title": "When I open the dialog and navigate its controls",
+                          "duration": 995
+                        },
+                        {
+                          "title": "Then Escape closes the dialog and restores trigger focus",
+                          "duration": 230
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:39.570Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "eb159da4f5ec97292fa0-0676cdf60d4a93494bb0",
+              "file": ".features-gen-storybook/tests/e2e/designSystem/interactions.feature.spec.js",
+              "line": 6,
+              "column": 7
+            },
+            {
+              "title": "Local tabs support keyboard selection",
+              "ok": true,
+              "tags": [
+                "phase-two-design-system",
+                "FR-102",
+                "SC-104"
+              ],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1790,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the keyboard tabs example is open",
+                          "duration": 680
+                        },
+                        {
+                          "title": "When I navigate enabled tabs with the keyboard",
+                          "duration": 538
+                        },
+                        {
+                          "title": "Then only the selected panel is exposed",
+                          "duration": 66
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:13.582Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1795,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the keyboard tabs example is open",
+                          "duration": 733
+                        },
+                        {
+                          "title": "When I navigate enabled tabs with the keyboard",
+                          "duration": 513
+                        },
+                        {
+                          "title": "Then only the selected panel is exposed",
+                          "duration": 87
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:21.036Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1766,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the keyboard tabs example is open",
+                          "duration": 724
+                        },
+                        {
+                          "title": "When I navigate enabled tabs with the keyboard",
+                          "duration": 558
+                        },
+                        {
+                          "title": "Then only the selected panel is exposed",
+                          "duration": 75
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:28.278Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1837,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the keyboard tabs example is open",
+                          "duration": 740
+                        },
+                        {
+                          "title": "When I navigate enabled tabs with the keyboard",
+                          "duration": 601
+                        },
+                        {
+                          "title": "Then only the selected panel is exposed",
+                          "duration": 84
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:35.462Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                },
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "storybook",
+                  "projectName": "storybook",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1760,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Given the keyboard tabs example is open",
+                          "duration": 742
+                        },
+                        {
+                          "title": "When I navigate enabled tabs with the keyboard",
+                          "duration": 138
+                        },
+                        {
+                          "title": "Then only the selected panel is exposed",
+                          "duration": 485
+                        }
+                      ],
+                      "startTime": "2026-10-26T02:04:42.876Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "eb159da4f5ec97292fa0-61a234d958c2a6827280",
+              "file": ".features-gen-storybook/tests/e2e/designSystem/interactions.feature.spec.js",
+              "line": 12,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "tests\\e2e\\designSystem\\accessibility.spec.ts",
+      "file": "tests/e2e/designSystem/accessibility.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "states passes automated WCAG checks at compact and desktop widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2978,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:04:46.908Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2869,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:01.387Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3002,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:15.810Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3088,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:30.277Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3016,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:45.170Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddd864604af8a6a0198f-f83857c1afc4cf0d10f3",
+          "file": "tests/e2e/designSystem/accessibility.spec.ts",
+          "line": 5,
+          "column": 7
+        },
+        {
+          "title": "keyboard-tabs passes automated WCAG checks at compact and desktop widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2610,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:04:50.500Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2504,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:04.856Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2499,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:19.437Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2545,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:33.994Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2505,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:48.815Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddd864604af8a6a0198f-d3a9d4e5e020354bd3dc",
+          "file": "tests/e2e/designSystem/accessibility.spec.ts",
+          "line": 5,
+          "column": 7
+        },
+        {
+          "title": "modal passes automated WCAG checks at compact and desktop widths",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2592,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:04:53.140Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2584,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:07.391Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2632,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:21.966Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:36.572Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2481,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:51.354Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddd864604af8a6a0198f-8edbac7a6fb0ffb3507c",
+          "file": "tests/e2e/designSystem/accessibility.spec.ts",
+          "line": 5,
+          "column": 7
+        },
+        {
+          "title": "reduced motion keeps loading feedback readable without animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1105,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:04:55.765Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1129,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:10.003Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1138,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:24.634Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1153,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:39.345Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1226,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:53.867Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "ddd864604af8a6a0198f-088e14e39773ddb17349",
+          "file": "tests/e2e/designSystem/accessibility.spec.ts",
+          "line": 32,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "tests\\e2e\\designSystem\\auditOwnership.spec.ts",
+      "file": "tests/e2e/designSystem/auditOwnership.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "one accessibility audit owner covers the current state and still rejects violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2072,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:04:56.935Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "audit-ownership.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiAwLAogICJtYXhpbXVtQWN0aXZlIjogMSwKICAicnVucyI6IFsKICAgIHsKICAgICAgImVuZ2luZSI6IDEsCiAgICAgICJjYWxsZXIiOiAiRXJyb3JcbiAgICBhdCBPYmplY3QucnVuICg8YW5vbnltb3VzPjozMjo0MSlcbiAgICBhdCBldmFsIChldmFsIGF0IGV2YWx1YXRlICg6MzcwOjMwKSwgPGFub255bW91cz46MjozNylcbiAgICBhdCBVdGlsaXR5U2NyaXB0LmV2YWx1YXRlICg8YW5vbnltb3VzPjozNzI6MTYpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC48YW5vbnltb3VzPiAoPGFub255bW91cz46MTo0NCkiCiAgICB9LAogICAgewogICAgICAiZW5naW5lIjogMSwKICAgICAgImNhbGxlciI6ICJFcnJvclxuICAgIGF0IE9iamVjdC5ydW4gKDxhbm9ueW1vdXM+OjMyOjQxKVxuICAgIGF0IGV2YWwgKGV2YWwgYXQgZXZhbHVhdGUgKDozNzA6MzApLCA8YW5vbnltb3VzPjoyOjM3KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuZXZhbHVhdGUgKDxhbm9ueW1vdXM+OjM3MjoxNilcbiAgICBhdCBVdGlsaXR5U2NyaXB0Ljxhbm9ueW1vdXM+ICg8YW5vbnltb3VzPjoxOjQ0KSIKICAgIH0sCiAgICB7CiAgICAgICJlbmdpbmUiOiAxLAogICAgICAiY2FsbGVyIjogIkVycm9yXG4gICAgYXQgT2JqZWN0LnJ1biAoPGFub255bW91cz46MzI6NDEpXG4gICAgYXQgZXZhbCAoZXZhbCBhdCBldmFsdWF0ZSAoOjM3MDozMCksIDxhbm9ueW1vdXM+OjI6MzcpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC5ldmFsdWF0ZSAoPGFub255bW91cz46MzcyOjE2KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuPGFub255bW91cz4gKDxhbm9ueW1vdXM+OjE6NDQpIgogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2184,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:11.196Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "audit-ownership.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiAwLAogICJtYXhpbXVtQWN0aXZlIjogMSwKICAicnVucyI6IFsKICAgIHsKICAgICAgImVuZ2luZSI6IDEsCiAgICAgICJjYWxsZXIiOiAiRXJyb3JcbiAgICBhdCBPYmplY3QucnVuICg8YW5vbnltb3VzPjozMjo0MSlcbiAgICBhdCBldmFsIChldmFsIGF0IGV2YWx1YXRlICg6MzcwOjMwKSwgPGFub255bW91cz46MjozNylcbiAgICBhdCBVdGlsaXR5U2NyaXB0LmV2YWx1YXRlICg8YW5vbnltb3VzPjozNzI6MTYpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC48YW5vbnltb3VzPiAoPGFub255bW91cz46MTo0NCkiCiAgICB9LAogICAgewogICAgICAiZW5naW5lIjogMSwKICAgICAgImNhbGxlciI6ICJFcnJvclxuICAgIGF0IE9iamVjdC5ydW4gKDxhbm9ueW1vdXM+OjMyOjQxKVxuICAgIGF0IGV2YWwgKGV2YWwgYXQgZXZhbHVhdGUgKDozNzA6MzApLCA8YW5vbnltb3VzPjoyOjM3KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuZXZhbHVhdGUgKDxhbm9ueW1vdXM+OjM3MjoxNilcbiAgICBhdCBVdGlsaXR5U2NyaXB0Ljxhbm9ueW1vdXM+ICg8YW5vbnltb3VzPjoxOjQ0KSIKICAgIH0sCiAgICB7CiAgICAgICJlbmdpbmUiOiAxLAogICAgICAiY2FsbGVyIjogIkVycm9yXG4gICAgYXQgT2JqZWN0LnJ1biAoPGFub255bW91cz46MzI6NDEpXG4gICAgYXQgZXZhbCAoZXZhbCBhdCBldmFsdWF0ZSAoOjM3MDozMCksIDxhbm9ueW1vdXM+OjI6MzcpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC5ldmFsdWF0ZSAoPGFub255bW91cz46MzcyOjE2KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuPGFub255bW91cz4gKDxhbm9ueW1vdXM+OjE6NDQpIgogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2123,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:25.836Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "audit-ownership.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiAwLAogICJtYXhpbXVtQWN0aXZlIjogMSwKICAicnVucyI6IFsKICAgIHsKICAgICAgImVuZ2luZSI6IDEsCiAgICAgICJjYWxsZXIiOiAiRXJyb3JcbiAgICBhdCBPYmplY3QucnVuICg8YW5vbnltb3VzPjozMjo0MSlcbiAgICBhdCBldmFsIChldmFsIGF0IGV2YWx1YXRlICg6MzcwOjMwKSwgPGFub255bW91cz46MjozNylcbiAgICBhdCBVdGlsaXR5U2NyaXB0LmV2YWx1YXRlICg8YW5vbnltb3VzPjozNzI6MTYpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC48YW5vbnltb3VzPiAoPGFub255bW91cz46MTo0NCkiCiAgICB9LAogICAgewogICAgICAiZW5naW5lIjogMSwKICAgICAgImNhbGxlciI6ICJFcnJvclxuICAgIGF0IE9iamVjdC5ydW4gKDxhbm9ueW1vdXM+OjMyOjQxKVxuICAgIGF0IGV2YWwgKGV2YWwgYXQgZXZhbHVhdGUgKDozNzA6MzApLCA8YW5vbnltb3VzPjoyOjM3KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuZXZhbHVhdGUgKDxhbm9ueW1vdXM+OjM3MjoxNilcbiAgICBhdCBVdGlsaXR5U2NyaXB0Ljxhbm9ueW1vdXM+ICg8YW5vbnltb3VzPjoxOjQ0KSIKICAgIH0sCiAgICB7CiAgICAgICJlbmdpbmUiOiAxLAogICAgICAiY2FsbGVyIjogIkVycm9yXG4gICAgYXQgT2JqZWN0LnJ1biAoPGFub255bW91cz46MzI6NDEpXG4gICAgYXQgZXZhbCAoZXZhbCBhdCBldmFsdWF0ZSAoOjM3MDozMCksIDxhbm9ueW1vdXM+OjI6MzcpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC5ldmFsdWF0ZSAoPGFub255bW91cz46MzcyOjE2KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuPGFub255bW91cz4gKDxhbm9ueW1vdXM+OjE6NDQpIgogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2236,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:40.560Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "audit-ownership.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiAwLAogICJtYXhpbXVtQWN0aXZlIjogMSwKICAicnVucyI6IFsKICAgIHsKICAgICAgImVuZ2luZSI6IDEsCiAgICAgICJjYWxsZXIiOiAiRXJyb3JcbiAgICBhdCBPYmplY3QucnVuICg8YW5vbnltb3VzPjozMjo0MSlcbiAgICBhdCBldmFsIChldmFsIGF0IGV2YWx1YXRlICg6MzcwOjMwKSwgPGFub255bW91cz46MjozNylcbiAgICBhdCBVdGlsaXR5U2NyaXB0LmV2YWx1YXRlICg8YW5vbnltb3VzPjozNzI6MTYpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC48YW5vbnltb3VzPiAoPGFub255bW91cz46MTo0NCkiCiAgICB9LAogICAgewogICAgICAiZW5naW5lIjogMSwKICAgICAgImNhbGxlciI6ICJFcnJvclxuICAgIGF0IE9iamVjdC5ydW4gKDxhbm9ueW1vdXM+OjMyOjQxKVxuICAgIGF0IGV2YWwgKGV2YWwgYXQgZXZhbHVhdGUgKDozNzA6MzApLCA8YW5vbnltb3VzPjoyOjM3KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuZXZhbHVhdGUgKDxhbm9ueW1vdXM+OjM3MjoxNilcbiAgICBhdCBVdGlsaXR5U2NyaXB0Ljxhbm9ueW1vdXM+ICg8YW5vbnltb3VzPjoxOjQ0KSIKICAgIH0sCiAgICB7CiAgICAgICJlbmdpbmUiOiAxLAogICAgICAiY2FsbGVyIjogIkVycm9yXG4gICAgYXQgT2JqZWN0LnJ1biAoPGFub255bW91cz46MzI6NDEpXG4gICAgYXQgZXZhbCAoZXZhbCBhdCBldmFsdWF0ZSAoOjM3MDozMCksIDxhbm9ueW1vdXM+OjI6MzcpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC5ldmFsdWF0ZSAoPGFub255bW91cz46MzcyOjE2KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuPGFub255bW91cz4gKDxhbm9ueW1vdXM+OjE6NDQpIgogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            },
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 9,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2084,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T02:05:55.155Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "audit-ownership.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiAwLAogICJtYXhpbXVtQWN0aXZlIjogMSwKICAicnVucyI6IFsKICAgIHsKICAgICAgImVuZ2luZSI6IDEsCiAgICAgICJjYWxsZXIiOiAiRXJyb3JcbiAgICBhdCBPYmplY3QucnVuICg8YW5vbnltb3VzPjozMjo0MSlcbiAgICBhdCBldmFsIChldmFsIGF0IGV2YWx1YXRlICg6MzcwOjMwKSwgPGFub255bW91cz46MjozNylcbiAgICBhdCBVdGlsaXR5U2NyaXB0LmV2YWx1YXRlICg8YW5vbnltb3VzPjozNzI6MTYpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC48YW5vbnltb3VzPiAoPGFub255bW91cz46MTo0NCkiCiAgICB9LAogICAgewogICAgICAiZW5naW5lIjogMSwKICAgICAgImNhbGxlciI6ICJFcnJvclxuICAgIGF0IE9iamVjdC5ydW4gKDxhbm9ueW1vdXM+OjMyOjQxKVxuICAgIGF0IGV2YWwgKGV2YWwgYXQgZXZhbHVhdGUgKDozNzA6MzApLCA8YW5vbnltb3VzPjoyOjM3KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuZXZhbHVhdGUgKDxhbm9ueW1vdXM+OjM3MjoxNilcbiAgICBhdCBVdGlsaXR5U2NyaXB0Ljxhbm9ueW1vdXM+ICg8YW5vbnltb3VzPjoxOjQ0KSIKICAgIH0sCiAgICB7CiAgICAgICJlbmdpbmUiOiAxLAogICAgICAiY2FsbGVyIjogIkVycm9yXG4gICAgYXQgT2JqZWN0LnJ1biAoPGFub255bW91cz46MzI6NDEpXG4gICAgYXQgZXZhbCAoZXZhbCBhdCBldmFsdWF0ZSAoOjM3MDozMCksIDxhbm9ueW1vdXM+OjI6MzcpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC5ldmFsdWF0ZSAoPGFub255bW91cz46MzcyOjE2KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuPGFub255bW91cz4gKDxhbm9ueW1vdXM+OjE6NDQpIgogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "fb8732d1934126f477e1-296694fe2366b74e866a",
+          "file": "tests/e2e/designSystem/auditOwnership.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-26T02:04:04.746Z",
+    "duration": 114149.381,
+    "expected": 35,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

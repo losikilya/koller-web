@@ -1,0 +1,182 @@
+# Dance Platform — Phase 3A Historical Evidence Exception
+
+The project owner has explicitly approved the narrowly scoped historical evidence exception proposed in:
+
+`docs/web-platform/phase-3a/workflow-exception-proposal.md`
+
+This approval authorizes implementing and independently reviewing validator support. It does NOT authorize immediate archival, fabrication of TDD evidence or automatic acceptance.
+
+## 1. Scope of approval
+
+The exception applies exclusively to:
+
+- Change: `phase-three-a-identity-foundation`
+- FR-205 / SC-205: missing original RED/GREEN/REFACTOR cycle caused by the unavailable Docker Linux engine.
+- Task 1.1: missing original complete preimplementation GREEN baseline caused by the previously existing Storybook axe race.
+
+No other requirements, scenarios, tasks, changes or future phases are eligible.
+
+Do not add a general waiver or skip-TDD mode.
+
+## 2. Read existing evidence
+
+Inspect:
+
+- Active OpenSpec change and tasks.
+- Existing workflow validator implementation and tests.
+- Existing TDD ledger and reports.
+- Historical evidence manifest.
+- Final-recovery evidence manifest.
+- Current full verification results.
+- Database acceptance evidence.
+- Independent reviews.
+- Approved process proposal.
+
+Preserve all existing historical artifacts and their hashes.
+
+## 3. Implement strict exception validation
+
+Introduce the smallest maintainable mechanism for explicitly approved historical process exceptions.
+
+Requirements:
+
+- Exact change and scenario matching.
+- Exact historical baseline gap matching.
+- Explicit owner approval reference.
+- Content-addressed evidence references.
+- Integrity verification of original artifacts.
+- Verification of real database acceptance evidence.
+- Verification of recovered current full GREEN.
+- Verification of independent reviewer approval.
+- No fabricated TDD lifecycle events.
+- No modification of historical ledger entries.
+- No bypass of current security, coverage, WCAG or build gates.
+- No change to ordinary TDD validation for other scenarios.
+
+Prefer an explicit record with strict schema validation rather than CLI flags or implicit behavior.
+
+Use a deterministic status such as:
+
+`accepted_by_approved_exception`
+
+Never represent missing historical evidence as completed TDD.
+
+Avoid broad changes to the workflow engine. Keep normal validation behavior unchanged when no exception is present.
+
+## 4. Approval handling
+
+Record this owner decision in a dedicated exception record as authorization to implement the narrowly scoped mechanism.
+
+Do not invent timestamps, signatures, approval IDs or reviewer identities.
+
+Approval provenance must be accurate and auditable.
+
+The independent reviewer must evaluate both:
+
+1. The policy exception and evidence integrity.
+2. The validator implementation and its negative tests.
+
+Owner approval alone is not reviewer approval.
+
+## 5. Test-first implementation
+
+Follow the existing engineering workflow.
+
+Before implementing validator behavior, create focused tests covering:
+
+Positive:
+
+- Exact approved change.
+- Exact eligible scenario and baseline gap.
+- Matching historical hashes.
+- Valid current acceptance evidence.
+- Explicit approvals.
+- Passing current quality gates.
+
+Negative:
+
+- Missing owner approval.
+- Missing reviewer approval.
+- Wrong change ID.
+- Wrong scenario ID.
+- Unapproved additional exceptions.
+- Stale or altered evidence.
+- Missing original artifacts.
+- Invalid approval provenance.
+- Failed current verification.
+- Failed database security acceptance.
+- Missing mandatory current tests.
+- Fabricated RED/GREEN/REFACTOR events.
+- Unsupported exception type.
+
+Ensure existing normal TDD validation tests remain unchanged and pass.
+
+Do not weaken assertions to obtain GREEN.
+
+## 6. Resolve the existing change
+
+After the exception mechanism is implemented and independently reviewed:
+
+1. Verify all original historical hashes.
+2. Verify current evidence hashes.
+3. Run real local database tests.
+4. Regenerate and compare database types.
+5. Run full `pnpm verify`.
+6. Run strict OpenSpec validation.
+7. Run the updated evidence validator.
+8. Request final independent review.
+9. Inspect remaining incomplete tasks.
+10. Obtain workflow readiness.
+
+Mark historical requirements using explicit exception semantics, not by claiming original TDD or original GREEN.
+
+If the existing task model cannot express this safely, extend it narrowly and test the extension.
+
+Do not mark tasks complete by manually bypassing the validator.
+
+## 7. Archival condition
+
+Do not archive the change during implementation or while reviewing the exception mechanism.
+
+After all mandatory gates pass, report the complete results and request a separate final archival decision from the project owner.
+
+Do not begin Phase 3B.
+
+Do not commit or deploy.
+
+## 8. Deliverables
+
+Update:
+
+- The approved exception record.
+- Relevant workflow documentation.
+- Validator tests.
+- The Phase 3A implementation report.
+- The active change's actual independent review.
+
+Document:
+
+- Exact policy scope.
+- Why historical evidence cannot be recreated.
+- How current acceptance compensates for the historical gap without pretending to restore TDD.
+- How unauthorized exceptions are rejected.
+- Test-first implementation evidence.
+- Security and process invariants.
+- Final validator and verification results.
+- Remaining tasks and archive eligibility.
+
+Do not rewrite Phase 0–2 historical documentation or unrelated agent rules.
+
+## Completion criteria
+
+Success requires:
+
+- Explicit exception semantics.
+- Preserved historical artifacts.
+- Strict positive and negative tests.
+- Independent PASS review.
+- Real database acceptance PASS.
+- Full project verification PASS.
+- Workflow readiness achieved through legitimate validation.
+
+Stop before archive and return the final evidence summary for owner approval.

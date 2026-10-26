@@ -1,0 +1,52 @@
+{
+  "kind": "archive-location-regression-not-SC-205",
+  "greenTestSource": {
+    "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/archive-relocation.test.mjs",
+    "bytes": 14707,
+    "sha256": "5458092784284c9ea54edc94baaee8de6267cbea9727f0bb9d64dbf1a4b05b60"
+  },
+  "note": "Three archive behavior assertions were added before implementation. After RED, only the fixture reader/import was migrated to the new resolver; assertions were preserved. No claim of an unchanged whole-file hash across that fixture adaptation.",
+  "runs": [
+    {
+      "phase": "red",
+      "command": [
+        "node",
+        "--test",
+        "scripts/phase3a-exception.test.mjs"
+      ],
+      "exitCode": 1,
+      "log": {
+        "path": "ci-reports/phase-3a/archive/relocation-red.log",
+        "bytes": 13916,
+        "sha256": "9f13840e8fedc924e4419d37a6d261b4f2bbe72af66248a505907dea91c04067"
+      }
+    },
+    {
+      "phase": "green",
+      "command": [
+        "pnpm",
+        "test:workflow"
+      ],
+      "exitCode": 0,
+      "log": {
+        "path": "ci-reports/phase-3a/archive/relocation-green.log",
+        "bytes": 11572,
+        "sha256": "e3852c5873ba502f3e2bfa1eadd93827cb4f377f1f775d393a7419e1252b4fc0"
+      }
+    },
+    {
+      "phase": "refactor",
+      "command": [
+        "node",
+        "--test",
+        "scripts/phase3a-exception.test.mjs"
+      ],
+      "exitCode": 0,
+      "log": {
+        "path": "ci-reports/phase-3a/archive/relocation-refactor.log",
+        "bytes": 5666,
+        "sha256": "0afebf0259b50582fea272ebfc806fa247fa9a8f6e686893bd1b25cd7d83ccc3"
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "implementationFiles": [
+    "packages/contracts/src/index.ts",
+    "packages/contracts/src/identity.ts",
+    "apps/web/src/shared/supabase/config.ts",
+    "apps/web/src/shared/supabase/database.types.ts",
+    "apps/web/src/shared/supabase/database.ts",
+    "apps/web/src/shared/supabase/browser.ts",
+    "apps/web/src/shared/supabase/server.ts",
+    "apps/web/src/shared/supabase/refreshSession.ts",
+    "apps/web/src/app/_infrastructure/supabase.ts",
+    "apps/web/src/modules/identity/ensureProfile.ts",
+    "apps/web/src/modules/identity/index.ts",
+    "apps/web/src/proxy.ts",
+    "supabase/migrations/20261026000001_identity_schema.sql",
+    "supabase/migrations/20261026000002_identity_access.sql"
+  ],
+  "scenarios": [
+    {
+      "id": "SC-201",
+      "requirement": "FR-201",
+      "feature": "tests/bdd/identity/foundation.feature",
+      "layer": "unit",
+      "testFile": "tests/bdd/identity/foundation.steps.ts"
+    },
+    {
+      "id": "SC-202",
+      "requirement": "FR-202",
+      "feature": "tests/bdd/identity/foundation.feature",
+      "layer": "unit",
+      "testFile": "tests/bdd/identity/foundation.steps.ts"
+    },
+    {
+      "id": "SC-203",
+      "requirement": "FR-203",
+      "feature": "tests/bdd/identity/foundation.feature",
+      "layer": "unit",
+      "testFile": "tests/bdd/identity/foundation.steps.ts"
+    },
+    {
+      "id": "SC-204",
+      "requirement": "FR-204",
+      "feature": "tests/bdd/identity/foundation.feature",
+      "layer": "unit",
+      "testFile": "tests/bdd/identity/foundation.steps.ts"
+    },
+    {
+      "id": "SC-205",
+      "requirement": "FR-205",
+      "feature": "tests/bdd/database/foundation.feature",
+      "layer": "unit",
+      "testFile": "tests/database/foundation.test.ts"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "change": "phase-three-a-identity-foundation",
+  "workspaceHash": "a91664258774c3c2a7bed17b6f90e6d51b48a6b6cc25ed29e809606ca220c3d8",
+  "verify": {
+    "command": [
+      "pnpm",
+      "verify"
+    ],
+    "exitCode": 0,
+    "log": {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/acceptance-2/verify.log",
+      "bytes": 22044,
+      "sha256": "9e2a22c04219a2963feccfa91cda135e405528038b38736039b60c051f2f0601"
+    }
+  },
+  "database": {
+    "command": [
+      "pnpm",
+      "db:test"
+    ],
+    "exitCode": 0,
+    "log": {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/acceptance-2/database.log",
+      "bytes": 836,
+      "sha256": "1568e72188e0a946d956483f65339310bb3dc443784845fd1844f65a692b98ff"
+    },
+    "report": {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/acceptance-2/database.json",
+      "bytes": 1162,
+      "sha256": "0dd47509a49ea8ed7abf49946b6b1ef7048df3f6e6d0fbcc70a3aeb7a0587e4c"
+    }
+  },
+  "types": {
+    "command": [
+      "supabase",
+      "gen",
+      "types",
+      "typescript",
+      "--local",
+      "--schema",
+      "public"
+    ],
+    "exitCode": 0,
+    "generated": {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/acceptance-2/types.generated.ts",
+      "bytes": 10477,
+      "sha256": "1c2f2cfa3ab5de32b679ab10720e68c0fd6f20a4ab0d9e916dae6bd56831e87e"
+    },
+    "checkedIn": {
+      "path": "apps/web/src/shared/supabase/database.types.ts",
+      "bytes": 10477,
+      "sha256": "1c2f2cfa3ab5de32b679ab10720e68c0fd6f20a4ab0d9e916dae6bd56831e87e"
+    }
+  }
+}

@@ -15,6 +15,6 @@ Accepted in docs/adr/0002-dance-platform-foundation.md, superseding the banking 
 - Modules live in src/modules/<domain>. External consumers enter only via explicit named index.ts exports. Internal imports are direct, never their own barrel. No unrelated module or micro-app private imports.
 - shared holds domain-agnostic application utilities, never domain logic promoted to bypass boundaries.
 - packages/ui depends on design-tokens; contracts is framework independent, without React/Next/Expo/browser APIs. Packages never import apps. Explicit exports only; no cycles.
-- Create only meaningful packages/segments. Identity/Profile and shared-kernel/config remain deferred.
+- Create only meaningful packages/segments. Phase 3A identity owns verified profile initialization; shared/supabase owns provider infrastructure, app/_infrastructure adapts Next cookies. Shared-kernel/config packages and profile UI remain deferred. Contracts may import exactly Zod plus their local files; framework imports remain forbidden.
 - @/ resolves to apps/web/src. Tests mirror source in tests/apps/web and tests/packages. Browser journeys remain in root tests/e2e.
 - Boundary/public API/routing ownership changes require architect review and durable decisions require a superseding ADR. Run pnpm boundaries and cycle lint; never suppress cycles.

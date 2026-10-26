@@ -3,6 +3,7 @@ import { resolve, relative, isAbsolute, basename } from 'node:path';
 import { createHash } from 'node:crypto';
 import { Parser, AstBuilder, GherkinClassicTokenMatcher } from '@cucumber/gherkin';
 import { IdGenerator } from '@cucumber/messages';
+import { checkApprovedException } from './phase3a-exception.mjs';
 
 export const hash = (data) => createHash('sha256').update(data).digest('hex');
 export const readJson = (path) => JSON.parse(readFileSync(path, 'utf8'));
@@ -124,9 +125,23 @@ export function checkChange(root, change, ready = false, directory) {
       ensure(ids.length === 1 && seen.has(ids[0].slice(1)), `Unmapped scenario in ${path}: ${s.name}`);
     }
   }
+  let historicalException;
   if (ready) {
+    historicalException = checkApprovedException(root, change, dir);
     const tasks = readFileSync(resolve(dir, 'tasks.md'), 'utf8');
-    ensure(/^- \[x\]/m.test(tasks) && !/^- \[ \]/m.test(tasks), 'Incomplete or missing tasks');
+    const pending = [...tasks.matchAll(/^- \[ \] (\d+\.\d+) .+$/gm)].map((m) => m[1]);
+    if (historicalException) {
+      ensure(['1.1', '3.2'].every((id) => pending.filter((item) => item === id).length === 1),
+        'Missing historical task status: do not claim historical completion');
+      for (const contract of [
+        '- [ ] 1.1 Record full initial GREEN; preserve log and actual exit code.',
+        '- [ ] 3.2 Run SC-205 real SQL/REST RED/GREEN/REFACTOR and reset migrations; generate and verify database types from local schema.',
+      ]) ensure(tasks.split(/\r?\n/).includes(contract), 'Historical task contract changed outside approved scope');
+    }
+    const unresolved = historicalException
+      ? pending.some((id) => !historicalException.tasks.includes(id)) || /^- \[ \](?! \d+\.\d+ .+$)/m.test(tasks)
+      : /^- \[ \]/m.test(tasks);
+    ensure(/^- \[x\]/m.test(tasks) && !unresolved, 'Incomplete or missing tasks');
     const ledger = readJson(resolve(dir, 'evidence/ledger.json'));
     for (const event of ledger.events) {
       const reportPath = safePath(dir, event.report);
@@ -137,10 +152,14 @@ export function checkChange(root, change, ready = false, directory) {
     for (const item of plan.scenarios) {
       const events = ledger.events.filter((event) => event.scenario === item.id);
       ensure(events.every((event) => event.testFile === item.testFile), `${item.id}: evidence belongs to another test`);
-      checkEvidence(ledger.events, item.id, item.cycle ?? 'tdd');
+      if (historicalException?.scenario === item.id) {
+        ensure(item.requirement === 'FR-205' && item.testFile === 'tests/database/foundation.test.ts'
+          && item.cycle === undefined, 'Historical exception scenario mapping changed');
+      } else checkEvidence(ledger.events, item.id, item.cycle ?? 'tdd');
     }
     const review = readFileSync(resolve(dir, 'review.md'), 'utf8');
     ensure(/^Verdict: PASS$/m.test(review), 'Missing PASS review');
+    if (historicalException) ensure([...review.matchAll(/^Verdict: (\w+)$/gm)].at(-1)?.[1] === 'PASS', 'Latest review is not PASS');
   }
-  return { change, scenarios: plan.scenarios.length, ready };
+  return { change, scenarios: plan.scenarios.length, ready, ...(historicalException ? { historicalException } : {}) };
 }

@@ -1,0 +1,256 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\Lenovo\\Desktop\\koller_web\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "-c",
+      "playwright.storybook.config.ts",
+      "tests/e2e/designSystem/auditOwnership.spec.ts",
+      "--reporter=list,json",
+      "--output=ci-reports/phase-3a/final-recovery/red-regression"
+    ],
+    "configFile": "C:\\Users\\Lenovo\\Desktop\\koller_web\\playwright.storybook.config.ts",
+    "rootDir": "C:/Users/Lenovo/Desktop/koller_web",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Lenovo/Desktop/koller_web/ci-reports/phase-3a/final-recovery/red-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "storybook",
+        "name": "storybook",
+        "testDir": "C:/Users/Lenovo/Desktop/koller_web/.features-gen-storybook",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/Lenovo/Desktop/koller_web/ci-reports/phase-3a/final-recovery/red-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "storybook-a11y",
+        "name": "storybook-a11y",
+        "testDir": "C:/Users/Lenovo/Desktop/koller_web/tests/e2e/designSystem",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\ci-reports\\phase-3a\\final-recovery\\red-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "storybook",
+        "testDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\.features-gen-storybook",
+        "snapshotDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\.features-gen-storybook",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:6006",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "storybook"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\ci-reports\\phase-3a\\final-recovery\\red-regression",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "storybook-a11y",
+        "testDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem",
+        "snapshotDir": "C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.ts",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:6006",
+          "trace": "retain-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium",
+          "channel": "msedge"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "storybook-a11y"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list"
+      ],
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": {
+      "command": "pnpm exec vite preview --outDir storybook-static --port 6006 --host 127.0.0.1 --strictPort",
+      "url": "http://127.0.0.1:6006",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [
+    {
+      "title": "tests\\e2e\\designSystem\\auditOwnership.spec.ts",
+      "file": "tests/e2e/designSystem/auditOwnership.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "one accessibility audit owner covers the current state and still rejects violations",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "storybook-a11y",
+              "projectName": "storybook-a11y",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1946,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m4\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m4\u001b[39m\n    at C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem\\auditOwnership.spec.ts:25:66",
+                    "location": {
+                      "file": "C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem\\auditOwnership.spec.ts",
+                      "column": 66,
+                      "line": 25
+                    },
+                    "snippet": "  23 |     expect(probe.active).toBe(0)\n  24 |     expect(probe.maximumActive).toBe(1)\n> 25 |     expect(new Set(probe.runs.map(({ engine }) => engine)).size).toBe(1)\n     |                                                                  ^\n  26 |     expect(probe.runs).toHaveLength(3)\n  27 |   }\n  28 | })"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem\\auditOwnership.spec.ts",
+                        "column": 66,
+                        "line": 25
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m1\u001b[39m\nReceived: \u001b[31m4\u001b[39m\n\n  23 |     expect(probe.active).toBe(0)\n  24 |     expect(probe.maximumActive).toBe(1)\n> 25 |     expect(new Set(probe.runs.map(({ engine }) => engine)).size).toBe(1)\n     |                                                                  ^\n  26 |     expect(probe.runs).toHaveLength(3)\n  27 |   }\n  28 | })\n    at C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem\\auditOwnership.spec.ts:25:66"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-26T01:57:25.548Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "audit-ownership.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJhY3RpdmUiOiAwLAogICJtYXhpbXVtQWN0aXZlIjogMSwKICAicnVucyI6IFsKICAgIHsKICAgICAgImVuZ2luZSI6IDEsCiAgICAgICJjYWxsZXIiOiAiRXJyb3JcbiAgICBhdCBPYmplY3QucnVuICg8YW5vbnltb3VzPjozMjo0MSlcbiAgICBhdCBldmFsIChldmFsIGF0IGV2YWx1YXRlICg6MzcwOjMwKSwgPGFub255bW91cz46MjozNylcbiAgICBhdCBVdGlsaXR5U2NyaXB0LmV2YWx1YXRlICg8YW5vbnltb3VzPjozNzI6MTYpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC48YW5vbnltb3VzPiAoPGFub255bW91cz46MTo0NCkiCiAgICB9LAogICAgewogICAgICAiZW5naW5lIjogMiwKICAgICAgImNhbGxlciI6ICJFcnJvclxuICAgIGF0IE9iamVjdC5ydW4gKDxhbm9ueW1vdXM+OjMyOjQxKVxuICAgIGF0IHAgKGh0dHA6Ly8xMjcuMC4wLjE6NjAwNi9hc3NldHMvaWZyYW1lLURlcUZBc2g5LmpzOjExNzk6MjEwNylcbiAgICBhdCB2RCAoaHR0cDovLzEyNy4wLjAuMTo2MDA2L2Fzc2V0cy9pZnJhbWUtRGVxRkFzaDkuanM6MTE3OToxMjI3KVxuICAgIGF0IGh0dHA6Ly8xMjcuMC4wLjE6NjAwNi9hc3NldHMvaWZyYW1lLURlcUZBc2g5LmpzOjExNzk6MjE2M1xuICAgIGF0IG5ldyBQcm9taXNlICg8YW5vbnltb3VzPilcbiAgICBhdCBfRCAoaHR0cDovLzEyNy4wLjAuMTo2MDA2L2Fzc2V0cy9pZnJhbWUtRGVxRkFzaDkuanM6MTE3OToxOTcxKVxuICAgIGF0IGFzeW5jIFNEIChodHRwOi8vMTI3LjAuMC4xOjYwMDYvYXNzZXRzL2lmcmFtZS1EZXFGQXNoOS5qczoxMTc5OjM0NjApXG4gICAgYXQgYXN5bmMgdSAoaHR0cDovLzEyNy4wLjAuMTo2MDA2L2Fzc2V0cy9pZnJhbWUtRGVxRkFzaDkuanM6ODg0OjI3NDUpXG4gICAgYXQgYXN5bmMgaHR0cDovLzEyNy4wLjAuMTo2MDA2L2Fzc2V0cy9pZnJhbWUtRGVxRkFzaDkuanM6OTA0OjQ0NDdcbiAgICBhdCBhc3luYyBrZi5ydW5QaGFzZSAoaHR0cDovLzEyNy4wLjAuMTo2MDA2L2Fzc2V0cy9pZnJhbWUtRGVxRkFzaDkuanM6OTA0Ojc2MykiCiAgICB9LAogICAgewogICAgICAiZW5naW5lIjogMywKICAgICAgImNhbGxlciI6ICJFcnJvclxuICAgIGF0IE9iamVjdC5ydW4gKDxhbm9ueW1vdXM+OjMyOjQxKVxuICAgIGF0IGV2YWwgKGV2YWwgYXQgZXZhbHVhdGUgKDozNzA6MzApLCA8YW5vbnltb3VzPjoyOjM3KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuZXZhbHVhdGUgKDxhbm9ueW1vdXM+OjM3MjoxNilcbiAgICBhdCBVdGlsaXR5U2NyaXB0Ljxhbm9ueW1vdXM+ICg8YW5vbnltb3VzPjoxOjQ0KSIKICAgIH0sCiAgICB7CiAgICAgICJlbmdpbmUiOiA0LAogICAgICAiY2FsbGVyIjogIkVycm9yXG4gICAgYXQgT2JqZWN0LnJ1biAoPGFub255bW91cz46MzI6NDEpXG4gICAgYXQgZXZhbCAoZXZhbCBhdCBldmFsdWF0ZSAoOjM3MDozMCksIDxhbm9ueW1vdXM+OjI6MzcpXG4gICAgYXQgVXRpbGl0eVNjcmlwdC5ldmFsdWF0ZSAoPGFub255bW91cz46MzcyOjE2KVxuICAgIGF0IFV0aWxpdHlTY3JpcHQuPGFub255bW91cz4gKDxhbm9ueW1vdXM+OjE6NDQpIgogICAgfQogIF0KfQ=="
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\Lenovo\\Desktop\\koller_web\\ci-reports\\phase-3a\\final-recovery\\red-regression\\auditOwnership-one-accessi-be492-nd-still-rejects-violations-storybook-a11y\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\Lenovo\\Desktop\\koller_web\\ci-reports\\phase-3a\\final-recovery\\red-regression\\auditOwnership-one-accessi-be492-nd-still-rejects-violations-storybook-a11y\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\Lenovo\\Desktop\\koller_web\\tests\\e2e\\designSystem\\auditOwnership.spec.ts",
+                    "column": 66,
+                    "line": 25
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "fb8732d1934126f477e1-296694fe2366b74e866a",
+          "file": "tests/e2e/designSystem/auditOwnership.spec.ts",
+          "line": 6,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-26T01:57:22.433Z",
+    "duration": 6755.165,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

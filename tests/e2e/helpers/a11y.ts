@@ -6,7 +6,8 @@ declare global {
   }
 }
 export async function expectAccessible(page: Page) {
-  await page.addScriptTag({ content: axe.source })
+  if (!(await page.evaluate(() => typeof window.axe?.run === 'function')))
+    await page.addScriptTag({ content: axe.source })
   const violations = await page.evaluate(async () => {
     const result = await window.axe.run(document, {
       runOnly: {

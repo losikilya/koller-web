@@ -1,0 +1,51 @@
+{
+  "kind": "workflow-config-fingerprint-regression-not-SC-205",
+  "test": {
+    "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/config-fingerprint-cycle.test.mjs",
+    "bytes": 13027,
+    "sha256": "8eeff84746bf9d0d8831338644724f71e5f681136d499df183cd99a0a35c31ad"
+  },
+  "phases": [
+    {
+      "phase": "red",
+      "command": [
+        "node",
+        "--test",
+        "scripts/phase3a-exception.test.mjs"
+      ],
+      "exitCode": 1,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/config-fingerprint-red.log",
+        "bytes": 8712,
+        "sha256": "5a14624f4de2a39eb6af497a608d97418690e5a0bbb699c0a7786fd32feabad5"
+      }
+    },
+    {
+      "phase": "green",
+      "command": [
+        "pnpm",
+        "test:workflow"
+      ],
+      "exitCode": 0,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/config-fingerprint-green.log",
+        "bytes": 10954,
+        "sha256": "812c65ccfd295d9e4088717393a1f59586fba7af12c7f1e08f83c34bccb82d95"
+      }
+    },
+    {
+      "phase": "refactor",
+      "command": [
+        "node",
+        "--test",
+        "scripts/phase3a-exception.test.mjs"
+      ],
+      "exitCode": 0,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/config-fingerprint-refactor.log",
+        "bytes": 5058,
+        "sha256": "16b440620d30ee3b3105fb2b23c3579aeb07f69d8d0351c7264c1470357c26a2"
+      }
+    }
+  ]
+}

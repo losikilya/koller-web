@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { expectAccessible } from '../helpers/a11y'
+import { openStoryForAudit } from '../helpers/storybook'
 for (const story of ['states', 'keyboard-tabs', 'modal']) {
   test(`${story} passes automated WCAG checks at compact and desktop widths`, async ({
     page,
@@ -8,9 +9,7 @@ for (const story of ['states', 'keyboard-tabs', 'modal']) {
     page.on('pageerror', (error) => errors.push(error.message))
     for (const width of [320, 1280]) {
       await page.setViewportSize({ width, height: 900 })
-      await page.goto(
-        `/iframe.html?id=design-system-primitives--${story}&viewMode=story`
-      )
+      await openStoryForAudit(page, story)
       await expect(
         page.getByRole('button').or(page.getByRole('tab')).first()
       ).toBeVisible()

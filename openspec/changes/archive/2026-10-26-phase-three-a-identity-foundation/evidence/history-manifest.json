@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "kind": "historical-content-references",
+  "references": [
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/ledger.json",
+      "bytes": 11404,
+      "sha256": "6ccfe19cf3ad9e8b71a36acd0d5d962750095941137d4f19f3a06ac135f828b9"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/001-SC-201-red.json",
+      "bytes": 3889,
+      "sha256": "c907da6ad07f7894c1a5f82ea4bb141913104fab17c7ec251a2a100e2911cf1e"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/002-SC-202-red.json",
+      "bytes": 3887,
+      "sha256": "76bd8cd5510c9b08074aa2fd8d267cc406cb0aafc54f55c016f120381f7cce51"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/003-SC-203-red.json",
+      "bytes": 4003,
+      "sha256": "345ffc9168b5b20c688d9012e754cfcbfd235df18d4641991b07d64e84bd2089"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/004-SC-204-red.json",
+      "bytes": 3851,
+      "sha256": "d98d72e31f05dd83fcb213de18077f3c36bb04a3798bf8788137027303a61352"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/005-SC-201-green.json",
+      "bytes": 2484,
+      "sha256": "ffaabd9583358f6d741f0ee7b676cdf06a60265bcdbe5d0e41adfc1f89be898e"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/006-SC-201-refactor.json",
+      "bytes": 2485,
+      "sha256": "40484ce3ebf01db98840ba9e22fb990ff3787405a9759bac111135b2ed4618a7"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/007-SC-202-green.json",
+      "bytes": 2486,
+      "sha256": "4fc1c876d5c78b47e59584314becb006b38b55edd6f072a000039c4990b43d92"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/008-SC-202-refactor.json",
+      "bytes": 2485,
+      "sha256": "498c8f45e18412ffc58cd1a6de0faafe382feb0a02338ce24f736c1e72b2ca67"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/009-SC-203-green.json",
+      "bytes": 2484,
+      "sha256": "de1017fb56f2ad337a54140aacbc04585479a3ae8c9e435c0a6cab36592bc01f"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/010-SC-203-refactor.json",
+      "bytes": 2485,
+      "sha256": "a767863bdcbfbfe9b92f57a6b9e6783038fb69f2b43a550c3aba1ca3dee4c1a5"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/011-SC-204-green.json",
+      "bytes": 2486,
+      "sha256": "86d0c501646a5e62dc9dee606d274d790c0c510f8f94564ee640c843b3e28027"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/012-SC-204-refactor.json",
+      "bytes": 2485,
+      "sha256": "4a0abe15294c9ea9390d74516f2b94e960943ffbb4ed8fd4561283cf92cba970"
+    },
+    {
+      "path": "ci-reports/phase-3a/baseline-isolated.log",
+      "bytes": 44676,
+      "sha256": "f00ab4e1723310d1bac2cca899d528872c15f9df20fb707b6c1cba2e14efbd19"
+    },
+    {
+      "path": "ci-reports/phase-3a/baseline-green.log",
+      "bytes": 44582,
+      "sha256": "7d148c19c7ff14ccdf741d75f6da337fb2355322b69f9f80c2a1c78a0909c1d0"
+    },
+    {
+      "path": "ci-reports/phase-3a/verify-final.log",
+      "bytes": 41284,
+      "sha256": "0d2092053dbc1391c7be5d94b08d581d44775e752ca7164b82e1f57e7539bccc"
+    },
+    {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/acceptance/database.json",
+      "bytes": 1172,
+      "sha256": "a2594083356f35cd2ec9bc98be8f8ed8c598e13922fd52ee6f9521606123f292"
+    },
+    {
+      "path": "ci-reports/phase-3a/acceptance-recovery/database-evidence.log",
+      "bytes": 2350,
+      "sha256": "25e2ecf108ca217421fe7aa5779fb7eb6cad3dc37fa3540d543620c9bc7b7dbb"
+    },
+    {
+      "path": "ci-reports/phase-3a/acceptance-recovery/types-reproducibility.log",
+      "bytes": 49,
+      "sha256": "06a53f87d9c5bcaa99259d0acc11706bd4407b03502d09d6f4329985a22253f3"
+    },
+    {
+      "path": "apps/web/src/shared/supabase/database.types.ts",
+      "bytes": 10477,
+      "sha256": "1c2f2cfa3ab5de32b679ab10720e68c0fd6f20a4ab0d9e916dae6bd56831e87e"
+    }
+  ]
+}

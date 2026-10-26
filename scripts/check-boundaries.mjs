@@ -4,6 +4,7 @@ import {pathToFileURL} from 'node:url'
 import ts from 'typescript'
 
 const normalize=path=>path.replaceAll('\\','/')
+export function contractImportAllowed(spec) { return spec.startsWith('.') || spec === 'zod' }
 export function boundaryViolation(from,to){
  const packageOwner=path=>path.match(/^packages\/([^/]+)/)?.[1]
  const moduleOwner=path=>path.match(/^apps\/web\/src\/modules\/([^/]+)/)?.[1]
@@ -48,7 +49,7 @@ export function checkBoundaries(root=process.cwd()){
  for(const file of sources){const from=normalize(relative(root,file));const targets=[]
   for(const spec of importSpecifiers(readFileSync(file,'utf8'),file)){
    if(spec==='<dynamic>'){errors.push(from+': nonliteral import requires explicit review');continue}
-   if(from.startsWith('packages/contracts/') && !spec.startsWith('.'))errors.push(from+': contracts cannot import '+spec)
+   if(from.startsWith('packages/contracts/') && !contractImportAllowed(spec))errors.push(from+': contracts cannot import '+spec)
    let candidate=names[spec] || (spec.startsWith('@/')?'apps/web/src/'+spec.slice(2):spec.startsWith('.')?normalize(relative(root,resolve(dirname(file),spec))):null)
    if(!candidate){if(spec.startsWith('@dance/'))errors.push(from+': undeclared workspace export '+spec);continue}
    const to=[candidate,candidate+'.ts',candidate+'.tsx',candidate+'/index.ts',candidate+'/index.tsx'].find(p=>existsSync(resolve(root,p)) && statSync(resolve(root,p)).isFile())

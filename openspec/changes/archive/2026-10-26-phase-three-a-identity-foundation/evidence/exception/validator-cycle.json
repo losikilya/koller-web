@@ -1,0 +1,42 @@
+{
+  "kind": "workflow-engineering-regression-not-SC-205",
+  "test": {
+    "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/validator-cycle.test.mjs",
+    "bytes": 11068,
+    "sha256": "9c390d4827f3fd1eae44d8e0342f3b155254c1786d6253d7a8549886ae1cef84"
+  },
+  "command": [
+    "node",
+    "--test",
+    "scripts/phase3a-exception.test.mjs"
+  ],
+  "phases": [
+    {
+      "phase": "red",
+      "exitCode": 1,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/validator-red.log",
+        "bytes": 52866,
+        "sha256": "b1bc14e03f7cc4eb272b575f92446c09e504b1a79ce177b77bc9c130bfebb2eb"
+      }
+    },
+    {
+      "phase": "green",
+      "exitCode": 0,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/validator-green-attempt.log",
+        "bytes": 3842,
+        "sha256": "5eea10dfb2df1222206b8d0c4c74cdfe73419100bbae04562abee451dc8a0e93"
+      }
+    },
+    {
+      "phase": "refactor",
+      "exitCode": 0,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/validator-refactor.log",
+        "bytes": 3838,
+        "sha256": "ac6e018743bfc6b46f07423d7f16de8c625c8fb8af808cc028354c0d07e6e1cf"
+      }
+    }
+  ]
+}

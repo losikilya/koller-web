@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "type": "phase3a_historical_evidence",
+  "change": "phase-three-a-identity-foundation",
+  "status": "accepted_by_approved_exception",
+  "gaps": [
+    {
+      "task": "1.1",
+      "gap": "original_full_preimplementation_green"
+    },
+    {
+      "task": "3.2",
+      "requirement": "FR-205",
+      "scenario": "SC-205",
+      "gap": "original_red_green_refactor"
+    }
+  ],
+  "ownerApproval": {
+    "source": "user-provided-attachment",
+    "authorization": {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/owner-authorization.txt",
+      "bytes": 6003,
+      "sha256": "704da611a6f5ad6af579db5036bb68a0a5ab20c413235c112c0875c9e339d9c2"
+    },
+    "proposal": {
+      "path": "docs/web-platform/phase-3a/workflow-exception-proposal.md",
+      "bytes": 5042,
+      "sha256": "96c9de270d85b011ef035ada20bfb2172a5e0ec3e10cf5921bfdceab95a919ce"
+    }
+  },
+  "historical": {
+    "path": "openspec/changes/phase-three-a-identity-foundation/evidence/history-manifest.json",
+    "bytes": 4205,
+    "sha256": "fb26b51ada142432e7c0296fc9516daf27ceb2df2e188d663d6990451e6908ff"
+  },
+  "priorAcceptance": {
+    "path": "openspec/changes/phase-three-a-identity-foundation/evidence/final-recovery/manifest.json",
+    "bytes": 3290,
+    "sha256": "eecc05ba9bcab407779da383aa826e2b3b4c5cbfb47653b8cc016e245837d1a4"
+  },
+  "currentAcceptance": {
+    "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/acceptance-3/acceptance.json",
+    "bytes": 1672,
+    "sha256": "54fe1ade79f1815a718cce2ec44e941a383c0b2f89ddab7e1601cbaaa1786f82"
+  },
+  "reviewerApproval": {
+    "source": "collaboration-readonly-reviewer",
+    "report": {
+      "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/archive-independent-review.md",
+      "bytes": 3226,
+      "sha256": "032f42a6acc5e6933db64ff50a311de756f41fdc80266295376efee05cbfef8e"
+    }
+  }
+}

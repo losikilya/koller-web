@@ -1,0 +1,51 @@
+{
+  "kind": "workflow-task-contract-regression-not-SC-205",
+  "test": {
+    "path": "openspec/changes/phase-three-a-identity-foundation/evidence/exception/task-contract-cycle.test.mjs",
+    "bytes": 12708,
+    "sha256": "282b71b4cd7c0db02eaa30c68549669c7f9b9efab09de8f872d6ed0a7f25a54d"
+  },
+  "phases": [
+    {
+      "phase": "red",
+      "command": [
+        "node",
+        "--test",
+        "scripts/phase3a-exception.test.mjs"
+      ],
+      "exitCode": 1,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/task-contract-red.log",
+        "bytes": 6576,
+        "sha256": "23b5db3bf0d48414ce5acb56cad86829179e51a1775e5a7d57c0a3c8c6a32da1"
+      }
+    },
+    {
+      "phase": "green",
+      "command": [
+        "pnpm",
+        "test:workflow"
+      ],
+      "exitCode": 0,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/task-contract-green.log",
+        "bytes": 10618,
+        "sha256": "b0ac738e68edff50dbcdc258d32b1739020ae51db89716993ef8b07bcd29b4c9"
+      }
+    },
+    {
+      "phase": "refactor",
+      "command": [
+        "node",
+        "--test",
+        "scripts/phase3a-exception.test.mjs"
+      ],
+      "exitCode": 0,
+      "log": {
+        "path": "ci-reports/phase-3a/approved-exception/task-contract-refactor.log",
+        "bytes": 4734,
+        "sha256": "9ba7818887437e2a27fce15d1398fd765bf36c3e1b35cd88bbff8dd1e2e79d74"
+      }
+    }
+  ]
+}
