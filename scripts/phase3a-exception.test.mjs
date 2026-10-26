@@ -3,14 +3,16 @@ import assert from 'node:assert/strict';
 import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync, existsSync, renameSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
-import { checkChange, checkEvidence, hash } from './workflow-lib.mjs';
-import { checkApprovedException, exceptionWorkspaceHash, exceptionSubjectHash, phase3aEvidencePath } from './phase3a-exception.mjs';
+import { hash } from './workflow-lib.mjs';
+import { checkApprovedException as productionCheckApprovedException, phase3aEvidencePath } from './phase3a-exception.mjs';
+import { fixtureFiles, fixtureAnchors, syntheticValidators } from '../tests/tooling/phase3aExceptionFixture.mjs';
+
+const { checkChange, checkEvidence, checkApprovedException, exceptionWorkspaceHash, exceptionSubjectHash } = await syntheticValidators();
 
 const change = 'phase-three-a-identity-foundation';
 const base = `openspec/changes/${change}`;
 const evidence = `${base}/evidence/exception`;
 const recordPath = `${base}/historical-exception.json`;
-const repo = process.cwd();
 
 // Synthetic acceptance/review fixtures exercise policy, never claim real DB or review results.
 function fixture(t) {
@@ -21,21 +23,11 @@ function fixture(t) {
     writeFileSync(join(root, path), content);
   };
   const json = (path, value) => put(path, JSON.stringify(value));
-  const copy = (path) => put(path, readFileSync(phase3aEvidencePath(repo, path)));
   const ref = (path) => {
     const bytes = readFileSync(join(root, path));
     return { path, bytes: bytes.length, sha256: hash(bytes) };
   };
-  for (const manifest of ['history-manifest.json', 'final-recovery/manifest.json']) {
-    const path = `${base}/evidence/${manifest}`;
-    copy(path);
-    for (const item of JSON.parse(readFileSync(join(root, path))).references) copy(item.path);
-  }
-  for (const path of ['proposal.md', 'design.md', 'bdd.md', 'test-plan.json', 'specs/identity-foundation/spec.md']) copy(`${base}/${path}`);
-  const plan = JSON.parse(readFileSync(join(root, `${base}/test-plan.json`)));
-  for (const s of plan.scenarios) { copy(s.feature); copy(s.testFile); }
-  copy(`${evidence}/owner-authorization.txt`);
-  copy('docs/web-platform/phase-3a/workflow-exception-proposal.md');
+  for (const [path, content] of fixtureFiles) put(path, content);
   const taskText = [
     '- [ ] 1.1 Record full initial GREEN; preserve log and actual exit code.',
     '- [x] 1.2 Synthetic tooling complete', '- [x] 2.1 Synthetic ordinary TDD complete',
@@ -100,6 +92,7 @@ test('exact approved exception resolves only the two historical gaps, without TD
 });
 
 const invalidRecords = [
+  ['invalid historical hash', (f) => { f.record.historical.sha256 = '0'.repeat(64); }],
   ['missing owner approval', (f) => { delete f.record.ownerApproval; }],
   ['missing reviewer approval', (f) => { f.record.reviewerApproval = null; }],
   ['wrong change', (f) => { f.record.change = 'another-change'; }],
@@ -119,6 +112,28 @@ const invalidRecords = [
 for (const [name, mutate] of invalidRecords) test(`rejects ${name}`, (t) => {
   const f = fixture(t); mutate(f); f.json(recordPath, f.record);
   assert.throws(() => checkApprovedException(f.root, change, join(f.root, base)), /Historical exception:/);
+});
+
+test('production validator never accepts the synthetic trust anchors', (t) => {
+  const f = fixture(t);
+  assert.equal(f.record.historical.sha256, fixtureAnchors.historical[1]);
+  assert.throws(() => productionCheckApprovedException(f.root, change, join(f.root, base)),
+    /Invalid approval provenance or historical trust anchor/);
+});
+
+for (const missing of [true, false]) test(`production validator rejects ${missing ? 'missing' : 'tampered'} real approval evidence without fallback`, (t) => {
+  const f = fixture(t);
+  // Exercise the real pinned approval before any historical report is needed.
+  // Never read or copy local reports, and never alter the archived originals.
+  const actual = JSON.parse(readFileSync(phase3aEvidencePath(process.cwd(), recordPath)));
+  const authorization = actual.ownerApproval.authorization;
+  f.put(authorization.path, readFileSync(phase3aEvidencePath(process.cwd(), authorization.path)));
+  f.json(recordPath, actual);
+  const approval = join(f.root, authorization.path);
+  if (missing) rmSync(approval);
+  else writeFileSync(approval, 'Tampered approval');
+  assert.throws(() => productionCheckApprovedException(f.root, change, join(f.root, base)),
+    missing ? /ENOENT/ : /Evidence integrity mismatch/);
 });
 
 test('rejects stale reviewer subject after the review report itself has a valid new content hash', (t) => {
