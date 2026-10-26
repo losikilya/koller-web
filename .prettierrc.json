@@ -5,5 +5,17 @@
   "singleQuote": true,
   "trailingComma": "es5",
   "semi": false,
-  "endOfLine": "crlf"
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": [
+        "openspec/changes/archive/**",
+        "openspec/**/verification-plan.json",
+        "docs/web-platform/phase-3a/workflow-exception-proposal.md"
+      ],
+      "options": {
+        "endOfLine": "auto"
+      }
+    }
+  ]
 }

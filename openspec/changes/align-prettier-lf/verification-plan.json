@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "commands": [
+    {
+      "id": "verify",
+      "command": "pnpm verify"
+    },
+    {
+      "id": "scope",
+      "command": "node scripts/architecture-refactor-workflow.mjs check align-prettier-lf"
+    }
+  ]
+}

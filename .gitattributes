@@ -1,0 +1,22 @@
+# Current formatting inputs use LF independently of a developer's core.autocrlf.
+# Deliberately scoped: do not renormalize the repository or historical evidence.
+/apps/** text=auto eol=lf
+/packages/** text=auto eol=lf
+/tests/** text=auto eol=lf
+/.storybook/** text=auto eol=lf
+/.github/** text=auto eol=lf
+/openspec/** text=auto eol=lf
+/docs/web-platform/phase-1/** text=auto eol=lf
+/docs/web-platform/phase-2/** text=auto eol=lf
+/docs/web-platform/phase-3a/** text=auto eol=lf
+/docs/adr/0002-dance-platform-foundation.md text=auto eol=lf
+/*.json text=auto eol=lf
+/*.yaml text=auto eol=lf
+/*.ts text=auto eol=lf
+
+# Preserve existing checkout handling for immutable history and evidence.
+/openspec/changes/archive/** !text !eol
+/openspec/**/evidence/** !text !eol
+# Verification plans are hashed as exact bytes by the maintenance runner.
+/openspec/**/verification-plan.json -text !eol
+/docs/web-platform/phase-3a/workflow-exception-proposal.md !text !eol

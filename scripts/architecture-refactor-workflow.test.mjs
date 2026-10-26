@@ -63,6 +63,15 @@ test('maintenance scope checks PR changes even with a clean checked-out working 
   assert.equal(maintenancePathAllowed('../README.md', change), false);
 });
 
+test('maintenance permits exact EOL policy files without admitting neighboring config or product paths', () => {
+  const change = 'align-prettier-lf';
+  assert.deepEqual(checkMaintenanceScope(process.cwd(), change, ['.prettierrc.json', '.gitattributes']),
+    ['.prettierrc.json', '.gitattributes']);
+  for (const path of ['.prettierrc.yml', '.gitattributes.backup', 'apps/web/.gitattributes', 'packages/design-tokens/src/tokens.css']) {
+    assert.throws(() => checkMaintenanceScope(process.cwd(), change, [path]), /Outside maintenance scope/);
+  }
+});
+
 test('maintenance refuses product deltas and missing explicit non-behavior metadata', () => {
   const { root, change, directory } = fixture();
   write(join(directory, 'proposal.md'), 'Change kind: maintenance\nBehavior contract: unchanged\n\n## Scope\nOnly docs and tooling.\n');

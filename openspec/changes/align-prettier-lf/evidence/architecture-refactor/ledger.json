@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "sequence": 1,
+      "phase": "baseline",
+      "success": true,
+      "planHash": "2cef13a62a1e7f4f1f67c540a6a89e165e06e4af3ec2df8442aa95461a3fe943",
+      "report": "evidence/architecture-refactor/001-baseline.json",
+      "reportHash": "2bfe448fd1aa319b1c14dddf8fb6e0ff21ee7c34d0c3c181c60b116f83181073"
+    },
+    {
+      "sequence": 2,
+      "phase": "final",
+      "success": true,
+      "planHash": "2cef13a62a1e7f4f1f67c540a6a89e165e06e4af3ec2df8442aa95461a3fe943",
+      "report": "evidence/architecture-refactor/002-final.json",
+      "reportHash": "e860f86fe262a013c631672b6bc3dc50f6932427c429bcf3368026683e365bee"
+    }
+  ]
+}

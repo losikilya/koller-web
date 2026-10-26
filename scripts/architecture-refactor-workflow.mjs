@@ -25,7 +25,7 @@ export function maintenancePathAllowed(path, change) {
   if (/^\.(?:opencode|claude|agents|codex)\/.*\.(?:md|toml|yaml)$/.test(path)) return true;
   if (/^docs\/(?:agent-reference\/[^/]+\.md|CODEX\.md|PROCESS\.md|STARTER-OPTIMIZATION\.md|web-platform\/phase-1\/post-phase-1-cleanup\.md)$/.test(path)) return true;
   if (/^(?:apps\/web|packages\/(?:ui|contracts|design-tokens))\/package\.json$/.test(path)) return true;
-  return ['AGENTS.md', 'CLAUDE.md', 'README.md', 'package.json', 'pnpm-lock.yaml',
+  return ['AGENTS.md', 'CLAUDE.md', 'README.md', 'package.json', 'pnpm-lock.yaml', '.prettierrc.json', '.gitattributes',
     'packages/design-tokens/tsconfig.json', 'scripts/architecture-refactor-workflow.mjs',
     'scripts/architecture-refactor-workflow.test.mjs', 'scripts/workflow-ci.mjs',
     'scripts/starter-config.test.mjs', 'openspec/config.yaml'].includes(path);
