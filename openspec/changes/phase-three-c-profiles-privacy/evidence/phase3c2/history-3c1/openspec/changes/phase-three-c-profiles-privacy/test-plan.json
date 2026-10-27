@@ -1,0 +1,76 @@
+{
+  "version": 1,
+  "implementationFiles": [
+    "packages/contracts/src/profile.ts",
+    "packages/contracts/src/index.ts",
+    "apps/web/src/shared/supabase/database.ts",
+    "apps/web/src/modules/profile/profileService.ts",
+    "apps/web/src/modules/profile/profileRepository.ts",
+    "apps/web/src/modules/profile/ProfileEditor.tsx",
+    "apps/web/src/modules/profile/ProfileEditor.module.scss",
+    "apps/web/src/modules/profile/index.ts",
+    "apps/web/src/app/_infrastructure/requestContext.ts",
+    "apps/web/src/app/_infrastructure/auth.ts",
+    "apps/web/src/app/_infrastructure/profile.ts",
+    "apps/web/src/app/api/v1/me/route.ts",
+    "apps/web/src/app/api/v1/me/profile/route.ts",
+    "apps/web/src/app/[locale]/account/profile/page.tsx",
+    "apps/web/src/app/[locale]/account/page.tsx",
+    "apps/web/src/shared/i18n/routes.ts",
+    "apps/web/src/shared/i18n/messages/en.json",
+    "apps/web/src/shared/i18n/messages/ru.json",
+    "apps/web/src/modules/identity/authPolicy.ts",
+    "apps/web/src/proxy.ts",
+    "playwright.bdd.config.ts",
+    "scripts/test-profile-database.mjs",
+    "package.json",
+    "docs/adr/0004-owner-profile-management.md",
+    "scripts/test-profile-publication-race.mjs"
+  ],
+  "scenarios": [
+    {
+      "id": "SC-401",
+      "requirement": "FR-401",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/profileService.test.ts"
+    },
+    {
+      "id": "SC-402",
+      "requirement": "FR-402",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/profileService.test.ts"
+    },
+    {
+      "id": "SC-405",
+      "requirement": "FR-403",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/app/_infrastructure/profile.test.ts"
+    },
+    {
+      "id": "SC-418",
+      "requirement": "FR-404",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/ProfileEditor.test.tsx"
+    },
+    {
+      "id": "SC-419",
+      "requirement": "FR-404",
+      "feature": "tests/e2e/profile/management.feature",
+      "layer": "browser",
+      "testFile": "tests/apps/web/modules/profile/ProfileEditor.test.tsx"
+    },
+    {
+      "id": "SC-420",
+      "requirement": "FR-405",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/database/profile.test.ts",
+      "cycle": "baseline",
+      "baselineReason": "Existing SQL/RPC ownership, concurrent uniqueness/revisions and decimal bigint transport are preserved without migration."
+    }
+  ]
+}

@@ -132,9 +132,32 @@ When(
     expect(new URL(mail.url).pathname).toBe('/' + locale + '/auth/confirm')
     const response = await page.goto(mail.url)
     expect(response?.headers()['cache-control']).toContain('no-store')
-    await expect(page).toHaveURL(new RegExp('/' + locale + '/account$'))
+    await expect(page).toHaveURL(new RegExp('/' + locale + '/account/profile$'))
     const listing = await admin.auth.admin.listUsers({ perPage: 1000 })
     userId = listing.data.users.find((user) => user.email === email)?.id ?? ''
+    await page
+      .getByLabel(locale === 'ru' ? 'Имя пользователя' : 'Username', {
+        exact: true,
+      })
+      .fill('a' + randomUUID().replaceAll('-', '').slice(0, 18))
+    await page
+      .getByLabel(locale === 'ru' ? 'Отображаемое имя' : 'Display name', {
+        exact: true,
+      })
+      .fill('Auth owner')
+    await page
+      .getByRole('button', {
+        name:
+          locale === 'ru'
+            ? 'Завершить публичный профиль'
+            : 'Complete public profile',
+      })
+      .click()
+    await expect(
+      page.getByRole('button', {
+        name: locale === 'ru' ? 'Сохранить профиль' : 'Save profile',
+      })
+    ).toBeVisible()
     // Reused links must fail even in an already authenticated browser.
     await page.goto(mail.url)
     await expect(page).toHaveURL(

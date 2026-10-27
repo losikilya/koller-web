@@ -1,0 +1,54 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/app/_infrastructure/auth.test.ts (6 tests | 1 failed) 25ms
+   × successful login preserves session cookies when completion lookup becomes unavailable 15ms
+ ❯ tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts (2 tests | 1 failed) 14ms
+   × Auth outages fail closed on gated document/RSC routes and server guards 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/auth.test.ts > successful login preserves session cookies when completion lookup becomes unavailable
+AssertionError: expected undefined to be 'fixture-session' // Object.is equality
+
+- Expected:
+"fixture-session"
+
++ Received:
+undefined
+
+ ❯ tests/apps/web/app/_infrastructure/auth.test.ts:108:58
+    106|   )
+    107|   expect(await response.json()).toEqual({ status: 'error', error: 'una…
+    108|   expect(response.cookies.get('sb-test-session')?.value).toBe('fixture…
+       |                                                          ^
+    109|   expect(response.headers.get('cache-control')).toContain('no-store')
+    110| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts > Auth outages fail closed on gated document/RSC routes and server guards
+AssertionError: expected 200 to be 503 // Object.is equality
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 6 passed (8)
+   Start at  08:52:21
+   Duration  2.00s (transform 496ms, setup 617ms, import 943ms, tests 38ms, environment 0ms)
+
+
+- Expected
++ Received
+
+- 503
++ 200
+
+ ❯ tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts:22:29
+     20|       headers: { cookie: 'sb-test-auth-token=fixture', RSC: '1' },
+     21|     }))
+     22|     expect(response.status).toBe(503)
+       |                             ^
+     23|     expect(response.headers.get('cache-control')).toContain('no-store')
+     24|     await expect(requirePageCompletion('en', '/playground')).rejects.t…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+

@@ -40,7 +40,7 @@ Example tests-only request: $team-test-module apps/web/src/shared/i18n/routes.ts
 
 The main session is the sole writer. Specialists architect, reviewer and test_designer work sequentially, read-only, without recursive delegation. Codex shell is permitted only for read/search inspection in specialist adapters; no application execution, tests, package scripts, writes or network. Specialists inherit client permissions: a TOML role instruction is not a separate technical sandbox.
 
-Give reviewers actual requirements, diff including untracked files and command results. They distinguish direct inspection from parent-run checks. If independent review is unavailable, report it pending rather than inventing PASS. Use at most two review passes and preserve Jira commit requirements. No commit/push/publication without explicit authorization.
+Give reviewers actual requirements, diff including untracked files and command results. They distinguish direct inspection from parent-run checks. If independent review is unavailable, report it pending rather than inventing PASS. Use at most two review passes and preserve OpenSpec commit metadata. No Jira ticket is required. Each commit, push or publication needs explicit authorization for that operation; existing consent covers only the current approved scope, never future operations.
 
 ## Verification
 

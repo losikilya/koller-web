@@ -38,7 +38,7 @@ For browser tests set one installed-browser override: PLAYWRIGHT_BROWSER_CHANNEL
 
 ## Engineering workflow
 
-[AGENTS.md](AGENTS.md) is the shared entrypoint; [PROCESS](docs/PROCESS.md) defines behavior changes, tests-only work, safe refactoring and scoped maintenance. OpenSpec → executable BDD → recorded RED/GREEN/REFACTOR → verification → independent review remains mandatory for product behavior changes. Commits require an explicit request and the existing Jira format; pushing is separate.
+[AGENTS.md](AGENTS.md) is the shared entrypoint; [PROCESS](docs/PROCESS.md) defines behavior changes, tests-only work, safe refactoring and scoped maintenance. OpenSpec → executable BDD → recorded RED/GREEN/REFACTOR → verification → independent review remains mandatory for product behavior changes. Every commit requires an explicit user request, current verification/review and OpenSpec metadata; no Jira ticket is required. Pushing requires separate explicit authorization, and future commits or pushes always require fresh consent.
 
 .opencode is canonical. Existing generators maintain .claude rules/commands/skills, .agents/skills and .codex/agents. Edit canonical files and run agents:sync/check. Main session is sole writer; architect, test_designer and reviewer are sequential/read-only. [Codex mapping and permissions](docs/CODEX.md) describe $team-\* invocations without model/provider overrides.
 

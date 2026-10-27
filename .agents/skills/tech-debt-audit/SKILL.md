@@ -35,7 +35,7 @@ Smallest credible remediation
 Effort range and dependencies
 Owner or owning area
 Trigger/deadline for action
-Related ADR/OpenSpec/Jira
+Related ADR/OpenSpec
 Confidence
 ```
 

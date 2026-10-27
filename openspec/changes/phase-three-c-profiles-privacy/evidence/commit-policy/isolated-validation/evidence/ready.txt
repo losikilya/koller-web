@@ -1,0 +1,7 @@
+{
+  "change": "remove-legacy-jira-commit-rule",
+  "ready": true,
+  "planHash": "0066aa9ba9ace109e25b4718b96af1eeedbe60ea528112d309259f8279c3917c",
+  "baseline": "evidence/architecture-refactor/001-baseline.json",
+  "final": "evidence/architecture-refactor/002-final.json"
+}

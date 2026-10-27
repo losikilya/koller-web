@@ -1,0 +1,42 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/app/_infrastructure/auth.test.ts (6 tests | 1 failed) 26ms
+   × successful login preserves session cookies when completion lookup becomes unavailable 15ms
+ ❯ tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts [ tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts ]
+Error: Cannot find module 'C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\next-intl@4.14.9_@types+react@19.3.0_next@16.4.3_react@19.3.0\node_modules\next\server' imported from C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\next-intl@4.14.9_@types+react@19.3.0_next@16.4.3_react@19.3.0\node_modules\next-intl\dist\esm\development\middleware\middleware.js
+Did you mean to import "next/server.js"?
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/auth.test.ts > successful login preserves session cookies when completion lookup becomes unavailable
+AssertionError: expected undefined to be 'fixture-session' // Object.is equality
+
+- Expected:
+"fixture-session"
+
++ Received:
+undefined
+
+ ❯ tests/apps/web/app/_infrastructure/auth.test.ts:108:58
+    106|   )
+    107|   expect(await response.json()).toEqual({ status: 'error', error: 'una…
+    108|   expect(response.cookies.get('sb-test-session')?.value).toBe('fixture…
+       |                                                          ^
+    109|   expect(response.headers.get('cache-control')).toContain('no-store')
+    110| })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  1 failed | 5 passed (6)
+   Start at  08:52:06
+   Duration  1.96s (transform 496ms, setup 621ms, import 708ms, tests 26ms, environment 0ms)
+

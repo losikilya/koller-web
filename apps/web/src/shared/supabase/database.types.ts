@@ -94,6 +94,7 @@ export type Database = {
         Row: {
           avatar_path: string | null
           bio: string
+          completed_at: string | null
           created_at: string
           deletion_requested_at: string | null
           display_name: string
@@ -106,6 +107,7 @@ export type Database = {
         Insert: {
           avatar_path?: string | null
           bio?: string
+          completed_at?: string | null
           created_at?: string
           deletion_requested_at?: string | null
           display_name?: string
@@ -117,6 +119,7 @@ export type Database = {
         Update: {
           avatar_path?: string | null
           bio?: string
+          completed_at?: string | null
           created_at?: string
           deletion_requested_at?: string | null
           display_name?: string
@@ -165,6 +168,14 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      complete_own_profile: {
+        Args: {
+          p_expected_privacy_revision: number
+          p_expected_profile_revision: number
+          p_patch: Json
+        }
+        Returns: undefined
+      }
       delete_own_playground_data: {
         Args: {
           p_app_key: string
@@ -176,6 +187,15 @@ export type Database = {
       ensure_profile: { Args: Record<PropertyKey, never>; Returns: undefined }
       get_public_profile: {
         Args: { p_user_id: string }
+        Returns: {
+          bio: string
+          display_name: string
+          user_id: string
+          username: string
+        }[]
+      }
+      get_public_profile_by_username: {
+        Args: { p_username: string }
         Returns: {
           bio: string
           display_name: string

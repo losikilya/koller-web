@@ -1,0 +1,15 @@
+[WebServer] (node:25440) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35400) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30900) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:28620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+SC-425 history diagnostic {"authenticated":true,"completed":false,"ownerCompleted":false,"navigation":{"path":"/en/account/profile","ready":"complete","type":"reload"}}
+  ok 1 [msedge-auth] › .features-gen\auth\tests\e2e\profile\completion.feature.spec.js:6:7 › Mandatory completion and unindexed public profiles › SC-425 Refresh and manual navigation cannot bypass completion @phase-three-c-profiles-privacy @FR-409 @SC-425 (5.2s)
+
+  1 passed (12.1s)

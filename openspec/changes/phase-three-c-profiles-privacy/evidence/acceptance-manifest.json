@@ -1,0 +1,268 @@
+{
+  "version": 1,
+  "scope": "Phase 3C.1 increment only; no archive or future-stage acceptance",
+  "browserChannel": "msedge",
+  "runs": [
+    {
+      "command": "original full pnpm verify",
+      "exitCode": 0,
+      "path": "evidence/baseline.txt",
+      "bytes": 26878,
+      "sha256": "f46a9f90e0c670741b80ead012a2c7d76e1c67b509ce74cf5c227cc153589b65"
+    },
+    {
+      "command": "first final pnpm verify",
+      "exitCode": 1,
+      "path": "evidence/final-verify-first.txt",
+      "bytes": 11209,
+      "sha256": "3746e6d028f680bf3e488a35bfa2873eb1b0dbd7fa50c4965dbbc1377ec11124"
+    },
+    {
+      "command": "second final pnpm verify before review corrections",
+      "exitCode": 0,
+      "path": "evidence/final-verify-second.txt",
+      "bytes": 28079,
+      "sha256": "f7ac84411b8d68e50fe77e13796d918d0bd9472448c031ee928263ee3b672f1c"
+    },
+    {
+      "command": "review-corrected full verify before stable formatting",
+      "exitCode": 1,
+      "path": "evidence/final-verify-reviewed.txt",
+      "bytes": 11269,
+      "sha256": "8f53841977f8ce55d48a915bff8556479fe4fb13c1d51de0f5bf41a2e24003c7"
+    },
+    {
+      "command": "final reviewed/formatted full pnpm verify",
+      "exitCode": 0,
+      "path": "evidence/final-verify-reviewed-formatted.txt",
+      "bytes": 28477,
+      "sha256": "57e78f91e5e753016d71564db7257e3efcbb04f40959fcec33a14e19df1e6c82"
+    },
+    {
+      "command": "lost thrown RPC regression before correction",
+      "exitCode": 1,
+      "path": "evidence/outcome-red.txt",
+      "bytes": 1441,
+      "sha256": "fecfe37fe8f66f282f57a0682a48e4a1c0836ad8f06864ad3dd741ebf65ea330"
+    },
+    {
+      "command": "lost thrown RPC regression unchanged after correction",
+      "exitCode": 0,
+      "path": "evidence/outcome-green.txt",
+      "bytes": 230,
+      "sha256": "28b68cb98d3465b5bc5839355fb852e323f5d54b739e777592b245cdd5a74ba6"
+    },
+    {
+      "command": "SDK/Cancel regressions before correction",
+      "exitCode": 1,
+      "path": "evidence/review-uncertain-red.txt",
+      "bytes": 2420,
+      "sha256": "ffce2bb17dde1806910a0c1ac6cc88aadb34af56e3e3b07ab33bb3d83e2b1ef1"
+    },
+    {
+      "command": "SDK/Cancel regressions unchanged after correction",
+      "exitCode": 0,
+      "path": "evidence/review-uncertain-green.txt",
+      "bytes": 232,
+      "sha256": "fe08286cc45982cd89f631eb4139e43e94e8997b97ebfe0a2b6ecf86d7dfa5f7"
+    },
+    {
+      "command": "current executable Gherkin and real PostgreSQL regressions",
+      "exitCode": 0,
+      "path": "evidence/executable-bdd-and-sql.txt",
+      "bytes": 442,
+      "sha256": "25803a58451a7d764b64ac404a623733d9927e006cc24ff1732a88ea27d79490"
+    },
+    {
+      "command": "pnpm workflow ready phase-three-c-profiles-privacy",
+      "exitCode": 0,
+      "path": "evidence/ready.txt",
+      "bytes": 231,
+      "sha256": "773ddfee51ceb5a9d8f9a598d7f63042dae3a55e34bd5f80b99dac1263768c37"
+    },
+    {
+      "command": "Actual independent reviewer response, pass 2",
+      "exitCode": null,
+      "path": "evidence/review-pass2.txt",
+      "bytes": 1826,
+      "sha256": "6b943a72e2cb968b2714eee6b59835cc3ca1064dd38375ced3de65eb69648913"
+    }
+  ],
+  "currentVerifiedSources": [
+    {
+      "path": "apps/web/src/app/[locale]/account/page.tsx",
+      "bytes": 2830,
+      "sha256": "1e9b70a141e4165f8342fd048a73de89c80a278fd11c0549b62799d55299eea7"
+    },
+    {
+      "path": "apps/web/src/app/[locale]/account/profile/page.tsx",
+      "bytes": 2574,
+      "sha256": "85019892bb47742f36c240cbe9fcd6d0ad60015fd8437f6960108bdd826532f2"
+    },
+    {
+      "path": "apps/web/src/app/_infrastructure/auth.ts",
+      "bytes": 5364,
+      "sha256": "836cdb79eadd3dd8c3152edd258193890d8caca56d61894fa4c65305c057840a"
+    },
+    {
+      "path": "apps/web/src/app/_infrastructure/profile.ts",
+      "bytes": 3067,
+      "sha256": "f69ae81ce4a2ee869f3d661f5427f7bce2b1116c6231f72bfb74ca929163ef94"
+    },
+    {
+      "path": "apps/web/src/app/_infrastructure/requestContext.ts",
+      "bytes": 1705,
+      "sha256": "bd6a8f7fc6e9ce59aca011383e79422e4913f8b9b4f03dd0694c488b4d9442df"
+    },
+    {
+      "path": "apps/web/src/app/api/v1/me/profile/route.ts",
+      "bytes": 212,
+      "sha256": "cac28620a2d171644cc462fa288a7adad9a5aabe31da7ecd154aff62241ba36c"
+    },
+    {
+      "path": "apps/web/src/app/api/v1/me/route.ts",
+      "bytes": 209,
+      "sha256": "ec5b14d5c932de6845c2156529639dca7ac780fe488bce3dfe039786e901e361"
+    },
+    {
+      "path": "apps/web/src/modules/identity/authPolicy.ts",
+      "bytes": 1017,
+      "sha256": "047947906da90ff2073bf509fe365729d64a087af986dac613e7d663e28d730d"
+    },
+    {
+      "path": "apps/web/src/modules/profile/ProfileEditor.module.scss",
+      "bytes": 778,
+      "sha256": "abe5274a8658350f70a4a646ac851dd969dd766149a1a5c74a72991e06e6176c"
+    },
+    {
+      "path": "apps/web/src/modules/profile/ProfileEditor.tsx",
+      "bytes": 7307,
+      "sha256": "f70d8b3730b91961400665899c1ec5c129981cddcba3dae352b5d7895cebfcc9"
+    },
+    {
+      "path": "apps/web/src/modules/profile/index.ts",
+      "bytes": 219,
+      "sha256": "a8a3974cbb7c4339794301f9ddef34803c69aa5538ca786c1aa096542a7a322c"
+    },
+    {
+      "path": "apps/web/src/modules/profile/profileRepository.ts",
+      "bytes": 2245,
+      "sha256": "09c25281b54fc8ebc7b7be96b5f24b07c8477bb64df25387fb693b96a1572c43"
+    },
+    {
+      "path": "apps/web/src/modules/profile/profileService.ts",
+      "bytes": 3005,
+      "sha256": "b8634d63a9fc636658abbc7398b1c6d10d38640df56b0a7276b34876e323e7b1"
+    },
+    {
+      "path": "apps/web/src/proxy.ts",
+      "bytes": 963,
+      "sha256": "8eff0d5dd284ea418b86cea05103c9c601d7a513b3f063954f6387376226fc13"
+    },
+    {
+      "path": "apps/web/src/shared/i18n/messages/en.json",
+      "bytes": 6904,
+      "sha256": "0f5dacf813f8d6c5401e5afa9f1f43c6322a458b730d926d747e1254bf7e80e7"
+    },
+    {
+      "path": "apps/web/src/shared/i18n/messages/ru.json",
+      "bytes": 10390,
+      "sha256": "b9c4eb59a915790e9cf0c2fcd055319b3cb1b3b58d0d0c62e1582240761c220a"
+    },
+    {
+      "path": "apps/web/src/shared/i18n/routes.ts",
+      "bytes": 734,
+      "sha256": "62f6aaa55add4689c4cdc02fbc7a7a650fa8d5bc3e7e3cc4fb9d4f962e05ded4"
+    },
+    {
+      "path": "apps/web/src/shared/supabase/database.ts",
+      "bytes": 1429,
+      "sha256": "2678fd65592a280a9f26361fc24a95c7bab2728daba79cada9102a26a1360371"
+    },
+    {
+      "path": "docs/adr/0004-owner-profile-management.md",
+      "bytes": 2057,
+      "sha256": "5e25a4ba17afc90951533dbb1f662e5dec02729639f7f1fd3882db3cdd980eb9"
+    },
+    {
+      "path": "package.json",
+      "bytes": 4764,
+      "sha256": "93ea6ecf1e6af038338b9330b5f72db5444b873a15a6f0574fc21bfc1d6feb77"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 593,
+      "sha256": "567c464ed4cbbcece515828a42ba9bc46123398617d7720d0b0e68b078715516"
+    },
+    {
+      "path": "packages/contracts/src/profile.ts",
+      "bytes": 1209,
+      "sha256": "d6846f8c8411ccb5f69498d3796860152ef026026c3a1352a0155e1af1e25ac7"
+    },
+    {
+      "path": "playwright.bdd.config.ts",
+      "bytes": 3018,
+      "sha256": "ea4a560aef728d634f283b450393222731855a2570a1b53af9361a2bbdaf9a6f"
+    },
+    {
+      "path": "scripts/test-profile-database.mjs",
+      "bytes": 4846,
+      "sha256": "48e102fb25428a6b1c61eaeea6624fdfcd14f745894776343b42c52fdb2a8220"
+    },
+    {
+      "path": "scripts/test-profile-publication-race.mjs",
+      "bytes": 2372,
+      "sha256": "55f5e2a8d5d31355a3a338649a6e9b7bc1d006f5cb4791e8015060a7a60a9c9a"
+    },
+    {
+      "path": "tests/apps/web/app/_infrastructure/profile.test.ts",
+      "bytes": 4498,
+      "sha256": "294e2e46dc148e397ad602cef97b65a409b2d51b107fc45dcae04d4f080c39c7"
+    },
+    {
+      "path": "tests/apps/web/modules/profile/ProfileEditor.test.tsx",
+      "bytes": 4237,
+      "sha256": "311ac6233552eeb80b7c599a216185f193adefbe5626f3474797a32e9a73cb92"
+    },
+    {
+      "path": "tests/apps/web/modules/profile/outcome.test.ts",
+      "bytes": 597,
+      "sha256": "6a75bf367f05a015a091b1895a2fae9535e0c463d8c9eba868a82d4c5adfeefe"
+    },
+    {
+      "path": "tests/apps/web/modules/profile/profileService.test.ts",
+      "bytes": 3960,
+      "sha256": "245e2452f19e610e4acfdbbac951379f8fec26a918ae1368c3dc179ca5a20e59"
+    },
+    {
+      "path": "tests/apps/web/modules/profile/uncertainWrite.test.tsx",
+      "bytes": 2520,
+      "sha256": "4d310c139469a1c626385e465e6b97a7a4bed26152fcbf2ee9fda55daaec8ef5"
+    },
+    {
+      "path": "tests/apps/web/shared/i18n/routes.test.ts",
+      "bytes": 890,
+      "sha256": "086811ddb04d31beeb3a540e152b73f670a48c52942d8d0db8482a77b2947d2f"
+    },
+    {
+      "path": "tests/bdd/profile/management.feature",
+      "bytes": 822,
+      "sha256": "e66054aa3275cd91abf7ee69873e212a795c5226f7117a50d60c1aaedcf622f1"
+    },
+    {
+      "path": "tests/database/profile.test.ts",
+      "bytes": 1004,
+      "sha256": "41c5e009cd5704b0fc1e1990ace2d6a966f7c5fb0d737fdca6af6c8c7aa5ef7b"
+    },
+    {
+      "path": "tests/e2e/profile/management.feature",
+      "bytes": 294,
+      "sha256": "67de95da62b7159b96b11822700610207bacfc948561058efc48d92fe72830c4"
+    },
+    {
+      "path": "tests/e2e/profile/management.steps.ts",
+      "bytes": 4834,
+      "sha256": "a25630154fe517e9ce1ea9831c282aa4f6b89514fb9a4dc90f5443d695e703ff"
+    }
+  ]
+}

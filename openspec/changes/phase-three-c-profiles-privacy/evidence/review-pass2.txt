@@ -1,0 +1,11 @@
+Verdict: PASS
+
+Все три замечания первого прохода устранены; новых actionable findings нет.
+
+- Canonical unit Gherkin теперь загружается и исполняется через `loadFeature`/`describeFeature` с явными partitions.
+- Adapter классифицирует неопределённые RPC-ошибки как `outcome_unknown`; Cancel сохраняет блокировку Save до успешного GET. Новые regressions проверяют SDK-shaped failure и прежний обход.
+- Отдельный SQL regression начинает гонку с допустимого непустого имени, проверяет одного победителя и итоговый invariant `public ⇒ nonblank`. Первоначальный baseline не переименован в новую проверку.
+
+Прямо проверены исправленные исходники, drivers, ordinary regressions и логи: поведенческие RED двух новых проверок, последующий GREEN, focused Gherkin/SQL и свежий полный verify. Финальный лог подтверждает 64 tests, реальные PostgreSQL/Auth/profile races, 22 browser, 7 Storybook/a11y и strict specs 6/6.
+
+Exit 0 полного verify и сохранность hashes предоставлены основным агентом; сам тесты/scripts не запускал и hashes заново не вычислял. Финальные записи review/report и ready остаются завершающими действиями основного агента. Вердикт ограничен Phase 3C.1; будущие privacy/public/Storage stages остаются deferred.

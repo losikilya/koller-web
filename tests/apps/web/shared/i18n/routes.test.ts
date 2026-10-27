@@ -12,6 +12,7 @@ describe('locale routes', () => {
       '/forgot-password',
       '/reset-password',
       '/account',
+      '/account/profile',
     ])
     expect(localizedPath('en', '/playground')).toBe('/en/playground')
   })

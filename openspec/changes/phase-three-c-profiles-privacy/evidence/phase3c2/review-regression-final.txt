@@ -1,0 +1,9 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+
+ Test Files  5 passed (5)
+      Tests  16 passed (16)
+   Start at  08:55:05
+   Duration  4.00s (transform 558ms, setup 1.49s, import 1.45s, tests 98ms, environment 0ms)
+

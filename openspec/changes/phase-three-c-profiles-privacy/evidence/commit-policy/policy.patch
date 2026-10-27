@@ -1,0 +1,311 @@
+diff --git a/.agents/skills/commit-change/SKILL.md b/.agents/skills/commit-change/SKILL.md
+index 91c4f88e0cb44f3fc4589e4adaae45b481559d96..8b4aa21bf760191187fc1a325ce77cf2e19d346b 100644
+--- a/.agents/skills/commit-change/SKILL.md
++++ b/.agents/skills/commit-change/SKILL.md
+@@ -1,23 +1,23 @@
+ ---
+ name: commit-change
+-description: Prepare a reviewed Git commit with the team's Jira and OpenSpec message format; use only when the user explicitly asks to create a commit for the current completed change
++description: Prepare a reviewed Git commit with OpenSpec metadata; use only when the user explicitly asks to create a commit for the current completed change
+ ---
+ 
+ # Commit the current change
+ 
+-Committing never implies pushing.
++Committing never implies pushing. This project does not use Jira tickets.
+ 
+ ## Preconditions
+ 
+-1. Inspect `git status`, staged/unstaged diff and untracked files.
+-2. Confirm the intended scope and exclude secrets, local environment files, generated reports and unrelated changes.
++1. Inspect Git status, staged/unstaged diff and untracked files.
++2. Confirm the intended scope and exclude secrets, local environment files, disposable generated reports and unrelated changes. Preserve required workflow evidence exactly.
+ 3. Require actual relevant verification. For behavior changes require current OpenSpec review PASS and ready gate. For tests-only/refactor work require the checks defined by that workflow and reviewer PASS.
+ 4. If files changed after verification/review, rerun the affected checks before committing.
++5. Every commit and every push requires explicit user authorization for that operation. An authorization already given for the current scope remains valid; do not ask for duplicate confirmation. One authorization never covers future commits or pushes.
+ 
+ ## Required inputs
+ 
+-- Jira ticket: ask the user when it was not supplied. Do not invent or infer a ticket number.
+-- OpenSpec change name: use the explicitly named change that owns the diff, whether it is ready or has just been archived. If exactly one change unambiguously owns the diff, propose it and ask for confirmation; otherwise ask. A tests-only diff from /test-module (only test files and `tests/**`, no production or spec edits) has no change: write `none (tests-only)` and do not create a change to fill this field.
++- OpenSpec change name: use the explicitly named change that owns the approved diff, whether ready or just archived. If ownership is unclear, propose the relevant change and clarify scope before staging. A tests-only diff from /test-module (only tests, no production/spec edits) uses `none (tests-only)`; do not create a change to fill this field.
+ - Summary: derive a short, factual description of all staged changes. Do not claim checks that did not run.
+ 
+ ## Message format
+@@ -25,26 +25,11 @@ Committing never implies pushing.
+ Preserve these logical blocks and blank lines:
+ 
+ ```text
+-{JIRA_TICKET}
++{short change summary}
+ 
+ OpenSpec Change: {change-name}
+-
+-{short change summary}
+ ```
+ 
+-The Jira ticket is the first line. `OpenSpec Change:` is the second logical block. The summary is concise and covers the complete staged scope.
+-
+-## Jira identifier safety gate
+-
+-The company commit check scans the complete message for Jira-shaped identifiers, not only the first line. Before showing or executing the commit, validate the exact final message:
+-
+-1. Treat `\b[A-Z][A-Z0-9]*-[0-9]+\b` as the Jira-shaped identifier pattern.
+-2. Require exactly one match in the complete commit message.
+-3. Require that match to equal the user-provided Jira ticket on the first line.
+-4. Never repeat the Jira ticket in the summary and never include a second Jira-shaped identifier.
+-5. Do not write architecture decision references such as `ADR-0001` in the message. Use a non-ticket-shaped form such as `ADR 0001`, `architecture decision 0001`, or a descriptive phrase such as `the FSD architecture decision`.
+-6. Apply the same restriction to file names, OpenSpec names and any other identifiers mentioned in the summary. If an exact required value would introduce another Jira-shaped identifier, stop and ask the user how to proceed instead of committing.
+-
+-Reject and rewrite any proposed message that fails this gate. Do not rely only on the ticket being the first line: a later token can be selected by the external Jira validator.
++Add a concise factual body only when it helps explain the complete staged scope. No ticket input, ticket-first line or ticket-pattern restriction applies.
+ 
+-Stage only confirmed files, show the final staged summary and commit message, then request tool approval for `git commit`. After success, report the commit hash and remaining working-tree changes. Never amend, push, rebase or tag unless separately requested.
++Stage only the approved files. Inspect and show the final staged summary and exact message, then execute the explicitly authorized commit, requesting tool approval only if the runtime requires it. After success report the commit hash and remaining working-tree changes. Never amend, push, rebase or tag unless separately authorized; a commit request alone permits none of those operations.
+diff --git a/.agents/skills/team-commit/SKILL.md b/.agents/skills/team-commit/SKILL.md
+index dc795002df1c8c5d1b18d165b8c626af056e57b2..e921e934787afa97059dce2caadfac4bc0927e98 100644
+--- a/.agents/skills/team-commit/SKILL.md
++++ b/.agents/skills/team-commit/SKILL.md
+@@ -1,6 +1,6 @@
+ ---
+ name: team-commit
+-description: "Explicit team workflow commit: create a reviewed commit using Jira and OpenSpec metadata"
++description: "Explicit team workflow commit: create a reviewed commit using OpenSpec metadata"
+ ---
+ Read AGENTS.md and .opencode/commands/commit.md. Apply that canonical command to the user's current arguments; treat its OpenCode frontmatter as metadata, not Codex configuration. Replace the literal $ARGUMENTS placeholder with the supplied task, change, ticket or module. Never run an OpenCode/Claude CLI to execute this workflow.
+ 
+diff --git a/.agents/skills/tech-debt-audit/SKILL.md b/.agents/skills/tech-debt-audit/SKILL.md
+index b0479e4310c634318ea458e88f3c1c055110c6cd..535651a2330e74baf87972e68fd14a29a71ca356 100644
+--- a/.agents/skills/tech-debt-audit/SKILL.md
++++ b/.agents/skills/tech-debt-audit/SKILL.md
+@@ -35,7 +35,7 @@ Smallest credible remediation
+ Effort range and dependencies
+ Owner or owning area
+ Trigger/deadline for action
+-Related ADR/OpenSpec/Jira
++Related ADR/OpenSpec
+ Confidence
+ ```
+ 
+diff --git a/.claude/commands/commit.md b/.claude/commands/commit.md
+index 763b925ce0bc4fddef52da33dcf526b0b44d551d..0b1c12f15e013051107b4bafdffc4ea46c8232ec 100644
+--- a/.claude/commands/commit.md
++++ b/.claude/commands/commit.md
+@@ -1,7 +1,8 @@
+ ---
+-description: create a reviewed commit using Jira and OpenSpec metadata
++description: create a reviewed commit using OpenSpec metadata
+ argument-hint: "[arguments]"
+ ---
+-Load commit-change. Inspect the complete working tree and confirm verification/review is current. Ask for the Jira ticket when absent and confirm the owning OpenSpec change. Stage only the approved scope, show the final message and request permission for git commit. Never push, amend, rebase or tag.
++
++Load commit-change. Inspect the complete working tree and confirm verification/review is current. Use the owning OpenSpec change and a factual summary; this project has no Jira-ticket requirement. Stage only the approved scope and show the exact final message. Execute only an explicitly authorized commit; do not ask again when the current operation and scope are already authorized. Every future commit or push needs fresh explicit user authorization. Never push, amend, rebase or tag on the basis of a commit request.
+ 
+ Inputs: $ARGUMENTS
+diff --git a/.claude/skills/commit-change/SKILL.md b/.claude/skills/commit-change/SKILL.md
+index 91c4f88e0cb44f3fc4589e4adaae45b481559d96..8b4aa21bf760191187fc1a325ce77cf2e19d346b 100644
+--- a/.claude/skills/commit-change/SKILL.md
++++ b/.claude/skills/commit-change/SKILL.md
+@@ -1,23 +1,23 @@
+ ---
+ name: commit-change
+-description: Prepare a reviewed Git commit with the team's Jira and OpenSpec message format; use only when the user explicitly asks to create a commit for the current completed change
++description: Prepare a reviewed Git commit with OpenSpec metadata; use only when the user explicitly asks to create a commit for the current completed change
+ ---
+ 
+ # Commit the current change
+ 
+-Committing never implies pushing.
++Committing never implies pushing. This project does not use Jira tickets.
+ 
+ ## Preconditions
+ 
+-1. Inspect `git status`, staged/unstaged diff and untracked files.
+-2. Confirm the intended scope and exclude secrets, local environment files, generated reports and unrelated changes.
++1. Inspect Git status, staged/unstaged diff and untracked files.
++2. Confirm the intended scope and exclude secrets, local environment files, disposable generated reports and unrelated changes. Preserve required workflow evidence exactly.
+ 3. Require actual relevant verification. For behavior changes require current OpenSpec review PASS and ready gate. For tests-only/refactor work require the checks defined by that workflow and reviewer PASS.
+ 4. If files changed after verification/review, rerun the affected checks before committing.
++5. Every commit and every push requires explicit user authorization for that operation. An authorization already given for the current scope remains valid; do not ask for duplicate confirmation. One authorization never covers future commits or pushes.
+ 
+ ## Required inputs
+ 
+-- Jira ticket: ask the user when it was not supplied. Do not invent or infer a ticket number.
+-- OpenSpec change name: use the explicitly named change that owns the diff, whether it is ready or has just been archived. If exactly one change unambiguously owns the diff, propose it and ask for confirmation; otherwise ask. A tests-only diff from /test-module (only test files and `tests/**`, no production or spec edits) has no change: write `none (tests-only)` and do not create a change to fill this field.
++- OpenSpec change name: use the explicitly named change that owns the approved diff, whether ready or just archived. If ownership is unclear, propose the relevant change and clarify scope before staging. A tests-only diff from /test-module (only tests, no production/spec edits) uses `none (tests-only)`; do not create a change to fill this field.
+ - Summary: derive a short, factual description of all staged changes. Do not claim checks that did not run.
+ 
+ ## Message format
+@@ -25,26 +25,11 @@ Committing never implies pushing.
+ Preserve these logical blocks and blank lines:
+ 
+ ```text
+-{JIRA_TICKET}
++{short change summary}
+ 
+ OpenSpec Change: {change-name}
+-
+-{short change summary}
+ ```
+ 
+-The Jira ticket is the first line. `OpenSpec Change:` is the second logical block. The summary is concise and covers the complete staged scope.
+-
+-## Jira identifier safety gate
+-
+-The company commit check scans the complete message for Jira-shaped identifiers, not only the first line. Before showing or executing the commit, validate the exact final message:
+-
+-1. Treat `\b[A-Z][A-Z0-9]*-[0-9]+\b` as the Jira-shaped identifier pattern.
+-2. Require exactly one match in the complete commit message.
+-3. Require that match to equal the user-provided Jira ticket on the first line.
+-4. Never repeat the Jira ticket in the summary and never include a second Jira-shaped identifier.
+-5. Do not write architecture decision references such as `ADR-0001` in the message. Use a non-ticket-shaped form such as `ADR 0001`, `architecture decision 0001`, or a descriptive phrase such as `the FSD architecture decision`.
+-6. Apply the same restriction to file names, OpenSpec names and any other identifiers mentioned in the summary. If an exact required value would introduce another Jira-shaped identifier, stop and ask the user how to proceed instead of committing.
+-
+-Reject and rewrite any proposed message that fails this gate. Do not rely only on the ticket being the first line: a later token can be selected by the external Jira validator.
++Add a concise factual body only when it helps explain the complete staged scope. No ticket input, ticket-first line or ticket-pattern restriction applies.
+ 
+-Stage only confirmed files, show the final staged summary and commit message, then request tool approval for `git commit`. After success, report the commit hash and remaining working-tree changes. Never amend, push, rebase or tag unless separately requested.
++Stage only the approved files. Inspect and show the final staged summary and exact message, then execute the explicitly authorized commit, requesting tool approval only if the runtime requires it. After success report the commit hash and remaining working-tree changes. Never amend, push, rebase or tag unless separately authorized; a commit request alone permits none of those operations.
+diff --git a/.claude/skills/tech-debt-audit/SKILL.md b/.claude/skills/tech-debt-audit/SKILL.md
+index b0479e4310c634318ea458e88f3c1c055110c6cd..535651a2330e74baf87972e68fd14a29a71ca356 100644
+--- a/.claude/skills/tech-debt-audit/SKILL.md
++++ b/.claude/skills/tech-debt-audit/SKILL.md
+@@ -35,7 +35,7 @@ Smallest credible remediation
+ Effort range and dependencies
+ Owner or owning area
+ Trigger/deadline for action
+-Related ADR/OpenSpec/Jira
++Related ADR/OpenSpec
+ Confidence
+ ```
+ 
+diff --git a/.opencode/commands/commit.md b/.opencode/commands/commit.md
+index df9ae44f015cd4704a8e8a0af898c9abd87ef580..bc15a2e0d231df909a2449396b7b4a36a903a09e 100644
+--- a/.opencode/commands/commit.md
++++ b/.opencode/commands/commit.md
+@@ -1,7 +1,8 @@
+ ---
+-description: create a reviewed commit using Jira and OpenSpec metadata
++description: create a reviewed commit using OpenSpec metadata
+ agent: orchestrator
+ ---
+-Load commit-change. Inspect the complete working tree and confirm verification/review is current. Ask for the Jira ticket when absent and confirm the owning OpenSpec change. Stage only the approved scope, show the final message and request permission for git commit. Never push, amend, rebase or tag.
++
++Load commit-change. Inspect the complete working tree and confirm verification/review is current. Use the owning OpenSpec change and a factual summary; this project has no Jira-ticket requirement. Stage only the approved scope and show the exact final message. Execute only an explicitly authorized commit; do not ask again when the current operation and scope are already authorized. Every future commit or push needs fresh explicit user authorization. Never push, amend, rebase or tag on the basis of a commit request.
+ 
+ Inputs: $ARGUMENTS
+diff --git a/.opencode/skills/commit-change/SKILL.md b/.opencode/skills/commit-change/SKILL.md
+index 91c4f88e0cb44f3fc4589e4adaae45b481559d96..8b4aa21bf760191187fc1a325ce77cf2e19d346b 100644
+--- a/.opencode/skills/commit-change/SKILL.md
++++ b/.opencode/skills/commit-change/SKILL.md
+@@ -1,23 +1,23 @@
+ ---
+ name: commit-change
+-description: Prepare a reviewed Git commit with the team's Jira and OpenSpec message format; use only when the user explicitly asks to create a commit for the current completed change
++description: Prepare a reviewed Git commit with OpenSpec metadata; use only when the user explicitly asks to create a commit for the current completed change
+ ---
+ 
+ # Commit the current change
+ 
+-Committing never implies pushing.
++Committing never implies pushing. This project does not use Jira tickets.
+ 
+ ## Preconditions
+ 
+-1. Inspect `git status`, staged/unstaged diff and untracked files.
+-2. Confirm the intended scope and exclude secrets, local environment files, generated reports and unrelated changes.
++1. Inspect Git status, staged/unstaged diff and untracked files.
++2. Confirm the intended scope and exclude secrets, local environment files, disposable generated reports and unrelated changes. Preserve required workflow evidence exactly.
+ 3. Require actual relevant verification. For behavior changes require current OpenSpec review PASS and ready gate. For tests-only/refactor work require the checks defined by that workflow and reviewer PASS.
+ 4. If files changed after verification/review, rerun the affected checks before committing.
++5. Every commit and every push requires explicit user authorization for that operation. An authorization already given for the current scope remains valid; do not ask for duplicate confirmation. One authorization never covers future commits or pushes.
+ 
+ ## Required inputs
+ 
+-- Jira ticket: ask the user when it was not supplied. Do not invent or infer a ticket number.
+-- OpenSpec change name: use the explicitly named change that owns the diff, whether it is ready or has just been archived. If exactly one change unambiguously owns the diff, propose it and ask for confirmation; otherwise ask. A tests-only diff from /test-module (only test files and `tests/**`, no production or spec edits) has no change: write `none (tests-only)` and do not create a change to fill this field.
++- OpenSpec change name: use the explicitly named change that owns the approved diff, whether ready or just archived. If ownership is unclear, propose the relevant change and clarify scope before staging. A tests-only diff from /test-module (only tests, no production/spec edits) uses `none (tests-only)`; do not create a change to fill this field.
+ - Summary: derive a short, factual description of all staged changes. Do not claim checks that did not run.
+ 
+ ## Message format
+@@ -25,26 +25,11 @@ Committing never implies pushing.
+ Preserve these logical blocks and blank lines:
+ 
+ ```text
+-{JIRA_TICKET}
++{short change summary}
+ 
+ OpenSpec Change: {change-name}
+-
+-{short change summary}
+ ```
+ 
+-The Jira ticket is the first line. `OpenSpec Change:` is the second logical block. The summary is concise and covers the complete staged scope.
+-
+-## Jira identifier safety gate
+-
+-The company commit check scans the complete message for Jira-shaped identifiers, not only the first line. Before showing or executing the commit, validate the exact final message:
+-
+-1. Treat `\b[A-Z][A-Z0-9]*-[0-9]+\b` as the Jira-shaped identifier pattern.
+-2. Require exactly one match in the complete commit message.
+-3. Require that match to equal the user-provided Jira ticket on the first line.
+-4. Never repeat the Jira ticket in the summary and never include a second Jira-shaped identifier.
+-5. Do not write architecture decision references such as `ADR-0001` in the message. Use a non-ticket-shaped form such as `ADR 0001`, `architecture decision 0001`, or a descriptive phrase such as `the FSD architecture decision`.
+-6. Apply the same restriction to file names, OpenSpec names and any other identifiers mentioned in the summary. If an exact required value would introduce another Jira-shaped identifier, stop and ask the user how to proceed instead of committing.
+-
+-Reject and rewrite any proposed message that fails this gate. Do not rely only on the ticket being the first line: a later token can be selected by the external Jira validator.
++Add a concise factual body only when it helps explain the complete staged scope. No ticket input, ticket-first line or ticket-pattern restriction applies.
+ 
+-Stage only confirmed files, show the final staged summary and commit message, then request tool approval for `git commit`. After success, report the commit hash and remaining working-tree changes. Never amend, push, rebase or tag unless separately requested.
++Stage only the approved files. Inspect and show the final staged summary and exact message, then execute the explicitly authorized commit, requesting tool approval only if the runtime requires it. After success report the commit hash and remaining working-tree changes. Never amend, push, rebase or tag unless separately authorized; a commit request alone permits none of those operations.
+diff --git a/.opencode/skills/tech-debt-audit/SKILL.md b/.opencode/skills/tech-debt-audit/SKILL.md
+index b0479e4310c634318ea458e88f3c1c055110c6cd..535651a2330e74baf87972e68fd14a29a71ca356 100644
+--- a/.opencode/skills/tech-debt-audit/SKILL.md
++++ b/.opencode/skills/tech-debt-audit/SKILL.md
+@@ -35,7 +35,7 @@ Smallest credible remediation
+ Effort range and dependencies
+ Owner or owning area
+ Trigger/deadline for action
+-Related ADR/OpenSpec/Jira
++Related ADR/OpenSpec
+ Confidence
+ ```
+ 
+diff --git a/README.md b/README.md
+index d0a7dec937f247f79b25bbe527ebc9b5888802fa..ac462bb3df8575797018af82bb74086bdc1bd84e 100644
+--- a/README.md
++++ b/README.md
+@@ -38,7 +38,7 @@ For browser tests set one installed-browser override: PLAYWRIGHT_BROWSER_CHANNEL
+ 
+ ## Engineering workflow
+ 
+-[AGENTS.md](AGENTS.md) is the shared entrypoint; [PROCESS](docs/PROCESS.md) defines behavior changes, tests-only work, safe refactoring and scoped maintenance. OpenSpec → executable BDD → recorded RED/GREEN/REFACTOR → verification → independent review remains mandatory for product behavior changes. Commits require an explicit request and the existing Jira format; pushing is separate.
++[AGENTS.md](AGENTS.md) is the shared entrypoint; [PROCESS](docs/PROCESS.md) defines behavior changes, tests-only work, safe refactoring and scoped maintenance. OpenSpec → executable BDD → recorded RED/GREEN/REFACTOR → verification → independent review remains mandatory for product behavior changes. Every commit requires an explicit user request, current verification/review and OpenSpec metadata; no Jira ticket is required. Pushing requires separate explicit authorization, and future commits or pushes always require fresh consent.
+ 
+ .opencode is canonical. Existing generators maintain .claude rules/commands/skills, .agents/skills and .codex/agents. Edit canonical files and run agents:sync/check. Main session is sole writer; architect, test_designer and reviewer are sequential/read-only. [Codex mapping and permissions](docs/CODEX.md) describe $team-\* invocations without model/provider overrides.
+ 
+diff --git a/docs/CODEX.md b/docs/CODEX.md
+index ed2fb9d0ebf85b08f1f7967d5a833819f991f0dd..86d8b06b2f1f51e809c80d03dae91d2cf99608d6 100644
+--- a/docs/CODEX.md
++++ b/docs/CODEX.md
+@@ -40,7 +40,7 @@ Example tests-only request: $team-test-module apps/web/src/shared/i18n/routes.ts
+ 
+ The main session is the sole writer. Specialists architect, reviewer and test_designer work sequentially, read-only, without recursive delegation. Codex shell is permitted only for read/search inspection in specialist adapters; no application execution, tests, package scripts, writes or network. Specialists inherit client permissions: a TOML role instruction is not a separate technical sandbox.
+ 
+-Give reviewers actual requirements, diff including untracked files and command results. They distinguish direct inspection from parent-run checks. If independent review is unavailable, report it pending rather than inventing PASS. Use at most two review passes and preserve Jira commit requirements. No commit/push/publication without explicit authorization.
++Give reviewers actual requirements, diff including untracked files and command results. They distinguish direct inspection from parent-run checks. If independent review is unavailable, report it pending rather than inventing PASS. Use at most two review passes and preserve OpenSpec commit metadata. No Jira ticket is required. Each commit, push or publication needs explicit authorization for that operation; existing consent covers only the current approved scope, never future operations.
+ 
+ ## Verification
+ 
+diff --git a/docs/PROCESS.md b/docs/PROCESS.md
+index f154d6cc4bbcfdb43b1946fa8c4b37090a77b351..17467c8ba043a4c9861d4992f1ff6fd3f76fed83 100644
+--- a/docs/PROCESS.md
++++ b/docs/PROCESS.md
+@@ -85,6 +85,6 @@ Required artifacts: proposal (Change kind: maintenance; Behavior contract: uncha
+ 
+ ## Commits and handoff
+ 
+-No commit/push/publication without an explicit request. /commit requires a user-supplied Jira ticket, owning OpenSpec change and current verification/review. Tests-only uses OpenSpec Change: none (tests-only). Keep the exact Jira message safety checks in commit-change; committing never authorizes pushing. Do not invent ticket IDs.
++Every commit, push and publication requires explicit user authorization for that operation; one authorization never covers future operations. Existing authorization for the current approved scope remains valid without duplicate confirmation. /commit requires the owning OpenSpec change and current verification/review, followed by a factual summary and OpenSpec metadata; this project does not require Jira tickets. Tests-only uses OpenSpec Change: none (tests-only). Committing never authorizes pushing.
+ 
+ Use one coherent change per session where practical. Handoff only decisions, paths, actual exit codes and next action. A stopped change remains incomplete; do not rewrite evidence/history to manufacture completion. Avoid global instructions imports and loading all archives/context. Permissions and role instructions are not substitutes for technical sandbox or branch protection.

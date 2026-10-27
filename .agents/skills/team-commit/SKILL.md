@@ -1,6 +1,6 @@
 ---
 name: team-commit
-description: "Explicit team workflow commit: create a reviewed commit using Jira and OpenSpec metadata"
+description: "Explicit team workflow commit: create a reviewed commit using OpenSpec metadata"
 ---
 Read AGENTS.md and .opencode/commands/commit.md. Apply that canonical command to the user's current arguments; treat its OpenCode frontmatter as metadata, not Codex configuration. Replace the literal $ARGUMENTS placeholder with the supplied task, change, ticket or module. Never run an OpenCode/Claude CLI to execute this workflow.
 

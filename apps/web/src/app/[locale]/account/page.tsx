@@ -1,3 +1,4 @@
+import { requirePageCompletion } from '@/app/_infrastructure/completion'
 import { notFound, redirect } from 'next/navigation'
 import { hasLocale } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
@@ -8,6 +9,7 @@ import { getSupabaseConfig } from '@/shared/supabase/config'
 import { createSupabaseServerClient } from '@/app/_infrastructure/supabase'
 import { Shell } from '@/app/_infrastructure/shell'
 import styles from '@/shared/styles/Pages.module.scss'
+import { Link } from '@/shared/i18n/navigation'
 export const dynamic = 'force-dynamic'
 type Props = {
   params: Promise<{ locale: string }>
@@ -42,16 +44,23 @@ export default async function Page({ params, searchParams }: Props) {
         encodeURIComponent('/' + locale + '/account')
     )
   const query = await searchParams
+  await requirePageCompletion(locale, '/account', query.bootstrap === 'retry')
   const result =
     query.bootstrap === 'retry'
       ? { bootstrap: 'retry' }
       : await bootstrapAccount(client)
   const t = await getTranslations('identity')
+  const profileText = await getTranslations('profile')
   return (
     <Shell path="/account">
       <Container className={styles.page}>
         <h1>{t('accountTitle')}</h1>
         <p>{t('accountDescription')}</p>
+        {result.bootstrap === 'ready' && (
+          <p>
+            <Link href="/account/profile">{profileText('title')}</Link>
+          </p>
+        )}
         <p className={styles.breakText}>
           {t('verifiedEmail')}: {identity.email}
         </p>

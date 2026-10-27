@@ -1,0 +1,11 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+PASS: real owner/anon/RLS, simultaneous claims/edits, immediate reuse, publication guard and lossless bigint RPC
+PASS: real concurrent publish/name-clear from an eligible nonblank profile preserves invariant
+
+ Test Files  4 passed (4)
+      Tests  7 passed (7)
+   Start at  06:51:04
+   Duration  7.99s (transform 549ms, setup 1.17s, import 1.05s, tests 3.81s, environment 1.23s)
+

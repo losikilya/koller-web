@@ -1,0 +1,89 @@
+
+> dance-platform@0.1.0 test:auth:e2e C:\Users\Lenovo\Desktop\koller_web
+> node scripts/run-local-auth.mjs e2e
+
+
+> dance-platform@0.1.0 test:e2e C:\Users\Lenovo\Desktop\koller_web
+> pnpm test:e2e:gen && playwright test -c playwright.bdd.config.ts
+
+
+> dance-platform@0.1.0 test:e2e:gen C:\Users\Lenovo\Desktop\koller_web
+> bddgen -c playwright.bdd.config.ts
+
+[WebServer] (node:23836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:33236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31520) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 23 tests using 1 worker
+
+(node:29776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [msedge] › .features-gen\foundation\tests\e2e\foundation\smoke.feature.spec.js:6:7 › Guest platform foundation › A guest discovers the first practice tool @dance-platform-foundation @FR-001 @SC-001 (663ms)
+  ok  2 [msedge] › .features-gen\foundation\tests\e2e\foundation\smoke.feature.spec.js:12:7 › Guest platform foundation › A visitor changes language without losing their route @dance-platform-foundation @FR-002 @SC-002 (375ms)
+(node:18132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  3 [msedge-auth] › .features-gen\auth\tests\e2e\identity\authentication.feature.spec.js:8:9 › Real local authentication › Register, confirm, recover and retain localized identity › Example #1 (3.7s)
+  ok  4 [msedge-auth] › .features-gen\auth\tests\e2e\identity\authentication.feature.spec.js:16:9 › Real local authentication › Register, confirm, recover and retain localized identity › Example #2 (3.1s)
+  x   5 [msedge-auth] › .features-gen\auth\tests\e2e\profile\completion.feature.spec.js:6:7 › Mandatory completion and unindexed public profiles › SC-425 Refresh and manual navigation cannot bypass completion @phase-three-c-profiles-privacy @FR-409 @SC-425 (6.2s)
+(node:34508) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  6 [msedge-auth] › .features-gen\auth\tests\e2e\profile\management.feature.spec.js:6:7 › Localized owner profile routes › SC-419 Use localized owner routes @phase-three-c-profiles-privacy @FR-404 @SC-419 (1.9s)
+(node:4360) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  7 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:4:7 › localized pages reflow at 320px (1.3s)
+  ok  8 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:4:7 › localized pages reflow at 768px (1.4s)
+  ok  9 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:4:7 › localized pages reflow at 1280px (1.3s)
+  ok 10 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:46:5 › default locale is deterministic and invalid routes return 404 (578ms)
+  ok 11 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en has accessible shell and localized metadata (696ms)
+  ok 12 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en/playground has accessible shell and localized metadata (584ms)
+  ok 13 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en/playground/practice-timer has accessible shell and localized metadata (557ms)
+  ok 14 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en/login has accessible shell and localized metadata (582ms)
+  ok 15 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en/register has accessible shell and localized metadata (607ms)
+  ok 16 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru has accessible shell and localized metadata (582ms)
+  ok 17 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru/playground has accessible shell and localized metadata (550ms)
+  ok 18 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru/playground/practice-timer has accessible shell and localized metadata (555ms)
+  ok 19 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru/login has accessible shell and localized metadata (599ms)
+  ok 20 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru/register has accessible shell and localized metadata (631ms)
+  ok 21 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:100:5 › compact navigation, locale continuity and reflow at 320px (541ms)
+  ok 22 [msedge-e2e] › tests\e2e\identity\security.spec.ts:3:7 › en callbacks reject invalid links, denial and unsafe destinations (862ms)
+  ok 23 [msedge-e2e] › tests\e2e\identity\security.spec.ts:3:7 › ru callbacks reject invalid links, denial and unsafe destinations (844ms)
+
+
+  1) [msedge-auth] › .features-gen\auth\tests\e2e\profile\completion.feature.spec.js:6:7 › Mandatory completion and unindexed public profiles › SC-425 Refresh and manual navigation cannot bypass completion @phase-three-c-profiles-privacy @FR-409 @SC-425 › Given a new authenticated incomplete account 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/en\/account\/profile$/
+    Received string:  "http://127.0.0.1:4310/en"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="en">…</html>
+           - unexpected value "http://127.0.0.1:4310/en"
+
+
+       at tests\e2e\profile\completion.steps.ts:130
+
+      128 |   await expect(page).toHaveURL(/\/en\/account\/profile$/)
+      129 |   await page.goBack()
+    > 130 |   await expect(page).toHaveURL(/\/en\/account\/profile$/)
+          |                      ^
+      131 | })
+      132 | When(
+      133 |   'the account attempts refresh manual and history navigation before completing',
+        at Object.<anonymous> (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\completion.steps.ts:130:22)
+        at BddStepInvoker.runWithAfterStepHooks (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:82:16)
+        at BddStepInvoker.invoke (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:55:5)
+        at C:\Users\Lenovo\Desktop\koller_web\.features-gen\auth\tests\e2e\profile\completion.feature.spec.js:7:5
+
+    Error Context: test-results\tests-e2e-profile-completi-321bc-on-cannot-bypass-completion-msedge-auth\error-context.md
+
+  1 failed
+    [msedge-auth] › .features-gen\auth\tests\e2e\profile\completion.feature.spec.js:6:7 › Mandatory completion and unindexed public profiles › SC-425 Refresh and manual navigation cannot bypass completion @phase-three-c-profiles-privacy @FR-409 @SC-425 
+  22 passed (43.9s)
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.

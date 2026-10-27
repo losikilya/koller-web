@@ -1,0 +1,36 @@
+.form {
+  max-width: 42rem;
+  overflow-wrap: anywhere;
+}
+.fields {
+  border: 0;
+  padding: 0;
+  margin-block: var(--space-6);
+  min-width: 0;
+  display: grid;
+  gap: var(--space-4);
+  legend {
+    font-size: var(--font-subtitle);
+    margin-bottom: var(--space-6);
+  }
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    padding: var(--space-4);
+    border: var(--border-width) solid var(--border-control);
+    border-radius: var(--radius-control);
+    background: var(--surface-raised);
+    color: var(--text-default);
+    font: inherit;
+  }
+  textarea:focus-visible {
+    outline: var(--focus-width) solid var(--focus-ring);
+    outline-offset: var(--focus-offset);
+  }
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}

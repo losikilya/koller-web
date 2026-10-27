@@ -1,3 +1,4 @@
+import { requirePageCompletion } from '@/app/_infrastructure/completion'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { hasLocale } from 'next-intl'
@@ -15,6 +16,7 @@ export default async function Page({ params }: Props) {
   const { locale } = await params
   if (!hasLocale(routing.locales, locale)) notFound()
   setRequestLocale(locale)
+  await requirePageCompletion(locale, '/playground')
   return (
     <Shell path="/playground">
       <PlaygroundPage />

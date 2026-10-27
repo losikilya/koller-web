@@ -48,8 +48,8 @@ const bddTestDir = defineBddConfig({
 
 // Auth traces would contain disposable bearer credentials and email token hashes.
 const authBddTestDir = defineBddConfig({
-  features: 'tests/e2e/identity/**/*.feature',
-  steps: 'tests/e2e/identity/**/*.steps.ts',
+  features: 'tests/e2e/{identity,profile}/**/*.feature',
+  steps: 'tests/e2e/{identity,profile}/**/*.steps.ts',
   outputDir: '.features-gen/auth',
 })
 

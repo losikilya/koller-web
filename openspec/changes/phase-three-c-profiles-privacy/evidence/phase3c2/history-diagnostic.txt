@@ -1,0 +1,47 @@
+[WebServer] (node:22280) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:32660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:33796) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:31396) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+SC-425 history diagnostic {"authenticated":true,"completed":false,"ownerCompleted":false,"navigation":{"path":"/en","ready":"complete","type":"back_forward"}}
+  x  1 [msedge-auth] › .features-gen\auth\tests\e2e\profile\completion.feature.spec.js:6:7 › Mandatory completion and unindexed public profiles › SC-425 Refresh and manual navigation cannot bypass completion @phase-three-c-profiles-privacy @FR-409 @SC-425 (6.8s)
+
+
+  1) [msedge-auth] › .features-gen\auth\tests\e2e\profile\completion.feature.spec.js:6:7 › Mandatory completion and unindexed public profiles › SC-425 Refresh and manual navigation cannot bypass completion @phase-three-c-profiles-privacy @FR-409 @SC-425 › Given a new authenticated incomplete account 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected pattern: /\/en\/account\/profile$/
+    Received string:  "http://127.0.0.1:4310/en"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="en">…</html>
+           - unexpected value "http://127.0.0.1:4310/en"
+
+
+       at tests\e2e\profile\completion.steps.ts:133
+
+      131 |   const ownRow=await owner.client.from('profiles').select('completed_at').single()
+      132 |   console.log('SC-425 history diagnostic',JSON.stringify({authenticated:statusSnapshot.authenticated,completed:statusSnapshot.completed,ownerCompleted:!!ownRow.data?.completed_at,navigation:await page.evaluate(()=>({path:window.location.pathname,ready:document.readyState,type:(performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming|undefined)?.type}))}))
+    > 133 |   await expect(page).toHaveURL(/\/en\/account\/profile$/)
+          |                      ^
+      134 | })
+      135 | When(
+      136 |   'the account attempts refresh manual and history navigation before completing',
+        at Object.<anonymous> (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\completion.steps.ts:133:22)
+        at BddStepInvoker.runWithAfterStepHooks (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:82:16)
+        at BddStepInvoker.invoke (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:55:5)
+        at C:\Users\Lenovo\Desktop\koller_web\.features-gen\auth\tests\e2e\profile\completion.feature.spec.js:7:5
+
+    Error Context: test-results\tests-e2e-profile-completi-321bc-on-cannot-bypass-completion-msedge-auth\error-context.md
+
+  1 failed
+    [msedge-auth] › .features-gen\auth\tests\e2e\profile\completion.feature.spec.js:6:7 › Mandatory completion and unindexed public profiles › SC-425 Refresh and manual navigation cannot bypass completion @phase-three-c-profiles-privacy @FR-409 @SC-425 

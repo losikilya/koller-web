@@ -1,0 +1,20 @@
+
+> dance-platform@0.1.0 db:test C:\Users\Lenovo\Desktop\koller_web
+> vitest run tests/database/foundation.test.ts
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+Connecting to local database...
+psql:/Users/Lenovo/Desktop/koller_web/supabase/tests/identity.test.sql:2: NOTICE:  extension "pgtap" already exists, skipping
+/Users/Lenovo/Desktop/koller_web/supabase/tests/identity.test.sql .. ok
+All tests successful.
+Files=1, Tests=74,  0 wallclock secs ( 0.02 usr  0.01 sys +  0.01 cusr  0.01 csys =  0.05 CPU)
+Result: PASS
+Real local PostgreSQL, anonymous, owner and non-owner REST assertions: PASS
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  07:51:06
+   Duration  4.71s (transform 34ms, setup 298ms, import 31ms, tests 4.20s, environment 0ms)
+

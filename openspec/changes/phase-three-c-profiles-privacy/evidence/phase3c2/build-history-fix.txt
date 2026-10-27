@@ -1,0 +1,68 @@
+
+> dance-platform@0.1.0 build C:\Users\Lenovo\Desktop\koller_web
+> turbo run build
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running build in 4 packages
+   • Remote caching disabled
+
+@dance/web:build: cache miss, executing 7ae9f582a4d66b9c
+@dance/web:build: 
+@dance/web:build: > @dance/web@0.1.0 build C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:build: > next build
+@dance/web:build: 
+@dance/web:build: ▲ Next.js 16.4.3 (Turbopack)
+@dance/web:build: ✓ Running next.config.ts took 82ms
+@dance/web:build: 
+@dance/web:build:   Creating an optimized production build ...
+@dance/web:build: ✓ Compiled successfully in 1774ms
+@dance/web:build:   Running TypeScript ...
+@dance/web:build:   Finished TypeScript in 2.0s ...
+@dance/web:build:   Collecting page data using 15 workers ...
+@dance/web:build:   Generating static pages using 15 workers (0/24) ...
+@dance/web:build:   Generating static pages using 15 workers (6/24) 
+@dance/web:build:   Generating static pages using 15 workers (12/24) 
+@dance/web:build:   Generating static pages using 15 workers (18/24) 
+@dance/web:build: ✓ Generating static pages using 15 workers (24/24) in 396ms
+@dance/web:build:   Finalizing page optimization ...
+@dance/web:build: 
+@dance/web:build: Route (app)
+@dance/web:build: ┌ ○ /_not-found
+@dance/web:build: ├   /[locale]
+@dance/web:build: │ ├ ● /en
+@dance/web:build: │ └ ● /ru
+@dance/web:build: ├ ƒ /[locale]/account
+@dance/web:build: ├ ƒ /[locale]/account/profile
+@dance/web:build: ├ ƒ /[locale]/auth/callback
+@dance/web:build: ├ ƒ /[locale]/auth/confirm
+@dance/web:build: ├ ƒ /[locale]/forgot-password
+@dance/web:build: ├ ƒ /[locale]/login
+@dance/web:build: ├   /[locale]/playground
+@dance/web:build: │ ├ ● /en/playground
+@dance/web:build: │ └ ● /ru/playground
+@dance/web:build: ├   /[locale]/playground/practice-timer
+@dance/web:build: │ ├ ● /en/playground/practice-timer
+@dance/web:build: │ └ ● /ru/playground/practice-timer
+@dance/web:build: ├ ƒ /[locale]/register
+@dance/web:build: ├ ƒ /[locale]/reset-password
+@dance/web:build: ├ ƒ /[locale]/u/[username]
+@dance/web:build: ├ ƒ /api/auth/[action]
+@dance/web:build: ├ ƒ /api/v1/me
+@dance/web:build: ├ ƒ /api/v1/me/completion
+@dance/web:build: ├ ƒ /api/v1/me/profile
+@dance/web:build: └ ƒ /api/v1/me/profile/complete
+@dance/web:build: 
+@dance/web:build: 
+@dance/web:build: ƒ Proxy (Middleware)
+@dance/web:build: 
+@dance/web:build: ○  (Static)   prerendered as static content
+@dance/web:build: ●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+@dance/web:build: ƒ  (Dynamic)  server-rendered on demand
+@dance/web:build: 
+
+ Tasks:    1 successful, 1 total
+Cached:    0 cached, 1 total
+  Time:    7.94s 
+

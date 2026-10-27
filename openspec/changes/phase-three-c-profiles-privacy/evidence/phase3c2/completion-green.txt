@@ -1,0 +1,7 @@
+
+> dance-platform@0.1.0 tdd C:\Users\Lenovo\Desktop\koller_web
+> node scripts/tdd.mjs "phase-three-c-profiles-privacy" "SC-421" "green"
+
+PASS: real explicit completion, required fields, ownership, direct bypasses, uniqueness/revision races, rename reuse, public whitelist/missing-privacy/deletion and domain gate
+JSON report written to C:/Users/Lenovo/Desktop/koller_web/openspec/changes/phase-three-c-profiles-privacy/evidence/022-SC-421-green.json
+Recorded SC-421 GREEN. 

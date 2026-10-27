@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "commands": [
+    { "id": "scope", "command": "node scripts/architecture-refactor-workflow.mjs check remove-legacy-jira-commit-rule" },
+    { "id": "agents", "command": "node scripts/sync-claude.mjs --check && node scripts/sync-codex.mjs --check" },
+    { "id": "adapter-tests", "command": "node --test C:/Users/Lenovo/Desktop/koller_web/scripts/sync-claude.test.mjs C:/Users/Lenovo/Desktop/koller_web/scripts/sync-codex.test.mjs" },
+    { "id": "verify", "command": "pnpm --dir C:/Users/Lenovo/Desktop/koller_web verify" }
+  ]
+}

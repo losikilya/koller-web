@@ -20,7 +20,8 @@ select ok(not has_function_privilege('anon', 'public.ensure_profile()', 'EXECUTE
 insert into auth.users(id, email, raw_user_meta_data) values
  ('11111111-1111-4111-8111-111111111111', 'a@example.test', '{"username":"admin","visibility":"public"}'),
  ('22222222-2222-4222-8222-222222222222', 'b@example.test', '{}'),
- ('33333333-3333-4333-8333-333333333333', 'c@example.test', '{}');
+ ('33333333-3333-4333-8333-333333333333', 'c@example.test', '{}'),
+ ('44444444-4444-4444-8444-444444444444', 'data@example.test', '{}');
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}', true);
@@ -43,6 +44,9 @@ select lives_ok('select public.set_own_preferences(''ru'',''dark'',1)', 'owner u
 select lives_ok('select public.ensure_profile()', 'retry preserves existing preferences');
 select is((select locale from public.user_preferences), 'ru', 'bootstrap does not reset locale');
 select throws_ok('select public.set_own_preferences(''de'',''system'',2)', '23514', null, 'unsupported locale denied');
+select set_config('request.jwt.claims', '{"sub":"44444444-4444-4444-8444-444444444444","role":"authenticated"}', true);
+select lives_ok('select public.ensure_profile()', 'data owner initializes privately');
+select lives_ok('select public.complete_own_profile(''{"username":"data_owner","displayName":"Data Owner"}'',1,1)', 'data owner explicitly completes before cloud writes');
 select throws_ok('select public.put_own_playground_data(''practice-timer'',''default'',''[]'',1)', '23514', null, 'JSON arrays denied');
 select throws_ok('select public.put_own_playground_data(''practice-timer'',''default'',''{}'',2)', '23514', null, 'unsupported schema denied');
 select throws_ok('select public.put_own_playground_data(''battles'',''default'',''{}'',1)', '23514', null, 'unknown app denied');
@@ -59,7 +63,8 @@ select is((select count(*) from public.profile_privacy where user_id = '11111111
 select is((select count(*) from public.user_preferences where user_id = '11111111-1111-4111-8111-111111111111'), 0::bigint, 'non-owner cannot read preferences');
 select is((select count(*) from public.playground_user_data), 0::bigint, 'non-owner cannot read data');
 select throws_ok('select public.update_own_profile(''{"username":"dancer_a"}'',1)', '23505', null, 'username uniqueness enforced');
-select lives_ok('select public.delete_own_playground_data(''practice-timer'',''default'',2)', 'non-owner delete is harmless idempotent absence');
+select lives_ok('select public.complete_own_profile(''{"username":"dancer_b","displayName":"Other"}'',1,1)', 'second owner explicitly completes');
+select lives_ok('select public.delete_own_playground_data(''practice-timer'',''default'',2)', 'completed non-owner delete is harmless idempotent absence');
 
 set local role anon;
 select set_config('request.jwt.claims', '{"role":"anon"}', true);
@@ -69,7 +74,8 @@ select is((select count(*) from public.list_public_profiles()), 0::bigint, 'priv
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}', true);
-select lives_ok('select public.set_own_privacy(''public'',false,1)', 'owner publishes without discovery');
+select lives_ok('select public.complete_own_profile(''{"username":"dancer_a","displayName":"Танцор"}'',2,1)', 'owner explicitly completes without discovery');
+select lives_ok('select public.put_own_playground_data(''practice-timer'',''default'',''{}'',1)', 'completed profile owns data for cascade coverage');
 set local role anon;
 select is((select count(*) from public.get_public_profile('11111111-1111-4111-8111-111111111111')), 1::bigint, 'public exact lookup allowed');
 select is((select count(*) from public.list_public_profiles()), 0::bigint, 'non-discoverable public profile excluded');
@@ -86,7 +92,7 @@ select is((select count(*) from public.get_public_profile('11111111-1111-4111-81
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}', true);
 select lives_ok('select public.ensure_profile()', 'bootstrap repairs missing privacy');
-select is((select visibility from public.profile_privacy), 'private', 'repaired privacy defaults private');
+select is((select visibility from public.profile_privacy), 'public', 'previously completed owner repairs public privacy without new consent inference');
 select is((select count(*) from public.playground_user_data), 1::bigint, 'other owner deletion did not remove data');
 
 reset role;

@@ -1,0 +1,32 @@
+
+> dance-platform@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web
+> turbo run typecheck && tsc --noEmit && tsc --noEmit -p .storybook/tsconfig.json
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running typecheck in 4 packages
+   • Remote caching disabled
+
+@dance/contracts:typecheck: cache miss, executing e89874f2b4837513
+@dance/ui:typecheck: cache miss, executing 05c155c218cb07c0
+@dance/contracts:typecheck: 
+@dance/contracts:typecheck: > @dance/contracts@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:typecheck: > tsc --noEmit
+@dance/contracts:typecheck: 
+@dance/ui:typecheck: 
+@dance/ui:typecheck: > @dance/ui@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:typecheck: > tsc --noEmit
+@dance/ui:typecheck: 
+@dance/web:typecheck: cache miss, executing dc929ec8c0b20c14
+@dance/web:typecheck: 
+@dance/web:typecheck: > @dance/web@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:typecheck: > next typegen && tsc --noEmit
+@dance/web:typecheck: 
+@dance/web:typecheck: Generating route types...
+@dance/web:typecheck: ✓ Types generated successfully
+
+ Tasks:    3 successful, 3 total
+Cached:    0 cached, 3 total
+  Time:    5.611s 
+

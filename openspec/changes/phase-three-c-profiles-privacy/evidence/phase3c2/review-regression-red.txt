@@ -1,0 +1,22 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/app/_infrastructure/auth.test.ts (0 test)
+ ❯ tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/auth.test.ts [ tests/apps/web/app/_infrastructure/auth.test.ts ]
+Error: EPERM: operation not permitted, rename 'C:\Users\Lenovo\AppData\Local\Packages\sandbox.{a9fa3652-107e-42c6-ba38-ab43ccfef699}\AC\Temp\QNjqjN5J8JysSd7cVES9N\ssr\.tmp-1793073117103-6bxwwkkjljo' -> 'C:\Users\Lenovo\AppData\Local\Packages\sandbox.{a9fa3652-107e-42c6-ba38-ab43ccfef699}\AC\Temp\QNjqjN5J8JysSd7cVES9N\ssr\6f095754fae940533af10dc3df8c592ef5d1fa70'
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts [ tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts ]
+Error: EPERM: operation not permitted, rename 'C:\Users\Lenovo\AppData\Local\Packages\sandbox.{a9fa3652-107e-42c6-ba38-ab43ccfef699}\AC\Temp\QNjqjN5J8JysSd7cVES9N\ssr\.tmp-1793073117450-k19kbseque' -> 'C:\Users\Lenovo\AppData\Local\Packages\sandbox.{a9fa3652-107e-42c6-ba38-ab43ccfef699}\AC\Temp\QNjqjN5J8JysSd7cVES9N\ssr\6f095754fae940533af10dc3df8c592ef5d1fa70'
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  no tests
+   Start at  08:51:56
+   Duration  718ms (transform 0ms, setup 0ms, import 0ms, tests 0ms, environment 0ms)
+

@@ -85,6 +85,6 @@ Required artifacts: proposal (Change kind: maintenance; Behavior contract: uncha
 
 ## Commits and handoff
 
-No commit/push/publication without an explicit request. /commit requires a user-supplied Jira ticket, owning OpenSpec change and current verification/review. Tests-only uses OpenSpec Change: none (tests-only). Keep the exact Jira message safety checks in commit-change; committing never authorizes pushing. Do not invent ticket IDs.
+Every commit, push and publication requires explicit user authorization for that operation; one authorization never covers future operations. Existing authorization for the current approved scope remains valid without duplicate confirmation. /commit requires the owning OpenSpec change and current verification/review, followed by a factual summary and OpenSpec metadata; this project does not require Jira tickets. Tests-only uses OpenSpec Change: none (tests-only). Committing never authorizes pushing.
 
 Use one coherent change per session where practical. Handoff only decisions, paths, actual exit codes and next action. A stopped change remains incomplete; do not rewrite evidence/history to manufacture completion. Avoid global instructions imports and loading all archives/context. Permissions and role instructions are not substitutes for technical sandbox or branch protection.

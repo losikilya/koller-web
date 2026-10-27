@@ -45,9 +45,11 @@
     "db:reset": "supabase db reset --local",
     "db:test": "vitest run tests/database/foundation.test.ts",
     "db:types": "node scripts/generate-database-types.mjs",
-    "verify:checks": "pnpm agents:check && pnpm test:workflow && pnpm lint && pnpm typecheck && pnpm format && pnpm test && pnpm test:ci && pnpm db:test && pnpm test:auth && pnpm build && pnpm storybook:build && pnpm test:e2e && pnpm test:storybook && pnpm spec:validate",
+    "verify:checks": "pnpm agents:check && pnpm test:workflow && pnpm lint && pnpm typecheck && pnpm format && pnpm test && pnpm test:ci && pnpm db:test && pnpm db:test:profile && pnpm db:test:completion && pnpm test:auth && pnpm build && pnpm storybook:build && pnpm test:e2e && pnpm test:storybook && pnpm spec:validate",
     "test:auth": "node scripts/run-local-auth.mjs integration",
-    "test:auth:e2e": "node scripts/run-local-auth.mjs e2e"
+    "test:auth:e2e": "node scripts/run-local-auth.mjs e2e",
+    "db:test:profile": "vitest run tests/database/profile.test.ts",
+    "db:test:completion": "vitest run tests/database/completion.test.ts tests/database/publicProfileRaces.test.ts"
   },
   "devDependencies": {
     "@amiceli/vitest-cucumber": "^7.0.0",

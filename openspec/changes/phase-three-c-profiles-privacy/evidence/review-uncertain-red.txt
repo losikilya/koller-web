@@ -1,0 +1,56 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/modules/profile/uncertainWrite.test.tsx (2 tests | 2 failed) 178ms
+   × SDK status-zero and empty-code errors require reload at the repository seam 11ms
+   × Cancel cannot enable another save after an uncertain result before a successful reload 166ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/modules/profile/uncertainWrite.test.tsx > SDK status-zero and empty-code errors require reload at the repository seam
+AssertionError: expected Error: service_unavailable { …(2) } to match object { code: 'outcome_unknown' }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "outcome_unknown",
++ ProfileFailure {
++   "code": "service_unavailable",
+  }
+
+ ❯ tests/apps/web/modules/profile/uncertainWrite.test.tsx:12:126
+     10| test('SDK status-zero and empty-code errors require reload at the repo…
+     11|   const client = { rpc: vi.fn().mockResolvedValue({ status: 0, error: …
+     12|   await expect(saveOwnProfile(createProfileRepository(client), '111111…
+       |                                                                                                                              ^
+     13| })
+     14| test('Cancel cannot enable another save after an uncertain result befo…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/apps/web/modules/profile/uncertainWrite.test.tsx > Cancel cannot enable another save after an uncertain result before a successful reload
+Error: expect(element).toBeDisabled()
+
+Received element is not disabled:
+  <button
+  class="_button_f176d3 _primary_f176d3 _medium_f176d3 "
+  type="submit"
+/>
+ ❯ tests/apps/web/modules/profile/uncertainWrite.test.tsx:24:16
+     22|   await user.click(screen.getByRole('button', { name: 'Cancel edits' }…
+     23|   const save = screen.getByRole('button', { name: 'Save profile' })
+     24|   expect(save).toBeDisabled()
+       |                ^
+     25|   await user.click(save)
+     26|   expect(fetcher).toHaveBeenCalledTimes(1)
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed (2)
+   Start at  06:50:33
+   Duration  1.85s (transform 346ms, setup 324ms, import 498ms, tests 178ms, environment 661ms)
+

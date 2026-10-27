@@ -1,0 +1,117 @@
+begin;
+create extension if not exists pgtap with schema extensions;
+set local search_path = public, extensions, pg_catalog;
+select no_plan();
+
+select has_table('public', 'profiles', 'profiles table exists');
+select has_table('public', 'profile_privacy', 'profile_privacy table exists');
+select has_table('public', 'user_preferences', 'user_preferences table exists');
+select has_table('public', 'playground_user_data', 'playground_user_data table exists');
+select ok((select bool_and(relrowsecurity) from pg_class where oid in ('public.profiles'::regclass, 'public.profile_privacy'::regclass, 'public.user_preferences'::regclass, 'public.playground_user_data'::regclass)), 'all user tables enable RLS');
+select ok(not has_table_privilege('anon', 'public.profiles', 'SELECT'), 'anon lacks profile SELECT grant');
+select ok(not has_table_privilege('authenticated', 'public.profiles', 'UPDATE'), 'authenticated lacks direct profile UPDATE grant');
+select ok(not has_table_privilege('authenticated', 'public.playground_user_data', 'INSERT'), 'authenticated lacks direct data INSERT grant');
+select ok(not pg_has_role('anon', 'dance_profile_reader', 'MEMBER'), 'anon cannot assume reader role');
+select ok(not pg_has_role('authenticated', 'dance_profile_reader', 'MEMBER'), 'authenticated cannot assume reader role');
+select ok(not (select rolbypassrls or rolcanlogin from pg_roles where rolname = 'dance_profile_reader'), 'public reader cannot login or bypass RLS');
+select ok(not has_column_privilege('dance_profile_reader', 'public.profiles', 'avatar_path', 'SELECT'), 'reader cannot select avatar storage path');
+select ok(not has_function_privilege('anon', 'public.ensure_profile()', 'EXECUTE'), 'anon cannot bootstrap');
+
+insert into auth.users(id, email, raw_user_meta_data) values
+ ('11111111-1111-4111-8111-111111111111', 'a@example.test', '{"username":"admin","visibility":"public"}'),
+ ('22222222-2222-4222-8222-222222222222', 'b@example.test', '{}'),
+ ('33333333-3333-4333-8333-333333333333', 'c@example.test', '{}');
+
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}', true);
+select lives_ok('select public.ensure_profile()', 'owner initializes application data');
+select lives_ok('select public.ensure_profile()', 'bootstrap is idempotent');
+select is((select count(*) from public.profiles), 1::bigint, 'owner sees exactly one profile');
+select is((select username from public.profiles), null::text, 'untrusted Auth username ignored');
+select is((select visibility from public.profile_privacy), 'private', 'privacy defaults private');
+select ok((select not discoverable and not show_activity from public.profile_privacy), 'discovery and activity default false');
+select is((select locale from public.user_preferences), 'en', 'locale default en');
+select is((select theme from public.user_preferences), 'system', 'theme default system');
+select throws_ok('update public.profiles set bio = ''bypass''', '42501', null, 'direct owner UPDATE denied');
+select throws_ok('select public.update_own_profile(''{"userId":"forged"}'',1)', '22023', null, 'forged owner patch denied');
+select throws_ok('select public.update_own_profile(''{"username":"Upper"}'',1)', '23514', null, 'uppercase username denied');
+select throws_ok('select public.update_own_profile(''{"username":"admin"}'',1)', '23514', null, 'reserved username denied');
+select throws_ok('select public.set_own_privacy(''public'',true,1)', '23514', null, 'blank display name cannot publish');
+select lives_ok('select public.update_own_profile(''{"displayName":"Танцор","username":"dancer_a"}'',1)', 'owner updates Russian profile');
+select throws_ok('select public.update_own_profile(''{"bio":"stale"}'',1)', '40001', null, 'stale revision rejected');
+select lives_ok('select public.set_own_preferences(''ru'',''dark'',1)', 'owner updates preferences');
+select lives_ok('select public.ensure_profile()', 'retry preserves existing preferences');
+select is((select locale from public.user_preferences), 'ru', 'bootstrap does not reset locale');
+select throws_ok('select public.set_own_preferences(''de'',''system'',2)', '23514', null, 'unsupported locale denied');
+select throws_ok('select public.put_own_playground_data(''practice-timer'',''default'',''[]'',1)', '23514', null, 'JSON arrays denied');
+select throws_ok('select public.put_own_playground_data(''practice-timer'',''default'',''{}'',2)', '23514', null, 'unsupported schema denied');
+select throws_ok('select public.put_own_playground_data(''battles'',''default'',''{}'',1)', '23514', null, 'unknown app denied');
+select throws_ok('select public.put_own_playground_data(''practice-timer'',''default'',jsonb_build_object(''value'',repeat(''я'',17000)),1)', '23514', null, 'oversized multibyte JSON denied');
+select lives_ok('select public.put_own_playground_data(''practice-timer'',''default'',''{}'',1)', 'owner creates bounded version-one envelope');
+select throws_ok('select public.put_own_playground_data(''practice-timer'',''default'',''{}'',1)', '23505', null, 'duplicate natural key denied');
+select lives_ok('select public.put_own_playground_data(''practice-timer'',''default'',''{}'',1,1)', 'owner updates expected revision');
+select throws_ok('select public.delete_own_playground_data(''practice-timer'',''default'',1)', '40001', null, 'stale deletion denied');
+
+select set_config('request.jwt.claims', '{"sub":"22222222-2222-4222-8222-222222222222","role":"authenticated"}', true);
+select lives_ok('select public.ensure_profile()', 'second owner initializes');
+select is((select count(*) from public.profiles where user_id = '11111111-1111-4111-8111-111111111111'), 0::bigint, 'non-owner cannot read profile');
+select is((select count(*) from public.profile_privacy where user_id = '11111111-1111-4111-8111-111111111111'), 0::bigint, 'non-owner cannot read privacy');
+select is((select count(*) from public.user_preferences where user_id = '11111111-1111-4111-8111-111111111111'), 0::bigint, 'non-owner cannot read preferences');
+select is((select count(*) from public.playground_user_data), 0::bigint, 'non-owner cannot read data');
+select throws_ok('select public.update_own_profile(''{"username":"dancer_a"}'',1)', '23505', null, 'username uniqueness enforced');
+select lives_ok('select public.delete_own_playground_data(''practice-timer'',''default'',2)', 'non-owner delete is harmless idempotent absence');
+
+set local role anon;
+select set_config('request.jwt.claims', '{"role":"anon"}', true);
+select throws_ok('select * from public.profiles', '42501', null, 'anonymous base read denied');
+select is((select count(*) from public.get_public_profile('11111111-1111-4111-8111-111111111111')), 0::bigint, 'private exact lookup hidden');
+select is((select count(*) from public.list_public_profiles()), 0::bigint, 'private accounts absent from discovery');
+
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}', true);
+select lives_ok('select public.set_own_privacy(''public'',false,1)', 'owner publishes without discovery');
+set local role anon;
+select is((select count(*) from public.get_public_profile('11111111-1111-4111-8111-111111111111')), 1::bigint, 'public exact lookup allowed');
+select is((select count(*) from public.list_public_profiles()), 0::bigint, 'non-discoverable public profile excluded');
+select results_eq('select jsonb_object_keys(to_jsonb(p)) from public.get_public_profile(''11111111-1111-4111-8111-111111111111'') p order by 1', $$values ('bio'::text), ('display_name'), ('user_id'), ('username')$$, 'public projection exposes approved columns only');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}', true);
+select lives_ok('select public.set_own_privacy(''public'',true,2)', 'owner enables discovery');
+set local role anon;
+select is((select count(*) from public.list_public_profiles()), 1::bigint, 'discoverable profile listed');
+reset role;
+delete from public.profile_privacy where user_id = '11111111-1111-4111-8111-111111111111';
+set local role anon;
+select is((select count(*) from public.get_public_profile('11111111-1111-4111-8111-111111111111')), 0::bigint, 'missing privacy fails closed');
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}', true);
+select lives_ok('select public.ensure_profile()', 'bootstrap repairs missing privacy');
+select is((select visibility from public.profile_privacy), 'private', 'repaired privacy defaults private');
+select is((select count(*) from public.playground_user_data), 1::bigint, 'other owner deletion did not remove data');
+
+reset role;
+create function pg_temp.reject_preferences() returns trigger language plpgsql as $$begin raise exception 'bootstrap fixture failure'; end;$$;
+create trigger test_bootstrap_failure before insert on public.user_preferences for each row execute function pg_temp.reject_preferences();
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"33333333-3333-4333-8333-333333333333","role":"authenticated"}', true);
+select throws_ok('select public.ensure_profile()', 'P0001', 'bootstrap fixture failure', 'bootstrap failure is explicit');
+select is((select count(*) from public.profiles), 0::bigint, 'failed bootstrap rolls back profile');
+select is((select count(*) from public.profile_privacy), 0::bigint, 'failed bootstrap rolls back privacy');
+reset role;
+select is((select count(*) from auth.users where id = '33333333-3333-4333-8333-333333333333'), 1::bigint, 'application failure never removes Auth user');
+drop trigger test_bootstrap_failure on public.user_preferences;
+set local role authenticated;
+select lives_ok('select public.ensure_profile()', 'bootstrap recovers after failure is repaired');
+reset role;
+update public.profiles set deletion_requested_at = now() where user_id = '11111111-1111-4111-8111-111111111111';
+set local role authenticated;
+select set_config('request.jwt.claims', '{"sub":"11111111-1111-4111-8111-111111111111","role":"authenticated"}', true);
+select throws_ok('select public.update_own_profile(''{"bio":"blocked"}'',2)', '42501', null, 'deleting account cannot mutate');
+reset role;
+delete from auth.users where id = '11111111-1111-4111-8111-111111111111';
+select is((select count(*) from public.profiles where user_id = '11111111-1111-4111-8111-111111111111'), 0::bigint, 'Auth deletion cascades profile');
+select is((select count(*) from public.profile_privacy where user_id = '11111111-1111-4111-8111-111111111111'), 0::bigint, 'Auth deletion cascades privacy');
+select is((select count(*) from public.user_preferences where user_id = '11111111-1111-4111-8111-111111111111'), 0::bigint, 'Auth deletion cascades preferences');
+select is((select count(*) from public.playground_user_data where user_id = '11111111-1111-4111-8111-111111111111'), 0::bigint, 'Auth deletion cascades app data');
+select * from finish();
+rollback;

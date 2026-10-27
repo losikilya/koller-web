@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "scope": "Authorized commit-policy maintenance supplemental evidence only; no avatar implementation or push",
+  "capturedAt": "2026-10-27T10:00:03.538Z",
+  "head": "cb1098f6e695a999d1f32e1e5539043f459edf7b",
+  "originalWorkspace": "C:\\Users\\Lenovo\\Desktop\\koller_web",
+  "isolatedWorkspace": "C:/Users/Lenovo/AppData/Local/Temp/koller-commit-policy-20261027",
+  "authorization": "One commit only; no push; every future commit/push requires fresh explicit user authorization",
+  "policyFiles": [
+    {
+      "path": ".opencode/commands/commit.md",
+      "bytes": 632,
+      "sha256": "973b64f7b45211d56018978b238867eaad4dd670efe421e3a280d6b76f28a72d"
+    },
+    {
+      "path": ".opencode/skills/commit-change/SKILL.md",
+      "bytes": 2257,
+      "sha256": "a7bc9e66033affea9153a75ab389a027e19995ade1d323a92ec818944dfb3cc5"
+    },
+    {
+      "path": ".opencode/skills/tech-debt-audit/SKILL.md",
+      "bytes": 2047,
+      "sha256": "5430057ce3e5cf046b2a48a7a9ac1954a64342d639aaef04ec21a23f823489f6"
+    },
+    {
+      "path": ".claude/commands/commit.md",
+      "bytes": 641,
+      "sha256": "00f9bc4b35da2e82b888d4396887dc3553acb10772b65bdff5614579989636fa"
+    },
+    {
+      "path": ".claude/skills/commit-change/SKILL.md",
+      "bytes": 2257,
+      "sha256": "a7bc9e66033affea9153a75ab389a027e19995ade1d323a92ec818944dfb3cc5"
+    },
+    {
+      "path": ".claude/skills/tech-debt-audit/SKILL.md",
+      "bytes": 2047,
+      "sha256": "5430057ce3e5cf046b2a48a7a9ac1954a64342d639aaef04ec21a23f823489f6"
+    },
+    {
+      "path": ".agents/skills/team-commit/SKILL.md",
+      "bytes": 1216,
+      "sha256": "de77a7da6a93b073ed284c3a1905aa4fcaae15d9626f8da4e5b9b5e286ff7479"
+    },
+    {
+      "path": ".agents/skills/commit-change/SKILL.md",
+      "bytes": 2257,
+      "sha256": "a7bc9e66033affea9153a75ab389a027e19995ade1d323a92ec818944dfb3cc5"
+    },
+    {
+      "path": ".agents/skills/tech-debt-audit/SKILL.md",
+      "bytes": 2047,
+      "sha256": "5430057ce3e5cf046b2a48a7a9ac1954a64342d639aaef04ec21a23f823489f6"
+    },
+    {
+      "path": "docs/PROCESS.md",
+      "bytes": 12726,
+      "sha256": "5051eab7e8fcc2220eb1c24fd21e065fec9770e1cf33b891f4dcaef7d6e80118"
+    },
+    {
+      "path": "docs/CODEX.md",
+      "bytes": 4294,
+      "sha256": "0063182f390dd191b0a2fa2a9852b6ae637b2c957c588ff16e0c59c5a7b0836a"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6316,
+      "sha256": "b6860785fe649a95f80ee3e753528c97c1c770679e015646bfdea7fece75c864"
+    }
+  ],
+  "packetFiles": [
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/.openspec.yaml",
+      "bytes": 66,
+      "sha256": "ddb3c102784ec848ff6119a0db44e2400edf7c083d945a0a4952e040c8ce7047"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/baseline.md",
+      "bytes": 915,
+      "sha256": "62716662158f99ba1d4a82c9069438a4de4957997d4d66128f72cf9e5cb720c7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/design.md",
+      "bytes": 2055,
+      "sha256": "a93e903990c37bf3911d1e42a7b9d57a9da7858dbfb594266d4ab016bb0338ed"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/architecture-refactor/001-baseline.json",
+      "bytes": 32885,
+      "sha256": "438d2bcd753c5f54e0e02494728be3ea7f4f33898bc7da2db826fc3f95b35a5a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/architecture-refactor/002-final.json",
+      "bytes": 32724,
+      "sha256": "61e97285cd0a65c6e81e37839023d60a7c7d324bd891c8e3750f508e2341b2ad"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/architecture-refactor/ledger.json",
+      "bytes": 681,
+      "sha256": "64e8c09fbd01423e28a5dbe217ae2617a3c08275bc030241d5e424825b9dbfa5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/native-validation.txt",
+      "bytes": 174,
+      "sha256": "c1f9782a58f1df4ea52bd0c29bcca8322d6c415bddcae3caa2074f8030352683"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/ready.txt",
+      "bytes": 281,
+      "sha256": "e2fa32ef09d6920d15093dab8f9868b7d3a0292f9dea9211b6478100c75d72d8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/runner-baseline-console.txt",
+      "bytes": 32934,
+      "sha256": "4f2f810b04b38de60fc6f9a0e4512ab1c93df8b752b090faecb547925e15e8e2"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/runner-final-console.txt",
+      "bytes": 32773,
+      "sha256": "d5718574d80d7a210cc7a992fd599582716baf7838ed51f0cdad258e0e59b44e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/setup-scope-failure.txt",
+      "bytes": 49,
+      "sha256": "ea2d80e4775adf59b1c0839ed47a16b3b9346a2365873d52fa85afbc5fbcb47f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/proposal.md",
+      "bytes": 1218,
+      "sha256": "b8e9496c05951120ec119d05983710e7929283fba5178495f90429b5cfc6b59b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/review.md",
+      "bytes": 1666,
+      "sha256": "61e25224d0621ccc912c271250df3ca6583fe813cddab86ae2df810e8af1d75d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/tasks.md",
+      "bytes": 434,
+      "sha256": "afdb337175b88c615b848c74d98b284d590a537f84d881cd74fffe253c2057e9"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/verification-plan.json",
+      "bytes": 550,
+      "sha256": "0066aa9ba9ace109e25b4718b96af1eeedbe60ea528112d309259f8279c3917c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/policy.patch",
+      "bytes": 25122,
+      "sha256": "3726d0830e77a8bb21e57d6e70fb3f1051d832ffd6552bcf5ac5e428286fc25e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/README.md",
+      "bytes": 1566,
+      "sha256": "baa32e1ef75ba5fb295cd986d85b3a9888d9d79bf0fe96184a22d18c0b5a9e1d"
+    }
+  ],
+  "priorManifests": [
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/acceptance-manifest.json",
+      "bytes": 9315,
+      "sha256": "dd411270db6b6f278c0c676e6a3d88a0a44dfc26b84f72091141e3239a829ab9"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/acceptance-manifest.json",
+      "bytes": 44619,
+      "sha256": "8b7990264fa3413f070422b8edc3c39b98cf1c9f49f0ffee7b8176d7eb2b9bb7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-manifest.json",
+      "bytes": 14136,
+      "sha256": "00cee2272bd284a042c5987d3b0c627d9c4ecbff0b479f3e8736cc7dfbe67d6c"
+    }
+  ],
+  "priorAcceptanceRecordsVerified": 238,
+  "unchangedCheckoutEolMappings": [
+    {
+      "path": ".eslintrc.cjs",
+      "unchangedHeadBlobSha256": "8d148e3f90bed2fd9e9deb20e5a1fed717c595f5ebdc44364c8f7cd4521679c5",
+      "originalWindowsAcceptanceSha256": "14b7570363424f5f0430eb79e986b23a5cc4deddcd43bcec604bacabedc32daf",
+      "normalizedSha256": "8d148e3f90bed2fd9e9deb20e5a1fed717c595f5ebdc44364c8f7cd4521679c5",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": ".prettierignore",
+      "unchangedHeadBlobSha256": "b3431930bc20eb53555c5e6f7fe713afdebb643cfad24e454a815967be9810af",
+      "originalWindowsAcceptanceSha256": "aa86e014af6f24ebb44a99116e23a98134e0683fe89e4f67d899ac94f57cd729",
+      "normalizedSha256": "b3431930bc20eb53555c5e6f7fe713afdebb643cfad24e454a815967be9810af",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/architecture-refactor-workflow.mjs",
+      "unchangedHeadBlobSha256": "bd52e5b9f81b0365be2fa21ec5b0d1b018c1327e76365012acea4820980e2a92",
+      "originalWindowsAcceptanceSha256": "137e5fb129fd14d453d2ac445ab552723f0453c9049455604bb08465670281f2",
+      "normalizedSha256": "bd52e5b9f81b0365be2fa21ec5b0d1b018c1327e76365012acea4820980e2a92",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/architecture-refactor-workflow.test.mjs",
+      "unchangedHeadBlobSha256": "338a719d367362136bb1248c7b9a7d4904f41b960f2cee569ff9bd9f72a9ad42",
+      "originalWindowsAcceptanceSha256": "af91a74ed1ac75bc5aa94c9618d8df7c91450c5254c4f468f40d8d88284b2d89",
+      "normalizedSha256": "338a719d367362136bb1248c7b9a7d4904f41b960f2cee569ff9bd9f72a9ad42",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/openspec.mjs",
+      "unchangedHeadBlobSha256": "fae9882a00d01c930051d39fadda214bf20e4c866542b3f787c6f4b9529051d5",
+      "originalWindowsAcceptanceSha256": "62f53ad2a1b2e15afea0efcaebf8879dbec6a38a3ab4f2a9f690cb7c13ac2146",
+      "normalizedSha256": "fae9882a00d01c930051d39fadda214bf20e4c866542b3f787c6f4b9529051d5",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/starter-config.test.mjs",
+      "unchangedHeadBlobSha256": "0727f2629aa4c7360f57d29269b7e29c46f981a3b8679c0101bdfa490a9c0a79",
+      "originalWindowsAcceptanceSha256": "3a209a3f09739e4e8fdc15e51c7770d7a41a9817b445df94fbbbc7f342bb5f8c",
+      "normalizedSha256": "0727f2629aa4c7360f57d29269b7e29c46f981a3b8679c0101bdfa490a9c0a79",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/sync-claude.mjs",
+      "unchangedHeadBlobSha256": "050814e4c9fb06680d8f7c6bbe00507b4ea2c770a09770766d9c7d34d167c6fe",
+      "originalWindowsAcceptanceSha256": "fb4a346adc40edaef59d4edfea31781c0679baf643a7ef579d1ad40499eac679",
+      "normalizedSha256": "050814e4c9fb06680d8f7c6bbe00507b4ea2c770a09770766d9c7d34d167c6fe",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/sync-claude.test.mjs",
+      "unchangedHeadBlobSha256": "8474144393c120708b652ffcba81aed57b0114f9a9d7eb63235c2af384cf8a46",
+      "originalWindowsAcceptanceSha256": "257b86bd396697e35e1e0af29b478459ed6a325260cc91dc6ac8b7267d5c31c4",
+      "normalizedSha256": "8474144393c120708b652ffcba81aed57b0114f9a9d7eb63235c2af384cf8a46",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/sync-codex.mjs",
+      "unchangedHeadBlobSha256": "90777fb8f1fa29c793b7d8b9d448935db7f521ddbf43801497c3f4b17dc2ed6c",
+      "originalWindowsAcceptanceSha256": "a4460815c0331ee9cd33fbaf2067a87135838d7b7e14ccb1a467074e9039a0fa",
+      "normalizedSha256": "90777fb8f1fa29c793b7d8b9d448935db7f521ddbf43801497c3f4b17dc2ed6c",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/sync-codex.test.mjs",
+      "unchangedHeadBlobSha256": "4387e70d0865800a21a621f1e839bcad68bebd400644aabfca37deba05a6d7c2",
+      "originalWindowsAcceptanceSha256": "83e2425b6a354eb2750704ec68e38d94a5aa5ac45dae516fb547198bdbdd6064",
+      "normalizedSha256": "4387e70d0865800a21a621f1e839bcad68bebd400644aabfca37deba05a6d7c2",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/tdd.mjs",
+      "unchangedHeadBlobSha256": "59c53a09445ec9085a064464e768b4ab2b86496e3b7d529ef536e4a735b774a2",
+      "originalWindowsAcceptanceSha256": "8c6e0c930a9f519c95079a94824af0008e47729b2c39c72d5f11c1e771a423ac",
+      "normalizedSha256": "59c53a09445ec9085a064464e768b4ab2b86496e3b7d529ef536e4a735b774a2",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/workflow-ci.mjs",
+      "unchangedHeadBlobSha256": "d8573ca143134c2b5c0f8404a26867bcf191acc55eb3bbdd58b029882b6fb7c0",
+      "originalWindowsAcceptanceSha256": "254c3091df083fd9348b0f68b1158be62a095d574e2edd705bd89a25b7c9a377",
+      "normalizedSha256": "d8573ca143134c2b5c0f8404a26867bcf191acc55eb3bbdd58b029882b6fb7c0",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/workflow-lib.mjs",
+      "unchangedHeadBlobSha256": "09ed8efcb37815d5341e7072fa353cf13eebaeeb21521b15ad90bb317f951553",
+      "originalWindowsAcceptanceSha256": "6c9a033b8f8219aaac2c4986127cd2b59fe8ddb2ebbedb60b83f0736201d7a70",
+      "normalizedSha256": "09ed8efcb37815d5341e7072fa353cf13eebaeeb21521b15ad90bb317f951553",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/workflow.mjs",
+      "unchangedHeadBlobSha256": "8d4a9f2cc86731c79670de84551cef728fc39e50a8ca26c7865bff13eca1d4fa",
+      "originalWindowsAcceptanceSha256": "27284dcfc0356fdf7ff3457c923b166cbf1bd96871f718a407b7b5cd4a4214c4",
+      "normalizedSha256": "8d4a9f2cc86731c79670de84551cef728fc39e50a8ca26c7865bff13eca1d4fa",
+      "action": "No staging or normalization; original manifest retained"
+    },
+    {
+      "path": "scripts/workflow.test.mjs",
+      "unchangedHeadBlobSha256": "99a2591bc153520404909fc5b6bb94a2f8e74f07c266952d1db702632569e2da",
+      "originalWindowsAcceptanceSha256": "7ecf33da7e5871ddb36a6c7a0ed534a8e2ae124276b7458deb9621dec2423ded",
+      "normalizedSha256": "99a2591bc153520404909fc5b6bb94a2f8e74f07c266952d1db702632569e2da",
+      "action": "No staging or normalization; original manifest retained"
+    }
+  ],
+  "stagingStatus": "Not claimed by this provenance; independently checked before commit in supplemental staged-byte-check.json"
+}

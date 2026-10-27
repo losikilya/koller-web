@@ -4,6 +4,7 @@ export function safeAuthReturn(value: unknown, locale: Locale): string {
   const allowed = [
     '/',
     '/account',
+    '/account/profile',
     '/playground',
     '/playground/practice-timer',
   ] as const

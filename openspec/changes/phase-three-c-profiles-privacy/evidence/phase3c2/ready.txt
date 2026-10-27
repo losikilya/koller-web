@@ -1,0 +1,9 @@
+
+> dance-platform@0.1.0 workflow C:\Users\Lenovo\Desktop\koller_web
+> node scripts/workflow.mjs "ready" "phase-three-c-profiles-privacy"
+
+{
+  "change": "phase-three-c-profiles-privacy",
+  "scenarios": 11,
+  "ready": true
+}

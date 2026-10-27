@@ -1,0 +1,185 @@
+
+> dance-platform@0.1.0 verify C:\Users\Lenovo\Desktop\koller_web
+> node scripts/run-local-auth.mjs verify
+
+
+> dance-platform@0.1.0 verify:checks C:\Users\Lenovo\Desktop\koller_web
+> pnpm agents:check && pnpm test:workflow && pnpm lint && pnpm typecheck && pnpm format && pnpm test && pnpm test:ci && pnpm db:test && pnpm db:test:profile && pnpm test:auth && pnpm build && pnpm storybook:build && pnpm test:e2e && pnpm test:storybook && pnpm spec:validate
+
+
+> dance-platform@0.1.0 agents:check C:\Users\Lenovo\Desktop\koller_web
+> node scripts/sync-claude.mjs --check && node scripts/sync-codex.mjs --check
+
+45 mirrored files, 0 out of sync, 0 stale
+Codex: 58 files, 0 out of sync, 0 stale
+
+> dance-platform@0.1.0 test:workflow C:\Users\Lenovo\Desktop\koller_web
+> node --test scripts/workflow.test.mjs scripts/starter-config.test.mjs scripts/sync-claude.test.mjs scripts/sync-codex.test.mjs scripts/architecture-refactor-workflow.test.mjs scripts/phase3a-exception.test.mjs
+
+warning: in the working copy of 'src/example.ts', LF will be replaced by CRLF the next time Git touches it
+✔ accepts a non-behavior architecture refactor plan (15.8292ms)
+✔ maintenance accepts its own schema without pretending to migrate application architecture (19.5772ms)
+✔ maintenance rejects product source, tests, specs and historical records (0.6891ms)
+✔ maintenance permits exact tooling/config paths and its own process artifacts (0.3555ms)
+✔ maintenance scope checks PR changes even with a clean checked-out working tree (9.4729ms)
+✔ maintenance permits exact EOL policy files without admitting neighboring config or product paths (0.3347ms)
+✔ maintenance refuses product deltas and missing explicit non-behavior metadata (22.8789ms)
+✔ maintenance fingerprints equivalent Windows/Linux text checkouts identically (128.2802ms)
+✔ maintenance fingerprints deleted paths identically before and after index removal (211.2561ms)
+✔ records matching GREEN baseline/final evidence and becomes ready (247.6666ms)
+✔ rejects implementation changes made after final evidence (237.325ms)
+✔ exact approved exception resolves only the two historical gaps, without TDD events (284.3208ms)
+✔ rejects invalid historical hash (67.6627ms)
+✔ rejects missing owner approval (65.74ms)
+✔ rejects missing reviewer approval (145.9889ms)
+✔ rejects wrong change (56.7874ms)
+✔ rejects wrong scenario (59.7015ms)
+✔ rejects wrong requirement (63.5389ms)
+✔ rejects wrong baseline gap (64.8718ms)
+✔ rejects additional exception (73.7309ms)
+✔ rejects unsupported type (59.614ms)
+✔ rejects unknown schema field (59.2283ms)
+✔ rejects invalid owner provenance (55.4937ms)
+✔ rejects invalid reviewer provenance (129.7504ms)
+✔ rejects owner authorization substitution (63.8728ms)
+✔ production validator never accepts the synthetic trust anchors (55.9077ms)
+✔ production validator rejects missing real approval evidence without fallback (61.1489ms)
+✔ production validator rejects tampered real approval evidence without fallback (58.1432ms)
+✔ rejects stale reviewer subject after the review report itself has a valid new content hash (128.2114ms)
+✔ rejects an exception on any other change even if its record claims the eligible change (52.1404ms)
+✔ rejects altered historical artifact (59.1149ms)
+✔ rejects missing original artifact (57.5733ms)
+✔ rejects fabricated SC-205 phases (57.3978ms)
+✔ rejects changed current source (114.5364ms)
+✔ rejects failed verify even with matching hashes and a fixture approval (113.141ms)
+✔ rejects missing browser gate even with matching hashes and a fixture approval (127.2911ms)
+✔ rejects missing coverage gate even with matching hashes and a fixture approval (130.496ms)
+✔ rejects missing unit assertions even with matching hashes and a fixture approval (128.5972ms)
+✔ rejects failed database even with matching hashes and a fixture approval (120.3103ms)
+✔ rejects failed SQL security even with matching hashes and a fixture approval (133.1523ms)
+✔ rejects failed REST security even with matching hashes and a fixture approval (134.3066ms)
+✔ rejects pending DB assertion even with matching hashes and a fixture approval (132.331ms)
+✔ rejects changed generated types even with matching hashes and a fixture approval (145.9843ms)
+✔ rejects remote type generation even with matching hashes and a fixture approval (140.8745ms)
+✔ task exceptions cannot resolve unrelated work or be relabelled TDD complete (249.436ms)
+✔ absent record preserves normal validation and missing SC-205 still fails (76.1656ms)
+✔ historical task identifiers cannot be reused for an unapproved task contract (153.4921ms)
+✔ current acceptance becomes stale when root config .prettierrc.json changes (139.2793ms)
+✔ current acceptance becomes stale when root config .npmrc changes (134.9144ms)
+✔ native archive relocation preserves approved readiness and every original evidence byte (172.5943ms)
+✔ archived evidence tampering still fails integrity validation after relocation (78.82ms)
+✔ duplicate active and archived identities are rejected rather than choosing evidence implicitly (67.1178ms)
+✔ workflow entrypoints remain syntactically runnable after workspace adaptation (168.1865ms)
+✔ skill folder names match required frontmatter (11.9267ms)
+✔ team workflows and documentation remain complete (2.7769ms)
+✔ Vitest tests live under tests/, not next to source files in src (4.6972ms)
+✔ Claude rule adapters retain bodies and add explicit path scopes (2.3586ms)
+✔ sync is stable across CRLF, preserves skills, and detects lost paths (65.2115ms)
+✔ specialist uses current standalone TOML format and preserves model inheritance (2.5856ms)
+✔ sync copies skill resources and creates explicit workflow adapters without writing source (84.9753ms)
+✔ RED accepts a failed behavior assertion and rejects a broken test loader (2.1133ms)
+✔ GREEN cannot hide skipped or failed tests (0.3492ms)
+✔ evidence requires ordered RED GREEN REFACTOR for the same test (0.5346ms)
+✔ change readiness rejects absent artifacts rather than silently skipping a change (6.674ms)
+✔ a complete fixture passes, but report tampering and wrong mapping are blocked (61.6511ms)
+✔ BASELINE accepts only a passing run of the selected scenario (0.4692ms)
+✔ a RED run that passes explains the baseline fork instead of a generic failure (0.278ms)
+✔ baseline evidence is checked separately from the RED/GREEN/REFACTOR cycle (0.5705ms)
+✔ baseline must be recorded before the first GREEN of the change (0.2748ms)
+✔ the planning gate validates baseline declarations and still requires one RED scenario (45.5483ms)
+✔ baseline is allowed only while production code under src has no uncommitted edits (1.063ms)
+✔ a ready change may mix a RED cycle with a clean baseline scenario (43.4309ms)
+ℹ tests 72
+ℹ suites 0
+ℹ pass 72
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4433.2683
+
+> dance-platform@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web
+> turbo run lint && eslint tests --ext .ts,.tsx && pnpm boundaries && eslint .storybook packages/ui/stories --ext .ts,.tsx
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running lint in 4 packages
+   • Remote caching disabled
+
+@dance/contracts:lint: cache hit, replaying logs e91df4dc91b78a78
+@dance/design-tokens:lint: cache hit, replaying logs fe10c662c27d8aa6
+@dance/contracts:lint: 
+@dance/contracts:lint: > @dance/contracts@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:lint: > eslint src --ext .ts,.tsx
+@dance/contracts:lint: 
+@dance/design-tokens:lint: 
+@dance/design-tokens:lint: > @dance/design-tokens@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\design-tokens
+@dance/design-tokens:lint: > prettier --check src/tokens.css
+@dance/design-tokens:lint: 
+@dance/design-tokens:lint: Checking formatting...
+@dance/design-tokens:lint: All matched files use Prettier code style!
+@dance/ui:lint: cache hit, replaying logs b271b347f839f973
+@dance/ui:lint: 
+@dance/ui:lint: > @dance/ui@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:lint: > eslint src --ext .ts,.tsx
+@dance/ui:lint: 
+@dance/web:lint: cache miss, executing fddd1800922841ec
+@dance/web:lint: 
+@dance/web:lint: > @dance/web@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:lint: > eslint src --ext .ts,.tsx
+@dance/web:lint: 
+
+ Tasks:    4 successful, 4 total
+Cached:    3 cached, 4 total
+  Time:    4.664s 
+
+Multiple projects found, consider using a single `tsconfig` with `references` to speed up, or use `noWarnOnMultipleProjects` to suppress this warning
+
+> dance-platform@0.1.0 boundaries C:\Users\Lenovo\Desktop\koller_web
+> node scripts/check-boundaries.mjs
+
+Import boundaries and cycles: PASS
+Multiple projects found, consider using a single `tsconfig` with `references` to speed up, or use `noWarnOnMultipleProjects` to suppress this warning
+
+> dance-platform@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web
+> turbo run typecheck && tsc --noEmit && tsc --noEmit -p .storybook/tsconfig.json
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running typecheck in 4 packages
+   • Remote caching disabled
+
+@dance/contracts:typecheck: cache hit, replaying logs 093e0de341288c81
+@dance/ui:typecheck: cache hit, replaying logs bc9a7e3f32ca7456
+@dance/contracts:typecheck: 
+@dance/contracts:typecheck: > @dance/contracts@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:typecheck: > tsc --noEmit
+@dance/contracts:typecheck: 
+@dance/ui:typecheck: 
+@dance/ui:typecheck: > @dance/ui@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:typecheck: > tsc --noEmit
+@dance/ui:typecheck: 
+@dance/web:typecheck: cache miss, executing 34f1f6b09bc130ea
+@dance/web:typecheck: 
+@dance/web:typecheck: > @dance/web@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:typecheck: > next typegen && tsc --noEmit
+@dance/web:typecheck: 
+@dance/web:typecheck: Generating route types...
+@dance/web:typecheck: ✓ Types generated successfully
+
+ Tasks:    3 successful, 3 total
+Cached:    2 cached, 3 total
+  Time:    3.269s 
+
+
+> dance-platform@0.1.0 format C:\Users\Lenovo\Desktop\koller_web
+> prettier --check apps packages tests openspec docs/web-platform/phase-1 docs/web-platform/phase-2 docs/web-platform/phase-3a docs/web-platform/phase-3b .storybook playwright.storybook.config.ts docs/adr/0002-dance-platform-foundation.md pnpm-workspace.yaml turbo.json tsconfig.json vitest.config.ts playwright.bdd.config.ts .github/workflows/verify.yml
+
+Checking formatting...
+[warn] tests\apps\web\modules\profile\ProfileEditor.test.tsx
+[warn] Code style issues found in the above file. Forgot to run Prettier?
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.

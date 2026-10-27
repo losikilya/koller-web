@@ -1,0 +1,40 @@
+
+> dance-platform@0.1.0 test C:\Users\Lenovo\Desktop\koller_web
+> vitest run
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/tooling/boundaries.test.ts (10 tests | 1 failed) 169ms
+     × accepts the implemented graph 166ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/tooling/boundaries.test.ts > architecture enforcement > accepts the implemented graph
+AssertionError: expected [ Array(1) ] to deeply equal []
+
+- Expected
++ Received
+
+- []
++ [
++   "apps/web/src/proxy.ts → apps/web/src/app/_infrastructure/completionPolicy.ts: Framework routes cannot be imported by lower layers",
++ ]
+
+ ❯ tests/tooling/boundaries.test.ts:11:31
+      9| describe('architecture enforcement', () => {
+     10|   it('accepts the implemented graph', () =>
+     11|     expect(checkBoundaries()).toEqual([]))
+       |                               ^
+     12|   it.each([
+     13|     ['packages/ui/src/index.tsx', 'apps/web/src/shell/Shell.tsx'],
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 27 passed (28)
+      Tests  1 failed | 71 passed (72)
+   Start at  07:57:47
+   Duration  34.88s (transform 1.07s, setup 7.87s, import 4.97s, tests 5.55s, environment 11.32s)
+
+ ELIFECYCLE  Test failed. See above for more details.

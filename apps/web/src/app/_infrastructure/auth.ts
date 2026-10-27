@@ -1,7 +1,6 @@
 import 'server-only'
 import { NextResponse, type NextRequest } from 'next/server'
-import type { CookieOptions } from '@supabase/ssr'
-import { createSupabaseRequestClient } from '@/shared/supabase/server'
+import { authOrigin, responseContext } from './requestContext'
 import {
   registerAccount,
   loginAccount,
@@ -16,52 +15,8 @@ import {
 } from '@/modules/identity'
 import type { AuthResult } from '@/modules/identity'
 import { locales, type Locale } from '@/shared/i18n/routes'
+import { authCompletionDestination } from './completion'
 
-function authOrigin() {
-  const url = new URL(process.env.AUTH_SITE_URL ?? 'http://127.0.0.1:3000')
-  if (
-    url.username ||
-    url.password ||
-    url.search ||
-    url.hash ||
-    url.pathname !== '/' ||
-    (url.protocol !== 'https:' &&
-      !(
-        url.protocol === 'http:' &&
-        ['127.0.0.1', 'localhost', '[::1]'].includes(url.hostname)
-      ))
-  )
-    throw new Error('Invalid application origin')
-  return url.origin
-}
-function responseContext(request: NextRequest) {
-  const writes = new Map<string, { value: string; options: CookieOptions }>()
-  const providerHeaders = new Headers()
-  const client = createSupabaseRequestClient({
-    getAll: () => request.cookies.getAll(),
-    setAll(cookies, headers) {
-      for (const { name, value, options } of cookies) {
-        request.cookies.set(name, value)
-        writes.set(name, { value, options })
-      }
-      for (const [name, value] of Object.entries(headers))
-        providerHeaders.set(name, value)
-    },
-  })
-  function finish(response: NextResponse) {
-    for (const [name, { value, options }] of writes)
-      response.cookies.set(name, value, options)
-    providerHeaders.forEach((value, name) => response.headers.set(name, value))
-    response.headers.set(
-      'Cache-Control',
-      'private, no-store, max-age=0, must-revalidate'
-    )
-    response.headers.set('Pragma', 'no-cache')
-    response.headers.set('Referrer-Policy', 'no-referrer')
-    return response
-  }
-  return { client, finish }
-}
 function secureJson(result: AuthResult, status = 200) {
   return NextResponse.json(result, {
     status,
@@ -72,6 +27,7 @@ function secureJson(result: AuthResult, status = 200) {
   })
 }
 export async function handleAuthPost(request: NextRequest, action: string) {
+  let context: ReturnType<typeof responseContext> | undefined
   try {
     if (request.headers.get('origin') !== authOrigin())
       return secureJson({ status: 'error', error: 'unavailable' }, 403)
@@ -93,7 +49,8 @@ export async function handleAuthPost(request: NextRequest, action: string) {
     )
       return secureJson({ status: 'error', error: 'validation' }, 400)
     const locale = input.locale as Locale
-    const { client, finish } = responseContext(request)
+    context = responseContext(request)
+    const { client, finish } = context
     const next = safeAuthReturn(input.next, locale)
     let result: AuthResult
     switch (action) {
@@ -110,7 +67,7 @@ export async function handleAuthPost(request: NextRequest, action: string) {
           result.url =
             result.bootstrap === 'retry'
               ? '/' + locale + '/account?bootstrap=retry'
-              : next
+              : await authCompletionDestination(client, locale, next)
         break
       case 'recover':
         result = await recoverPassword(
@@ -130,10 +87,13 @@ export async function handleAuthPost(request: NextRequest, action: string) {
         result = await bootstrapAccount(client)
         if (result.status === 'success')
           result.url =
-            '/' +
-            locale +
-            '/account' +
-            (result.bootstrap === 'retry' ? '?bootstrap=retry' : '')
+            result.bootstrap === 'retry'
+              ? '/' + locale + '/account?bootstrap=retry'
+              : await authCompletionDestination(
+                  client,
+                  locale,
+                  '/' + locale + '/account'
+                )
         break
       case 'google':
         if (process.env.AUTH_GOOGLE_ENABLED !== 'true') {
@@ -163,7 +123,8 @@ export async function handleAuthPost(request: NextRequest, action: string) {
     }
     return finish(secureJson(result))
   } catch {
-    return secureJson({ status: 'error', error: 'unavailable' })
+    const response = secureJson({ status: 'error', error: 'unavailable' })
+    return context ? context.finish(response) : response
   }
 }
 export async function handleAuthCallback(
@@ -197,7 +158,11 @@ export async function handleAuthCallback(
           ? '/' + locale + '/reset-password'
           : result.bootstrap === 'retry'
           ? '/' + locale + '/account?bootstrap=retry'
-          : safeAuthReturn(query.get('next'), locale)
+          : await authCompletionDestination(
+              context.client,
+              locale,
+              safeAuthReturn(query.get('next'), locale)
+            )
     }
     return context.finish(
       NextResponse.redirect(new URL(destination, authOrigin()), 303)

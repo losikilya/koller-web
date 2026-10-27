@@ -4,10 +4,17 @@ import { loadFeature, describeFeature } from '@amiceli/vitest-cucumber'
 import { NextRequest } from 'next/server'
 import { createSupabaseRequestClient } from '@/shared/supabase/server'
 import { handleAuthPost, handleAuthCallback } from '@/app/_infrastructure/auth'
+vi.mock('@/modules/profile/completionService', () => ({
+  readCompletion: async () => {
+    if (state.completionFailed) throw new Error('private provider detail')
+    return true
+  },
+}))
 const state = vi.hoisted(() => ({
   cookies: null as Parameters<typeof createSupabaseRequestClient>[0] | null,
   failVerify: false,
   googleCalls: 0,
+  completionFailed: false,
 }))
 vi.mock('@/shared/supabase/server', () => ({
   createSupabaseRequestClient: vi.fn(
@@ -78,6 +85,7 @@ beforeEach(() => {
   state.failVerify = false
   state.googleCalls = 0
   state.cookies = null
+  state.completionFailed = false
 })
 function post(origin: string | undefined, body: unknown) {
   return new NextRequest('http://127.0.0.1:4310/api/auth/login', {
@@ -89,6 +97,23 @@ function post(origin: string | undefined, body: unknown) {
     body: JSON.stringify(body),
   })
 }
+test('successful login preserves session cookies when completion lookup becomes unavailable', async () => {
+  state.completionFailed = true
+  const response = await handleAuthPost(
+    post('http://127.0.0.1:4310', {
+      locale: 'ru',
+      email: 'fixture@example.test',
+      password: 'Password123!',
+    }),
+    'login'
+  )
+  expect(await response.json()).toEqual({
+    status: 'error',
+    error: 'unavailable',
+  })
+  expect(response.cookies.get('sb-test-session')?.value).toBe('fixture-session')
+  expect(response.headers.get('cache-control')).toContain('no-store')
+})
 test('same-origin login preserves provider cookies and no-store headers with an allowlisted return', async () => {
   const response = await handleAuthPost(
     post('http://127.0.0.1:4310', {

@@ -1,0 +1,34 @@
+
+> dance-platform@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web
+> turbo run typecheck && tsc --noEmit && tsc --noEmit -p .storybook/tsconfig.json
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running typecheck in 4 packages
+   • Remote caching disabled
+
+@dance/ui:typecheck: cache miss, executing 23e0659d0b6458bc
+@dance/contracts:typecheck: cache miss, executing f56c074c3b17b095
+@dance/ui:typecheck: 
+@dance/ui:typecheck: > @dance/ui@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:typecheck: > tsc --noEmit
+@dance/ui:typecheck: 
+@dance/contracts:typecheck: 
+@dance/contracts:typecheck: > @dance/contracts@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:typecheck: > tsc --noEmit
+@dance/contracts:typecheck: 
+@dance/contracts:typecheck: src/profile.ts(43,9): error TS2345: Argument of type 'ZodPipe<ZodObject<{ username: ZodOptional<ZodPipe<ZodNullable<ZodString>, ZodTransform<string | null, string | null>>>; displayName: ZodOptional<...>; bio: ZodOptional<...>; }, $strict>, ZodObject<...>>' is not assignable to parameter of type '$ZodType<any, { username: string; displayName: string; bio?: string | undefined; }, $ZodTypeInternals<any, { username: string; displayName: string; bio?: string | undefined; }>>'.
+@dance/contracts:typecheck:   The types of '_zod.input.username' are incompatible between these types.
+@dance/contracts:typecheck:     Type 'string | null | undefined' is not assignable to type 'string'.
+@dance/contracts:typecheck:       Type 'undefined' is not assignable to type 'string'.
+@dance/contracts:typecheck:  ELIFECYCLE  Command failed with exit code 2.
+@dance/contracts#typecheck:  ERROR  command (C:\Users\Lenovo\Desktop\koller_web\packages\contracts) C:\Users\Lenovo\AppData\Roaming\npm\pnpm.cmd run typecheck exited (1)
+
+ Tasks:    1 successful, 2 total
+Cached:    0 cached, 2 total
+  Time:    1.694s 
+Failed:    @dance/contracts#typecheck
+
+ ERROR  run failed: command  exited (1)
+ ELIFECYCLE  Command failed with exit code 1.

@@ -1,0 +1,312 @@
+{
+  "version": 1,
+  "head": "cb1098f6e695a999d1f32e1e5539043f459edf7b",
+  "files": [
+    {
+      "path": "apps/web/src/app/[locale]/account/page.tsx",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/app/[locale]/account/page.tsx",
+      "sha256": "1e9b70a141e4165f8342fd048a73de89c80a278fd11c0549b62799d55299eea7",
+      "bytes": 2830
+    },
+    {
+      "path": "apps/web/src/app/[locale]/account/profile/page.tsx",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/app/[locale]/account/profile/page.tsx",
+      "sha256": "85019892bb47742f36c240cbe9fcd6d0ad60015fd8437f6960108bdd826532f2",
+      "bytes": 2574
+    },
+    {
+      "path": "apps/web/src/app/_infrastructure/auth.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/app/_infrastructure/auth.ts",
+      "sha256": "836cdb79eadd3dd8c3152edd258193890d8caca56d61894fa4c65305c057840a",
+      "bytes": 5364
+    },
+    {
+      "path": "apps/web/src/app/_infrastructure/profile.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/app/_infrastructure/profile.ts",
+      "sha256": "f69ae81ce4a2ee869f3d661f5427f7bce2b1116c6231f72bfb74ca929163ef94",
+      "bytes": 3067
+    },
+    {
+      "path": "apps/web/src/app/_infrastructure/requestContext.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/app/_infrastructure/requestContext.ts",
+      "sha256": "bd6a8f7fc6e9ce59aca011383e79422e4913f8b9b4f03dd0694c488b4d9442df",
+      "bytes": 1705
+    },
+    {
+      "path": "apps/web/src/app/api/v1/me/profile/route.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/app/api/v1/me/profile/route.ts",
+      "sha256": "cac28620a2d171644cc462fa288a7adad9a5aabe31da7ecd154aff62241ba36c",
+      "bytes": 212
+    },
+    {
+      "path": "apps/web/src/app/api/v1/me/route.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/app/api/v1/me/route.ts",
+      "sha256": "ec5b14d5c932de6845c2156529639dca7ac780fe488bce3dfe039786e901e361",
+      "bytes": 209
+    },
+    {
+      "path": "apps/web/src/modules/identity/authPolicy.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/modules/identity/authPolicy.ts",
+      "sha256": "047947906da90ff2073bf509fe365729d64a087af986dac613e7d663e28d730d",
+      "bytes": 1017
+    },
+    {
+      "path": "apps/web/src/modules/profile/ProfileEditor.module.scss",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/modules/profile/ProfileEditor.module.scss",
+      "sha256": "abe5274a8658350f70a4a646ac851dd969dd766149a1a5c74a72991e06e6176c",
+      "bytes": 778
+    },
+    {
+      "path": "apps/web/src/modules/profile/ProfileEditor.tsx",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/modules/profile/ProfileEditor.tsx",
+      "sha256": "f70d8b3730b91961400665899c1ec5c129981cddcba3dae352b5d7895cebfcc9",
+      "bytes": 7307
+    },
+    {
+      "path": "apps/web/src/modules/profile/index.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/modules/profile/index.ts",
+      "sha256": "a8a3974cbb7c4339794301f9ddef34803c69aa5538ca786c1aa096542a7a322c",
+      "bytes": 219
+    },
+    {
+      "path": "apps/web/src/modules/profile/profileRepository.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/modules/profile/profileRepository.ts",
+      "sha256": "09c25281b54fc8ebc7b7be96b5f24b07c8477bb64df25387fb693b96a1572c43",
+      "bytes": 2245
+    },
+    {
+      "path": "apps/web/src/modules/profile/profileService.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/modules/profile/profileService.ts",
+      "sha256": "b8634d63a9fc636658abbc7398b1c6d10d38640df56b0a7276b34876e323e7b1",
+      "bytes": 3005
+    },
+    {
+      "path": "apps/web/src/proxy.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/proxy.ts",
+      "sha256": "8eff0d5dd284ea418b86cea05103c9c601d7a513b3f063954f6387376226fc13",
+      "bytes": 963
+    },
+    {
+      "path": "apps/web/src/shared/i18n/messages/en.json",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/shared/i18n/messages/en.json",
+      "sha256": "0f5dacf813f8d6c5401e5afa9f1f43c6322a458b730d926d747e1254bf7e80e7",
+      "bytes": 6904
+    },
+    {
+      "path": "apps/web/src/shared/i18n/messages/ru.json",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/shared/i18n/messages/ru.json",
+      "sha256": "b9c4eb59a915790e9cf0c2fcd055319b3cb1b3b58d0d0c62e1582240761c220a",
+      "bytes": 10390
+    },
+    {
+      "path": "apps/web/src/shared/i18n/routes.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/shared/i18n/routes.ts",
+      "sha256": "62f6aaa55add4689c4cdc02fbc7a7a650fa8d5bc3e7e3cc4fb9d4f962e05ded4",
+      "bytes": 734
+    },
+    {
+      "path": "apps/web/src/shared/supabase/database.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/apps/web/src/shared/supabase/database.ts",
+      "sha256": "2678fd65592a280a9f26361fc24a95c7bab2728daba79cada9102a26a1360371",
+      "bytes": 1429
+    },
+    {
+      "path": "docs/adr/0004-owner-profile-management.md",
+      "snapshot": "evidence/phase3c2/history-3c1/docs/adr/0004-owner-profile-management.md",
+      "sha256": "5e25a4ba17afc90951533dbb1f662e5dec02729639f7f1fd3882db3cdd980eb9",
+      "bytes": 2057
+    },
+    {
+      "path": "docs/web-platform/phase-3c/00-implementation-plan.md",
+      "snapshot": "evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/00-implementation-plan.md",
+      "sha256": "ed7ab669f20f4eaee9be4c5a3321e3601241ab2c7aeed9e78b1b26ca35099e1c",
+      "bytes": 17247
+    },
+    {
+      "path": "docs/web-platform/phase-3c/01-current-state-audit.md",
+      "snapshot": "evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/01-current-state-audit.md",
+      "sha256": "caa59290665a6c6b210ea3ecf385c19c85a060d602ea72ebf76370a8fa586a3a",
+      "bytes": 15232
+    },
+    {
+      "path": "docs/web-platform/phase-3c/02-privacy-and-security-design.md",
+      "snapshot": "evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/02-privacy-and-security-design.md",
+      "sha256": "0f00f97deef634ec292f0dd8fcff8405f91467269664b37c425c7803d9c186b8",
+      "bytes": 18786
+    },
+    {
+      "path": "docs/web-platform/phase-3c/03-acceptance-scenarios.md",
+      "snapshot": "evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/03-acceptance-scenarios.md",
+      "sha256": "572476ea91e1f5887ac1854c3d310da07876efcee9fdef9462e155b76090c43b",
+      "bytes": 16006
+    },
+    {
+      "path": "docs/web-platform/phase-3c/04-open-decisions.md",
+      "snapshot": "evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/04-open-decisions.md",
+      "sha256": "c33a8fd6d13202b4ee403b1e99c7858577b13e7b0d1aed2ab518cb33b59ef733",
+      "bytes": 8880
+    },
+    {
+      "path": "docs/web-platform/phase-3c/PHASE-3C-PLANNING-REPORT.md",
+      "snapshot": "evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/PHASE-3C-PLANNING-REPORT.md",
+      "sha256": "619afb7a7eee17efcbc868a4b6f7aa6b002718ebcb5318a15e8dbe3662f2d815",
+      "bytes": 18222
+    },
+    {
+      "path": "docs/web-platform/phase-3c/PHASE-3C1-IMPLEMENTATION-REPORT.md",
+      "snapshot": "evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/PHASE-3C1-IMPLEMENTATION-REPORT.md",
+      "sha256": "e5cde005861ff14adee5487ece70a0eb3b41d780ec1f23ef0251dc802a9f973a",
+      "bytes": 10568
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/bdd.md",
+      "snapshot": "evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/bdd.md",
+      "sha256": "de51571aa56fd3de555b9808f13c16fb94f488e598f8ff4b7aedd6cc8b086c7e",
+      "bytes": 1508
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/design.md",
+      "snapshot": "evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/design.md",
+      "sha256": "d4caab637ad05c42b7f90881775e2e226c9ae70fbd61cd28a7bc2da60669059b",
+      "bytes": 3194
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/ledger.json",
+      "snapshot": "evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/evidence/ledger.json",
+      "sha256": "55728aeeac9a70959876ea5733045b645372ab3759b8311f8c5779dadc439049",
+      "bytes": 15603
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/proposal.md",
+      "snapshot": "evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/proposal.md",
+      "sha256": "c54089b45d375277ae378ed959f43fe900ac1749caa7093c65888fa0a3bcbb2d",
+      "bytes": 2095
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/review.md",
+      "snapshot": "evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/review.md",
+      "sha256": "6f8289a74890eddbf8cf71fce6d3f8526b7e5d89f1768352abe12b70b064a9fd",
+      "bytes": 2318
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/tasks.md",
+      "snapshot": "evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/tasks.md",
+      "sha256": "5e7dcd49e549e7ec897fcd04695483640e8fc1b58f518e70bf9c4b5bf0aedd6d",
+      "bytes": 1694
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/test-plan.json",
+      "snapshot": "evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/test-plan.json",
+      "sha256": "c92965b68c654066c5be38313b56965581e0c7f62f684eff09641e6148261f82",
+      "bytes": 2714
+    },
+    {
+      "path": "package.json",
+      "snapshot": "evidence/phase3c2/history-3c1/package.json",
+      "sha256": "93ea6ecf1e6af038338b9330b5f72db5444b873a15a6f0574fc21bfc1d6feb77",
+      "bytes": 4764
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/packages/contracts/src/index.ts",
+      "sha256": "567c464ed4cbbcece515828a42ba9bc46123398617d7720d0b0e68b078715516",
+      "bytes": 593
+    },
+    {
+      "path": "packages/contracts/src/profile.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/packages/contracts/src/profile.ts",
+      "sha256": "d6846f8c8411ccb5f69498d3796860152ef026026c3a1352a0155e1af1e25ac7",
+      "bytes": 1209
+    },
+    {
+      "path": "playwright.bdd.config.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/playwright.bdd.config.ts",
+      "sha256": "ea4a560aef728d634f283b450393222731855a2570a1b53af9361a2bbdaf9a6f",
+      "bytes": 3018
+    },
+    {
+      "path": "scripts/test-database.mjs",
+      "snapshot": "evidence/phase3c2/history-3c1/scripts/test-database.mjs",
+      "sha256": "ce1aae8a57e3c8ce682316752c66c480b3b1856ea77e023ee951b7f69853e332",
+      "bytes": 10113
+    },
+    {
+      "path": "scripts/test-profile-database.mjs",
+      "snapshot": "evidence/phase3c2/history-3c1/scripts/test-profile-database.mjs",
+      "sha256": "48e102fb25428a6b1c61eaeea6624fdfcd14f745894776343b42c52fdb2a8220",
+      "bytes": 4846
+    },
+    {
+      "path": "scripts/test-profile-publication-race.mjs",
+      "snapshot": "evidence/phase3c2/history-3c1/scripts/test-profile-publication-race.mjs",
+      "sha256": "55f5e2a8d5d31355a3a338649a6e9b7bc1d006f5cb4791e8015060a7a60a9c9a",
+      "bytes": 2372
+    },
+    {
+      "path": "supabase/tests/identity.test.sql",
+      "snapshot": "evidence/phase3c2/history-3c1/supabase/tests/identity.test.sql",
+      "sha256": "e4867a018d8e0c2ef7502e5725d192bb8da7faa5cd0afacca7257f27f1633051",
+      "bytes": 11097
+    },
+    {
+      "path": "tests/apps/web/app/_infrastructure/profile.test.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/apps/web/app/_infrastructure/profile.test.ts",
+      "sha256": "294e2e46dc148e397ad602cef97b65a409b2d51b107fc45dcae04d4f080c39c7",
+      "bytes": 4498
+    },
+    {
+      "path": "tests/apps/web/modules/profile/ProfileEditor.test.tsx",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/apps/web/modules/profile/ProfileEditor.test.tsx",
+      "sha256": "311ac6233552eeb80b7c599a216185f193adefbe5626f3474797a32e9a73cb92",
+      "bytes": 4237
+    },
+    {
+      "path": "tests/apps/web/modules/profile/outcome.test.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/apps/web/modules/profile/outcome.test.ts",
+      "sha256": "6a75bf367f05a015a091b1895a2fae9535e0c463d8c9eba868a82d4c5adfeefe",
+      "bytes": 597
+    },
+    {
+      "path": "tests/apps/web/modules/profile/profileService.test.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/apps/web/modules/profile/profileService.test.ts",
+      "sha256": "245e2452f19e610e4acfdbbac951379f8fec26a918ae1368c3dc179ca5a20e59",
+      "bytes": 3960
+    },
+    {
+      "path": "tests/apps/web/modules/profile/uncertainWrite.test.tsx",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/apps/web/modules/profile/uncertainWrite.test.tsx",
+      "sha256": "4d310c139469a1c626385e465e6b97a7a4bed26152fcbf2ee9fda55daaec8ef5",
+      "bytes": 2520
+    },
+    {
+      "path": "tests/apps/web/shared/i18n/routes.test.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/apps/web/shared/i18n/routes.test.ts",
+      "sha256": "086811ddb04d31beeb3a540e152b73f670a48c52942d8d0db8482a77b2947d2f",
+      "bytes": 890
+    },
+    {
+      "path": "tests/bdd/profile/management.feature",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/bdd/profile/management.feature",
+      "sha256": "e66054aa3275cd91abf7ee69873e212a795c5226f7117a50d60c1aaedcf622f1",
+      "bytes": 822
+    },
+    {
+      "path": "tests/database/profile.test.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/database/profile.test.ts",
+      "sha256": "41c5e009cd5704b0fc1e1990ace2d6a966f7c5fb0d737fdca6af6c8c7aa5ef7b",
+      "bytes": 1004
+    },
+    {
+      "path": "tests/e2e/profile/management.feature",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/e2e/profile/management.feature",
+      "sha256": "67de95da62b7159b96b11822700610207bacfc948561058efc48d92fe72830c4",
+      "bytes": 294
+    },
+    {
+      "path": "tests/e2e/profile/management.steps.ts",
+      "snapshot": "evidence/phase3c2/history-3c1/tests/e2e/profile/management.steps.ts",
+      "sha256": "a25630154fe517e9ce1ea9831c282aa4f6b89514fb9a4dc90f5443d695e703ff",
+      "bytes": 4834
+    }
+  ]
+}

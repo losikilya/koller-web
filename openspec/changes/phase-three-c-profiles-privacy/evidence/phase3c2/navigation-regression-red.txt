@@ -1,0 +1,79 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/app/_infrastructure/completionTransport.test.ts (2 tests | 1 failed) 24ms
+   × minimal session state returns a safe guest response while owner profile data stays protected 10ms
+ ❯ tests/apps/web/app/_infrastructure/CompletionNavigationGuard.test.tsx (1 test | 1 failed) 64ms
+   × background completion revalidation preserves existing main DOM and keyboard focus for guests 63ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/CompletionNavigationGuard.test.tsx > background completion revalidation preserves existing main DOM and keyboard focus for guests
+TestingLibraryElementError: Unable to find an accessible element with the role "main"
+
+Here are the accessible roles:
+
+  status:
+
+  Name "":
+  <span
+    class="_loading_f176d3"
+    role="status"
+  />
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <span
+      class="_loading_f176d3"
+      role="status"
+    >
+      <span
+        aria-hidden="true"
+        class="_spinner_f176d3"
+      />
+      Loading profile…
+    </span>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/apps/web/app/_infrastructure/CompletionNavigationGuard.test.tsx:12:20
+     10|  vi.stubGlobal('fetch',vi.fn(()=>new Promise<Response>(accept=>{resolv…
+     11|  render(<NextIntlClientProvider locale="en" messages={en}><CompletionN…
+     12|  const main=screen.getByRole('main');main.focus();expect(main).toHaveF…
+       |                    ^
+     13|  await act(async()=>{resolve(new Response(JSON.stringify({authenticate…
+     14|  expect(screen.getByRole('main')).toBe(main);expect(main).toHaveFocus()
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/completionTransport.test.ts > minimal session state returns a safe guest response while owner profile data stays protected
+AssertionError: expected 401 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 401
+
+ ❯ tests/apps/web/app/_infrastructure/completionTransport.test.ts:53:26
+     51|  state.authenticated=false
+     52|  const response=await handleProfileRequest(new NextRequest('http://127…
+     53|  expect(response.status).toBe(200)
+       |                          ^
+     54|  expect(await response.json()).toEqual({authenticated:false,completed:…
+     55|  expect((await handleProfileRequest(new NextRequest('http://127.0.0.1:…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  2 failed | 1 passed (3)
+   Start at  08:10:38
+   Duration  2.30s (transform 432ms, setup 603ms, import 615ms, tests 88ms, environment 625ms)
+
