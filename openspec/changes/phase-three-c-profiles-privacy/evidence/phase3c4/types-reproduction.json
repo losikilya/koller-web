@@ -1,0 +1,6 @@
+{
+  "FormattedTypesMatch": true,
+  "Sha256": "06f3727e44baaf7e57ce0b206f38f5deda8b741c9f2b6aa8080ccd816e3478ce",
+  "ActualLocalSchema": "public including nullable avatar/completion columns",
+  "DatabaseReset": false
+}

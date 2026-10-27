@@ -1,0 +1,109 @@
+
+> dance-platform@0.1.0 test:e2e:gen C:\Users\Lenovo\Desktop\koller_web
+> bddgen -c playwright.bdd.config.ts
+
+
+Running 3 tests using 1 worker
+
+  x  1 [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:8:9 › Combined local profile acceptance › An optional avatar follows completion and username reuse › Example #1 @phase3c-integration (7.1s)
+  x  2 [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:15:9 › Combined local profile acceptance › An optional avatar follows completion and username reuse › Example #2 @phase3c-integration (7.1s)
+  x  3 [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:24:7 › Combined local profile acceptance › Another editor cannot overwrite an avatar revision with a stale text draft @phase3c-integration (6.9s)
+
+
+  1) [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:8:9 › Combined local profile acceptance › An optional avatar follows completion and username reuse › Example #1 @phase3c-integration › Given an incomplete integration owner opens the en profile 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected: "http://127.0.0.1:4310/en/account/profile"
+    Received: "http://127.0.0.1:4310/en/login?next=/en/account/profile"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="en">…</html>
+           - unexpected value "http://127.0.0.1:4310/en/login?next=/en/account/profile"
+
+
+       at tests\e2e\profile\integration.steps.ts:88
+
+      86 |   await page.getByLabel('Password', { exact: true }).fill(owner.password)
+      87 |   await page.getByRole('button', { name: 'Log in', exact: true }).click()
+    > 88 |   await expect(page).toHaveURL('/en/account/profile')
+         |                      ^
+      89 |   if (locale === 'ru') await page.goto('/ru/account/profile')
+      90 | }
+      91 | async function own(context: BrowserContext) {
+        at login (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\integration.steps.ts:88:22)
+        at Object.<anonymous> (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\integration.steps.ts:138:5)
+        at BddStepInvoker.runWithAfterStepHooks (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:82:16)
+        at BddStepInvoker.invoke (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:55:5)
+        at C:\Users\Lenovo\Desktop\koller_web\.features-gen\auth\tests\e2e\profile\integration.feature.spec.js:9:7
+
+    Error Context: test-results\tests-e2e-profile-integrat-3decd-nd-username-reuse-Example-1-msedge-auth\error-context.md
+
+  2) [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:15:9 › Combined local profile acceptance › An optional avatar follows completion and username reuse › Example #2 @phase3c-integration › Given an incomplete integration owner opens the ru profile 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected: "http://127.0.0.1:4310/en/account/profile"
+    Received: "http://127.0.0.1:4310/en/login?next=/en/account/profile"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="en">…</html>
+           - unexpected value "http://127.0.0.1:4310/en/login?next=/en/account/profile"
+
+
+       at tests\e2e\profile\integration.steps.ts:88
+
+      86 |   await page.getByLabel('Password', { exact: true }).fill(owner.password)
+      87 |   await page.getByRole('button', { name: 'Log in', exact: true }).click()
+    > 88 |   await expect(page).toHaveURL('/en/account/profile')
+         |                      ^
+      89 |   if (locale === 'ru') await page.goto('/ru/account/profile')
+      90 | }
+      91 | async function own(context: BrowserContext) {
+        at login (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\integration.steps.ts:88:22)
+        at Object.<anonymous> (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\integration.steps.ts:138:5)
+        at BddStepInvoker.runWithAfterStepHooks (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:82:16)
+        at BddStepInvoker.invoke (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:55:5)
+        at C:\Users\Lenovo\Desktop\koller_web\.features-gen\auth\tests\e2e\profile\integration.feature.spec.js:16:7
+
+    Error Context: test-results\tests-e2e-profile-integrat-284f8-nd-username-reuse-Example-2-msedge-auth\error-context.md
+
+  3) [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:24:7 › Combined local profile acceptance › Another editor cannot overwrite an avatar revision with a stale text draft @phase3c-integration › Given two integration editors share one completed owner revision 
+
+    Error: expect(page).toHaveURL(expected) failed
+
+    Expected: "http://127.0.0.1:4310/en/account/profile"
+    Received: "http://127.0.0.1:4310/en/login?next=/en/account/profile"
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toHaveURL" with timeout 5000ms
+        14 × locator resolved to <html lang="en">…</html>
+           - unexpected value "http://127.0.0.1:4310/en/login?next=/en/account/profile"
+
+
+       at tests\e2e\profile\integration.steps.ts:88
+
+      86 |   await page.getByLabel('Password', { exact: true }).fill(owner.password)
+      87 |   await page.getByRole('button', { name: 'Log in', exact: true }).click()
+    > 88 |   await expect(page).toHaveURL('/en/account/profile')
+         |                      ^
+      89 |   if (locale === 'ru') await page.goto('/ru/account/profile')
+      90 | }
+      91 | async function own(context: BrowserContext) {
+        at login (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\integration.steps.ts:88:22)
+        at Object.<anonymous> (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\integration.steps.ts:334:5)
+        at BddStepInvoker.runWithAfterStepHooks (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:82:16)
+        at BddStepInvoker.invoke (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:55:5)
+        at C:\Users\Lenovo\Desktop\koller_web\.features-gen\auth\tests\e2e\profile\integration.feature.spec.js:25:5
+
+    Error Context: test-results\tests-e2e-profile-integrat-31e38-ion-with-a-stale-text-draft-msedge-auth\error-context.md
+
+  3 failed
+    [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:8:9 › Combined local profile acceptance › An optional avatar follows completion and username reuse › Example #1 @phase3c-integration 
+    [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:15:9 › Combined local profile acceptance › An optional avatar follows completion and username reuse › Example #2 @phase3c-integration 
+    [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:24:7 › Combined local profile acceptance › Another editor cannot overwrite an avatar revision with a stale text draft @phase3c-integration 

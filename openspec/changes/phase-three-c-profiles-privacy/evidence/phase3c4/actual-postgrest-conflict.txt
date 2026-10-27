@@ -1,0 +1,1 @@
+{"source":"Actual local PostgREST through installed Supabase SDK","httpStatus":500,"sqlCode":"40001","expectedRevision":"1","currentRevision":"2"}

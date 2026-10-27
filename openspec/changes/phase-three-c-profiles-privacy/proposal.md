@@ -2,7 +2,7 @@
 
 ## Why
 
-Completed 3C.1/3C.2 provide reviewed owner editing, mandatory completion and unindexed public presentation. Authorized local 3C.3 adds optional bounded avatars with private Storage and durable cleanup, preserving Identity, ownership, privacy and revision guarantees.
+Completed 3C.1–3C.3 provide reviewed owner editing, mandatory completion, unindexed public presentation and optional bounded local avatars. Authorized Phase 3C.4 verifies their combined behavior and produces the final local integration handoff, preserving all historical evidence and accepted contracts.
 
 ## What Changes
 
@@ -48,3 +48,11 @@ Completed 3C.1/3C.2 scope and reviews above are historical; the following author
 - FR-414: authenticated local worker, 24-hour pending expiry, seven-day successful-deletion retention, durable retries and crash/late-orphan reconciliation.
 
 Accepted D-07–D-10 local policy and architect constraints: docs/web-platform/phase-3c/06-avatar-local-policy.md and ADR 0006. Production hosting, keys and scheduler are undecided; manual local cleanup is not production readiness.
+
+## Phase 3C.4 — Current local acceptance authorization
+
+Authorized after the single Phase 3C.3 commit `524ef172acc8d327ba5591adfa76a8abefa80cba`. Earlier 3C.4 deferrals above describe their historical increments and are prospectively superseded only for this local acceptance. No new requirement or product behavior is proposed. FR-401–414 and all 17 existing mapped scenarios retain their original genuine evidence; the original 51 ledger events and report hashes are unchanged.
+
+Verify combined optional avatar-before-completion, completion/revision continuity, rename/immediate reuse/public SSR and stale text editing after an actual avatar write. Add ordinary untagged browser acceptance linked to the existing requirements/scenarios, not invented RED or a retroactive TDD baseline. Fresh full GREEN, actual type reproduction, real SQL/Auth/Storage/cleanup and bundle isolation, final full verification and independent review support the handoff. Manual screen-reader limitations are reported explicitly.
+
+Mandatory completion/always-public completed profiles supersede the original optional-publication/hide-toggle/indexable proposal. No privacy toggle, catalog/activity/social feature, new schema/dependency, production settings/scheduler, commit/push/amend/reset/deploy, automatic archive or Phase 4. A reproducible late defect requires a real regression before a minimal fix and reverification; a consequential contract/schema choice requires clarification.

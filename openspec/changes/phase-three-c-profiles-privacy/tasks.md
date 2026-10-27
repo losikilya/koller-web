@@ -59,4 +59,13 @@
 - [x] 9.1 Run real Storage/database/browser acceptance and final full verify after last material corrections; preserve actual logs/codes and historical integrity.
 - [x] 9.2 Obtain actual independent review and deliver PHASE-3C3-IMPLEMENTATION-REPORT/current-source manifest with scoped readiness.
 
-Current deferrals: 3C.4/Phase 4 and production scheduler/keys/hosting. No commit, push, amend, deploy or reset is authorized.
+Historical 3C.3 deferrals above are superseded prospectively only for the authorized local acceptance below. No further commit, push, amend, deploy, reset, automatic archive, production scheduler/keys/hosting or Phase 4 is authorized.
+
+## 10. Phase 3C.4 integrated local acceptance
+
+- [x] 10.1 Capture clean committed HEAD, exact active-artifact snapshots/historical and commit-proof pins, and fresh full standalone GREEN.
+- [x] 10.2 Map every existing requirement/scenario/test to actual layer evidence; distinguish superseded policy and acceptance GREEN from historical TDD.
+- [x] 10.3 Execute real EN/RU cross-feature completion/avatar/rename/reuse and stale-editor acceptance, preserving focused failures and findings honestly.
+- [x] 10.4 Reproduce actual local database types/nullability, verify root SQL/Auth/Storage/race/cleanup orchestration and private browser/import isolation; record accessibility scope and manual screen-reader gaps.
+- [x] 10.5 Run final full pnpm verify after scoped corrections, obtain actual independent review and resolve actionable findings with required reverification.
+- [x] 10.6 Deliver PHASE-3C4-ACCEPTANCE-REPORT/current-source-and-evidence manifest and truthful readiness; stop active/unarchived without further Git or production actions.

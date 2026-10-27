@@ -1,0 +1,40 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/modules/profile/profileRepository.test.ts (4 tests | 2 failed) 44ms
+   × write distinguishes definite SQL rollback 40001 from an uncertain HTTP 500 30ms
+   × complete distinguishes definite SQL rollback 40001 from an uncertain HTTP 500 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/modules/profile/profileRepository.test.ts > write distinguishes definite SQL rollback 40001 from an uncertain HTTP 500
+ FAIL  tests/apps/web/modules/profile/profileRepository.test.ts > complete distinguishes definite SQL rollback 40001 from an uncertain HTTP 500
+AssertionError: expected Error: outcome_unknown { …(2) } to match object { code: 'revision_conflict', …(1) }
+
+- Expected
++ Received
+
+- {
+-   "code": "revision_conflict",
+-   "status": 412,
++ ProfileFailure {
++   "code": "outcome_unknown",
++   "status": 503,
+  }
+
+ ❯ tests/apps/web/modules/profile/profileRepository.test.ts:62:26
+     60|               '1'
+     61|             )
+     62|       await expect(result).rejects.toMatchObject(expected)
+       |                          ^
+     63|       expect(calls).toBe(1)
+     64|     })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 2 passed (4)
+   Start at  02:44:53
+   Duration  1.42s (transform 399ms, setup 342ms, import 805ms, tests 44ms, environment 0ms)
+

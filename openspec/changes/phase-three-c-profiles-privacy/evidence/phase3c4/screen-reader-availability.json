@@ -1,0 +1,7 @@
+{
+  "NvdaOnPath": false,
+  "NvdaRunning": false,
+  "NvdaProgramFiles": false,
+  "NvdaProgramFilesX86": false,
+  "ManualSpeechVerification": "Not run; no NVDA found in checked locations. Automated accessibility/keyboard evidence is separate."
+}

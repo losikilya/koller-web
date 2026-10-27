@@ -37,3 +37,13 @@ Actual independent read-only pass 1 returned **PASS**, with no actionable findin
 Final full `pnpm verify` exited 0: [verify-final-second.txt](evidence/phase3c3/verify-final-second.txt), SHA-256 `ec3a0553576da02128b0f506560f71b7d04dbe0d69fd49f0a5edd99fa812895c`. It includes 95 tests with coverage, real local PostgreSQL/RLS/Storage/races/worker restart, Auth integration, builds/client secret isolation, 24 application browser checks, seven Storybook checks and strict specs 6/6. Original failures remain preserved and are not labelled behavioral RED. Final formatting follows completed original cycles; final verification exercises current tests.
 
 This PASS covers local Phase 3C.3 only. Production scheduling/keys/hosting and Phase 3C.4 remain deferred; the change stays active and unarchived. Current-source binding and historical integrity are recorded in the separate Phase 3C.3 acceptance manifest and implementation report.
+
+## Phase 3C.4 current acceptance review
+
+Verdict: PASS
+
+Actual independent read-only pass 1 returned **PASS**, with no actionable findings. The [actual response](evidence/phase3c4/review-pass1.txt) records direct inspection of the diff, three new test files, acceptance mapping, prospective artifacts/report/handoff and the ordinary real-SDK regression. It confirms the minimal SQLSTATE 40001 correction restores existing revision_conflict/412 while unknown 5xx remain uncertain. No historical verdict is reused.
+
+Final full `pnpm verify` exited **0**: [verify-final-first.txt](evidence/phase3c4/verify-final-first.txt), SHA-256 `abbedb9b480ec8520a7c8eacbc82543d7cf7d09fd5e4013246cb4fa45fa58849`. It passed 99 tests with coverage, actual DB/RLS/Auth/Storage/worker/races, builds/private-browser-material isolation, 27 application browser examples, seven Storybook checks and strict specs 6/6. The reviewer inspected actual logs/exit, but ran no tests/scripts/network. Complete historical/source hash validation belongs to the main session, not the reviewer. Exact pre-3C4 artifacts remain in evidence/phase3c4/history-3c3; original 51 events are not new cycles.
+
+PASS covers local Phase 3C.4 technical acceptance only. Manual screen-reader speech, live Google/external SMTP, remote CI and production operations remain unverified and disclosed. The change stays active/unarchived; this review does not authorize archive, commit/push or Phase 4.

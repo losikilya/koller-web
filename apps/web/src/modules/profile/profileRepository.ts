@@ -58,6 +58,8 @@ export function createProfileRepository(
       })
       if (
         result.error &&
+        // SQLSTATE 40001 is a definite rollback even when PostgREST returns 500.
+        result.error.code !== '40001' &&
         (result.status === 0 || result.status >= 500 || !result.error.code)
       ) {
         throw new ProfileFailure('outcome_unknown', 503)
@@ -72,6 +74,7 @@ export function createProfileRepository(
       })
       if (
         result.error &&
+        result.error.code !== '40001' &&
         (result.status === 0 || result.status >= 500 || !result.error.code)
       )
         throw new ProfileFailure('outcome_unknown', 503)

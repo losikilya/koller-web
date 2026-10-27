@@ -1,0 +1,23 @@
+Actual read-only test_designer response:
+
+Рекомендую два компактных browser acceptance-сценария существующего поведения.
+
+1. **Аватар до completion → completion → rename/reuse** — основной новый сквозной случай.
+   - **Given** новый подтверждённый incomplete owner находится в форме completion.
+   - **When** он вводит обязательные поля, загружает аватар, затем завершает профиль клавиатурой.
+   - **Then** черновик полей переживает upload; completion использует актуальную ревизию; до completion изображение доступно владельцу и недоступно гостю, после completion тот же controlled URL доступен гостю.
+   - **When** владелец переименовывается, а другой пользователь занимает освобождённый username.
+   - **Then** UUID и аватар первого владельца сохраняются; старый URL сначала 404 без redirect, после reuse показывает второго владельца без чужого аватара. Новая публичная EN/RU страница имеет правильные canonical/noindex/no-store и безопасный SSR DTO.
+   - Запустить outline EN/RU; проверить focus после upload/completion/save, 320px reflow и axe. Переиспользовать `helpers/avatar.ts`, паттерны login/completion из `completion.steps.ts`.
+
+2. **Stale text editor после реального avatar write** — полезный отдельный browser-сценарий.
+   - **Given** два редактора одного completed owner открыты с одной ревизией; первый содержит несохранённый bio.
+   - **When** второй загружает аватар, затем первый сохраняет текст.
+   - **Then** настоящий API возвращает 412; локальный bio сохраняется, серверный текст не перезаписан, текущий аватар остаётся доступен. Явный reload получает актуальные поля/аватар/ETag, последующее сохранение проходит.
+   - Не требовать disabled Save после обычного 412: текущая блокировка обязательна для uncertain outcome, а обычный conflict сохраняет устаревший conditional write.
+
+Подтверждённые пробелы: `avatars.steps.ts` начинает с уже completed owner; `completion.steps.ts` заканчивает без аватара; browser rename/reuse отсутствует. Связка avatar → text ETag покрыта только mocked RTL в `profileAvatarCoordination.test.tsx`.
+
+Низший достаточный слой для этих связок — настоящий browser + HTTP/локальная БД/Storage. Повторять все size/decoder/24h/7d/race partitions в них не нужно: они уже покрыты существующими слоями.
+
+Это ordinary acceptance GREEN, связанное с существующими SC-419/425/431 и SQL acceptance; новые FR/SC и ретроактивные baseline/RED не нужны. Проверял файлы напрямую, команды и тесты не запускал.

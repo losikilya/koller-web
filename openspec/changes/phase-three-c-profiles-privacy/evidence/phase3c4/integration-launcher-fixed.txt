@@ -1,0 +1,42 @@
+[WebServer] (node:28664) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:27348) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30380) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 3 tests using 1 worker
+
+(node:2596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:8:9 › Combined local profile acceptance › An optional avatar follows completion and username reuse › Example #1 @phase3c-integration (4.1s)
+  ok 2 [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:15:9 › Combined local profile acceptance › An optional avatar follows completion and username reuse › Example #2 @phase3c-integration (3.5s)
+  x  3 [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:24:7 › Combined local profile acceptance › Another editor cannot overwrite an avatar revision with a stale text draft @phase3c-integration (2.4s)
+
+
+  1) [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:24:7 › Combined local profile acceptance › Another editor cannot overwrite an avatar revision with a stale text draft @phase3c-integration › When one editor uploads a photo and the other saves a stale text draft 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 412
+    Received: 503
+
+       at tests\e2e\profile\integration.steps.ts:356
+
+      354 |       .getByRole('button', { name: 'Save profile', exact: true })
+      355 |       .focus()
+    > 356 |     await page.keyboard.press('Enter')
+          |                                       ^
+      357 |     expect((await conflict).status()).toBe(412)
+      358 |     const alert = page.getByRole('main').getByRole('alert')
+      359 |     await expect(alert).toHaveText(labels.en.conflict)
+        at Object.<anonymous> (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\integration.steps.ts:356:48)
+        at BddStepInvoker.runWithAfterStepHooks (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:82:16)
+        at BddStepInvoker.invoke (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:55:5)
+        at C:\Users\Lenovo\Desktop\koller_web\.features-gen\auth\tests\e2e\profile\integration.feature.spec.js:26:5
+
+    Error Context: test-results\tests-e2e-profile-integrat-31e38-ion-with-a-stale-text-draft-msedge-auth\error-context.md
+
+  1 failed
+    [msedge-auth] › .features-gen\auth\tests\e2e\profile\integration.feature.spec.js:24:7 › Combined local profile acceptance › Another editor cannot overwrite an avatar revision with a stale text draft @phase3c-integration 
+  2 passed (18.4s)

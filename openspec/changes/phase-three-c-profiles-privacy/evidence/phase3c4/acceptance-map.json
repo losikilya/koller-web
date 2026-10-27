@@ -1,0 +1,317 @@
+{
+  "version": 1,
+  "scope": "Existing FR-401–414 only; no new requirements, tagged scenarios or retroactive baseline/RED.",
+  "policy": "Mandatory completion -> always-public completed profiles; original optional publication/hide toggle/indexability proposals superseded by approved Phase3C2.",
+  "requirements": [
+    {
+      "requirement": "FR-401",
+      "scenarios": [
+        "SC-401"
+      ],
+      "features": [
+        "tests/bdd/profile/management.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/modules/profile/profileService.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-402",
+      "scenarios": [
+        "SC-402"
+      ],
+      "features": [
+        "tests/bdd/profile/management.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/modules/profile/profileService.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-403",
+      "scenarios": [
+        "SC-405"
+      ],
+      "features": [
+        "tests/bdd/profile/management.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/app/_infrastructure/profile.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-404",
+      "scenarios": [
+        "SC-418",
+        "SC-419"
+      ],
+      "features": [
+        "tests/bdd/profile/management.feature",
+        "tests/e2e/profile/management.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/modules/profile/ProfileEditor.test.tsx"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-405",
+      "scenarios": [
+        "SC-420"
+      ],
+      "features": [
+        "tests/bdd/profile/management.feature"
+      ],
+      "drivers": [
+        "tests/database/profile.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-406",
+      "scenarios": [
+        "SC-421"
+      ],
+      "features": [
+        "tests/bdd/profile/completion.feature"
+      ],
+      "drivers": [
+        "tests/database/completion.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-407",
+      "scenarios": [
+        "SC-422"
+      ],
+      "features": [
+        "tests/bdd/profile/completion.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/app/_infrastructure/completion.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-408",
+      "scenarios": [
+        "SC-423"
+      ],
+      "features": [
+        "tests/bdd/profile/completion.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/modules/profile/publicProfile.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-409",
+      "scenarios": [
+        "SC-424",
+        "SC-425"
+      ],
+      "features": [
+        "tests/bdd/profile/completion.feature",
+        "tests/e2e/profile/completion.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/modules/profile/completionEditor.test.tsx"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-410",
+      "scenarios": [
+        "SC-426"
+      ],
+      "features": [
+        "tests/bdd/profile/avatars.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/app/_infrastructure/avatarProcessing.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-411",
+      "scenarios": [
+        "SC-427"
+      ],
+      "features": [
+        "tests/bdd/profile/avatars.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/modules/profile/avatarService.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-412",
+      "scenarios": [
+        "SC-428"
+      ],
+      "features": [
+        "tests/bdd/profile/avatars.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/app/_infrastructure/avatar.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-413",
+      "scenarios": [
+        "SC-429",
+        "SC-431"
+      ],
+      "features": [
+        "tests/bdd/profile/avatars.feature",
+        "tests/e2e/profile/avatars.feature"
+      ],
+      "drivers": [
+        "tests/apps/web/modules/profile/AvatarEditor.test.tsx"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    },
+    {
+      "requirement": "FR-414",
+      "scenarios": [
+        "SC-430"
+      ],
+      "features": [
+        "tests/bdd/profile/avatars.feature"
+      ],
+      "drivers": [
+        "tests/tooling/avatarCleanup.test.ts"
+      ],
+      "currentEvidence": "Final full verify plus original immutable ledger events; browser layers additionally execute actual Playwright BDD."
+    }
+  ],
+  "ordinaryIntegrationCases": [
+    {
+      "id": "ACC-01",
+      "feature": "tests/e2e/profile/integration.feature",
+      "scenario": "An optional avatar follows completion and username reuse",
+      "examples": [
+        "en",
+        "ru"
+      ],
+      "requirements": [
+        "FR-401",
+        "FR-402",
+        "FR-403",
+        "FR-404",
+        "FR-406",
+        "FR-407",
+        "FR-408",
+        "FR-409",
+        "FR-411",
+        "FR-412",
+        "FR-413"
+      ],
+      "existingScenarios": [
+        "SC-419",
+        "SC-421",
+        "SC-423",
+        "SC-425",
+        "SC-427",
+        "SC-428",
+        "SC-431"
+      ],
+      "test": "tests/e2e/profile/integration.steps.ts",
+      "kind": "standalone acceptance GREEN of existing behavior"
+    },
+    {
+      "id": "ACC-02",
+      "feature": "tests/e2e/profile/integration.feature",
+      "scenario": "Another editor cannot overwrite an avatar revision with a stale text draft",
+      "requirements": [
+        "FR-401",
+        "FR-402",
+        "FR-403",
+        "FR-404",
+        "FR-405",
+        "FR-411",
+        "FR-413"
+      ],
+      "existingScenarios": [
+        "SC-402",
+        "SC-405",
+        "SC-418",
+        "SC-420",
+        "SC-427",
+        "SC-431"
+      ],
+      "test": "tests/e2e/profile/integration.steps.ts",
+      "kind": "standalone acceptance GREEN of existing behavior"
+    }
+  ],
+  "realLayers": [
+    {
+      "command": "pnpm db:test",
+      "path": "scripts/test-database.mjs",
+      "scope": "74 pgTAP and actual anon/owner/non-owner signed-JWT REST/RLS"
+    },
+    {
+      "command": "pnpm db:test:profile",
+      "path": "scripts/test-profile-database.mjs",
+      "scope": "Ownership, revision/uniqueness/publication races and lossless bigint"
+    },
+    {
+      "command": "pnpm db:test:completion",
+      "path": "scripts/test-completion-database.mjs",
+      "scope": "Required completion, public/no-hide constraints and real completion/edit/rename-public races"
+    },
+    {
+      "command": "pnpm db:test:avatars",
+      "path": "scripts/test-avatar-storage.mjs",
+      "scope": "Actual private Storage, raw grants, CAS/replay/rates,24hTTL/7dayretention/failure/worker fencing/restart/orphans"
+    },
+    {
+      "command": "pnpm test:auth",
+      "path": "tests/database/authentication.test.ts",
+      "scope": "Real local Auth/Mailpit; external providers not certified"
+    },
+    {
+      "command": "pnpm avatars:check-client",
+      "path": "scripts/check-avatar-client.mjs",
+      "scope": "Actual private service key and variable name absent from built browser js/maps"
+    },
+    {
+      "command": "pnpm test:e2e",
+      "path": "playwright.bdd.config.ts",
+      "scope": "All real guest/Auth/profile/combined EN/RU routing/SSR/RSC/keyboard/a11y journeys"
+    },
+    {
+      "command": "pnpm test:storybook",
+      "path": "playwright.storybook.config.ts",
+      "scope": "Shared control keyboard/focus,compactdesktop/reducedmotion automated accessibility"
+    }
+  ],
+  "manualLimit": "NVDA not found on PATH, running processes or usual Program Files locations. No manual screen-reader speech verification claimed.",
+  "ordinaryRegression": {
+    "id": "ACC-03",
+    "requirement": [
+      "FR-402",
+      "FR-403",
+      "FR-406"
+    ],
+    "test": "tests/apps/web/modules/profile/profileRepository.test.ts",
+    "source": "apps/web/src/modules/profile/profileRepository.ts",
+    "actualProviderProbe": "actual-postgrest-conflict.txt",
+    "red": "repository-conflict-red.txt",
+    "redExitCode": 1,
+    "redResults": "2 failed / 2 unknown-error controls passed",
+    "green": "repository-conflict-green.txt",
+    "greenExitCode": 0,
+    "refactorRegression": "conflict-refactor-regressions.txt",
+    "refactorExitCode": 0,
+    "meaning": "Existing SQLSTATE40001 definite rollback must yield revision_conflict/412 even over HTTP500; unknown errors still outcome_unknown/503.",
+    "historicalLedger": "All51events/reports unchanged; this ordinary postimplementation regression is not retroactive TDD."
+  }
+}

@@ -1,0 +1,1480 @@
+{
+  "version": 1,
+  "head": "524ef172acc8d327ba5591adfa76a8abefa80cba",
+  "accepted3C3Entries": 327,
+  "files": [
+    {
+      "path": "docs/adr/0004-owner-profile-management.md",
+      "bytes": 2057,
+      "sha256": "5e25a4ba17afc90951533dbb1f662e5dec02729639f7f1fd3882db3cdd980eb9"
+    },
+    {
+      "path": "docs/adr/0005-profile-completion-public-policy.md",
+      "bytes": 2809,
+      "sha256": "4311d6ca30c31e3d71770e649c1e1efda8c9ebe917f8fa8f050c855e12b5b76a"
+    },
+    {
+      "path": "docs/adr/0006-local-profile-avatars.md",
+      "bytes": 1953,
+      "sha256": "3819a96558dc0225af1dc2fe02ae32c362dd2e11ae15972aa2c5f2755698b9c0"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/00-implementation-plan.md",
+      "bytes": 17247,
+      "sha256": "ed7ab669f20f4eaee9be4c5a3321e3601241ab2c7aeed9e78b1b26ca35099e1c"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/01-current-state-audit.md",
+      "bytes": 15232,
+      "sha256": "caa59290665a6c6b210ea3ecf385c19c85a060d602ea72ebf76370a8fa586a3a"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/02-privacy-and-security-design.md",
+      "bytes": 18786,
+      "sha256": "0f00f97deef634ec292f0dd8fcff8405f91467269664b37c425c7803d9c186b8"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/03-acceptance-scenarios.md",
+      "bytes": 16006,
+      "sha256": "572476ea91e1f5887ac1854c3d310da07876efcee9fdef9462e155b76090c43b"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/04-open-decisions.md",
+      "bytes": 8880,
+      "sha256": "c33a8fd6d13202b4ee403b1e99c7858577b13e7b0d1aed2ab518cb33b59ef733"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/05-revised-completion-policy.md",
+      "bytes": 9517,
+      "sha256": "96dbe9357eb1e9bf05598a74e759b6e2adf04472ed51991397d1b08f17b9a981"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/06-avatar-local-policy.md",
+      "bytes": 6522,
+      "sha256": "68cf14f2c4b10c8c7d93cfefb9c8b725f7f320bed1d320e4412ea904afa5a819"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/PHASE-3C-PLANNING-REPORT.md",
+      "bytes": 18222,
+      "sha256": "619afb7a7eee17efcbc868a4b6f7aa6b002718ebcb5318a15e8dbe3662f2d815"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/PHASE-3C1-IMPLEMENTATION-REPORT.md",
+      "bytes": 10568,
+      "sha256": "e5cde005861ff14adee5487ece70a0eb3b41d780ec1f23ef0251dc802a9f973a"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/PHASE-3C2-IMPLEMENTATION-REPORT.md",
+      "bytes": 16547,
+      "sha256": "a6d157c150d12af3fc4a671934ac931608b13451f32e3c7f7892888612d6bcae"
+    },
+    {
+      "path": "docs/web-platform/phase-3c/PHASE-3C3-IMPLEMENTATION-REPORT.md",
+      "bytes": 9878,
+      "sha256": "8aee9d510738d5699239d841eb418cd9677858ddac734d87924cc0d9c332ecb4"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/.openspec.yaml",
+      "bytes": 45,
+      "sha256": "a8645ec3e8deeda77395d6cd5c317114e65decac05aa2cc1600e1466153b42f5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/bdd.md",
+      "bytes": 2504,
+      "sha256": "66f10edd107b1ef4ce0d1744d32c52fb81694d043a1c33fe8a267303196b95ad"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/design.md",
+      "bytes": 6481,
+      "sha256": "100b5ac0f31909c9bc1a18faf8ffc7f4cabeb7954abb2396d0ccc2363df92c73"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/001-SC-420-baseline.json",
+      "bytes": 864,
+      "sha256": "f7bb664bad50d9fb62e6bd20d3ac436404719ff52623f49ba125d1ae8d16d119"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/002-SC-401-red.json",
+      "bytes": 2320,
+      "sha256": "7d89a4bf281f9525974e1a2c72a2875d73ed94a8b46805a5241278ed5e9a19f4"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/003-SC-402-red.json",
+      "bytes": 2321,
+      "sha256": "ac4936d69298483585eba7ddd965703161f6cc1a6c6bc0f82528994a4cefe95f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/004-SC-405-red.json",
+      "bytes": 1126,
+      "sha256": "6a560e69bb3fed4ee41b61a02c3f0f5ed8478fdeb86f22420abae073408ac9c3"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/005-SC-418-red.json",
+      "bytes": 2897,
+      "sha256": "d72230636827d287ee8ebc02a73b0632f7cc274afa0069041f72c3eac9b83d6d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/006-SC-419-red.json",
+      "bytes": 2925,
+      "sha256": "8e63cc392efa832d049d624815fa8b8fa9c270f55e041b570443b971a0cb56cc"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/007-SC-401-green.json",
+      "bytes": 1063,
+      "sha256": "f7988c3636540f7fce98d8b417e1c362b8b532be6b59ca5489a33fedb567260a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/008-SC-402-green.json",
+      "bytes": 1062,
+      "sha256": "07177ca9251e1b2dd966e296bd5242bc8a0cc725fc307578f26e842b48e2362b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/009-SC-405-green.json",
+      "bytes": 887,
+      "sha256": "f4f389e205312363d3e14a44851931c2dc4b143df3c659957edb673ae8455b33"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/010-SC-418-green.json",
+      "bytes": 1088,
+      "sha256": "ce7ccb7562b1c77355ff35de7d2423b6cd1bafb865d5e459b969f8145bdbf50c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/011-SC-419-green.json",
+      "bytes": 1088,
+      "sha256": "f52deb3332c24ac686f7cb62e0ec1b9e19e52b98f7a9f2026b67251ccd22afe7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/012-SC-401-refactor.json",
+      "bytes": 1062,
+      "sha256": "e439d3de9f8b678a58339a8d95e9737d35705e92ff27ff51d6588739af822dfa"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/013-SC-402-refactor.json",
+      "bytes": 1062,
+      "sha256": "de4bd08a71b67fb5b9a0e189ebcbb02ddb958f4bc88058698212024935980e4f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/014-SC-405-refactor.json",
+      "bytes": 885,
+      "sha256": "e782abf3d439478d628c88b7ff124ccc46247d0490e3507a5198592ef531b77f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/015-SC-418-refactor.json",
+      "bytes": 1079,
+      "sha256": "1398c51ed8e920254cfdfb9ba03083361d101f0691f4442f9fb146bf6b569088"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/016-SC-419-refactor.json",
+      "bytes": 1088,
+      "sha256": "f75fdbe36c63c4282a2c7b6f39964f3682700c28f76134e604d87f49b5348007"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/017-SC-421-red.json",
+      "bytes": 2398,
+      "sha256": "3acb229d6b597579e83c6e92726115b25fc3d04a35f5b44fd113e2660493d89b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/018-SC-422-red.json",
+      "bytes": 2587,
+      "sha256": "44292d1fce54c1ab314ec7296dfa1d1f89964ede7b951850f9fabd228d6cebec"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/019-SC-423-red.json",
+      "bytes": 1627,
+      "sha256": "a1d13e7018607dfb5468f43cba94b71d3d17fae54495b833247f1359e8adb622"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/020-SC-424-red.json",
+      "bytes": 11272,
+      "sha256": "36c33307e9b48c5dab5bfcb38ba65b71ca33a3d562bc7a067122a477aee6f315"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/021-SC-425-red.json",
+      "bytes": 11679,
+      "sha256": "9e3f0ccb4cf0c00778ff18434d88fd75ee4004c9d858db0d7a20109d9d87dfc8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/022-SC-421-green.json",
+      "bytes": 1183,
+      "sha256": "e33074f56397d0b930b7f14d257a1f51a2ae4ff9bb26ffa5d00b4361b71fe43d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/023-SC-422-green.json",
+      "bytes": 1189,
+      "sha256": "1c0a04972837fd58f9926ce5a8cd894cafef721c7cfb77e977ad1f97a1a29e03"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/024-SC-423-green.json",
+      "bytes": 1186,
+      "sha256": "a87ba6485450443d3fd87b45035368d3657e226e31c91d76468186d4e8891d27"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/025-SC-424-green.json",
+      "bytes": 1424,
+      "sha256": "3fb332812658c314fefd1d0933f1e9c4070182d074602b83762d44f0cd6ada5d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/026-SC-425-green.json",
+      "bytes": 1424,
+      "sha256": "bb900ec640b01f5899342f8a807c0ef93c58a5ecb7deeb215e50ffd26f3e92ed"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/027-SC-421-refactor.json",
+      "bytes": 1184,
+      "sha256": "e6f77e3f1cf8ccd05ced1f01b9ca7c4e6c43d3babcdf644d3fd55a8cbc282d5d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/028-SC-422-refactor.json",
+      "bytes": 1187,
+      "sha256": "dab02b9369f5f6ba7c43899c1267c0a82f813104913633f0fa0bc9475162dfeb"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/029-SC-423-refactor.json",
+      "bytes": 1185,
+      "sha256": "e259d056d9c56f953ece9499dc620b40f0a669d4b0e8f09c9a66f8466457d4db"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/030-SC-424-refactor.json",
+      "bytes": 1425,
+      "sha256": "bc6115ad5715d1c53f6cbf8f8332ea369d3f7ae6eebce1cbd56f7c51727b54f3"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/031-SC-425-refactor.json",
+      "bytes": 1423,
+      "sha256": "eb836f6bea055082aa15bf27dbe19dd17fd9fd2e5bda3a4e9ac9948c516a3c2e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/032-SC-426-red.json",
+      "bytes": 1830,
+      "sha256": "830c58e2247ff66e6f066e1204d4cfcd2afce78ff4de8c572d11dd6ffe9b6d2d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/033-SC-427-red.json",
+      "bytes": 2647,
+      "sha256": "4e73996fbb9d065c1be5dc9ef88b1f8c28661f6ee4962a2eb20ec563a5d8df4d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/034-SC-428-red.json",
+      "bytes": 1667,
+      "sha256": "6a96919c1ed357269947b3e285634bd8a0313ba1d33ffca4b67b0078cd75c18d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/035-SC-429-red.json",
+      "bytes": 4770,
+      "sha256": "46dc3dce21a5344c037f4cd2da704a998a106c46ad54df7cee3bc666c90e8c3c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/036-SC-430-red.json",
+      "bytes": 2103,
+      "sha256": "360239a53cdb0bfd36bc6cf6a7f7222dc45a41863a7d6206868ad082b8d15246"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/037-SC-431-red.json",
+      "bytes": 6187,
+      "sha256": "ba7584ec1aed038edf89bc5fb079b7da358756594b20de13395420b78eef19dc"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/038-SC-430-red.json",
+      "bytes": 2104,
+      "sha256": "91ab1527b185da2eb65f5ceb3a549c8513c7c22fb2c649643d7eb3e50582a720"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/039-SC-430-red.json",
+      "bytes": 2104,
+      "sha256": "fa7178e5aa063578d929c14887507e03b610963d351818bfe4629ce767495dbe"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/040-SC-426-green.json",
+      "bytes": 1219,
+      "sha256": "85e329f1c5de238cd35536ae921cfc7dc9458547b471e702f8a37dd99fb296b4"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/041-SC-427-green.json",
+      "bytes": 1231,
+      "sha256": "070e68d399b62f3673d794dc75d64d572be1e34b3d65804e88f11bf92338bdc3"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/042-SC-428-green.json",
+      "bytes": 1225,
+      "sha256": "a3af0c30a50aab8561c8c198f8a203f4bd51c59b6aab77b187dd0e9e3d0d5d1d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/043-SC-429-green.json",
+      "bytes": 2541,
+      "sha256": "a80ec0d7654e92549a17434237c2b61c14935a40ac2844be6f9863590c88ac01"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/044-SC-430-green.json",
+      "bytes": 1159,
+      "sha256": "fd69d576887fa51f62e1520e15b201452ef9575c9b194108c41ab17b4a93474f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/045-SC-431-green.json",
+      "bytes": 2600,
+      "sha256": "4d94661f584faffcbb26678ef279656806a8d0c1e27dba7837efb4cde41dc1e3"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/046-SC-426-refactor.json",
+      "bytes": 1209,
+      "sha256": "a5fa3d7e904b1c1dfe26a25144b415058a2560ec47f954afce9a86dbfd8dcccf"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/047-SC-427-refactor.json",
+      "bytes": 1231,
+      "sha256": "3946a3e95a6a731cb229e93690cac08849f5d7b62690b85c7f53686b36770b6c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/048-SC-428-refactor.json",
+      "bytes": 1225,
+      "sha256": "f9005e9216990af52067c3f91a1c14cdba1a13af77b8506f4acd16b912d89b84"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/049-SC-429-refactor.json",
+      "bytes": 2542,
+      "sha256": "22e673959954e1e88948326072ee3eea035c53018234ff0893678a243307ddcc"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/050-SC-430-refactor.json",
+      "bytes": 1158,
+      "sha256": "b1f7cbb30210c1157d9b4f74be2c5b69a41b483103c086e78f9410be56c0c35a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/051-SC-431-refactor.json",
+      "bytes": 2587,
+      "sha256": "ade42fb7a082643761e4e41f9179affa9a6151613a1187c9e593ac417493243b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/acceptance-manifest.json",
+      "bytes": 9315,
+      "sha256": "dd411270db6b6f278c0c676e6a3d88a0a44dfc26b84f72091141e3239a829ab9"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/baseline.txt",
+      "bytes": 26878,
+      "sha256": "f46a9f90e0c670741b80ead012a2c7d76e1c67b509ce74cf5c227cc153589b65"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/README.md",
+      "bytes": 1566,
+      "sha256": "baa32e1ef75ba5fb295cd986d85b3a9888d9d79bf0fe96184a22d18c0b5a9e1d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/.openspec.yaml",
+      "bytes": 66,
+      "sha256": "ddb3c102784ec848ff6119a0db44e2400edf7c083d945a0a4952e040c8ce7047"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/baseline.md",
+      "bytes": 915,
+      "sha256": "62716662158f99ba1d4a82c9069438a4de4957997d4d66128f72cf9e5cb720c7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/design.md",
+      "bytes": 2055,
+      "sha256": "a93e903990c37bf3911d1e42a7b9d57a9da7858dbfb594266d4ab016bb0338ed"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/architecture-refactor/001-baseline.json",
+      "bytes": 32885,
+      "sha256": "438d2bcd753c5f54e0e02494728be3ea7f4f33898bc7da2db826fc3f95b35a5a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/architecture-refactor/002-final.json",
+      "bytes": 32724,
+      "sha256": "61e97285cd0a65c6e81e37839023d60a7c7d324bd891c8e3750f508e2341b2ad"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/architecture-refactor/ledger.json",
+      "bytes": 681,
+      "sha256": "64e8c09fbd01423e28a5dbe217ae2617a3c08275bc030241d5e424825b9dbfa5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/native-validation.txt",
+      "bytes": 174,
+      "sha256": "c1f9782a58f1df4ea52bd0c29bcca8322d6c415bddcae3caa2074f8030352683"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/ready.txt",
+      "bytes": 281,
+      "sha256": "e2fa32ef09d6920d15093dab8f9868b7d3a0292f9dea9211b6478100c75d72d8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/runner-baseline-console.txt",
+      "bytes": 32934,
+      "sha256": "4f2f810b04b38de60fc6f9a0e4512ab1c93df8b752b090faecb547925e15e8e2"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/runner-final-console.txt",
+      "bytes": 32773,
+      "sha256": "d5718574d80d7a210cc7a992fd599582716baf7838ed51f0cdad258e0e59b44e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/evidence/setup-scope-failure.txt",
+      "bytes": 49,
+      "sha256": "ea2d80e4775adf59b1c0839ed47a16b3b9346a2365873d52fa85afbc5fbcb47f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/proposal.md",
+      "bytes": 1218,
+      "sha256": "b8e9496c05951120ec119d05983710e7929283fba5178495f90429b5cfc6b59b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/review.md",
+      "bytes": 1666,
+      "sha256": "61e25224d0621ccc912c271250df3ca6583fe813cddab86ae2df810e8af1d75d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/tasks.md",
+      "bytes": 434,
+      "sha256": "afdb337175b88c615b848c74d98b284d590a537f84d881cd74fffe253c2057e9"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/isolated-validation/verification-plan.json",
+      "bytes": 550,
+      "sha256": "0066aa9ba9ace109e25b4718b96af1eeedbe60ea528112d309259f8279c3917c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/policy.patch",
+      "bytes": 25122,
+      "sha256": "3726d0830e77a8bb21e57d6e70fb3f1051d832ffd6552bcf5ac5e428286fc25e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/precommit-checks.txt",
+      "bytes": 2729,
+      "sha256": "1ff6f3c18290d9f2f041946f361d90812bba7b7b16214a9fb2d9fc8dcd490ce5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/provenance.json",
+      "bytes": 14121,
+      "sha256": "bff409c482f1b5c3ccb532e17b28ab1a44f987aef1d29435f65678928c1437eb"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/commit-policy/staged-byte-check.json",
+      "bytes": 59456,
+      "sha256": "3ddc13e179f3d3433fa540a27af5bdcfaeffd8e16461c0e1b4e4318b8bedc576"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/executable-bdd-and-sql.txt",
+      "bytes": 442,
+      "sha256": "25803a58451a7d764b64ac404a623733d9927e006cc24ff1732a88ea27d79490"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/final-verify-first.txt",
+      "bytes": 11209,
+      "sha256": "3746e6d028f680bf3e488a35bfa2873eb1b0dbd7fa50c4965dbbc1377ec11124"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/final-verify-reviewed-formatted.txt",
+      "bytes": 28477,
+      "sha256": "57e78f91e5e753016d71564db7257e3efcbb04f40959fcec33a14e19df1e6c82"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/final-verify-reviewed.txt",
+      "bytes": 11269,
+      "sha256": "8f53841977f8ce55d48a915bff8556479fe4fb13c1d51de0f5bf41a2e24003c7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/final-verify-second.txt",
+      "bytes": 28079,
+      "sha256": "f7ac84411b8d68e50fe77e13796d918d0bd9472448c031ee928263ee3b672f1c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/ledger.json",
+      "bytes": 49438,
+      "sha256": "27c746868e4caa3adee782c9b19aff0d21b54646a7f3eb6981528c1cb75cc119"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/outcome-green.txt",
+      "bytes": 230,
+      "sha256": "28b68cb98d3465b5bc5839355fb852e323f5d54b739e777592b245cdd5a74ba6"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/outcome-red.txt",
+      "bytes": 1441,
+      "sha256": "fecfe37fe8f66f282f57a0682a48e4a1c0836ad8f06864ad3dd741ebf65ea330"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/acceptance-manifest.json",
+      "bytes": 44619,
+      "sha256": "8b7990264fa3413f070422b8edc3c39b98cf1c9f49f0ffee7b8176d7eb2b9bb7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/baseline.txt",
+      "bytes": 28331,
+      "sha256": "6602a339cf6dbd7374a5e8329f8642462f65fdf917a4fdae15afd4f7997a43bf"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/browser-second.txt",
+      "bytes": 7621,
+      "sha256": "bf7d9973f18457d7dcc358fc11f10cfe5feb1d52e4e63debe46fb295d30a4a07"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/build-browser-fixes.txt",
+      "bytes": 2915,
+      "sha256": "f57001242de54f72c14c109bb773681af24d11f02402420b2ab2d884c9d58b6f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/build-history-fix.txt",
+      "bytes": 2916,
+      "sha256": "37bc4e51694eaf3056744e2fcb2bb6ebf7d3890cdf81aded4a389b53c6ae6100"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/completion-green.txt",
+      "bytes": 481,
+      "sha256": "b30351924ff015bf2df62cba309edf8346af4dba098ef0fe4b7b9b24de37d62a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/completion-test-before-fixture-transport-fix.mjs",
+      "bytes": 7645,
+      "sha256": "bde0f4f66031377d2e3f1fafb7a86d18aef369320b96a69512ce5ebe54c1c1ac"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/final-document-checks.txt",
+      "bytes": 1300,
+      "sha256": "38bcb3b98c534310e816947205e25ed1d55781227ff830395028cb0e27564abd"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/foundation-database.txt",
+      "bytes": 790,
+      "sha256": "4484392a72024bc7e191e6dff7fec7a3aabfd65e6b157493745bcb7711b88f04"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/green-loader-diagnostic.txt",
+      "bytes": 2532,
+      "sha256": "d0cac4dd583d1894aee47192e49dcfdd85376de7f85dd5b30189544a2a867686"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/app/[locale]/account/page.tsx",
+      "bytes": 2830,
+      "sha256": "1e9b70a141e4165f8342fd048a73de89c80a278fd11c0549b62799d55299eea7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/app/[locale]/account/profile/page.tsx",
+      "bytes": 2574,
+      "sha256": "85019892bb47742f36c240cbe9fcd6d0ad60015fd8437f6960108bdd826532f2"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/app/_infrastructure/auth.ts",
+      "bytes": 5364,
+      "sha256": "836cdb79eadd3dd8c3152edd258193890d8caca56d61894fa4c65305c057840a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/app/_infrastructure/profile.ts",
+      "bytes": 3067,
+      "sha256": "f69ae81ce4a2ee869f3d661f5427f7bce2b1116c6231f72bfb74ca929163ef94"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/app/_infrastructure/requestContext.ts",
+      "bytes": 1705,
+      "sha256": "bd6a8f7fc6e9ce59aca011383e79422e4913f8b9b4f03dd0694c488b4d9442df"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/app/api/v1/me/profile/route.ts",
+      "bytes": 212,
+      "sha256": "cac28620a2d171644cc462fa288a7adad9a5aabe31da7ecd154aff62241ba36c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/app/api/v1/me/route.ts",
+      "bytes": 209,
+      "sha256": "ec5b14d5c932de6845c2156529639dca7ac780fe488bce3dfe039786e901e361"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/modules/identity/authPolicy.ts",
+      "bytes": 1017,
+      "sha256": "047947906da90ff2073bf509fe365729d64a087af986dac613e7d663e28d730d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/modules/profile/ProfileEditor.module.scss",
+      "bytes": 778,
+      "sha256": "abe5274a8658350f70a4a646ac851dd969dd766149a1a5c74a72991e06e6176c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/modules/profile/ProfileEditor.tsx",
+      "bytes": 7307,
+      "sha256": "f70d8b3730b91961400665899c1ec5c129981cddcba3dae352b5d7895cebfcc9"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/modules/profile/index.ts",
+      "bytes": 219,
+      "sha256": "a8a3974cbb7c4339794301f9ddef34803c69aa5538ca786c1aa096542a7a322c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/modules/profile/profileRepository.ts",
+      "bytes": 2245,
+      "sha256": "09c25281b54fc8ebc7b7be96b5f24b07c8477bb64df25387fb693b96a1572c43"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/modules/profile/profileService.ts",
+      "bytes": 3005,
+      "sha256": "b8634d63a9fc636658abbc7398b1c6d10d38640df56b0a7276b34876e323e7b1"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/proxy.ts",
+      "bytes": 963,
+      "sha256": "8eff0d5dd284ea418b86cea05103c9c601d7a513b3f063954f6387376226fc13"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/shared/i18n/messages/en.json",
+      "bytes": 6904,
+      "sha256": "0f5dacf813f8d6c5401e5afa9f1f43c6322a458b730d926d747e1254bf7e80e7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/shared/i18n/messages/ru.json",
+      "bytes": 10390,
+      "sha256": "b9c4eb59a915790e9cf0c2fcd055319b3cb1b3b58d0d0c62e1582240761c220a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/shared/i18n/routes.ts",
+      "bytes": 734,
+      "sha256": "62f6aaa55add4689c4cdc02fbc7a7a650fa8d5bc3e7e3cc4fb9d4f962e05ded4"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/apps/web/src/shared/supabase/database.ts",
+      "bytes": 1429,
+      "sha256": "2678fd65592a280a9f26361fc24a95c7bab2728daba79cada9102a26a1360371"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/docs/adr/0004-owner-profile-management.md",
+      "bytes": 2057,
+      "sha256": "5e25a4ba17afc90951533dbb1f662e5dec02729639f7f1fd3882db3cdd980eb9"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/00-implementation-plan.md",
+      "bytes": 17247,
+      "sha256": "ed7ab669f20f4eaee9be4c5a3321e3601241ab2c7aeed9e78b1b26ca35099e1c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/01-current-state-audit.md",
+      "bytes": 15232,
+      "sha256": "caa59290665a6c6b210ea3ecf385c19c85a060d602ea72ebf76370a8fa586a3a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/02-privacy-and-security-design.md",
+      "bytes": 18786,
+      "sha256": "0f00f97deef634ec292f0dd8fcff8405f91467269664b37c425c7803d9c186b8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/03-acceptance-scenarios.md",
+      "bytes": 16006,
+      "sha256": "572476ea91e1f5887ac1854c3d310da07876efcee9fdef9462e155b76090c43b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/04-open-decisions.md",
+      "bytes": 8880,
+      "sha256": "c33a8fd6d13202b4ee403b1e99c7858577b13e7b0d1aed2ab518cb33b59ef733"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/PHASE-3C-PLANNING-REPORT.md",
+      "bytes": 18222,
+      "sha256": "619afb7a7eee17efcbc868a4b6f7aa6b002718ebcb5318a15e8dbe3662f2d815"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/docs/web-platform/phase-3c/PHASE-3C1-IMPLEMENTATION-REPORT.md",
+      "bytes": 10568,
+      "sha256": "e5cde005861ff14adee5487ece70a0eb3b41d780ec1f23ef0251dc802a9f973a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/bdd.md",
+      "bytes": 1508,
+      "sha256": "de51571aa56fd3de555b9808f13c16fb94f488e598f8ff4b7aedd6cc8b086c7e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/design.md",
+      "bytes": 3194,
+      "sha256": "d4caab637ad05c42b7f90881775e2e226c9ae70fbd61cd28a7bc2da60669059b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/evidence/ledger.json",
+      "bytes": 15603,
+      "sha256": "55728aeeac9a70959876ea5733045b645372ab3759b8311f8c5779dadc439049"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/proposal.md",
+      "bytes": 2095,
+      "sha256": "c54089b45d375277ae378ed959f43fe900ac1749caa7093c65888fa0a3bcbb2d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/review.md",
+      "bytes": 2318,
+      "sha256": "6f8289a74890eddbf8cf71fce6d3f8526b7e5d89f1768352abe12b70b064a9fd"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/tasks.md",
+      "bytes": 1694,
+      "sha256": "5e7dcd49e549e7ec897fcd04695483640e8fc1b58f518e70bf9c4b5bf0aedd6d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/openspec/changes/phase-three-c-profiles-privacy/test-plan.json",
+      "bytes": 2714,
+      "sha256": "c92965b68c654066c5be38313b56965581e0c7f62f684eff09641e6148261f82"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/package.json",
+      "bytes": 4764,
+      "sha256": "93ea6ecf1e6af038338b9330b5f72db5444b873a15a6f0574fc21bfc1d6feb77"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/packages/contracts/src/index.ts",
+      "bytes": 593,
+      "sha256": "567c464ed4cbbcece515828a42ba9bc46123398617d7720d0b0e68b078715516"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/packages/contracts/src/profile.ts",
+      "bytes": 1209,
+      "sha256": "d6846f8c8411ccb5f69498d3796860152ef026026c3a1352a0155e1af1e25ac7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/playwright.bdd.config.ts",
+      "bytes": 3018,
+      "sha256": "ea4a560aef728d634f283b450393222731855a2570a1b53af9361a2bbdaf9a6f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/scripts/test-database.mjs",
+      "bytes": 10113,
+      "sha256": "ce1aae8a57e3c8ce682316752c66c480b3b1856ea77e023ee951b7f69853e332"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/scripts/test-profile-database.mjs",
+      "bytes": 4846,
+      "sha256": "48e102fb25428a6b1c61eaeea6624fdfcd14f745894776343b42c52fdb2a8220"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/scripts/test-profile-publication-race.mjs",
+      "bytes": 2372,
+      "sha256": "55f5e2a8d5d31355a3a338649a6e9b7bc1d006f5cb4791e8015060a7a60a9c9a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/supabase/tests/identity.test.sql",
+      "bytes": 11097,
+      "sha256": "e4867a018d8e0c2ef7502e5725d192bb8da7faa5cd0afacca7257f27f1633051"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/apps/web/app/_infrastructure/profile.test.ts",
+      "bytes": 4498,
+      "sha256": "294e2e46dc148e397ad602cef97b65a409b2d51b107fc45dcae04d4f080c39c7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/apps/web/modules/profile/ProfileEditor.test.tsx",
+      "bytes": 4237,
+      "sha256": "311ac6233552eeb80b7c599a216185f193adefbe5626f3474797a32e9a73cb92"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/apps/web/modules/profile/outcome.test.ts",
+      "bytes": 597,
+      "sha256": "6a75bf367f05a015a091b1895a2fae9535e0c463d8c9eba868a82d4c5adfeefe"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/apps/web/modules/profile/profileService.test.ts",
+      "bytes": 3960,
+      "sha256": "245e2452f19e610e4acfdbbac951379f8fec26a918ae1368c3dc179ca5a20e59"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/apps/web/modules/profile/uncertainWrite.test.tsx",
+      "bytes": 2520,
+      "sha256": "4d310c139469a1c626385e465e6b97a7a4bed26152fcbf2ee9fda55daaec8ef5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/apps/web/shared/i18n/routes.test.ts",
+      "bytes": 890,
+      "sha256": "086811ddb04d31beeb3a540e152b73f670a48c52942d8d0db8482a77b2947d2f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/bdd/profile/management.feature",
+      "bytes": 822,
+      "sha256": "e66054aa3275cd91abf7ee69873e212a795c5226f7117a50d60c1aaedcf622f1"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/database/profile.test.ts",
+      "bytes": 1004,
+      "sha256": "41c5e009cd5704b0fc1e1990ace2d6a966f7c5fb0d737fdca6af6c8c7aa5ef7b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/e2e/profile/management.feature",
+      "bytes": 294,
+      "sha256": "67de95da62b7159b96b11822700610207bacfc948561058efc48d92fe72830c4"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-3c1/tests/e2e/profile/management.steps.ts",
+      "bytes": 4834,
+      "sha256": "a25630154fe517e9ce1ea9831c282aa4f6b89514fb9a4dc90f5443d695e703ff"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-bddgen.txt",
+      "bytes": 114,
+      "sha256": "6bd7acc412344c1398d8c52ccff21ff0cb6a1e93451eb51d9e203a9104de08aa"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-diagnostic.txt",
+      "bytes": 3700,
+      "sha256": "072b492b8ef4f18425f226c99247f50ec06cfd91071859450dd8f28d4778cb9a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-fixed-browser.txt",
+      "bytes": 1233,
+      "sha256": "73c427583ff88c504a6f19f7522f3ce600b77c65f8369c6c451438208bc50fcf"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/history-manifest.json",
+      "bytes": 14136,
+      "sha256": "00cee2272bd284a042c5987d3b0c627d9c4ecbff0b479f3e8736cc7dfbe67d6c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/integrity.txt",
+      "bytes": 124,
+      "sha256": "569ef957e7e5d0e2453c05aeb0e2c5856616e580417ab4dcf5588975414901d0"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/lint.txt",
+      "bytes": 2064,
+      "sha256": "241419b42c63743d108cc40821eee684a73d7dc7b600c4062e6a016a0c7f1a14"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/migration-up.txt",
+      "bytes": 242,
+      "sha256": "6b1ba75b86d88087522e447f5ed93a276c17e8d8d1b3df52e4177f7903ed88e1"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/navigation-regression-green.txt",
+      "bytes": 231,
+      "sha256": "4b3850245a08364b1be5883ef7e0f276df297ffd33df3aa8e80324005e99d969"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/navigation-regression-red.txt",
+      "bytes": 3320,
+      "sha256": "5c19237b698b397ce9ac4784d50340bca3b28e6705286e4c40b62f2c5a1dcabf"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/ready.txt",
+      "bytes": 232,
+      "sha256": "983a839de5bd99acdf7e68dc3fdaa5329fc2c46c871291b25cd23f5ec2e24c1f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/review-behavior-red-complete.txt",
+      "bytes": 3152,
+      "sha256": "ff8c5dbcd8563eaec001ddaf4ad251448d9272d61fb764e402f2409cec54afda"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/review-behavior-red-confirmed.txt",
+      "bytes": 2207,
+      "sha256": "0c16d0a55f058d0dc5b626a6fdd6115103617e2ce2f9681b1bddc2b86a959677"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/review-behavior-red.txt",
+      "bytes": 2040,
+      "sha256": "12ed013a55e408ca3df94dd027d408ad370be9914077f8e6e32eaa8e4320334a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/review-pass1.txt",
+      "bytes": 3277,
+      "sha256": "5212a656376935014677a569df4eb960d859fdf79d8c2a38c2d82ccd2f19d950"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/review-pass2.txt",
+      "bytes": 1590,
+      "sha256": "5036716aa0d2f3b296112be94b71f13de73f95b1639e5ce1fa96f3d81c74bf6c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/review-regression-final.txt",
+      "bytes": 231,
+      "sha256": "47d76cfca910794c080151e1b83b86e37990c04f83f7472a38aff4f19a48fb29"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/review-regression-green.txt",
+      "bytes": 231,
+      "sha256": "f524d895c7f86f3423f68f0f1260a5dfe328f0df805c9d378e18db782a99b2fe"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/review-regression-red.txt",
+      "bytes": 1572,
+      "sha256": "587a5693ebe27960fdd2045f18746d1e611a23a290c13e843223e95f83f01bcd"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/typecheck-corrected.txt",
+      "bytes": 1327,
+      "sha256": "7dbb1e2915a20197d98964ad0f7e9d10e84752b1ea5fe4a910cf5cbe64ab32b5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/typecheck.txt",
+      "bytes": 2144,
+      "sha256": "8bd9ab0144609d8295ffcf2e4d898db0c2e9f49b6bbfebc6c3730510a6f51b32"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/unit-current.txt",
+      "bytes": 1355,
+      "sha256": "ae4b5eb7ed1240a827a92f1ec79533b0718c0a6fc8e61ea22830fc75ea2a6f6c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/verify-first.txt",
+      "bytes": 51538,
+      "sha256": "09ccb111c685b271ae519e886d9f4009c9ad5fb41d818b24315fbe941e017384"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/verify-history-fixed.txt",
+      "bytes": 30118,
+      "sha256": "eb354ff3fceebe384c1fafb95e617405c91fce9f9a67f64913fea808b57636f3"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/verify-review-corrected.txt",
+      "bytes": 14346,
+      "sha256": "bd05a8b8ab5a265131742a413e1dc5a1ca161a5deb0317a3bc23f0a0895d9fda"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c2/verify-review-final.txt",
+      "bytes": 30173,
+      "sha256": "ff1d6a9e37449e87f3166eef52e6adc119d278fe09d2769ca8a5471b77be36db"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-426-green-console.txt",
+      "bytes": 304,
+      "sha256": "4e5bf419dac38c1723afc1c4cfd9a96cf84b5e68c60459c9da26fef389c99c83"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-426-red-console.txt",
+      "bytes": 350,
+      "sha256": "1940fe95bb8478923ce248a22aa065cbd4d84bc25e51448905dc4a17517645f8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-426-refactor-console.txt",
+      "bytes": 313,
+      "sha256": "298b589373a05afd002d630e860966996898f2f03aa52630222502a99466c4b2"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-427-green-console.txt",
+      "bytes": 304,
+      "sha256": "b67fadf22ed842d8050c2985c24be3c80bba25099b7e9ce9f1671000a6f654ae"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-427-red-console.txt",
+      "bytes": 350,
+      "sha256": "55af9f3c71e1d7e512ec32195cdf3bce7aa5295201229191caaad4719c5c1015"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-427-refactor-console.txt",
+      "bytes": 313,
+      "sha256": "8d69e1609839c12ae0b283f98a6cfcf1a279d1a3a8bc2bd96fcae81cc31950e6"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-428-green-console.txt",
+      "bytes": 304,
+      "sha256": "f6809ed391009bef11cabfcfa8c612a2c16ec4909369ad5929a851f74140368c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-428-red-console.txt",
+      "bytes": 350,
+      "sha256": "4010fc50de17a0fb9d8a3ece80bf49a10095ef196646253bc998b188aa11a7f6"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-428-refactor-console.txt",
+      "bytes": 313,
+      "sha256": "545449687f763bf62b3b73128bd6ee91a70aeeac39d5352f4370557ffe481085"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-429-green-console.txt",
+      "bytes": 304,
+      "sha256": "180bff79afa4bec46bf31610dfc6071a11794541f10dc86ed5c32f7071f64548"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-429-red-console.txt",
+      "bytes": 350,
+      "sha256": "a9aa6446814bec23bc15aae84cd59d2b9c9a25f2a6c7182b0b140153327887cd"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-429-refactor-console.txt",
+      "bytes": 313,
+      "sha256": "e32a6f55aa309b4f201d93992f23031995c66e43d24430c3ef8b93e0460cb1b9"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-430-ack-red-console.txt",
+      "bytes": 350,
+      "sha256": "7dbb1cbccb651f43f50a9b35499a3c356990c4e73e1a4928a93707735b7fa26a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-430-green-console.txt",
+      "bytes": 304,
+      "sha256": "8297e0eb6266e6e896fd371e53b8b251ed8d407f7702b08f75de56df9be64b0b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-430-red-console.txt",
+      "bytes": 350,
+      "sha256": "ac8639b26548e142697fd98b4943d0b95dd9fdca69ad82aed5d419091ae64fcc"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-430-refactor-console.txt",
+      "bytes": 313,
+      "sha256": "ff9d56eff742e4e20cde38058b7d6ad03c95cf1e385b5a28945651a2c8eb5c90"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-430-refined-red-console.txt",
+      "bytes": 350,
+      "sha256": "9729dfce976d4e9828c0567e45c4ea0df56879f36f22f9f0c1596e0a2eac3abe"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-431-green-console.txt",
+      "bytes": 304,
+      "sha256": "660da69e233ced1e7c3652b7d236e9a61295e6b438a580468c7ce10cf91ada36"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-431-red-console.txt",
+      "bytes": 350,
+      "sha256": "657069ac4802b494219d05731292ecf474a738b6ddc73e67ace39989c94909aa"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/SC-431-refactor-console.txt",
+      "bytes": 313,
+      "sha256": "63b381edbd371b7a12209b02980554bcd3201a891eec7c8d376e409be02f6bf7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/acceptance-manifest.json",
+      "bytes": 61656,
+      "sha256": "e20a264ead6b13542f26714a0d2dbe2148219b27e96e3cbe71217947808babb4"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/architect-confirmation-review.txt",
+      "bytes": 731,
+      "sha256": "efc957718a50e1aa2d18e5e81aa0c068c8acf92543812e5ce910828b13f715df"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/architect.txt",
+      "bytes": 1127,
+      "sha256": "7c22876a19c05143c68ef3dbd61228d9844f690a58c7171ae9683246b934d3f4"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/baseline.txt",
+      "bytes": 30295,
+      "sha256": "dd23b078f5347c347189ed8f8f109f5468b54fbb20aede3f0bc8433482cf0c2a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/browser-delete-fixed.txt",
+      "bytes": 1291,
+      "sha256": "7262c7b2608820375ba3ecba8d120c9f402ee1a398104933f1669ea1aa5eeb19"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/browser-first.txt",
+      "bytes": 696,
+      "sha256": "c634fb52c55aa2691772495baccfcc8b7813bcbe9747c5101def8ae5494822f9"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/browser-fixture-fixed.txt",
+      "bytes": 3674,
+      "sha256": "bb598ac5d48b2cfd75738a95a9a8a64b135d1af79254544868bdc4f0edca1b85"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/browser-scoped-alert.txt",
+      "bytes": 3226,
+      "sha256": "1c7a2fef72f7bf42297b39865d9a52a809bc9123eb98ec90da4a93f041bf7b2b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/build-delete-fixed.txt",
+      "bytes": 2760,
+      "sha256": "a14b944c60e1f4e9bc0a4de70bcaf948b28ba2f344adb284321171b9abd31e1b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/build-first.txt",
+      "bytes": 2760,
+      "sha256": "251ff49935f431a36808769c9b907d891a45f221635f861f69dc57b887938013"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/capture-acceptance.mjs",
+      "bytes": 5129,
+      "sha256": "e22a458da562fd2bdde9ae8f66644c79e85ca9cb052ae778de6211123587633e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/cleanup-fixture-refinement.txt",
+      "bytes": 702,
+      "sha256": "bdc82d0536311ab3468ffeb581aa6d6f11d27e8dd3f4988082f7dbc69e79b961"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/current-source-pin.json",
+      "bytes": 40763,
+      "sha256": "612e8c33a871e72d080758797743ae9a89c8fff932dbb5fd4cd0515d88afbf6e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/current-task.md",
+      "bytes": 1276,
+      "sha256": "e70669ea64366c7629f34de7ca0f19310d64280c4db52a84b9416f04bef8d3c8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/decoder-install-existing-store.txt",
+      "bytes": 2371,
+      "sha256": "0a71861f9f83cab4f55fc70a3f88b1af450da75f3298d0cdb0228221ec818050"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/decoder-install.txt",
+      "bytes": 641,
+      "sha256": "e45b2997fc02ac0f1f8882c3079a39bb1572cc8585d6480c92459f162ae77b0f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/delete-empty-body-green.txt",
+      "bytes": 229,
+      "sha256": "1a02bb5545fc2f4d79f2a833047c9ef471ea8854e63973434c03bdc5510969fd"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/delete-empty-body-red.txt",
+      "bytes": 1330,
+      "sha256": "32b99e5ed7998f647f575856e1b9f30e08f2c1dfa88de6077f2b279aac10406d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/editor-coordination.txt",
+      "bytes": 232,
+      "sha256": "4ab3dbc783d9f19b1747a6b47c377112a1ff75785fbdc954c760d3be7fddac5d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/focused-final.txt",
+      "bytes": 232,
+      "sha256": "68e977bd7641c68b6d4af00b9413059212e51bcfeea410fa705619d45aa240a6"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/generated-types-reproduction.txt",
+      "bytes": 116,
+      "sha256": "8a00ab6d5f6ea1d213c0bd9574d2838956291c5a436e6c8fafff034bfdb77ae5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/generated-types.txt",
+      "bytes": 116,
+      "sha256": "8a00ab6d5f6ea1d213c0bd9574d2838956291c5a436e6c8fafff034bfdb77ae5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/.openspec.yaml",
+      "bytes": 45,
+      "sha256": "a8645ec3e8deeda77395d6cd5c317114e65decac05aa2cc1600e1466153b42f5"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/bdd.md",
+      "bytes": 1974,
+      "sha256": "24d411c6cfc565a8b3e75358be563bdbdfc8adac7e542fcca31df094a70b56c2"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/design.md",
+      "bytes": 5337,
+      "sha256": "4c999c0563887f7a399d1073edb8cfc941cdc0f025c08cbeadd06c1aba5f2c9d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/evidence/ledger.json",
+      "bytes": 30138,
+      "sha256": "1e81085291d87ffd5535454dddeff8e039bca6aece02bed07e725c268fbb285c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/proposal.md",
+      "bytes": 3522,
+      "sha256": "c78a4d90fff26c8384a8b2f92c123c466febb21373b5df49a7e34a9a382541aa"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/review.md",
+      "bytes": 4253,
+      "sha256": "978b75933301f94637aa00e7272d10e986c04aa7a89de64cdf152e8e1df33122"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/specs/user-profile/spec.md",
+      "bytes": 7423,
+      "sha256": "a5d714e1d10267a549a076270d85b93b306acca111e01f90bfabc5ed358ba045"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/tasks.md",
+      "bytes": 3053,
+      "sha256": "c4e71e9bd17dbb7e4600d606a5ebd84245e76fee2af7d10a36a0ab1e4dffb8a8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-3c2/test-plan.json",
+      "bytes": 5064,
+      "sha256": "f8e50068a6876c67fe143aed73daa46ed7ab54032c78676d93068b2d32e21997"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-integrity-current.txt",
+      "bytes": 103,
+      "sha256": "7b412de782416211b04ad94769190b6cfb5a7cab134eeb0bc0057b0697c13264"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-integrity.txt",
+      "bytes": 103,
+      "sha256": "7b412de782416211b04ad94769190b6cfb5a7cab134eeb0bc0057b0697c13264"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/history-manifest.json",
+      "bytes": 43001,
+      "sha256": "cc1a7c945ad580ab826c579b60e3e42d92b005020f1ca0b2ad67a84c9c9f2721"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/lint-corrected.txt",
+      "bytes": 2065,
+      "sha256": "97576e8bbf0acc1be200e100f66712bf7736dfd23e5bbee05b391aa130f490d8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/lint-first.txt",
+      "bytes": 2164,
+      "sha256": "3c6122ff4ff1a1f7e1eb07f81637159b766caa18b62c9281cc291c476ff1f8da"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/migration-confirmation-up.txt",
+      "bytes": 260,
+      "sha256": "c998845f2a1272db5c609fe0fc68c13822d93d809cecd0b9af2e15fae61c19f3"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/migration-up.txt",
+      "bytes": 236,
+      "sha256": "aa94280e03ea787efc0c9a0472f322fe89fca6e804e70015f38ce5eab4654e9c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/review-pass1.txt",
+      "bytes": 1654,
+      "sha256": "29f7dcd570c92e8fac0ddf9fd78c762f24885401a4917c07fd12db3932cd4eba"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/runtime-msw-corrected.txt",
+      "bytes": 229,
+      "sha256": "dc2239e75677302cc4e028fd59dfa08e40a682aab5ee2e96df498e83be77e5e4"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/runtime-msw.txt",
+      "bytes": 2025,
+      "sha256": "1e956978f1d609263053e4b12b5320c5898cfb0bd665be7def2887007c33259f"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/start-help.txt",
+      "bytes": 2497,
+      "sha256": "969d841604b3d8077873a894d632668f893eabe5a1cd038e1eeddf2c8437401d"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/stop-help.txt",
+      "bytes": 2451,
+      "sha256": "0a8b32ddc6a72d9edf5ce3c0083321e48424a08178b9c02ddf8f0c1051c5f208"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/storage-database-corrected.txt",
+      "bytes": 425,
+      "sha256": "f58cc14c014b66db2d18c9ee9ea9f184277d4c2c60712eb33796a1fe913062f2"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/storage-database-first.txt",
+      "bytes": 1553,
+      "sha256": "ada79fe45112862f3ef6c0a6277299136fff59a9e4306c9f9d856e350577cab1"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/storage-database-fixture-fixed.txt",
+      "bytes": 1503,
+      "sha256": "85fa7b7b755602e1197eb65ddb2612326ebbbe1133d1f2039350a8ab8c671331"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/storage-restart.json",
+      "bytes": 308,
+      "sha256": "b06fb682d2eca4d14694565d9c8bd55571f0361c179d2c7a2724d7fef8a2562a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/storage-start.json",
+      "bytes": 222,
+      "sha256": "2f8280d9d805e99d5f7eb682c589a9945bf9a5275851db9956ea1a668eeccead"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/text-rebase-green.txt",
+      "bytes": 9192,
+      "sha256": "621a8a18da6c48f18e15d4e14ebd99e710ba8656b9dd52cee23998c1bb93d4fe"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/text-rebase-red-access.txt",
+      "bytes": 6651,
+      "sha256": "45e51d96ec2fed859c39736af41d846a77b65e73950e2368b919c1f38b6a3bb1"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/text-rebase-red.txt",
+      "bytes": 963,
+      "sha256": "241b4aac2aa7b475649b5f09638fa565e59f37d58dc0e26e2b149556c2f7e68b"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/typecheck-corrected.txt",
+      "bytes": 5009,
+      "sha256": "bd5b26dbfcd33463248b70fde20725a1177951fe75151979b9d9447fb60e017a"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/typecheck-first.txt",
+      "bytes": 1327,
+      "sha256": "fc6c2bf90c5a04408a39f444aa5d140dabe38c9f4ad978bc8b034972c08df684"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/types-reproduction-result.txt",
+      "bytes": 31,
+      "sha256": "794c8bc6870388251c0fa5d6ccbc79f3943c5422f0de317940175337324c81d8"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/verify-final-first-exit.txt",
+      "bytes": 18,
+      "sha256": "58857b4d930cbd2d15b600fd4a8a17b3810a6aed1ba6186889a53b591734aebc"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/verify-final-first.txt",
+      "bytes": 19086,
+      "sha256": "45eb2eda47cf35b0775764c37895c09b623ce43645fbaa3520ea1e16ff3eaeba"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/verify-final-second-exit.txt",
+      "bytes": 18,
+      "sha256": "08693d4f7d60c457d55763c6bcebb1c2d701ba9fb0cb6483c1f10cc56c84172c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/verify-final-second.txt",
+      "bytes": 32447,
+      "sha256": "ec3a0553576da02128b0f506560f71b7d04dbe0d69fd49f0a5edd99fa812895c"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c3/workflow-ready.txt",
+      "bytes": 232,
+      "sha256": "fedff8b659ed355b2447363265fd3a6d5c39f475136941cbd3778924f8eb5912"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/ready.txt",
+      "bytes": 231,
+      "sha256": "773ddfee51ceb5a9d8f9a598d7f63042dae3a55e34bd5f80b99dac1263768c37"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/review-pass2.txt",
+      "bytes": 1826,
+      "sha256": "6b943a72e2cb968b2714eee6b59835cc3ca1064dd38375ced3de65eb69648913"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/review-uncertain-green.txt",
+      "bytes": 232,
+      "sha256": "fe08286cc45982cd89f631eb4139e43e94e8997b97ebfe0a2b6ecf86d7dfa5f7"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/review-uncertain-red.txt",
+      "bytes": 2420,
+      "sha256": "ffce2bb17dde1806910a0c1ac6cc88aadb34af56e3e3b07ab33bb3d83e2b1ef1"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/proposal.md",
+      "bytes": 5076,
+      "sha256": "64338c27939e6cc0ef1370e4e0c36dfcee45b4b2b4e85d4de912f8e9f40f0605"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/review.md",
+      "bytes": 5809,
+      "sha256": "9f1772c3b2ba67368bac5b95690419b3ebee1e7e79c24730d5e1af33eba0b69e"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/specs/user-profile/spec.md",
+      "bytes": 11202,
+      "sha256": "e50661044efe9e6daf9004f05a3b5074c3f7b1eb676952aac9630fe770fb2415"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/tasks.md",
+      "bytes": 4533,
+      "sha256": "741ce72ff2a2c75071f97e6667838c5a8189fc32f789122dbb94db039794d737"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/test-plan.json",
+      "bytes": 7272,
+      "sha256": "83c4f8fe20676868de954d68d33504f6d4932573c37e98c5dd2081a4bcf7021e"
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/.openspec.yaml",
+      "bytes": 45,
+      "sha256": "a8645ec3e8deeda77395d6cd5c317114e65decac05aa2cc1600e1466153b42f5",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/.openspec.yaml"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/proposal.md",
+      "bytes": 5076,
+      "sha256": "64338c27939e6cc0ef1370e4e0c36dfcee45b4b2b4e85d4de912f8e9f40f0605",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/proposal.md"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/design.md",
+      "bytes": 6481,
+      "sha256": "100b5ac0f31909c9bc1a18faf8ffc7f4cabeb7954abb2396d0ccc2363df92c73",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/design.md"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/bdd.md",
+      "bytes": 2504,
+      "sha256": "66f10edd107b1ef4ce0d1744d32c52fb81694d043a1c33fe8a267303196b95ad",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/bdd.md"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/test-plan.json",
+      "bytes": 7272,
+      "sha256": "83c4f8fe20676868de954d68d33504f6d4932573c37e98c5dd2081a4bcf7021e",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/test-plan.json"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/tasks.md",
+      "bytes": 4533,
+      "sha256": "741ce72ff2a2c75071f97e6667838c5a8189fc32f789122dbb94db039794d737",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/tasks.md"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/review.md",
+      "bytes": 5809,
+      "sha256": "9f1772c3b2ba67368bac5b95690419b3ebee1e7e79c24730d5e1af33eba0b69e",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/review.md"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/specs/user-profile/spec.md",
+      "bytes": 11202,
+      "sha256": "e50661044efe9e6daf9004f05a3b5074c3f7b1eb676952aac9630fe770fb2415",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/specs/user-profile/spec.md"
+    },
+    {
+      "path": "openspec/changes/phase-three-c-profiles-privacy/evidence/ledger.json",
+      "bytes": 49438,
+      "sha256": "27c746868e4caa3adee782c9b19aff0d21b54646a7f3eb6981528c1cb75cc119",
+      "snapshot": "openspec/changes/phase-three-c-profiles-privacy/evidence/phase3c4/history-3c3/evidence/ledger.json"
+    }
+  ],
+  "commitProofs": [
+    {
+      "path": ".git/codex-proofs/current-task.md",
+      "bytes": 1639,
+      "sha256": "ddfa9957122cab70f3a1928dc497beade474ae6eccaade9aa03f1dc6d5f74f6b"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-commit-output.txt",
+      "bytes": 12902,
+      "sha256": "81e66519e653aa6ad0325deeba0f8d41cda9c853919848c79a91ab5052b028a7"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-commit-plan.json",
+      "bytes": 33082,
+      "sha256": "f13402629fae4733fa95fe8015d3d17d7f3f1fb8664177092a9c6e88d85a0d8b"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-committed-proof.json",
+      "bytes": 50561,
+      "sha256": "0d3710287803d489f439b8fb4dc89f147c67fcc59d7778b731d9add26f9d1c94"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-message.txt",
+      "bytes": 256,
+      "sha256": "aa44dbb22483ad9868c0e095aff953e7534cc86254dcdce8ba820d00548f2530"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-precommit-checks.txt",
+      "bytes": 1042,
+      "sha256": "ced90a30d93c3c3aeefca091f8f74ec0ffab20c648a03669878a50939df2d2cc"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-raw-whitespace.txt",
+      "bytes": 624406,
+      "sha256": "760d33e5e5578a585b5971c53bb5bff3bfa5f18d2d6e271731f4b1360be76af1"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-source-whitespace.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-staged-proof.json",
+      "bytes": 49360,
+      "sha256": "19a1f7ba484d3262d95cf17090a75947fc1026f1f4f6b51218e5642e2f6d05f0"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-verify.mjs",
+      "bytes": 8460,
+      "sha256": "7ac9a697679047d904e8281449a9cfb6c06629a7f9cf541e6ada8ed129b1dcbf"
+    },
+    {
+      "path": ".git/codex-proofs/phase3c3-whitespace-provenance.json",
+      "bytes": 257,
+      "sha256": "979b7f4eb19f3bab51a950569e1b280c2fdf3c97c64f43b9a7220170ff2dc8dd"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "Requirements": [
+    "FR-401",
+    "FR-402",
+    "FR-403",
+    "FR-404",
+    "FR-405",
+    "FR-406",
+    "FR-407",
+    "FR-408",
+    "FR-409",
+    "FR-410",
+    "FR-411",
+    "FR-412",
+    "FR-413",
+    "FR-414"
+  ],
+  "ExistingScenarios": 17,
+  "MappedPathsExist": true,
+  "ProductionChanges": [
+    "apps/web/src/modules/profile/profileRepository.ts"
+  ],
+  "NewTests": [
+    "tests/apps/web/modules/profile/profileRepository.test.ts",
+    "tests/e2e/profile/integration.feature",
+    "tests/e2e/profile/integration.steps.ts"
+  ],
+  "PinSourceFiles": 239,
+  "OriginalEvents": 51,
+  "ProvenanceCorrection": "Initial inventory omitted unchanged .prettierignore. Expanded inventory unions all original3C3source paths; original selection retained. No source bytes changed for this correction."
+}

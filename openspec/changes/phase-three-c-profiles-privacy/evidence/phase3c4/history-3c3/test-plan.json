@@ -1,0 +1,197 @@
+{
+  "version": 1,
+  "implementationFiles": [
+    "packages/contracts/src/profile.ts",
+    "packages/contracts/src/index.ts",
+    "apps/web/src/shared/supabase/database.ts",
+    "apps/web/src/modules/profile/profileService.ts",
+    "apps/web/src/modules/profile/profileRepository.ts",
+    "apps/web/src/modules/profile/ProfileEditor.tsx",
+    "apps/web/src/modules/profile/ProfileEditor.module.scss",
+    "apps/web/src/modules/profile/index.ts",
+    "apps/web/src/app/_infrastructure/requestContext.ts",
+    "apps/web/src/app/_infrastructure/auth.ts",
+    "apps/web/src/app/_infrastructure/profile.ts",
+    "apps/web/src/app/api/v1/me/route.ts",
+    "apps/web/src/app/api/v1/me/profile/route.ts",
+    "apps/web/src/app/[locale]/account/profile/page.tsx",
+    "apps/web/src/app/[locale]/account/page.tsx",
+    "apps/web/src/shared/i18n/routes.ts",
+    "apps/web/src/shared/i18n/messages/en.json",
+    "apps/web/src/shared/i18n/messages/ru.json",
+    "apps/web/src/modules/identity/authPolicy.ts",
+    "apps/web/src/proxy.ts",
+    "playwright.bdd.config.ts",
+    "scripts/test-profile-database.mjs",
+    "package.json",
+    "docs/adr/0004-owner-profile-management.md",
+    "scripts/test-profile-publication-race.mjs",
+    "supabase/migrations/20261027000001_profile_completion.sql",
+    "apps/web/src/shared/supabase/database.types.ts",
+    "apps/web/src/shared/supabase/refreshSession.ts",
+    "apps/web/src/shared/supabase/verifiedUser.ts",
+    "apps/web/src/app/_infrastructure/completionPolicy.ts",
+    "apps/web/src/app/_infrastructure/completion.ts",
+    "apps/web/src/app/_infrastructure/publicProfile.ts",
+    "apps/web/src/app/_infrastructure/CompletionNavigationGuard.tsx",
+    "apps/web/src/app/_infrastructure/ProfileForm.tsx",
+    "apps/web/src/app/api/v1/me/completion/route.ts",
+    "apps/web/src/app/api/v1/me/profile/complete/route.ts",
+    "apps/web/src/app/[locale]/u/[username]/page.tsx",
+    "apps/web/src/app/[locale]/layout.tsx",
+    "apps/web/src/app/[locale]/page.tsx",
+    "apps/web/src/app/[locale]/playground/page.tsx",
+    "apps/web/src/app/[locale]/playground/practice-timer/page.tsx",
+    "apps/web/src/modules/profile/completionService.ts",
+    "apps/web/src/modules/profile/publicProfile.ts",
+    "scripts/test-completion-database.mjs",
+    "scripts/test-database.mjs",
+    "supabase/tests/identity.test.sql",
+    "docs/adr/0005-profile-completion-public-policy.md",
+    "scripts/test-public-profile-races.mjs",
+    "apps/web/public/favicon.svg",
+    "packages/contracts/src/avatar.ts",
+    "packages/contracts/src/identity.ts",
+    "apps/web/src/app/_infrastructure/avatarProcessing.ts",
+    "apps/web/src/app/_infrastructure/avatarRuntime.ts",
+    "apps/web/src/app/_infrastructure/avatar.ts",
+    "apps/web/src/modules/profile/avatarService.ts",
+    "apps/web/src/modules/profile/AvatarEditor.tsx",
+    "scripts/avatar-cleanup-worker.mjs",
+    "scripts/local-auth-environment.mjs",
+    "scripts/run-local-auth.mjs",
+    "supabase/config.toml",
+    "supabase/migrations/20261027000002_profile_avatars.sql",
+    "apps/web/package.json",
+    "pnpm-lock.yaml",
+    "docs/adr/0006-local-profile-avatars.md",
+    "apps/web/src/app/api/v1/me/avatar/route.ts",
+    "apps/web/src/app/api/v1/profile-avatars/[id]/route.ts",
+    "scripts/test-avatar-storage.mjs",
+    "scripts/check-avatar-client.mjs",
+    "supabase/migrations/20261027000003_avatar_cleanup_confirmation.sql"
+  ],
+  "scenarios": [
+    {
+      "id": "SC-401",
+      "requirement": "FR-401",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/profileService.test.ts"
+    },
+    {
+      "id": "SC-402",
+      "requirement": "FR-402",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/profileService.test.ts"
+    },
+    {
+      "id": "SC-405",
+      "requirement": "FR-403",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/app/_infrastructure/profile.test.ts"
+    },
+    {
+      "id": "SC-418",
+      "requirement": "FR-404",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/ProfileEditor.test.tsx"
+    },
+    {
+      "id": "SC-419",
+      "requirement": "FR-404",
+      "feature": "tests/e2e/profile/management.feature",
+      "layer": "browser",
+      "testFile": "tests/apps/web/modules/profile/ProfileEditor.test.tsx"
+    },
+    {
+      "id": "SC-420",
+      "requirement": "FR-405",
+      "feature": "tests/bdd/profile/management.feature",
+      "layer": "unit",
+      "testFile": "tests/database/profile.test.ts",
+      "cycle": "baseline",
+      "baselineReason": "Existing SQL/RPC ownership, concurrent uniqueness/revisions and decimal bigint transport are preserved without migration."
+    },
+    {
+      "id": "SC-421",
+      "requirement": "FR-406",
+      "feature": "tests/bdd/profile/completion.feature",
+      "layer": "unit",
+      "testFile": "tests/database/completion.test.ts"
+    },
+    {
+      "id": "SC-422",
+      "requirement": "FR-407",
+      "feature": "tests/bdd/profile/completion.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/app/_infrastructure/completion.test.ts"
+    },
+    {
+      "id": "SC-423",
+      "requirement": "FR-408",
+      "feature": "tests/bdd/profile/completion.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/publicProfile.test.ts"
+    },
+    {
+      "id": "SC-424",
+      "requirement": "FR-409",
+      "feature": "tests/bdd/profile/completion.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/completionEditor.test.tsx"
+    },
+    {
+      "id": "SC-425",
+      "requirement": "FR-409",
+      "feature": "tests/e2e/profile/completion.feature",
+      "layer": "browser",
+      "testFile": "tests/apps/web/modules/profile/completionEditor.test.tsx"
+    },
+    {
+      "id": "SC-426",
+      "requirement": "FR-410",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/app/_infrastructure/avatarProcessing.test.ts"
+    },
+    {
+      "id": "SC-427",
+      "requirement": "FR-411",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/avatarService.test.ts"
+    },
+    {
+      "id": "SC-428",
+      "requirement": "FR-412",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/app/_infrastructure/avatar.test.ts"
+    },
+    {
+      "id": "SC-429",
+      "requirement": "FR-413",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/AvatarEditor.test.tsx"
+    },
+    {
+      "id": "SC-430",
+      "requirement": "FR-414",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/tooling/avatarCleanup.test.ts"
+    },
+    {
+      "id": "SC-431",
+      "requirement": "FR-413",
+      "feature": "tests/e2e/profile/avatars.feature",
+      "layer": "browser",
+      "testFile": "tests/apps/web/modules/profile/AvatarEditor.test.tsx"
+    }
+  ]
+}

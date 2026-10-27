@@ -1,0 +1,563 @@
+
+> dance-platform@0.1.0 verify C:\Users\Lenovo\Desktop\koller_web
+> node scripts/run-local-auth.mjs verify
+
+
+> dance-platform@0.1.0 verify:checks C:\Users\Lenovo\Desktop\koller_web
+> pnpm agents:check && pnpm test:workflow && pnpm lint && pnpm typecheck && pnpm format && pnpm test && pnpm test:ci && pnpm db:test && pnpm db:test:profile && pnpm db:test:completion && pnpm db:test:avatars && pnpm test:auth && pnpm build && pnpm avatars:check-client && pnpm storybook:build && pnpm test:e2e && pnpm test:storybook && pnpm spec:validate
+
+
+> dance-platform@0.1.0 agents:check C:\Users\Lenovo\Desktop\koller_web
+> node scripts/sync-claude.mjs --check && node scripts/sync-codex.mjs --check
+
+45 mirrored files, 0 out of sync, 0 stale
+Codex: 58 files, 0 out of sync, 0 stale
+
+> dance-platform@0.1.0 test:workflow C:\Users\Lenovo\Desktop\koller_web
+> node --test scripts/workflow.test.mjs scripts/starter-config.test.mjs scripts/sync-claude.test.mjs scripts/sync-codex.test.mjs scripts/architecture-refactor-workflow.test.mjs scripts/phase3a-exception.test.mjs
+
+warning: in the working copy of 'src/example.ts', LF will be replaced by CRLF the next time Git touches it
+✔ accepts a non-behavior architecture refactor plan (20.0381ms)
+✔ maintenance accepts its own schema without pretending to migrate application architecture (18.6802ms)
+✔ maintenance rejects product source, tests, specs and historical records (0.4709ms)
+✔ maintenance permits exact tooling/config paths and its own process artifacts (0.1931ms)
+✔ maintenance scope checks PR changes even with a clean checked-out working tree (12.2714ms)
+✔ maintenance permits exact EOL policy files without admitting neighboring config or product paths (0.3946ms)
+✔ maintenance refuses product deltas and missing explicit non-behavior metadata (28.4225ms)
+✔ maintenance fingerprints equivalent Windows/Linux text checkouts identically (137.22ms)
+✔ maintenance fingerprints deleted paths identically before and after index removal (219.8267ms)
+✔ records matching GREEN baseline/final evidence and becomes ready (245.0228ms)
+✔ rejects implementation changes made after final evidence (223.9879ms)
+✔ exact approved exception resolves only the two historical gaps, without TDD events (306.9875ms)
+✔ rejects invalid historical hash (61.4898ms)
+✔ rejects missing owner approval (59.3978ms)
+✔ rejects missing reviewer approval (137.2274ms)
+✔ rejects wrong change (56.9499ms)
+✔ rejects wrong scenario (58.5757ms)
+✔ rejects wrong requirement (56.9678ms)
+✔ rejects wrong baseline gap (57.5131ms)
+✔ rejects additional exception (58.139ms)
+✔ rejects unsupported type (58.9492ms)
+✔ rejects unknown schema field (58.5304ms)
+✔ rejects invalid owner provenance (58.4517ms)
+✔ rejects invalid reviewer provenance (131.1838ms)
+✔ rejects owner authorization substitution (56.6876ms)
+✔ production validator never accepts the synthetic trust anchors (52.9468ms)
+✔ production validator rejects missing real approval evidence without fallback (58.6519ms)
+✔ production validator rejects tampered real approval evidence without fallback (58.3329ms)
+✔ rejects stale reviewer subject after the review report itself has a valid new content hash (132.7298ms)
+✔ rejects an exception on any other change even if its record claims the eligible change (51.9019ms)
+✔ rejects altered historical artifact (59.5959ms)
+✔ rejects missing original artifact (60.6114ms)
+✔ rejects fabricated SC-205 phases (91.4217ms)
+✔ rejects changed current source (122.4338ms)
+✔ rejects failed verify even with matching hashes and a fixture approval (119.2327ms)
+✔ rejects missing browser gate even with matching hashes and a fixture approval (122.4036ms)
+✔ rejects missing coverage gate even with matching hashes and a fixture approval (128.7382ms)
+✔ rejects missing unit assertions even with matching hashes and a fixture approval (128.2235ms)
+✔ rejects failed database even with matching hashes and a fixture approval (133.9154ms)
+✔ rejects failed SQL security even with matching hashes and a fixture approval (130.4607ms)
+✔ rejects failed REST security even with matching hashes and a fixture approval (124.8338ms)
+✔ rejects pending DB assertion even with matching hashes and a fixture approval (130.8071ms)
+✔ rejects changed generated types even with matching hashes and a fixture approval (134.5987ms)
+✔ rejects remote type generation even with matching hashes and a fixture approval (137.2004ms)
+✔ task exceptions cannot resolve unrelated work or be relabelled TDD complete (308.1728ms)
+✔ absent record preserves normal validation and missing SC-205 still fails (74.4316ms)
+✔ historical task identifiers cannot be reused for an unapproved task contract (144.2162ms)
+✔ current acceptance becomes stale when root config .prettierrc.json changes (117.0201ms)
+✔ current acceptance becomes stale when root config .npmrc changes (115.4328ms)
+✔ native archive relocation preserves approved readiness and every original evidence byte (161.6056ms)
+✔ archived evidence tampering still fails integrity validation after relocation (61.5721ms)
+✔ duplicate active and archived identities are rejected rather than choosing evidence implicitly (53.6261ms)
+✔ workflow entrypoints remain syntactically runnable after workspace adaptation (178.0323ms)
+✔ skill folder names match required frontmatter (12.8893ms)
+✔ team workflows and documentation remain complete (3.388ms)
+✔ Vitest tests live under tests/, not next to source files in src (5.3253ms)
+✔ Claude rule adapters retain bodies and add explicit path scopes (2.2025ms)
+✔ sync is stable across CRLF, preserves skills, and detects lost paths (73.4703ms)
+✔ specialist uses current standalone TOML format and preserves model inheritance (2.7878ms)
+✔ sync copies skill resources and creates explicit workflow adapters without writing source (97.8817ms)
+✔ RED accepts a failed behavior assertion and rejects a broken test loader (1.9213ms)
+✔ GREEN cannot hide skipped or failed tests (0.3538ms)
+✔ evidence requires ordered RED GREEN REFACTOR for the same test (0.6238ms)
+✔ change readiness rejects absent artifacts rather than silently skipping a change (7.135ms)
+✔ a complete fixture passes, but report tampering and wrong mapping are blocked (67.6163ms)
+✔ BASELINE accepts only a passing run of the selected scenario (0.6279ms)
+✔ a RED run that passes explains the baseline fork instead of a generic failure (0.2499ms)
+✔ baseline evidence is checked separately from the RED/GREEN/REFACTOR cycle (0.6076ms)
+✔ baseline must be recorded before the first GREEN of the change (0.307ms)
+✔ the planning gate validates baseline declarations and still requires one RED scenario (46.518ms)
+✔ baseline is allowed only while production code under src has no uncommitted edits (1.2666ms)
+✔ a ready change may mix a RED cycle with a clean baseline scenario (44.6222ms)
+ℹ tests 72
+ℹ suites 0
+ℹ pass 72
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4384.3745
+
+> dance-platform@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web
+> turbo run lint && eslint tests --ext .ts,.tsx && pnpm boundaries && eslint .storybook packages/ui/stories --ext .ts,.tsx
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running lint in 4 packages
+   • Remote caching disabled
+
+@dance/design-tokens:lint: cache hit, replaying logs bf01c4209c2ff9b9
+@dance/contracts:lint: cache hit, replaying logs e2f67f05872cd7a0
+@dance/contracts:lint: 
+@dance/contracts:lint: > @dance/contracts@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:lint: > eslint src --ext .ts,.tsx
+@dance/contracts:lint: 
+@dance/design-tokens:lint: 
+@dance/design-tokens:lint: > @dance/design-tokens@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\design-tokens
+@dance/design-tokens:lint: > prettier --check src/tokens.css
+@dance/design-tokens:lint: 
+@dance/design-tokens:lint: Checking formatting...
+@dance/design-tokens:lint: All matched files use Prettier code style!
+@dance/ui:lint: cache hit, replaying logs 610c3a7efe68d4c4
+@dance/ui:lint: 
+@dance/ui:lint: > @dance/ui@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:lint: > eslint src --ext .ts,.tsx
+@dance/ui:lint: 
+@dance/web:lint: cache hit, replaying logs 08947bd727d3d54c
+@dance/web:lint: 
+@dance/web:lint: > @dance/web@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:lint: > eslint src --ext .ts,.tsx
+@dance/web:lint: 
+
+ Tasks:    4 successful, 4 total
+Cached:    4 cached, 4 total
+  Time:    138ms >>> FULL TURBO
+
+Multiple projects found, consider using a single `tsconfig` with `references` to speed up, or use `noWarnOnMultipleProjects` to suppress this warning
+
+> dance-platform@0.1.0 boundaries C:\Users\Lenovo\Desktop\koller_web
+> node scripts/check-boundaries.mjs
+
+Import boundaries and cycles: PASS
+Multiple projects found, consider using a single `tsconfig` with `references` to speed up, or use `noWarnOnMultipleProjects` to suppress this warning
+
+> dance-platform@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web
+> turbo run typecheck && tsc --noEmit && tsc --noEmit -p .storybook/tsconfig.json
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running typecheck in 4 packages
+   • Remote caching disabled
+
+@dance/contracts:typecheck: cache hit, replaying logs a8f59412fdb9e136
+@dance/ui:typecheck: cache hit, replaying logs e4e61538de4db461
+@dance/contracts:typecheck: 
+@dance/contracts:typecheck: > @dance/contracts@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:typecheck: > tsc --noEmit
+@dance/contracts:typecheck: 
+@dance/ui:typecheck: 
+@dance/ui:typecheck: > @dance/ui@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:typecheck: > tsc --noEmit
+@dance/ui:typecheck: 
+@dance/web:typecheck: cache hit, replaying logs 1accae961ab46713
+@dance/web:typecheck: 
+@dance/web:typecheck: > @dance/web@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:typecheck: > next typegen && tsc --noEmit
+@dance/web:typecheck: 
+@dance/web:typecheck: Generating route types...
+@dance/web:typecheck: ✓ Types generated successfully
+
+ Tasks:    3 successful, 3 total
+Cached:    3 cached, 3 total
+  Time:    89ms >>> FULL TURBO
+
+
+> dance-platform@0.1.0 format C:\Users\Lenovo\Desktop\koller_web
+> prettier --check apps packages tests openspec docs/web-platform/phase-1 docs/web-platform/phase-2 docs/web-platform/phase-3a docs/web-platform/phase-3b .storybook playwright.storybook.config.ts docs/adr/0002-dance-platform-foundation.md pnpm-workspace.yaml turbo.json tsconfig.json vitest.config.ts playwright.bdd.config.ts .github/workflows/verify.yml
+
+Checking formatting...
+All matched files use Prettier code style!
+
+> dance-platform@0.1.0 test C:\Users\Lenovo\Desktop\koller_web
+> vitest run
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+
+ Test Files  38 passed (38)
+      Tests  95 passed (95)
+   Start at  02:35:27
+   Duration  72.04s (transform 4.06s, setup 14.89s, import 17.25s, tests 6.92s, environment 24.79s)
+
+
+> dance-platform@0.1.0 test:ci C:\Users\Lenovo\Desktop\koller_web
+> vitest run --coverage --reporter=default --reporter=junit --outputFile.junit=ci-reports/junit/vitest.xml
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+      Coverage enabled with v8
+
+ ✓ tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx (3 tests) 1043ms
+   ✓ avatar write preserves text draft and advances the next text-write condition  378ms
+   ✓ uncertain avatar write blocks both editors through cancel until an explicit current reload  394ms
+ ✓ tests/apps/web/modules/identity/AuthForm.test.tsx (2 tests) 811ms
+   ✓ pending login disables duplicate submissions and unmount aborts the owned request  549ms
+ ✓ tests/apps/web/modules/identity/authentication.test.tsx (7 tests) 833ms
+       ✓ Then the 306 authentication contract is enforced  803ms
+ ✓ tests/apps/web/modules/profile/AvatarEditor.test.tsx (4 tests) 587ms
+       ✓ Then exact file boundaries and localized feedback preserve drafts and release previews  422ms
+ ✓ tests/apps/web/modules/profile/ProfileEditor.test.tsx (2 tests) 561ms
+       ✓ Then failed edits retain drafts and reload is explicit with owned cancellation  410ms
+ ✓ tests/bdd/designSystem/controls.steps.tsx (6 tests) 369ms
+ ✓ tests/packages/ui/Controls.test.tsx (4 tests) 288ms
+ ✓ tests/apps/web/modules/profile/completionEditor.test.tsx (2 tests) 384ms
+       ✓ Then explicit completion requires only handle and name and preserves safe write state  364ms
+ ✓ tests/apps/web/modules/profile/uncertainWrite.test.tsx (2 tests) 323ms
+   ✓ Cancel cannot enable another save after an uncertain result before a successful reload  314ms
+ ✓ tests/apps/web/app/_infrastructure/avatarProcessing.test.ts (1 test) 228ms
+ ✓ tests/tooling/boundaries.test.ts (10 tests) 310ms
+     ✓ accepts the implemented graph  306ms
+ ✓ tests/bdd/foundation/controls.steps.tsx (6 tests) 222ms
+ ✓ tests/packages/ui/Button.test.tsx (1 test) 190ms
+ ✓ tests/apps/web/shell/MobileNavigation.test.tsx (1 test) 106ms
+ ✓ tests/apps/web/app/_infrastructure/CompletionNavigationGuard.test.tsx (1 test) 79ms
+ ✓ tests/apps/web/app/_infrastructure/avatarRuntime.test.ts (3 tests) 72ms
+ ✓ tests/apps/web/app/_infrastructure/avatar.test.ts (1 test) 27ms
+ ✓ tests/apps/web/shared/supabase/server.test.ts (1 test) 42ms
+ ✓ tests/apps/web/shared/supabase/oauth.test.ts (1 test) 31ms
+ ✓ tests/apps/web/app/_infrastructure/profile.test.ts (1 test) 28ms
+ ✓ tests/apps/web/app/_infrastructure/completionTransport.test.ts (2 tests) 30ms
+ ✓ tests/apps/web/app/_infrastructure/auth.test.ts (6 tests) 23ms
+ ✓ tests/bdd/identity/foundation.steps.ts (4 tests) 19ms
+ ✓ tests/apps/web/app/_infrastructure/completion.test.ts (1 test) 17ms
+ ✓ tests/apps/web/app/_infrastructure/completionAuthFailure.test.ts (4 tests) 17ms
+ ✓ tests/apps/web/modules/profile/profileService.test.ts (2 tests) 16ms
+ ✓ tests/apps/web/app/_infrastructure/avatarRemovalBody.test.ts (2 tests) 17ms
+ ✓ tests/apps/web/app/_infrastructure/completionFailure.test.ts (2 tests) 13ms
+ ✓ tests/apps/web/shared/supabase/refreshSession.test.ts (3 tests) 12ms
+ ✓ tests/apps/web/modules/profile/publicProfile.test.ts (1 test) 11ms
+ ✓ tests/apps/web/modules/identity/recovery.test.ts (1 test) 10ms
+ ✓ tests/apps/web/modules/profile/avatarService.test.ts (1 test) 9ms
+ ✓ tests/apps/web/modules/profile/outcome.test.ts (1 test) 9ms
+ ✓ tests/apps/web/shared/i18n/messages.test.ts (1 test) 8ms
+ ✓ tests/packages/contracts/completion.test.ts (1 test) 8ms
+ ✓ tests/tooling/avatarCleanup.test.ts (1 test) 10ms
+ ✓ tests/apps/web/shared/i18n/routes.test.ts (2 tests) 6ms
+ ✓ tests/apps/web/shared/supabase/database.test.ts (1 test) 4ms
+
+ Test Files  38 passed (38)
+      Tests  95 passed (95)
+   Start at  02:36:41
+   Duration  52.15s (transform 1.38s, setup 12.34s, import 8.07s, tests 6.77s, environment 14.79s)
+
+JUNIT report written to C:/Users/Lenovo/Desktop/koller_web/ci-reports/junit/vitest.xml
+ % Coverage report from v8
+
+=============================== Coverage summary ===============================
+Statements   : 69.59% ( 902/1296 )
+Branches     : 68.46% ( 760/1110 )
+Functions    : 68.54% ( 170/248 )
+Lines        : 71.48% ( 835/1168 )
+================================================================================
+
+> dance-platform@0.1.0 db:test C:\Users\Lenovo\Desktop\koller_web
+> vitest run tests/database/foundation.test.ts
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+Connecting to local database...
+psql:/Users/Lenovo/Desktop/koller_web/supabase/tests/identity.test.sql:2: NOTICE:  extension "pgtap" already exists, skipping
+/Users/Lenovo/Desktop/koller_web/supabase/tests/identity.test.sql .. ok
+All tests successful.
+Files=1, Tests=74,  0 wallclock secs ( 0.02 usr  0.02 sys +  0.02 cusr  0.02 csys =  0.08 CPU)
+Result: PASS
+Real local PostgreSQL, anonymous, owner and non-owner REST assertions: PASS
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  02:37:35
+   Duration  5.71s (transform 36ms, setup 324ms, import 33ms, tests 5.15s, environment 0ms)
+
+
+> dance-platform@0.1.0 db:test:profile C:\Users\Lenovo\Desktop\koller_web
+> vitest run tests/database/profile.test.ts
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+PASS: real owner/anon/RLS, simultaneous claims/edits, immediate reuse, publication guard and lossless bigint RPC
+PASS: real concurrent publish/name-clear from an eligible nonblank profile preserves invariant
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  02:37:42
+   Duration  3.88s (transform 36ms, setup 324ms, import 34ms, tests 3.32s, environment 0ms)
+
+
+> dance-platform@0.1.0 db:test:completion C:\Users\Lenovo\Desktop\koller_web
+> vitest run tests/database/completion.test.ts tests/database/publicProfileRaces.test.ts
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+PASS: real explicit completion, required fields, ownership, direct bypasses, uniqueness/revision races, rename reuse, public whitelist/missing-privacy/deletion and domain gate
+PASS: real completion/edit and rename/public-read races expose no partial or invalid presentation
+
+ Test Files  2 passed (2)
+      Tests  2 passed (2)
+   Start at  02:37:47
+   Duration  5.19s (transform 43ms, setup 621ms, import 45ms, tests 4.13s, environment 0ms)
+
+
+> dance-platform@0.1.0 db:test:avatars C:\Users\Lenovo\Desktop\koller_web
+> vitest run tests/database/avatar.test.ts
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+PASS: real private Storage/raw grants, ownership, completion eligibility, immutable IDs, revision races/bigints, DB rate limits, 24h/7d cleanup, fencing, crash/restart and orphan reconciliation
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  02:37:53
+   Duration  19.58s (transform 33ms, setup 324ms, import 9ms, tests 19.03s, environment 0ms)
+
+
+> dance-platform@0.1.0 test:auth C:\Users\Lenovo\Desktop\koller_web
+> node scripts/run-local-auth.mjs integration
+
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  02:38:15
+   Duration  2.07s (transform 111ms, setup 342ms, import 213ms, tests 1.30s, environment 0ms)
+
+
+> dance-platform@0.1.0 build C:\Users\Lenovo\Desktop\koller_web
+> turbo run build
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running build in 4 packages
+   • Remote caching disabled
+
+@dance/web:build: cache hit, replaying logs 87b103841d36b336
+@dance/web:build: 
+@dance/web:build: > @dance/web@0.1.0 build C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:build: > next build
+@dance/web:build: 
+@dance/web:build: ▲ Next.js 16.4.3 (Turbopack)
+@dance/web:build: ✓ Running next.config.ts took 91ms
+@dance/web:build: 
+@dance/web:build:   Creating an optimized production build ...
+@dance/web:build: ✓ Compiled successfully in 1413ms
+@dance/web:build:   Running TypeScript ...
+@dance/web:build:   Finished TypeScript in 2.8s ...
+@dance/web:build:   Collecting page data using 15 workers ...
+@dance/web:build:   Generating static pages using 15 workers (0/25) ...
+@dance/web:build:   Generating static pages using 15 workers (6/25) 
+@dance/web:build:   Generating static pages using 15 workers (12/25) 
+@dance/web:build:   Generating static pages using 15 workers (18/25) 
+@dance/web:build: ✓ Generating static pages using 15 workers (25/25) in 610ms
+@dance/web:build:   Finalizing page optimization ...
+@dance/web:build: 
+@dance/web:build: Route (app)
+@dance/web:build: ┌ ○ /_not-found
+@dance/web:build: ├ ƒ /[locale]
+@dance/web:build: ├ ƒ /[locale]/account
+@dance/web:build: ├ ƒ /[locale]/account/profile
+@dance/web:build: ├ ƒ /[locale]/auth/callback
+@dance/web:build: ├ ƒ /[locale]/auth/confirm
+@dance/web:build: ├ ƒ /[locale]/forgot-password
+@dance/web:build: ├ ƒ /[locale]/login
+@dance/web:build: ├ ƒ /[locale]/playground
+@dance/web:build: ├ ƒ /[locale]/playground/practice-timer
+@dance/web:build: ├ ƒ /[locale]/register
+@dance/web:build: ├ ƒ /[locale]/reset-password
+@dance/web:build: ├ ƒ /[locale]/u/[username]
+@dance/web:build: ├ ƒ /api/auth/[action]
+@dance/web:build: ├ ƒ /api/v1/me
+@dance/web:build: ├ ƒ /api/v1/me/avatar
+@dance/web:build: ├ ƒ /api/v1/me/completion
+@dance/web:build: ├ ƒ /api/v1/me/profile
+@dance/web:build: ├ ƒ /api/v1/me/profile/complete
+@dance/web:build: └ ƒ /api/v1/profile-avatars/[id]
+@dance/web:build: 
+@dance/web:build: 
+@dance/web:build: ƒ Proxy (Middleware)
+@dance/web:build: 
+@dance/web:build: ○  (Static)   prerendered as static content
+@dance/web:build: ƒ  (Dynamic)  server-rendered on demand
+@dance/web:build: 
+
+ Tasks:    1 successful, 1 total
+Cached:    1 cached, 1 total
+  Time:    112ms >>> FULL TURBO
+
+
+> dance-platform@0.1.0 avatars:check-client C:\Users\Lenovo\Desktop\koller_web
+> node scripts/check-avatar-client.mjs
+
+PASS: privileged avatar key and server-only configuration absent from 17 browser assets
+
+> dance-platform@0.1.0 storybook:build C:\Users\Lenovo\Desktop\koller_web
+> storybook build --output-dir storybook-static
+
+
+T  Building storybook v10.6.3
+|
+o  Cleaning outputDir: storybook-static
+|
+o  Loading presets
+|
+o  Building manager..
+|
+•  Building open services..
+|
+•  Building preview..
+|  Vite vite v7.3.6 building client environment for production...
+|  Vite transforming...
+|
+!  Vite packages/ui/src/Dialog.tsx (1:0): Error when using sourcemap for
+|  reporting an error: Can't resolve original location of error.
+|
+!  Vite packages/ui/src/Dialog.tsx (1:0): Module level directives cause
+|  errors when bundled, "use client" in "packages/ui/src/Dialog.tsx" was
+|  ignored.
+|
+!  Vite packages/ui/src/Tabs.tsx (1:0): Error when using sourcemap for
+|  reporting an error: Can't resolve original location of error.
+|
+!  Vite packages/ui/src/Tabs.tsx (1:0): Module level directives cause
+|  errors when bundled, "use client" in "packages/ui/src/Tabs.tsx" was
+|  ignored.
+|  Vite ✓ 326 modules transformed.
+|  Vite rendering chunks...
+|  Vite computing gzip size...
+|  Vite storybook-static/iframe.html                               18.85
+|  kB │ gzip:   5.26 kB
+|  Vite storybook-static/assets/iframe-kl8qeKz8.css                 2.77
+|  kB │ gzip:   1.07 kB
+|  Vite storybook-static/assets/Primitives-CGcVuE1S.css             5.21
+|  kB │ gzip:   1.34 kB
+|  Vite storybook-static/assets/preload-helper-PPVm8Dsz.js          1.23
+|  kB │ gzip:   0.71 kB
+|  Vite storybook-static/assets/Primitives.stories-DjZUsB5d.js     10.86
+|  kB │ gzip:   3.33 kB
+|  Vite storybook-static/vite-inject-mocker-entry.js               28.11
+|  kB │ gzip:   9.82 kB
+|  Vite storybook-static/assets/matchers-JIUQ3HVY-N4FjKbka.js      29.23
+|  kB │ gzip:  10.05 kB
+|  Vite storybook-static/assets/react-18-DSG61W3Q.js              210.16
+|  kB │ gzip:  65.59 kB
+|  Vite storybook-static/assets/axe-N4PknZJ0.js                   675.80
+|  kB │ gzip: 193.80 kB
+|  Vite storybook-static/assets/iframe-DeqFAsh9.js              1,311.72
+|  kB │ gzip: 375.42 kB
+|
+!  Vite
+|  (!) Some chunks are larger than 500 kB after minification. Consider:
+|  - Using dynamic import() to code-split the application
+|  - Use build.rollupOptions.output.manualChunks to improve chunking:
+|  ]8;;https://rollupjs.org/configuration-options/#output-manualchunkshttps://rollupjs.org/configuration-options/#output-manualchunks]8;;
+|  - Adjust chunk size limit for this warning via
+|  build.chunkSizeWarningLimit.
+|  Vite ✓ built in 8.01s
+|
+o  Output directory: C:/Users/Lenovo/Desktop/koller_web/storybook-static
+|
+—  Storybook build completed successfully
+
+
+> dance-platform@0.1.0 test:e2e C:\Users\Lenovo\Desktop\koller_web
+> pnpm test:e2e:gen && playwright test -c playwright.bdd.config.ts
+
+
+> dance-platform@0.1.0 test:e2e:gen C:\Users\Lenovo\Desktop\koller_web
+> bddgen -c playwright.bdd.config.ts
+
+[WebServer] (node:22724) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:30212) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:35492) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 1 worker
+
+(node:31120) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 [msedge] › .features-gen\foundation\tests\e2e\foundation\smoke.feature.spec.js:6:7 › Guest platform foundation › A guest discovers the first practice tool @dance-platform-foundation @FR-001 @SC-001 (851ms)
+  ok  2 [msedge] › .features-gen\foundation\tests\e2e\foundation\smoke.feature.spec.js:12:7 › Guest platform foundation › A visitor changes language without losing their route @dance-platform-foundation @FR-002 @SC-002 (476ms)
+(node:36764) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  3 [msedge-auth] › .features-gen\auth\tests\e2e\identity\authentication.feature.spec.js:8:9 › Real local authentication › Register, confirm, recover and retain localized identity › Example #1 (4.0s)
+  ok  4 [msedge-auth] › .features-gen\auth\tests\e2e\identity\authentication.feature.spec.js:16:9 › Real local authentication › Register, confirm, recover and retain localized identity › Example #2 (3.1s)
+  ok  5 [msedge-auth] › .features-gen\auth\tests\e2e\profile\avatars.feature.spec.js:6:7 › Localized optional avatar management › SC-431 Manage avatars in real EN and RU pages @phase-three-c-profiles-privacy @FR-413 @SC-431 (4.3s)
+  ok  6 [msedge-auth] › .features-gen\auth\tests\e2e\profile\completion.feature.spec.js:6:7 › Mandatory completion and unindexed public profiles › SC-425 Refresh and manual navigation cannot bypass completion @phase-three-c-profiles-privacy @FR-409 @SC-425 (4.5s)
+  ok  7 [msedge-auth] › .features-gen\auth\tests\e2e\profile\management.feature.spec.js:6:7 › Localized owner profile routes › SC-419 Use localized owner routes @phase-three-c-profiles-privacy @FR-404 @SC-419 (1.6s)
+(node:27776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  8 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:4:7 › localized pages reflow at 320px (1.4s)
+  ok  9 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:4:7 › localized pages reflow at 768px (1.4s)
+  ok 10 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:4:7 › localized pages reflow at 1280px (1.2s)
+  ok 11 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:46:5 › default locale is deterministic and invalid routes return 404 (552ms)
+  ok 12 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en has accessible shell and localized metadata (675ms)
+  ok 13 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en/playground has accessible shell and localized metadata (561ms)
+  ok 14 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en/playground/practice-timer has accessible shell and localized metadata (554ms)
+  ok 15 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en/login has accessible shell and localized metadata (614ms)
+  ok 16 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › en/register has accessible shell and localized metadata (612ms)
+  ok 17 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru has accessible shell and localized metadata (573ms)
+  ok 18 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru/playground has accessible shell and localized metadata (579ms)
+  ok 19 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru/playground/practice-timer has accessible shell and localized metadata (564ms)
+  ok 20 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru/login has accessible shell and localized metadata (569ms)
+  ok 21 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:65:9 › ru/register has accessible shell and localized metadata (573ms)
+  ok 22 [msedge-e2e] › tests\e2e\foundation\accessibility.spec.ts:100:5 › compact navigation, locale continuity and reflow at 320px (538ms)
+  ok 23 [msedge-e2e] › tests\e2e\identity\security.spec.ts:3:7 › en callbacks reject invalid links, denial and unsafe destinations (842ms)
+  ok 24 [msedge-e2e] › tests\e2e\identity\security.spec.ts:3:7 › ru callbacks reject invalid links, denial and unsafe destinations (786ms)
+
+  24 passed (51.9s)
+
+> dance-platform@0.1.0 test:storybook C:\Users\Lenovo\Desktop\koller_web
+> bddgen -c playwright.storybook.config.ts && playwright test -c playwright.storybook.config.ts
+
+[WebServer] (node:22860) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4776) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 7 tests using 1 worker
+
+(node:26432) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [storybook] › .features-gen-storybook\tests\e2e\designSystem\interactions.feature.spec.js:6:7 › Browser interaction with shared controls › Native modal contains and restores keyboard focus @phase-two-design-system @FR-102 @SC-103 (988ms)
+  ok 2 [storybook] › .features-gen-storybook\tests\e2e\designSystem\interactions.feature.spec.js:12:7 › Browser interaction with shared controls › Local tabs support keyboard selection @phase-two-design-system @FR-102 @SC-104 (519ms)
+(node:16596) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 [storybook-a11y] › tests\e2e\designSystem\accessibility.spec.ts:5:7 › states passes automated WCAG checks at compact and desktop widths (1.2s)
+  ok 4 [storybook-a11y] › tests\e2e\designSystem\accessibility.spec.ts:5:7 › keyboard-tabs passes automated WCAG checks at compact and desktop widths (990ms)
+  ok 5 [storybook-a11y] › tests\e2e\designSystem\accessibility.spec.ts:5:7 › modal passes automated WCAG checks at compact and desktop widths (1.0s)
+  ok 6 [storybook-a11y] › tests\e2e\designSystem\accessibility.spec.ts:32:5 › reduced motion keeps loading feedback readable without animation (419ms)
+  ok 7 [storybook-a11y] › tests\e2e\designSystem\auditOwnership.spec.ts:6:5 › one accessibility audit owner covers the current state and still rejects violations (749ms)
+
+  7 passed (9.6s)
+
+> dance-platform@0.1.0 spec:validate C:\Users\Lenovo\Desktop\koller_web
+> node scripts/openspec.mjs validate --all --strict --no-interactive
+
+✓ change/align-prettier-lf
+  ℹ [INFO] file: skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted
+✓ spec/design-system
+✓ spec/identity-foundation
+✓ change/phase-three-c-profiles-privacy
+✓ spec/platform-shell
+✓ spec/user-auth
+Totals: 6 passed, 0 failed (6 items)

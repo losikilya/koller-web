@@ -13,3 +13,7 @@ New executable scenarios SC-421–424 cover atomic SQL completion, route/auth-re
 ## Phase 3C.3 executable mapping
 
 SC-426–430: tests/bdd/profile/avatars.feature, with focused decoder, injected durable use-case, transport, UI and cleanup-worker drivers. SC-431: tests/e2e/profile/avatars.feature with real local browser steps and a focused UI driver. Real Storage/database/worker tests run independently in root verify; they are not replaced by protocol mocks. Every new scenario records genuine RED/GREEN/REFACTOR; postimplementation regressions remain ordinary tests. No original event/report is rewritten.
+
+## Phase 3C.4 acceptance of existing behavior
+
+`tests/e2e/profile/integration.feature` and adjacent steps add ordinary browser acceptance for avatar-before-completion/rename/reuse (EN/RU outline) and a real stale editor after another tab's avatar write. They have no change/FR/SC tags and introduce no new contract. `evidence/phase3c4/acceptance-map.json` links them to the original 17 scenarios and FR-401–414. Original test-plan mappings and all 51 ledger events/reports stay unchanged. These joins run genuinely GREEN; no retroactive RED/baseline is fabricated. A discovered defect must be separately reproduced before a fix. Existing full root commands continue exercising real DB/Auth/Storage/worker/race and browser/a11y acceptance.
