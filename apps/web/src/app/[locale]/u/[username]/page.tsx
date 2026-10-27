@@ -51,6 +51,15 @@ export default async function Page({ params }: Props) {
       <Container className={styles.page}>
         <Card>
           <h1 className={styles.breakText}>{profile.displayName}</h1>
+          {profile.avatarUrl && (
+            <img
+              src={profile.avatarUrl}
+              alt=""
+              width={96}
+              height={96}
+              style={{ objectFit: 'cover', borderRadius: '50%' }}
+            />
+          )}
           <p>@{profile.username}</p>
           {profile.bio && (
             <p className={styles.breakText} style={{ whiteSpace: 'pre-wrap' }}>

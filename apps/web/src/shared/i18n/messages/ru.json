@@ -134,6 +134,22 @@
     "viewPublic": "Посмотреть публичный профиль",
     "publicTitle": "Профиль",
     "publicUnavailable": "Профиль недоступен",
-    "publicServiceUnavailable": "Профили временно недоступны. Попробуйте позже."
+    "publicServiceUnavailable": "Профили временно недоступны. Попробуйте позже.",
+    "avatarRemove": "Удалить фото",
+    "avatarTooLarge": "Фото слишком большое. Максимальный размер: 2 МБ.",
+    "avatarOutcomeUnknown": "Загрузите текущий профиль перед изменением.",
+    "avatarLabel": "Фото профиля",
+    "avatarUpload": "Загрузить фото",
+    "avatarRateLimited": "Слишком много загрузок. Попробуйте позже.",
+    "avatarCancel": "Отменить выбор фото",
+    "avatarPreview": "Предпросмотр выбранного фото",
+    "avatarSaved": "Фото сохранено",
+    "avatarConflict": "Профиль изменён. Загрузите текущий.",
+    "avatarLoading": "Сохранение фото",
+    "avatarHint": "Максимальный размер фото: 2 МБ",
+    "avatarUnavailable": "Фото недоступно",
+    "avatarInvalid": "Недопустимое фото",
+    "avatarCurrent": "Текущее фото профиля",
+    "avatarRemoved": "Фото удалено"
   }
 }

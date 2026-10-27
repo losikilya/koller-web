@@ -1,0 +1,250 @@
+
+> dance-platform@0.1.0 verify C:\Users\Lenovo\Desktop\koller_web
+> node scripts/run-local-auth.mjs verify
+
+
+> dance-platform@0.1.0 verify:checks C:\Users\Lenovo\Desktop\koller_web
+> pnpm agents:check && pnpm test:workflow && pnpm lint && pnpm typecheck && pnpm format && pnpm test && pnpm test:ci && pnpm db:test && pnpm db:test:profile && pnpm db:test:completion && pnpm db:test:avatars && pnpm test:auth && pnpm build && pnpm avatars:check-client && pnpm storybook:build && pnpm test:e2e && pnpm test:storybook && pnpm spec:validate
+
+
+> dance-platform@0.1.0 agents:check C:\Users\Lenovo\Desktop\koller_web
+> node scripts/sync-claude.mjs --check && node scripts/sync-codex.mjs --check
+
+45 mirrored files, 0 out of sync, 0 stale
+Codex: 58 files, 0 out of sync, 0 stale
+
+> dance-platform@0.1.0 test:workflow C:\Users\Lenovo\Desktop\koller_web
+> node --test scripts/workflow.test.mjs scripts/starter-config.test.mjs scripts/sync-claude.test.mjs scripts/sync-codex.test.mjs scripts/architecture-refactor-workflow.test.mjs scripts/phase3a-exception.test.mjs
+
+warning: in the working copy of 'src/example.ts', LF will be replaced by CRLF the next time Git touches it
+✔ accepts a non-behavior architecture refactor plan (18.2209ms)
+✔ maintenance accepts its own schema without pretending to migrate application architecture (17.1406ms)
+✔ maintenance rejects product source, tests, specs and historical records (0.7713ms)
+✔ maintenance permits exact tooling/config paths and its own process artifacts (0.3435ms)
+✔ maintenance scope checks PR changes even with a clean checked-out working tree (10.2869ms)
+✔ maintenance permits exact EOL policy files without admitting neighboring config or product paths (0.549ms)
+✔ maintenance refuses product deltas and missing explicit non-behavior metadata (26.7587ms)
+✔ maintenance fingerprints equivalent Windows/Linux text checkouts identically (129.5494ms)
+✔ maintenance fingerprints deleted paths identically before and after index removal (198.5862ms)
+✔ records matching GREEN baseline/final evidence and becomes ready (235.8519ms)
+✔ rejects implementation changes made after final evidence (219.8604ms)
+✔ exact approved exception resolves only the two historical gaps, without TDD events (278.449ms)
+✔ rejects invalid historical hash (60.5738ms)
+✔ rejects missing owner approval (56.9579ms)
+✔ rejects missing reviewer approval (131.5127ms)
+✔ rejects wrong change (58.3648ms)
+✔ rejects wrong scenario (56.7976ms)
+✔ rejects wrong requirement (56.0656ms)
+✔ rejects wrong baseline gap (56.1575ms)
+✔ rejects additional exception (58.1232ms)
+✔ rejects unsupported type (55.3093ms)
+✔ rejects unknown schema field (54.1265ms)
+✔ rejects invalid owner provenance (53.9926ms)
+✔ rejects invalid reviewer provenance (126.0462ms)
+✔ rejects owner authorization substitution (55.5944ms)
+✔ production validator never accepts the synthetic trust anchors (51.384ms)
+✔ production validator rejects missing real approval evidence without fallback (61.05ms)
+✔ production validator rejects tampered real approval evidence without fallback (55.6411ms)
+✔ rejects stale reviewer subject after the review report itself has a valid new content hash (126.0682ms)
+✔ rejects an exception on any other change even if its record claims the eligible change (56.7817ms)
+✔ rejects altered historical artifact (57.7568ms)
+✔ rejects missing original artifact (56.5505ms)
+✔ rejects fabricated SC-205 phases (55.89ms)
+✔ rejects changed current source (116.0674ms)
+✔ rejects failed verify even with matching hashes and a fixture approval (111.563ms)
+✔ rejects missing browser gate even with matching hashes and a fixture approval (116.1936ms)
+✔ rejects missing coverage gate even with matching hashes and a fixture approval (125.6181ms)
+✔ rejects missing unit assertions even with matching hashes and a fixture approval (127.5836ms)
+✔ rejects failed database even with matching hashes and a fixture approval (116.6615ms)
+✔ rejects failed SQL security even with matching hashes and a fixture approval (115.7602ms)
+✔ rejects failed REST security even with matching hashes and a fixture approval (122.95ms)
+✔ rejects pending DB assertion even with matching hashes and a fixture approval (121.7426ms)
+✔ rejects changed generated types even with matching hashes and a fixture approval (125.4868ms)
+✔ rejects remote type generation even with matching hashes and a fixture approval (126.028ms)
+✔ task exceptions cannot resolve unrelated work or be relabelled TDD complete (240.1343ms)
+✔ absent record preserves normal validation and missing SC-205 still fails (70.4254ms)
+✔ historical task identifiers cannot be reused for an unapproved task contract (146.1935ms)
+✔ current acceptance becomes stale when root config .prettierrc.json changes (120.9792ms)
+✔ current acceptance becomes stale when root config .npmrc changes (120.9265ms)
+✔ native archive relocation preserves approved readiness and every original evidence byte (170.8607ms)
+✔ archived evidence tampering still fails integrity validation after relocation (74.289ms)
+✔ duplicate active and archived identities are rejected rather than choosing evidence implicitly (62.7101ms)
+✔ workflow entrypoints remain syntactically runnable after workspace adaptation (167.3259ms)
+✔ skill folder names match required frontmatter (11.1946ms)
+✔ team workflows and documentation remain complete (2.6671ms)
+✔ Vitest tests live under tests/, not next to source files in src (5.6819ms)
+✔ Claude rule adapters retain bodies and add explicit path scopes (2.5138ms)
+✔ sync is stable across CRLF, preserves skills, and detects lost paths (71.5063ms)
+✔ specialist uses current standalone TOML format and preserves model inheritance (2.6395ms)
+✔ sync copies skill resources and creates explicit workflow adapters without writing source (89.8201ms)
+✔ RED accepts a failed behavior assertion and rejects a broken test loader (2.1595ms)
+✔ GREEN cannot hide skipped or failed tests (0.3719ms)
+✔ evidence requires ordered RED GREEN REFACTOR for the same test (0.649ms)
+✔ change readiness rejects absent artifacts rather than silently skipping a change (7.1404ms)
+✔ a complete fixture passes, but report tampering and wrong mapping are blocked (61.2749ms)
+✔ BASELINE accepts only a passing run of the selected scenario (0.3741ms)
+✔ a RED run that passes explains the baseline fork instead of a generic failure (0.2229ms)
+✔ baseline evidence is checked separately from the RED/GREEN/REFACTOR cycle (0.4106ms)
+✔ baseline must be recorded before the first GREEN of the change (0.2098ms)
+✔ the planning gate validates baseline declarations and still requires one RED scenario (42.534ms)
+✔ baseline is allowed only while production code under src has no uncommitted edits (1.026ms)
+✔ a ready change may mix a RED cycle with a clean baseline scenario (43.0709ms)
+ℹ tests 72
+ℹ suites 0
+ℹ pass 72
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4186.1607
+
+> dance-platform@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web
+> turbo run lint && eslint tests --ext .ts,.tsx && pnpm boundaries && eslint .storybook packages/ui/stories --ext .ts,.tsx
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running lint in 4 packages
+   • Remote caching disabled
+
+@dance/design-tokens:lint: cache hit, replaying logs bf01c4209c2ff9b9
+@dance/design-tokens:lint: 
+@dance/design-tokens:lint: > @dance/design-tokens@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\design-tokens
+@dance/design-tokens:lint: > prettier --check src/tokens.css
+@dance/design-tokens:lint: 
+@dance/design-tokens:lint: Checking formatting...
+@dance/design-tokens:lint: All matched files use Prettier code style!
+@dance/contracts:lint: cache hit, replaying logs e2f67f05872cd7a0
+@dance/contracts:lint: 
+@dance/contracts:lint: > @dance/contracts@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:lint: > eslint src --ext .ts,.tsx
+@dance/contracts:lint: 
+@dance/ui:lint: cache hit, replaying logs 610c3a7efe68d4c4
+@dance/ui:lint: 
+@dance/ui:lint: > @dance/ui@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:lint: > eslint src --ext .ts,.tsx
+@dance/ui:lint: 
+@dance/web:lint: cache miss, executing 08947bd727d3d54c
+@dance/web:lint: 
+@dance/web:lint: > @dance/web@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:lint: > eslint src --ext .ts,.tsx
+@dance/web:lint: 
+
+ Tasks:    4 successful, 4 total
+Cached:    3 cached, 4 total
+  Time:    5.336s 
+
+Multiple projects found, consider using a single `tsconfig` with `references` to speed up, or use `noWarnOnMultipleProjects` to suppress this warning
+
+> dance-platform@0.1.0 boundaries C:\Users\Lenovo\Desktop\koller_web
+> node scripts/check-boundaries.mjs
+
+Import boundaries and cycles: PASS
+Multiple projects found, consider using a single `tsconfig` with `references` to speed up, or use `noWarnOnMultipleProjects` to suppress this warning
+
+> dance-platform@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web
+> turbo run typecheck && tsc --noEmit && tsc --noEmit -p .storybook/tsconfig.json
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running typecheck in 4 packages
+   • Remote caching disabled
+
+@dance/contracts:typecheck: cache miss, executing a8f59412fdb9e136
+@dance/ui:typecheck: cache miss, executing e4e61538de4db461
+@dance/contracts:typecheck: 
+@dance/contracts:typecheck: > @dance/contracts@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:typecheck: > tsc --noEmit
+@dance/contracts:typecheck: 
+@dance/ui:typecheck: 
+@dance/ui:typecheck: > @dance/ui@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:typecheck: > tsc --noEmit
+@dance/ui:typecheck: 
+@dance/web:typecheck: cache miss, executing 1accae961ab46713
+@dance/web:typecheck: 
+@dance/web:typecheck: > @dance/web@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:typecheck: > next typegen && tsc --noEmit
+@dance/web:typecheck: 
+@dance/web:typecheck: Generating route types...
+@dance/web:typecheck: ✓ Types generated successfully
+
+ Tasks:    3 successful, 3 total
+Cached:    0 cached, 3 total
+  Time:    5.374s 
+
+tests/apps/web/app/_infrastructure/avatarRemovalBody.test.ts(36,5): error TS2322: Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'BodyInit | null | undefined'.
+  Type 'Uint8Array<ArrayBufferLike>' is missing the following properties from type 'URLSearchParams': size, append, delete, get, and 2 more.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(80,56): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(89,56): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(116,56): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(127,56): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(130,66): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(133,56): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(136,66): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(140,58): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(168,56): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(172,58): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(182,56): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(185,56): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(191,66): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx(195,58): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+  Overload 2 of 2, '(role: ByRoleMatcher, options?: ByRoleOptions | undefined): HTMLElement', gave the following error.
+    Object literal may only specify known properties, and 'exact' does not exist in type 'ByRoleOptions'.
+ ELIFECYCLE  Command failed with exit code 2.
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.

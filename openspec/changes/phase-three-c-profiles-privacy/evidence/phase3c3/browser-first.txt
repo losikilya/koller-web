@@ -1,0 +1,13 @@
+
+> dance-platform@0.1.0 test:avatars:e2e C:\Users\Lenovo\Desktop\koller_web
+> pnpm test:e2e:gen && node scripts/run-local-auth.mjs avatar-e2e
+
+
+> dance-platform@0.1.0 test:e2e:gen C:\Users\Lenovo\Desktop\koller_web
+> bddgen -c playwright.bdd.config.ts
+
+(node:2004) Warning: Failed to load the ES module: C:\Users\Lenovo\Desktop\koller_web\scripts\local-auth-environment.mjs. Make sure to set "type": "module" in the nearest package.json file or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Cannot use 'import.meta' outside a module
+ ELIFECYCLE  Command failed with exit code 1.
+ ELIFECYCLE  Command failed with exit code 1.

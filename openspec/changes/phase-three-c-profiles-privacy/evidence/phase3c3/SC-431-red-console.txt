@@ -1,0 +1,6 @@
+
+> dance-platform@0.1.0 tdd C:\Users\Lenovo\Desktop\koller_web
+> node scripts/tdd.mjs "phase-three-c-profiles-privacy" "SC-431" "red"
+
+JSON report written to C:/Users/Lenovo/Desktop/koller_web/openspec/changes/phase-three-c-profiles-privacy/evidence/037-SC-431-red.json
+Recorded SC-431 RED. Inspect the assertion failure before implementation.

@@ -29,3 +29,14 @@ export {
   resetPasswordSchema,
   recoverySchema,
 } from './auth'
+export {
+  AVATAR_MAX_FILE_BYTES,
+  AVATAR_MAX_REQUEST_BYTES,
+  AVATAR_MAX_OUTPUT_BYTES,
+  AVATAR_MAX_SIDE,
+  AVATAR_MAX_PIXELS,
+  AVATAR_MIME_TYPES,
+  avatarOperationSchema,
+  controlledAvatarUrlSchema,
+  avatarUrlFor,
+} from './avatar'

@@ -96,3 +96,53 @@ The localized editor SHALL explain public publication and require only username/
 
 - **WHEN** incomplete users refresh, navigate manually or through history, then complete and revisit public EN/RU pages
 - **THEN** the mandatory gate, safe auth exceptions, explicit publication and accessible noindex SSR remain enforced
+
+### Requirement: FR-410 Bounded static avatar processing
+
+One exact 2,097,152-byte file limit SHALL apply. Authoritative signature/MIME/decoder checks SHALL accept only static JPEG/PNG/WebP within 4096 per side and 16,000,000 pixels. Metadata SHALL be stripped by WebP re-encoding within 512x512 and 1 MiB. Multipart overhead SHALL have a separate bounded ceiling; no unbounded reads.
+
+#### Scenario: SC-426 Validate exact file and decoder boundaries
+
+- **WHEN** valid, malformed, animated, mismatched or boundary-sized files reach server processing
+- **THEN** only valid bounded static input becomes metadata-free bounded WebP without trusting client claims
+
+### Requirement: FR-411 Durable authorized avatar mutation
+
+Optional avatars SHALL use private immutable Storage and verified active owner operations. Reserve fingerprint-bound idempotent work before processing; atomically associate/remove with lossless revisions and queue old objects. Retry SHALL not resurrect removed objects. Database owner attempt/pending limits and direct access denial SHALL apply. Failed association preserves current state and durably compensates unused new objects.
+
+#### Scenario: SC-427 Associate and compensate revisioned avatars
+
+- **WHEN** owner avatar operations conflict, fail, race or replay
+- **THEN** current presentation is protected, ownership is enforced and durable state allows recovery without partial attachment
+
+### Requirement: FR-412 Controlled current-avatar delivery
+
+Owner/public presentation SHALL expose optional opaque application image URLs only. Delivery SHALL recheck pointer, account/privacy/completion eligibility and verified owner exception before and after Storage fetch. Replaced/removed IDs SHALL become unavailable. Responses SHALL be no-store/noindex without paths, keys or signed URLs; public SSR remains safe without JavaScript.
+
+#### Scenario: SC-428 Protect avatar transport and current delivery
+
+- **WHEN** valid or forged callers request avatar mutation, DTOs or current/stale IDs
+- **THEN** identity/origin/bytes/revisions and safe response headers protect current delivery without revealing locators
+
+### Requirement: FR-413 Accessible localized avatar controls
+
+The editor SHALL show 2 MB/2 МБ guidance and announce oversized selection before network. Keyboard select/preview/upload/replace/remove SHALL preserve current avatar/text drafts on failure, release abandoned preview URLs, prevent duplicate work and preserve explicit reload after uncertain writes. Avatar remains optional for completion.
+
+#### Scenario: SC-429 Reject oversized selection before network
+
+- **WHEN** owners select below/equal/above-limit files or avatar writes fail
+- **THEN** oversized selection sends no upload, errors/guidance are accessible and current avatar/drafts/previews have correct ownership
+
+#### Scenario: SC-431 Manage avatars in real EN and RU pages
+
+- **WHEN** owners select, replace/remove and view avatars on localized routes
+- **THEN** keyboard/reflow, pre-network size rejection, controlled stale URLs and no-JS public presentation work without changing completion
+
+### Requirement: FR-414 Local cleanup and crash recovery
+
+An authenticated local worker SHALL expire uncommitted uploads after 24 hours, retry failures durably with fenced leases and protect current objects. It SHALL reconcile crashes and late/orphan objects. Successful deletion records retain seven days after confirmation; failed jobs never expire due only to age. Production scheduling/secrets/readiness remain deferred.
+
+#### Scenario: SC-430 Restart durable cleanup safely
+
+- **WHEN** deletion fails, leases expire, late objects appear or a fresh worker restarts
+- **THEN** failed work persists, current objects survive and only confirmed deletion allows seven-day pruning

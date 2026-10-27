@@ -24,8 +24,23 @@ export type Database = Omit<GeneratedDatabase, 'public'> & {
       | 'get_public_profile_by_username'
       | 'update_own_profile'
       | 'complete_own_profile'
+      | 'attach_own_avatar'
+      | 'remove_own_avatar'
+      | 'get_public_avatar_id'
     > & {
       get_public_profile: PublicProfileFunction<'get_public_profile'>
+      get_public_avatar_id: Omit<
+        GeneratedDatabase['public']['Functions']['get_public_avatar_id'],
+        'Returns'
+      > & { Returns: string | null }
+      attach_own_avatar: Omit<
+        GeneratedDatabase['public']['Functions']['attach_own_avatar'],
+        'Args'
+      > & { Args: { p_id: string; p_expected_revision: string } }
+      remove_own_avatar: Omit<
+        GeneratedDatabase['public']['Functions']['remove_own_avatar'],
+        'Args'
+      > & { Args: { p_id: string; p_expected_revision: string } }
       list_public_profiles: PublicProfileFunction<'list_public_profiles'>
       get_public_profile_by_username: PublicProfileFunction<'get_public_profile_by_username'>
       complete_own_profile: Omit<

@@ -35,8 +35,28 @@
 - [x] 6.1 Run focused and final full pnpm verify after material corrections, retain commands/logs and historical integrity evidence.
 - [x] 6.2 Obtain actual independent review, deliver PHASE-3C2-IMPLEMENTATION-REPORT, check scoped increment readiness and stop without archive.
 
-## Deferred stages — not authorized
+## Historical 3C.2 deferrals (superseded only for authorized local 3C.3)
 
 - Phase 3C.3 avatars/Storage and 3C.4 combined acceptance remain deferred.
 - No activity, catalog/search, community/follows/events/battles, account deletion or Phase 4.
 - No commit, push, deployment, reset or external credentials/configuration changes.
+
+## 7. Phase 3C.3 planning and baseline
+
+- [x] 7.1 Capture fresh clean HEAD/Git state, exact historical manifest/snapshots and full original GREEN before production changes.
+- [x] 7.2 Record accepted local D-07–D-10 policy and actual architect constraints before Storage/migration implementation.
+- [x] 7.3 Map executable SC-426–431 and record genuine behavioral RED before implementing new behavior.
+
+## 8. Phase 3C.3 implementation
+
+- [x] 8.1 Enable only local Storage, apply additive reviewed migration without reset, reproduce types and declare compatible direct decoder.
+- [x] 8.2 Implement authoritative bounded processing, secure owner HTTP and controlled current-avatar DTO/delivery.
+- [x] 8.3 Implement durable operation/rate/cleanup protocol and runnable authenticated local worker with real crash/restart/race tests.
+- [x] 8.4 Implement accessible localized editor/preview/oversize-before-network, preserving drafts/revisions/uncertain-write semantics; record GREEN/REFACTOR.
+
+## 9. Phase 3C.3 acceptance
+
+- [x] 9.1 Run real Storage/database/browser acceptance and final full verify after last material corrections; preserve actual logs/codes and historical integrity.
+- [x] 9.2 Obtain actual independent review and deliver PHASE-3C3-IMPLEMENTATION-REPORT/current-source manifest with scoped readiness.
+
+Current deferrals: 3C.4/Phase 4 and production scheduler/keys/hosting. No commit, push, amend, deploy or reset is authorized.

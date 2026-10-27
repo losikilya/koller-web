@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { controlledAvatarUrlSchema } from './avatar'
 
 const boundedText = (max: number) =>
   z.string().refine((value) => [...value].length <= max, 'Text is too long')
@@ -57,7 +58,7 @@ export const publicProfileSchema = z.strictObject({
   username: usernameSchema,
   displayName: boundedText(80),
   bio: boundedText(500),
-  avatarUrl: z.null(),
+  avatarUrl: controlledAvatarUrlSchema.nullable(),
 })
 
 export type ProfilePatch = z.infer<typeof profilePatchSchema>

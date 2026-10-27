@@ -1,0 +1,6 @@
+
+> dance-platform@0.1.0 tdd C:\Users\Lenovo\Desktop\koller_web
+> node scripts/tdd.mjs "phase-three-c-profiles-privacy" "SC-427" "green"
+
+JSON report written to C:/Users/Lenovo/Desktop/koller_web/openspec/changes/phase-three-c-profiles-privacy/evidence/041-SC-427-green.json
+Recorded SC-427 GREEN. 

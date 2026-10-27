@@ -1,0 +1,17 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx [ tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx ]
+Error: EPERM: operation not permitted, rename 'C:\Users\Lenovo\AppData\Local\Packages\sandbox.{893c0777-1fc1-4aa5-aa70-32fb21de80d3}\AC\Temp\_oo9GwXC7mp6kjBEZJ5zY\client\.tmp-1793102643913-65g38mb5n67' -> 'C:\Users\Lenovo\AppData\Local\Packages\sandbox.{893c0777-1fc1-4aa5-aa70-32fb21de80d3}\AC\Temp\_oo9GwXC7mp6kjBEZJ5zY\client\6f095754fae940533af10dc3df8c592ef5d1fa70'
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  no tests
+   Start at  17:04:02
+   Duration  1.68s (transform 0ms, setup 0ms, import 0ms, tests 0ms, environment 1.32s)
+

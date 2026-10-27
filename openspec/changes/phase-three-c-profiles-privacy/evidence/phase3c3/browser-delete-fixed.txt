@@ -1,0 +1,22 @@
+
+> dance-platform@0.1.0 test:avatars:e2e C:\Users\Lenovo\Desktop\koller_web
+> pnpm test:e2e:gen && node scripts/run-local-auth.mjs avatar-e2e
+
+
+> dance-platform@0.1.0 test:e2e:gen C:\Users\Lenovo\Desktop\koller_web
+> bddgen -c playwright.bdd.config.ts
+
+[WebServer] (node:35636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:31904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:36080) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:28304) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 [msedge-auth] › .features-gen\auth\tests\e2e\profile\avatars.feature.spec.js:6:7 › Localized optional avatar management › SC-431 Manage avatars in real EN and RU pages @phase-three-c-profiles-privacy @FR-413 @SC-431 (4.6s)
+
+  1 passed (12.6s)

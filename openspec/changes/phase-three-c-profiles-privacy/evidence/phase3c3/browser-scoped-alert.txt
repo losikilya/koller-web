@@ -1,0 +1,48 @@
+
+> dance-platform@0.1.0 test:avatars:e2e C:\Users\Lenovo\Desktop\koller_web
+> pnpm test:e2e:gen && node scripts/run-local-auth.mjs avatar-e2e
+
+
+> dance-platform@0.1.0 test:e2e:gen C:\Users\Lenovo\Desktop\koller_web
+> bddgen -c playwright.bdd.config.ts
+
+[WebServer] (node:28540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:36444) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:34152) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:32204) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 [msedge-auth] › .features-gen\auth\tests\e2e\profile\avatars.feature.spec.js:6:7 › Localized optional avatar management › SC-431 Manage avatars in real EN and RU pages @phase-three-c-profiles-privacy @FR-413 @SC-431 (4.5s)
+
+
+  1) [msedge-auth] › .features-gen\auth\tests\e2e\profile\avatars.feature.spec.js:6:7 › Localized optional avatar management › SC-431 Manage avatars in real EN and RU pages @phase-three-c-profiles-privacy @FR-413 @SC-431 › Then current EN and RU public images are safe and old avatar URLs are unavailable 
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 400
+
+       at tests\e2e\profile\avatars.steps.ts:288
+
+      286 |         .focus()
+      287 |       await page.keyboard.press('Enter')
+    > 288 |       expect((await removed).status()).toBe(200)
+          |                                        ^
+      289 |       await expect(page.getByRole('status')).toHaveText('Фото удалено')
+      290 |       await expect(
+      291 |         page.getByRole('img', { name: 'Текущее фото профиля' })
+        at Object.<anonymous> (C:\Users\Lenovo\Desktop\koller_web\tests\e2e\profile\avatars.steps.ts:288:40)
+        at BddStepInvoker.runWithAfterStepHooks (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:82:16)
+        at BddStepInvoker.invoke (C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\playwright-bdd@9.2.1_@playwright+test@1.64.1\node_modules\playwright-bdd\src\runtime\bddStepInvoker.ts:55:5)
+        at C:\Users\Lenovo\Desktop\koller_web\.features-gen\auth\tests\e2e\profile\avatars.feature.spec.js:9:5
+
+    Error Context: test-results\tests-e2e-profile-avatars.-b3ac8-ars-in-real-EN-and-RU-pages-msedge-auth\error-context.md
+
+  1 failed
+    [msedge-auth] › .features-gen\auth\tests\e2e\profile\avatars.feature.spec.js:6:7 › Localized optional avatar management › SC-431 Manage avatars in real EN and RU pages @phase-three-c-profiles-privacy @FR-413 @SC-431 
+ ELIFECYCLE  Command failed with exit code 1.

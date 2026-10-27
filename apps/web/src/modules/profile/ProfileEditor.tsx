@@ -10,6 +10,7 @@ import {
 import { publicProfilePath, localizedPath } from '@/shared/i18n/routes'
 import type { OwnProfile } from '@dance/contracts'
 import styles from './ProfileEditor.module.scss'
+import { AvatarEditor } from './AvatarEditor'
 const fields = (profile: OwnProfile) => ({
   username: profile.username ?? '',
   displayName: profile.displayName,
@@ -36,7 +37,11 @@ export function ProfileEditor({
   const [draft, setDraft] = useState(() => fields(initialProfile))
   const [state, setState] = useState<State>({ kind: 'idle' })
   const [different, setDifferent] = useState(false)
-  const [needsReload, setNeedsReload] = useState(false)
+  const [reloadReason, setReloadReason] = useState<
+    'outcome_unknown' | 'revision_conflict' | null
+  >(null)
+  const needsReload = reloadReason !== null
+  const [avatarBusy, setAvatarBusy] = useState(false)
   const locked = useRef(false)
   const controller = useRef<AbortController | null>(null)
   const feedback = useRef<HTMLParagraphElement>(null)
@@ -45,10 +50,10 @@ export function ProfileEditor({
     if (state.kind === 'error' || state.kind === 'success')
       feedback.current?.focus()
   }, [state])
-  const busy = state.kind === 'loading'
+  const busy = state.kind === 'loading' || avatarBusy
   const completing = !current.profile.completed
   async function request(reload = false) {
-    if (locked.current || (!reload && needsReload)) return
+    if (locked.current || avatarBusy || (!reload && needsReload)) return
     const parsed = (
       completing ? profileCompletionSchema : profileFormPatchSchema
     ).safeParse(draft)
@@ -105,7 +110,7 @@ export function ProfileEditor({
           typeof body.error.code === 'string'
             ? body.error.code
             : 'service_unavailable'
-        if (code === 'outcome_unknown') setNeedsReload(true)
+        if (code === 'outcome_unknown') setReloadReason('outcome_unknown')
         setState({ kind: 'error', code })
         return
       }
@@ -127,12 +132,12 @@ export function ProfileEditor({
       )
       setCurrent({ profile, etag })
       setDraft(fields(profile))
-      if (reload) setNeedsReload(false)
+      if (reload) setReloadReason(null)
       setState({ kind: 'success' })
       if (completing && profile.completed) onCompleted?.()
     } catch {
       if (!owned.signal.aborted) {
-        if (!reload) setNeedsReload(true)
+        if (!reload) setReloadReason('outcome_unknown')
         setState({
           kind: 'error',
           code: reload ? 'service_unavailable' : 'outcome_unknown',
@@ -171,6 +176,29 @@ export function ProfileEditor({
         {t(completing ? 'incomplete' : current.profile.privacy.visibility)}
       </Badge>
       {completing && <p>{t('completionNotice')}</p>}
+      <AvatarEditor
+        profile={current.profile}
+        etag={current.etag}
+        disabled={state.kind === 'loading'}
+        needsReload={needsReload}
+        onChange={(result) => {
+          const previous = fields(current.profile)
+          if (
+            Object.entries(fields(result.profile)).some(
+              ([key, value]) => previous[key as keyof typeof previous] !== value
+            )
+          ) {
+            setReloadReason('revision_conflict')
+            setState({ kind: 'error', code: 'revision_conflict' })
+          }
+          setCurrent(result)
+        }}
+        onNeedsReload={() => setReloadReason('outcome_unknown')}
+        onBusyChange={(value) => {
+          setAvatarBusy(value)
+          if (value) setState({ kind: 'idle' })
+        }}
+      />
       <p id="profile-warning">{t('renameWarning')}</p>
       <fieldset disabled={busy} className={styles.fields}>
         <legend>{t('edit')}</legend>
@@ -226,8 +254,8 @@ export function ProfileEditor({
             onClick={() => {
               setDraft(fields(current.profile))
               setState(
-                needsReload
-                  ? { kind: 'error', code: 'outcome_unknown' }
+                reloadReason
+                  ? { kind: 'error', code: reloadReason }
                   : { kind: 'idle' }
               )
             }}
@@ -249,9 +277,15 @@ export function ProfileEditor({
           {error}
         </p>
       )}
-      {(busy || state.kind === 'success') && (
+      {(state.kind === 'loading' || state.kind === 'success') && (
         <p ref={feedback} role="status" tabIndex={-1}>
-          {t(busy ? 'loading' : different ? 'currentChanged' : 'saved')}
+          {t(
+            state.kind === 'loading'
+              ? 'loading'
+              : different
+              ? 'currentChanged'
+              : 'saved'
+          )}
         </p>
       )}
       {current.profile.completed && current.profile.username && (

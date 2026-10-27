@@ -1,0 +1,7 @@
+Actual read-only architect response retained from profile_architecture:
+
+**Одобряю локальное применение `00003_avatar_cleanup_confirmation.sql`.** Материальных ошибок не обнаружил.
+
+`true` теперь означает подтверждённое отсутствие объекта и committed переход в `deleted`; retry bookkeeping возвращает `false`. Проверки lease/current pointer и порядок profiles → ledger сохранены. `CREATE OR REPLACE` сохраняет существующие grants.
+
+Проверял только SQL; применение и повторные тесты остаются за main-сессией.

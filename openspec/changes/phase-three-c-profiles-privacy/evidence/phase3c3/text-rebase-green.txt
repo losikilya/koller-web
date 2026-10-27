@@ -1,0 +1,369 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx (3 tests | 1 failed) 1241ms
+   × avatar reload-current cannot silently rebase a text draft over concurrent server edits 357ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx > avatar reload-current cannot silently rebase a text draft over concurrent server edits
+TestingLibraryElementError: Unable to find an accessible element with the role "button" and name "Cancel"
+
+Here are the accessible roles:
+
+  group:
+
+  Name "Profile photo":
+  <fieldset
+    aria-busy="false"
+    class="_fields_c7c5d9"
+  />
+
+  Name "Edit profile":
+  <fieldset
+    class="_fields_c7c5d9"
+  />
+
+  --------------------------------------------------
+  img:
+
+  Name "Current profile photo":
+  <img
+    alt="Current profile photo"
+    class="_avatarPhoto_c7c5d9"
+    height="96"
+    src="/api/v1/profile-avatars/11111111-1111-4111-8111-111111111111"
+    width="96"
+  />
+
+  --------------------------------------------------
+  paragraph:
+
+  Name "":
+  <p
+    id="avatar-hint"
+  />
+
+  Name "":
+  <p
+    id="profile-warning"
+  />
+
+  Name "":
+  <p
+    class="_description_f176d3"
+    id="profile-username-description"
+  />
+
+  Name "":
+  <p
+    id="profile-bio-hint"
+  />
+
+  Name "":
+  <p />
+
+  --------------------------------------------------
+  button:
+
+  Name "Upload photo":
+  <button
+    class="_button_f176d3 _primary_f176d3 _medium_f176d3 "
+    disabled=""
+    type="button"
+  />
+
+  Name "Remove photo":
+  <button
+    class="_button_f176d3 _secondary_f176d3 _medium_f176d3 "
+    disabled=""
+    type="button"
+  />
+
+  Name "Cancel photo selection":
+  <button
+    class="_button_f176d3 _ghost_f176d3 _medium_f176d3 "
+    type="button"
+  />
+
+  Name "Save profile":
+  <button
+    class="_button_f176d3 _primary_f176d3 _medium_f176d3 "
+    disabled=""
+    type="submit"
+  />
+
+  Name "Cancel edits":
+  <button
+    class="_button_f176d3 _secondary_f176d3 _medium_f176d3 "
+    type="button"
+  />
+
+  Name "Reload current profile":
+  <button
+    class="_button_f176d3 _ghost_f176d3 _medium_f176d3 "
+    type="button"
+  />
+
+  --------------------------------------------------
+  status:
+
+  Name "":
+  <p
+    role="status"
+    tabindex="-1"
+  />
+
+  --------------------------------------------------
+  textbox:
+
+  Name "Username":
+  <input
+    aria-describedby="profile-warning profile-error profile-username-description"
+    autocomplete="username"
+    class="_input_f176d3 "
+    id="profile-username"
+    required=""
+    value="dancer"
+  />
+
+  Name "Display name":
+  <input
+    aria-describedby="profile-error"
+    autocomplete="nickname"
+    class="_input_f176d3 "
+    id="profile-display-name"
+    required=""
+    value="Owner"
+  />
+
+  Name "Bio":
+  <textarea
+    aria-describedby="profile-bio-hint profile-error"
+    id="profile-bio"
+    rows="6"
+  />
+
+  --------------------------------------------------
+  alert:
+
+  Name "":
+  <p
+    id="profile-error"
+    role="alert"
+    tabindex="-1"
+  />
+
+  --------------------------------------------------
+  link:
+
+  Name "View public profile":
+  <a
+    href="/en/u/dancer"
+  />
+
+  --------------------------------------------------
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <form
+      aria-busy="false"
+      class="_form_c7c5d9"
+      novalidate=""
+    >
+      <span
+        class="_badge_f176d3 _accent_f176d3 "
+      >
+        Public profile
+      </span>
+      <fieldset
+        aria-busy="false"
+        class="_fields_c7c5d9"
+      >
+        <legend>
+          Profile photo
+        </legend>
+        <img
+          alt="Current profile photo"
+          class="_avatarPhoto_c7c5d9"
+          height="96"
+          src="/api/v1/profile-avatars/11111111-1111-4111-8111-111111111111"
+          width="96"
+        />
+        <label
+          for="profile-avatar-file"
+        >
+          Profile photo
+        </label>
+        <input
+          accept="image/jpeg,image/png,image/webp"
+          aria-describedby="avatar-hint"
+          id="profile-avatar-file"
+          type="file"
+        />
+        <p
+          id="avatar-hint"
+        >
+          Maximum photo size: 2 MB
+        </p>
+        <div
+          class="_actions_c7c5d9"
+        >
+          <button
+            class="_button_f176d3 _primary_f176d3 _medium_f176d3 "
+            disabled=""
+            type="button"
+          >
+            Upload photo
+          </button>
+          <button
+            class="_button_f176d3 _secondary_f176d3 _medium_f176d3 "
+            disabled=""
+            type="button"
+          >
+            Remove photo
+          </button>
+          <button
+            class="_button_f176d3 _ghost_f176d3 _medium_f176d3 "
+            type="button"
+          >
+            Cancel photo selection
+          </button>
+        </div>
+        <p
+          role="status"
+          tabindex="-1"
+        >
+          Photo saved
+        </p>
+      </fieldset>
+      <p
+        id="profile-warning"
+      >
+        Changing or clearing your username makes the old name immediately available to others. Old links will not redirect. Your account identity stays the same.
+      </p>
+      <fieldset
+        class="_fields_c7c5d9"
+      >
+        <legend>
+          Edit profile
+        </legend>
+        <div
+          class="_field_f176d3"
+        >
+          <label
+            for="profile-username"
+          >
+            Username
+          </label>
+          <input
+            aria-describedby="profile-warning profile-error profile-username-description"
+            autocomplete="username"
+            class="_input_f176d3 "
+            id="profile-username"
+            required=""
+            value="dancer"
+          />
+          <p
+            class="_description_f176d3"
+            id="profile-username-description"
+          >
+            Optional: 3-30 lowercase letters, digits or underscores; start with a letter.
+          </p>
+        </div>
+        <div
+          class="_field_f176d3"
+        >
+          <label
+            for="profile-display-name"
+          >
+            Display name
+          </label>
+          <input
+            aria-describedby="profile-error"
+            autocomplete="nickname"
+            class="_input_f176d3 "
+            id="profile-display-name"
+            required=""
+            value="Owner"
+          />
+        </div>
+        <label
+          for="profile-bio"
+        >
+          Bio
+        </label>
+        <textarea
+          aria-describedby="profile-bio-hint profile-error"
+          id="profile-bio"
+          rows="6"
+        >
+          Local draft
+        </textarea>
+        <p
+          id="profile-bio-hint"
+        >
+          Up to 500 characters.
+        </p>
+        <div
+          class="_actions_c7c5d9"
+        >
+          <button
+            class="_button_f176d3 _primary_f176d3 _medium_f176d3 "
+            disabled=""
+            type="submit"
+          >
+            Save profile
+          </button>
+          <button
+            class="_button_f176d3 _secondary_f176d3 _medium_f176d3 "
+            type="button"
+          >
+            Cancel edits
+          </button>
+          <button
+            class="_button_f176d3 _ghost_f176d3 _medium_f176d3 "
+            type="button"
+          >
+            Reload current profile
+          </button>
+        </div>
+      </fieldset>
+      <p
+        id="profile-error"
+        role="alert"
+        tabindex="-1"
+      >
+        Your profile changed elsewhere. Your draft is kept. Reload current profile before editing again.
+      </p>
+      <p>
+        <a
+          href="/en/u/dancer"
+        >
+          View public profile
+        </a>
+      </p>
+    </form>
+  </div>
+</body>
+ ❯ Object.getElementError node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:37:19
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+ ❯ node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+ ❯ tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx:181:27
+    179|     en.profile.revision_conflict
+    180|   )
+    181|   await user.click(screen.getByRole('button', { name: 'Cancel', exact:…
+       |                           ^
+    182|   expect(
+    183|     screen.getByRole('button', { name: 'Save profile', exact: true })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 2 passed (3)
+   Start at  17:04:32
+   Duration  2.88s (transform 362ms, setup 319ms, import 516ms, tests 1.24s, environment 617ms)
+

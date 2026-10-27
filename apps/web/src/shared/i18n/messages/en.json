@@ -134,6 +134,22 @@
     "viewPublic": "View public profile",
     "publicTitle": "Profile",
     "publicUnavailable": "Profile unavailable",
-    "publicServiceUnavailable": "Profiles are temporarily unavailable. Please try again later."
+    "publicServiceUnavailable": "Profiles are temporarily unavailable. Please try again later.",
+    "avatarRemove": "Remove photo",
+    "avatarTooLarge": "Photo too large. Maximum size: 2 MB.",
+    "avatarOutcomeUnknown": "Reload current profile before another change.",
+    "avatarLabel": "Profile photo",
+    "avatarUpload": "Upload photo",
+    "avatarRateLimited": "Too many uploads. Try again later.",
+    "avatarCancel": "Cancel photo selection",
+    "avatarPreview": "Selected photo preview",
+    "avatarSaved": "Photo saved",
+    "avatarConflict": "Profile changed; reload current profile.",
+    "avatarLoading": "Saving photo",
+    "avatarHint": "Maximum photo size: 2 MB",
+    "avatarUnavailable": "Photo unavailable",
+    "avatarInvalid": "Invalid photo",
+    "avatarCurrent": "Current profile photo",
+    "avatarRemoved": "Photo removed"
   }
 }

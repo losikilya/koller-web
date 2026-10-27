@@ -1,0 +1,33 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/app/_infrastructure/avatarRemovalBody.test.ts (2 tests | 1 failed) 13ms
+   × an empty transport stream is a valid bodyless DELETE and preserves its revision condition 10ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/app/_infrastructure/avatarRemovalBody.test.ts > an empty transport stream is a valid bodyless DELETE and preserves its revision condition
+AssertionError: expected 400 to be 200 // Object.is equality
+
+- Expected
++ Received
+
+- 200
++ 400
+
+ ❯ tests/apps/web/app/_infrastructure/avatarRemovalBody.test.ts:12:27
+     10| test('an empty transport stream is a valid bodyless DELETE and preserv…
+     11|   const response=await handleAvatarRequest(request(new Uint8Array()),'…
+     12|   expect(response.status).toBe(200)
+       |                           ^
+     13|   expect(response.headers.get('etag')).toBe('"profile-5"')
+     14|   expect(remove).toHaveBeenCalledWith('22222222-2222-4222-8222-2222222…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  16:38:03
+   Duration  1.09s (transform 398ms, setup 322ms, import 566ms, tests 13ms, environment 0ms)
+

@@ -1,0 +1,10 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+PASS: real private Storage/raw grants, ownership, completion eligibility, immutable IDs, revision races/bigints, DB rate limits, 24h/7d cleanup, fencing, crash/restart and orphan reconciliation
+
+ Test Files  1 passed (1)
+      Tests  1 passed (1)
+   Start at  16:00:22
+   Duration  18.94s (transform 35ms, setup 380ms, import 10ms, tests 18.35s, environment 0ms)
+

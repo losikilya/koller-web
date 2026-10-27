@@ -1,0 +1,8 @@
+{
+  "command": "supabase start (local only; raw output withheld because it can contain credentials)",
+  "exitCode": 0,
+  "timedOut": false,
+  "storageRunning": false,
+  "reset": false,
+  "rawCredentialsPersisted": false
+}

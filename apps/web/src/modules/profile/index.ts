@@ -14,3 +14,10 @@ export {
   createPublicProfileReader,
   normalizedPublicUsername,
 } from './publicProfile'
+export { saveAvatar, removeAvatar } from './avatarService'
+export type {
+  AvatarDependencies,
+  AvatarResult,
+  AvatarInput,
+} from './avatarService'
+export { AvatarEditor } from './AvatarEditor'

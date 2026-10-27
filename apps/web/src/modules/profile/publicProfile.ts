@@ -1,10 +1,11 @@
 import type { PublicProfileDto } from '@dance/contracts'
-import { publicProfileSchema } from '@dance/contracts'
+import { publicProfileSchema, avatarUrlFor } from '@dance/contracts'
 import type { SupabaseClient } from '@supabase/supabase-js'
 import type { Database } from '@/shared/supabase/database'
 import { ProfileFailure } from './profileService'
 export type PublicProfileReader = {
   readByUsername(username: string): Promise<unknown>
+  readAvatarId?(userId: string): Promise<string | null>
 }
 export function normalizedPublicUsername(value: string): string | null {
   return /^[a-z][a-z0-9_]{2,29}$/i.test(value) ? value.toLowerCase() : null
@@ -13,6 +14,13 @@ export function createPublicProfileReader(
   client: SupabaseClient<Database>
 ): PublicProfileReader {
   return {
+    async readAvatarId(userId) {
+      const result = await client.rpc('get_public_avatar_id', {
+        p_user_id: userId,
+      })
+      if (result.error) throw new ProfileFailure('service_unavailable', 503)
+      return result.data
+    },
     async readByUsername(username) {
       const result = await client.rpc('get_public_profile_by_username', {
         p_username: username,
@@ -46,7 +54,11 @@ export async function readPublicProfile(
       username: row.username,
       displayName: row.display_name,
       bio: row.bio,
-      avatarUrl: null,
+      avatarUrl: reader.readAvatarId
+        ? await reader
+            .readAvatarId(String(row.user_id))
+            .then((id) => (id ? avatarUrlFor(id) : null))
+        : null,
     })
   } catch {
     throw new ProfileFailure('service_unavailable', 503)

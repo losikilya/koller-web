@@ -1,0 +1,4 @@
+
+> dance-platform@0.1.0 db:types C:\Users\Lenovo\Desktop\koller_web
+> node scripts/generate-database-types.mjs
+

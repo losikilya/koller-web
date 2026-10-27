@@ -9,3 +9,7 @@ Review correction: initial direct Vitest assertions established the recorded beh
 ## Revised Phase 3C.2
 
 New executable scenarios SC-421–424 cover atomic SQL completion, route/auth-return gates, public projection/metadata and EN/RU onboarding/browser navigation. Their assertions and canonical feature drivers precede implementation; new RED cycles append without modifying original 16 events. No new baseline cycle is claimed against uncommitted 3C.1 production. A fresh full unchanged-3C.1 GREEN is retained in evidence/phase3c2/baseline.txt.
+
+## Phase 3C.3 executable mapping
+
+SC-426–430: tests/bdd/profile/avatars.feature, with focused decoder, injected durable use-case, transport, UI and cleanup-worker drivers. SC-431: tests/e2e/profile/avatars.feature with real local browser steps and a focused UI driver. Real Storage/database/worker tests run independently in root verify; they are not replaced by protocol mocks. Every new scenario records genuine RED/GREEN/REFACTOR; postimplementation regressions remain ordinary tests. No original event/report is rewritten.

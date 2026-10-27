@@ -34,3 +34,18 @@
   flex-wrap: wrap;
   gap: var(--space-4);
 }
+.avatarPhoto {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.fields input[type='file'] {
+  width: 100%;
+  max-width: 100%;
+  font: inherit;
+}
+.fields input[type='file']:focus-visible {
+  outline: var(--focus-width) solid var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}

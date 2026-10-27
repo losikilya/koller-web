@@ -44,7 +44,7 @@ enable_signup = true
 enable_confirmations = true
 
 [storage]
-enabled = false
+enabled = true
 
 [realtime]
 enabled = false

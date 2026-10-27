@@ -11,7 +11,7 @@ export function createProfileRepository(
         client
           .from('profiles')
           .select(
-            'user_id,username,display_name,bio,revision::text,updated_at,deletion_requested_at,completed_at'
+            'user_id,username,display_name,bio,revision::text,updated_at,deletion_requested_at,completed_at,avatar_id'
           )
           .eq('user_id', userId)
           .maybeSingle(),
@@ -42,6 +42,7 @@ export function createProfileRepository(
         revision: row.revision,
         updatedAt: row.updated_at,
         completed: row.completed_at !== null,
+        avatarId: row.avatar_id,
         privacy: {
           visibility: settings.visibility,
           discoverable: settings.discoverable,

@@ -1,0 +1,61 @@
+
+> dance-platform@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web
+> turbo run typecheck && tsc --noEmit && tsc --noEmit -p .storybook/tsconfig.json
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running typecheck in 4 packages
+   • Remote caching disabled
+
+@dance/contracts:typecheck: cache hit, replaying logs a8f59412fdb9e136
+@dance/ui:typecheck: cache hit, replaying logs e4e61538de4db461
+@dance/ui:typecheck: 
+@dance/ui:typecheck: > @dance/ui@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:typecheck: > tsc --noEmit
+@dance/ui:typecheck: 
+@dance/contracts:typecheck: 
+@dance/contracts:typecheck: > @dance/contracts@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:typecheck: > tsc --noEmit
+@dance/contracts:typecheck: 
+@dance/web:typecheck: cache miss, executing 4e751ab815d1b721
+@dance/web:typecheck: 
+@dance/web:typecheck: > @dance/web@0.1.0 typecheck C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:typecheck: > next typegen && tsc --noEmit
+@dance/web:typecheck: 
+@dance/web:typecheck: 
+@dance/web:typecheck: > Unexpected error while generating route types. Original error:
+@dance/web:typecheck: 
+@dance/web:typecheck: Error: Failed to load native binding
+@dance/web:typecheck:     at ignore-listed frames {
+@dance/web:typecheck:   [cause]: [
+@dance/web:typecheck:     Error: Cannot find module './swc.win32-x64-msvc.node'
+@dance/web:typecheck:     Require stack:
+@dance/web:typecheck:     - C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\@swc+core@1.16.20\node_modules\@swc\core\binding.js
+@dance/web:typecheck:     - C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\@swc+core@1.16.20\node_modules\@swc\core\index.js
+@dance/web:typecheck:     - C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\next-intl@4.14.9_@types+react@19.3.0_next@16.4.3_react@19.3.0\node_modules\next-intl\dist\cjs\development\plugin.cjs
+@dance/web:typecheck:     - C:\Users\Lenovo\Desktop\koller_web\apps\web\next.config.compiled.js
+@dance/web:typecheck:     - C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\next@16.4.3_@babel+core@7.29.7_@playwright+test@1.64.1_@types+node@24.19.0_react-dom@19.3.0_react@19.3.0_sass@1.77.6\node_modules\next\dist\build\next-config-ts\transpile-config.js
+@dance/web:typecheck:     - C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\next@16.4.3_@babel+core@7.29.7_@playwright+test@1.64.1_@types+node@24.19.0_react-dom@19.3.0_react@19.3.0_sass@1.77.6\node_modules\next\dist\server\config.js
+@dance/web:typecheck:     - C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\next@16.4.3_@babel+core@7.29.7_@playwright+test@1.64.1_@types+node@24.19.0_react-dom@19.3.0_react@19.3.0_sass@1.77.6\node_modules\next\dist\cli\next-test.js
+@dance/web:typecheck:     - C:\Users\Lenovo\Desktop\koller_web\node_modules\.pnpm\next@16.4.3_@babel+core@7.29.7_@playwright+test@1.64.1_@types+node@24.19.0_react-dom@19.3.0_react@19.3.0_sass@1.77.6\node_modules\next\dist\bin\next
+@dance/web:typecheck:         at ignore-listed frames {
+@dance/web:typecheck:       code: 'MODULE_NOT_FOUND',
+@dance/web:typecheck:       requireStack: [Array]
+@dance/web:typecheck:     },
+@dance/web:typecheck:     Error: SWC native addon: user cache failed: validate cache root C:\Users\Lenovo\AppData\Local\Packages\sandbox.{4477cb3d-95bf-4fab-94e5-f09a494cbc1c}\AC\swc: cache ancestor C:\Users\Lenovo\AppData\Local\Packages\sandbox.{4477cb3d-95bf-4fab-94e5-f09a494cbc1c}\AC\swc: DACL grants replacement rights 0x1f01ff to SID S-1-15-2-758881239-1058695077-4179579431-2868513248-1985359697-1222313843-3103173529; fallback cache failed: open cache pruning lock C:\Users\Lenovo\.swc-cache\swc-native-S-1-5-21-2966394185-170389895-2001018114-1001\v1\.swc-native-prune.lock: Отказано в доступе. (os error 5); ProgramData cache failed: secure cache directory C:\ProgramData\swc-native-S-1-5-21-2966394185-170389895-2001018114-1001: Отказано в доступе. (os error 5); set SWC_NATIVE_BINDING_CACHE to a safe absolute directory owned by your user whose ancestors do not grant other users replacement rights. Reinstall the native package if its payload is damaged; check SWC_NATIVE_BINDING_CACHE and directory permissions for materialization failures.
+@dance/web:typecheck:         at ignore-listed frames {
+@dance/web:typecheck:       code: 'ERR_SWC_NATIVE_CACHE'
+@dance/web:typecheck:     }
+@dance/web:typecheck:   ]
+@dance/web:typecheck: }
+@dance/web:typecheck:  ELIFECYCLE  Command failed with exit code 1.
+@dance/web#typecheck:  ERROR  command (C:\Users\Lenovo\Desktop\koller_web\apps\web) C:\Users\Lenovo\AppData\Roaming\npm\pnpm.cmd run typecheck exited (1)
+
+ Tasks:    2 successful, 3 total
+Cached:    2 cached, 3 total
+  Time:    1.388s 
+Failed:    @dance/web#typecheck
+
+ ERROR  run failed: command  exited (1)
+ ELIFECYCLE  Command failed with exit code 1.

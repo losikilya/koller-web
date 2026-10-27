@@ -1,0 +1,212 @@
+
+ RUN  v4.1.12 C:/Users/Lenovo/Desktop/koller_web
+
+ ❯ tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx (3 tests | 1 failed) 2300ms
+   × avatar reload-current cannot silently rebase a text draft over concurrent server edits 1326ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx > avatar reload-current cannot silently rebase a text draft over concurrent server edits
+Error: expect(element).toBeDisabled()
+
+Received element is not disabled:
+  <button
+  class="_button_f176d3 _primary_f176d3 _medium_f176d3 "
+  type="submit"
+/>
+
+Ignored nodes: comments, script, style
+<html>
+  <head />
+  <body>
+    <div>
+      <form
+        aria-busy="false"
+        class="_form_c7c5d9"
+        novalidate=""
+      >
+        <span
+          class="_badge_f176d3 _accent_f176d3 "
+        >
+          Public profile
+        </span>
+        <fieldset
+          aria-busy="false"
+          class="_fields_c7c5d9"
+        >
+          <legend>
+            Profile photo
+          </legend>
+          <img
+            alt="Current profile photo"
+            class="_avatarPhoto_c7c5d9"
+            height="96"
+            src="/api/v1/profile-avatars/11111111-1111-4111-8111-111111111111"
+            width="96"
+          />
+          <label
+            for="profile-avatar-file"
+          >
+            Profile photo
+          </label>
+          <input
+            accept="image/jpeg,image/png,image/webp"
+            aria-describedby="avatar-hint"
+            id="profile-avatar-file"
+            type="file"
+          />
+          <p
+            id="avatar-hint"
+          >
+            Maximum photo size: 2 MB
+          </p>
+          <div
+            class="_actions_c7c5d9"
+          >
+            <button
+              class="_button_f176d3 _primary_f176d3 _medium_f176d3 "
+              disabled=""
+              type="button"
+            >
+              Upload photo
+            </button>
+            <button
+              class="_button_f176d3 _secondary_f176d3 _medium_f176d3 "
+              type="button"
+            >
+              Remove photo
+            </button>
+            <button
+              class="_button_f176d3 _ghost_f176d3 _medium_f176d3 "
+              type="button"
+            >
+              Cancel photo selection
+            </button>
+          </div>
+          <p
+            role="status"
+            tabindex="-1"
+          >
+            Photo saved
+          </p>
+        </fieldset>
+        <p
+          id="profile-warning"
+        >
+          Changing or clearing your username makes the old name immediately available to others. Old links will not redirect. Your account identity stays the same.
+        </p>
+        <fieldset
+          class="_fields_c7c5d9"
+        >
+          <legend>
+            Edit profile
+          </legend>
+          <div
+            class="_field_f176d3"
+          >
+            <label
+              for="profile-username"
+            >
+              Username
+            </label>
+            <input
+              aria-describedby="profile-warning profile-username-description"
+              autocomplete="username"
+              class="_input_f176d3 "
+              id="profile-username"
+              required=""
+              value="dancer"
+            />
+            <p
+              class="_description_f176d3"
+              id="profile-username-description"
+            >
+              Optional: 3-30 lowercase letters, digits or underscores; start with a letter.
+            </p>
+          </div>
+          <div
+            class="_field_f176d3"
+          >
+            <label
+              for="profile-display-name"
+            >
+              Display name
+            </label>
+            <input
+              autocomplete="nickname"
+              class="_input_f176d3 "
+              id="profile-display-name"
+              required=""
+              value="Owner"
+            />
+          </div>
+          <label
+            for="profile-bio"
+          >
+            Bio
+          </label>
+          <textarea
+            aria-describedby="profile-bio-hint"
+            id="profile-bio"
+            rows="6"
+          >
+            Local draft
+          </textarea>
+          <p
+            id="profile-bio-hint"
+          >
+            Up to 500 characters.
+          </p>
+          <div
+            class="_actions_c7c5d9"
+          >
+            <button
+              class="_button_f176d3 _primary_f176d3 _medium_f176d3 "
+              type="submit"
+            >
+              Save profile
+            </button>
+            <button
+              class="_button_f176d3 _secondary_f176d3 _medium_f176d3 "
+              type="button"
+            >
+              Cancel edits
+            </button>
+            <button
+              class="_button_f176d3 _ghost_f176d3 _medium_f176d3 "
+              type="button"
+            >
+              Reload current profile
+            </button>
+          </div>
+        </fieldset>
+        <p>
+          <a
+            href="/en/u/dancer"
+          >
+            View public profile
+          </a>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>
+ ❯ tests/apps/web/modules/profile/profileAvatarCoordination.test.tsx:157:97
+    155|   await user.upload(screen.getByLabelText('Profile photo'), new File([…
+
+    156|   await user.click(screen.getByRole('button', { name: 'Upload photo', …
+    157|   await waitFor(() => expect(screen.getByRole('button', { name: 'Save …
+       |                                                                                                 ^
+    158|   expect(screen.getByLabelText('Bio', { exact: true })).toHaveValue('L…
+    159|   expect(screen.getByRole('alert')).toHaveTextContent(en.profile.revis…
+ ❯ runWithExpensiveErrorDiagnosticsDisabled node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/config.js:47:12
+ Test Files  1 failed (1)
+ ❯ checkCallback node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:124:77
+      Tests  1 failed | 2 passed (3)
+ ❯ Timeout.checkRealTimersCallback node_modules/.pnpm/@testing-library+dom@10.4.2/node_modules/@testing-library/dom/dist/wait-for.js:118:16
+   Start at  17:04:11
+   Duration  3.95s (transform 355ms, setup 307ms, import 520ms, tests 2.30s, environment 628ms)
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+

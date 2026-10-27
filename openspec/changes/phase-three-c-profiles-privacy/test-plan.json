@@ -49,7 +49,27 @@
     "supabase/tests/identity.test.sql",
     "docs/adr/0005-profile-completion-public-policy.md",
     "scripts/test-public-profile-races.mjs",
-    "apps/web/public/favicon.svg"
+    "apps/web/public/favicon.svg",
+    "packages/contracts/src/avatar.ts",
+    "packages/contracts/src/identity.ts",
+    "apps/web/src/app/_infrastructure/avatarProcessing.ts",
+    "apps/web/src/app/_infrastructure/avatarRuntime.ts",
+    "apps/web/src/app/_infrastructure/avatar.ts",
+    "apps/web/src/modules/profile/avatarService.ts",
+    "apps/web/src/modules/profile/AvatarEditor.tsx",
+    "scripts/avatar-cleanup-worker.mjs",
+    "scripts/local-auth-environment.mjs",
+    "scripts/run-local-auth.mjs",
+    "supabase/config.toml",
+    "supabase/migrations/20261027000002_profile_avatars.sql",
+    "apps/web/package.json",
+    "pnpm-lock.yaml",
+    "docs/adr/0006-local-profile-avatars.md",
+    "apps/web/src/app/api/v1/me/avatar/route.ts",
+    "apps/web/src/app/api/v1/profile-avatars/[id]/route.ts",
+    "scripts/test-avatar-storage.mjs",
+    "scripts/check-avatar-client.mjs",
+    "supabase/migrations/20261027000003_avatar_cleanup_confirmation.sql"
   ],
   "scenarios": [
     {
@@ -130,6 +150,48 @@
       "feature": "tests/e2e/profile/completion.feature",
       "layer": "browser",
       "testFile": "tests/apps/web/modules/profile/completionEditor.test.tsx"
+    },
+    {
+      "id": "SC-426",
+      "requirement": "FR-410",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/app/_infrastructure/avatarProcessing.test.ts"
+    },
+    {
+      "id": "SC-427",
+      "requirement": "FR-411",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/avatarService.test.ts"
+    },
+    {
+      "id": "SC-428",
+      "requirement": "FR-412",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/app/_infrastructure/avatar.test.ts"
+    },
+    {
+      "id": "SC-429",
+      "requirement": "FR-413",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/apps/web/modules/profile/AvatarEditor.test.tsx"
+    },
+    {
+      "id": "SC-430",
+      "requirement": "FR-414",
+      "feature": "tests/bdd/profile/avatars.feature",
+      "layer": "unit",
+      "testFile": "tests/tooling/avatarCleanup.test.ts"
+    },
+    {
+      "id": "SC-431",
+      "requirement": "FR-413",
+      "feature": "tests/e2e/profile/avatars.feature",
+      "layer": "browser",
+      "testFile": "tests/apps/web/modules/profile/AvatarEditor.test.tsx"
     }
   ]
 }

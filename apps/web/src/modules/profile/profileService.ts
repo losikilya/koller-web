@@ -3,9 +3,12 @@ import {
   profileFormPatchSchema,
   profileRevisionSchema,
   profileCompletionSchema,
+  avatarUrlFor,
 } from '@dance/contracts'
 import type { OwnProfile, ProfilePatch } from '@dance/contracts'
-export type OwnerRecord = Omit<OwnProfile, 'avatarUrl'>
+export type OwnerRecord = Omit<OwnProfile, 'avatarUrl'> & {
+  avatarId?: string | null
+}
 export type ProfileRepository = {
   read(userId: string): Promise<OwnerRecord | null>
   write(
@@ -58,7 +61,7 @@ export async function readOwnProfile(
     username: row.username,
     displayName: row.displayName,
     bio: row.bio,
-    avatarUrl: null,
+    avatarUrl: row.avatarId ? avatarUrlFor(row.avatarId) : null,
     completed: row.completed ?? false,
     revision: row.revision,
     updatedAt: row.updatedAt,

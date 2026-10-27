@@ -92,6 +92,7 @@ export type Database = {
       }
       profiles: {
         Row: {
+          avatar_id: string | null
           avatar_path: string | null
           bio: string
           completed_at: string | null
@@ -105,6 +106,7 @@ export type Database = {
         }
         ComputedFields: never
         Insert: {
+          avatar_id?: string | null
           avatar_path?: string | null
           bio?: string
           completed_at?: string | null
@@ -117,6 +119,7 @@ export type Database = {
           username?: string | null
         }
         Update: {
+          avatar_id?: string | null
           avatar_path?: string | null
           bio?: string
           completed_at?: string | null
@@ -168,6 +171,54 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      attach_own_avatar: {
+        Args: { p_expected_revision: number; p_id: string }
+        Returns: undefined
+      }
+      avatar_service_abandon: {
+        Args: { p_id: string; p_owner: string }
+        Returns: undefined
+      }
+      avatar_service_claim_cleanup: {
+        Args: { p_limit?: number }
+        Returns: {
+          id: string
+          lease_token: string
+          object_id: string
+          owner_id: string
+        }[]
+      }
+      avatar_service_cleanup_authorized: {
+        Args: { p_id: string; p_lease: string }
+        Returns: boolean
+      }
+      avatar_service_finish_cleanup: {
+        Args: { p_id: string; p_lease: string; p_success: boolean }
+        Returns: boolean
+      }
+      avatar_service_ready: {
+        Args: { p_id: string; p_owner: string }
+        Returns: undefined
+      }
+      avatar_service_reconcile: {
+        Args: Record<PropertyKey, never>
+        Returns: undefined
+      }
+      avatar_service_resolve: {
+        Args: { p_id: string; p_viewer?: string }
+        Returns: {
+          object_id: string
+          owner_id: string
+        }[]
+      }
+      avatar_service_upload_object: {
+        Args: { p_id: string; p_owner: string }
+        Returns: string
+      }
+      begin_own_avatar_upload: {
+        Args: { p_fingerprint: string; p_id: string }
+        Returns: string
+      }
       complete_own_profile: {
         Args: {
           p_expected_privacy_revision: number
@@ -185,6 +236,7 @@ export type Database = {
         Returns: undefined
       }
       ensure_profile: { Args: Record<PropertyKey, never>; Returns: undefined }
+      get_public_avatar_id: { Args: { p_user_id: string }; Returns: string }
       get_public_profile: {
         Args: { p_user_id: string }
         Returns: {
@@ -221,6 +273,10 @@ export type Database = {
           p_schema_version: number
         }
         Returns: string
+      }
+      remove_own_avatar: {
+        Args: { p_expected_revision: number; p_id: string }
+        Returns: undefined
       }
       set_own_preferences: {
         Args: { p_expected_revision: number; p_locale: string; p_theme: string }

@@ -1,0 +1,44 @@
+
+> dance-platform@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web
+> turbo run lint && eslint tests --ext .ts,.tsx && pnpm boundaries && eslint .storybook packages/ui/stories --ext .ts,.tsx
+
+
+   • turbo 2.11.10
+   • Packages in scope: @dance/contracts, @dance/design-tokens, @dance/ui, @dance/web
+   • Running lint in 4 packages
+   • Remote caching disabled
+
+@dance/contracts:lint: cache miss, executing e2f67f05872cd7a0
+@dance/design-tokens:lint: cache miss, executing bf01c4209c2ff9b9
+@dance/design-tokens:lint: 
+@dance/design-tokens:lint: > @dance/design-tokens@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\design-tokens
+@dance/design-tokens:lint: > prettier --check src/tokens.css
+@dance/design-tokens:lint: 
+@dance/contracts:lint: 
+@dance/contracts:lint: > @dance/contracts@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\contracts
+@dance/contracts:lint: > eslint src --ext .ts,.tsx
+@dance/contracts:lint: 
+@dance/design-tokens:lint: Checking formatting...
+@dance/design-tokens:lint: All matched files use Prettier code style!
+@dance/ui:lint: cache miss, executing 610c3a7efe68d4c4
+@dance/ui:lint: 
+@dance/ui:lint: > @dance/ui@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\packages\ui
+@dance/ui:lint: > eslint src --ext .ts,.tsx
+@dance/ui:lint: 
+@dance/web:lint: cache miss, executing 9937fcff773d888b
+@dance/web:lint: 
+@dance/web:lint: > @dance/web@0.1.0 lint C:\Users\Lenovo\Desktop\koller_web\apps\web
+@dance/web:lint: > eslint src --ext .ts,.tsx
+@dance/web:lint: 
+
+ Tasks:    4 successful, 4 total
+Cached:    0 cached, 4 total
+  Time:    18.222s 
+
+Multiple projects found, consider using a single `tsconfig` with `references` to speed up, or use `noWarnOnMultipleProjects` to suppress this warning
+
+> dance-platform@0.1.0 boundaries C:\Users\Lenovo\Desktop\koller_web
+> node scripts/check-boundaries.mjs
+
+Import boundaries and cycles: PASS
+Multiple projects found, consider using a single `tsconfig` with `references` to speed up, or use `noWarnOnMultipleProjects` to suppress this warning
